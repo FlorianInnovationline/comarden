@@ -64,7 +64,7 @@ export default function FacadeShowcase() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-[70vh] lg:min-h-[75vh] xl:min-h-[70vh] flex flex-col lg:flex-row overflow-hidden bg-gradient-to-br from-[#0a1f3f] via-[#0f2a52] to-[#0a1f3f]"
+      className="relative min-h-[55vh] sm:min-h-[60vh] lg:min-h-[65vh] xl:min-h-[60vh] flex flex-col lg:flex-row overflow-hidden bg-gradient-to-br from-[#0a1f3f] via-[#0f2a52] to-[#0a1f3f]"
     >
       {/* Animated gradient background */}
       <div className="absolute inset-0 overflow-hidden">
@@ -86,7 +86,7 @@ export default function FacadeShowcase() {
 
       {/* Left Section - Content */}
       <div
-        className={`relative z-10 w-full lg:w-[45%] flex flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-8 sm:py-10 lg:py-12 xl:py-16 transition-all duration-1000 ease-out ${
+        className={`relative z-10 w-full lg:w-[45%] flex flex-col justify-center px-4 sm:px-6 md:px-8 lg:px-10 xl:px-12 py-6 sm:py-8 lg:py-10 xl:py-12 transition-all duration-1000 ease-out ${
           isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-10'
         }`}
       >
@@ -101,24 +101,21 @@ export default function FacadeShowcase() {
           </span>
         </div>
 
-        {/* Main Title with gradient text effect */}
+        {/* Main Title */}
         <h2
-          className={`text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl font-bold text-white leading-tight mb-2 sm:mb-3 transition-all duration-1000 delay-300 ease-out ${
+          className={`text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-4xl font-bold text-white leading-tight mb-2 sm:mb-3 transition-all duration-1000 delay-300 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
           <span className="block bg-gradient-to-r from-white to-white/90 bg-clip-text text-transparent drop-shadow-lg">
             BARDAGE
           </span>
-          <span className="block text-accent drop-shadow-lg relative">
-            PROFESSIONNEL
-            <span className="absolute inset-0 text-accent blur-xl opacity-50">PROFESSIONNEL</span>
-          </span>
+          <span className="block text-accent drop-shadow-lg">PROFESSIONNEL</span>
         </h2>
 
         {/* Description */}
         <p
-          className={`text-white/80 text-xs sm:text-sm md:text-base lg:text-base leading-relaxed mb-4 sm:mb-6 max-w-xl transition-all duration-1000 delay-500 ease-out ${
+          className={`text-white/80 text-xs sm:text-sm md:text-sm lg:text-base leading-relaxed mb-3 sm:mb-5 max-w-xl transition-all duration-1000 delay-500 ease-out ${
             isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
           }`}
         >
@@ -129,10 +126,10 @@ export default function FacadeShowcase() {
         </p>
 
         {/* Feature Blocks with staggered animation */}
-        <div className="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
+        <div className="space-y-2 sm:space-y-2.5 mb-3 sm:mb-5">
           {/* Feature 1 */}
           <div
-            className={`group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 transition-all duration-500 ease-out overflow-hidden ${
+            className={`group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-2.5 sm:p-3 transition-all duration-500 ease-out overflow-hidden ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
             style={{ transitionDelay: isVisible ? '700ms' : '0ms' }}
@@ -140,15 +137,15 @@ export default function FacadeShowcase() {
             {/* Hover gradient effect */}
             <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/5 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
-            <div className="relative flex items-start gap-2.5 sm:gap-3">
-              <div className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-accent/20">
-                <Palette className="w-4 h-4 sm:w-5 sm:h-5 text-accent transition-transform duration-300 group-hover:scale-110" />
+            <div className="relative flex items-start gap-2 sm:gap-2.5">
+              <div className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-accent/20">
+                <Palette className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent transition-transform duration-300 group-hover:scale-110" />
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="text-white font-bold text-sm sm:text-base mb-0.5 group-hover:text-accent transition-colors duration-300">
                   PERSONNALISATION
                 </h3>
-                <p className="text-white/70 text-[11px] sm:text-xs leading-relaxed group-hover:text-white/80 transition-colors duration-300">
+                <p className="text-white/70 text-[11px] sm:text-xs leading-snug group-hover:text-white/80 transition-colors duration-300">
                   Une seule limite : votre imagination ! Solutions sur mesure adaptées à votre projet.
                 </p>
               </div>
@@ -160,16 +157,16 @@ export default function FacadeShowcase() {
 
           {/* Feature 2 */}
           <div
-            className={`group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 transition-all duration-500 ease-out overflow-hidden ${
+            className={`group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-2.5 sm:p-3 transition-all duration-500 ease-out overflow-hidden ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
             style={{ transitionDelay: isVisible ? '850ms' : '0ms' }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/5 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
-            <div className="relative flex items-start gap-2.5 sm:gap-3">
-              <div className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-accent/20">
-                <Award className="w-4 h-4 sm:w-5 sm:h-5 text-accent transition-transform duration-300 group-hover:scale-110" />
+            <div className="relative flex items-start gap-2 sm:gap-2.5">
+              <div className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-accent/20">
+                <Award className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent transition-transform duration-300 group-hover:scale-110" />
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="text-white font-bold text-sm sm:text-base mb-0.5 group-hover:text-accent transition-colors duration-300">
@@ -186,16 +183,16 @@ export default function FacadeShowcase() {
 
           {/* Feature 3 */}
           <div
-            className={`group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-3 sm:p-4 transition-all duration-500 ease-out overflow-hidden ${
+            className={`group relative bg-white/5 backdrop-blur-md border border-white/10 rounded-xl p-2.5 sm:p-3 transition-all duration-500 ease-out overflow-hidden ${
               isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
             }`}
             style={{ transitionDelay: isVisible ? '1000ms' : '0ms' }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-accent/0 via-accent/5 to-accent/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
             
-            <div className="relative flex items-start gap-2.5 sm:gap-3">
-              <div className="flex-shrink-0 w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-accent/20">
-                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 text-accent transition-transform duration-300 group-hover:scale-110" />
+            <div className="relative flex items-start gap-2 sm:gap-2.5">
+              <div className="flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-gradient-to-br from-accent/20 to-accent/10 flex items-center justify-center group-hover:from-accent/30 group-hover:to-accent/20 transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 shadow-lg shadow-accent/20">
+                <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-accent transition-transform duration-300 group-hover:scale-110" />
               </div>
               <div className="flex-1 min-w-0">
                 <h3 className="text-white font-bold text-sm sm:text-base mb-0.5 group-hover:text-accent transition-colors duration-300">
@@ -241,19 +238,22 @@ export default function FacadeShowcase() {
 
       {/* Right Section - Image with parallax */}
       <div
-        className={`relative w-full lg:w-[55%] min-h-[40vh] sm:min-h-[50vh] lg:min-h-full transition-all duration-1000 delay-300 ease-out ${
+        className={`relative w-full lg:w-[55%] min-h-[35vh] sm:min-h-[40vh] lg:min-h-full transition-all duration-1000 delay-300 ease-out ${
           isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 translate-x-10'
         }`}
       >
-        {/* Enhanced gradient overlays */}
-        <div className="absolute inset-0 bg-gradient-to-l from-[#0a1f3f] via-transparent to-transparent z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#0a1f3f] z-10 pointer-events-none" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_left,transparent_0%,rgba(10,31,63,0.8)_70%)] z-10 pointer-events-none" />
+        {/* Single smooth gradient overlay - blends image into dark blue panel, no diagonal artifacts */}
+        <div
+          className="absolute inset-0 z-10 pointer-events-none"
+          style={{
+            background: 'linear-gradient(to left, transparent 0%, rgba(10,31,63,0.4) 35%, rgba(10,31,63,0.9) 65%, #0a1f3f 100%)',
+          }}
+        />
 
         {/* Image Container with parallax */}
         <div ref={imageRef} className="relative w-full h-full transition-transform duration-300 ease-out">
-          {/* Animated gradient overlay */}
-          <div className="absolute inset-0 bg-gradient-to-br from-accent/20 via-transparent to-primary/30 animate-pulse-slow z-0" />
+          {/* Subtle accent tint */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-transparent z-[1] pointer-events-none" />
           
           {/* Placeholder Image - Modern facade architecture */}
           <div
@@ -264,8 +264,8 @@ export default function FacadeShowcase() {
               transform: `translate(${mousePosition.x * 0.5}px, ${mousePosition.y * 0.5}px) scale(1.05)`,
             }}
           >
-            {/* Dynamic overlay */}
-            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-black/20 to-black/40 transition-opacity duration-300" />
+            {/* Subtle darkening for readability */}
+            <div className="absolute inset-0 bg-black/15" />
           </div>
 
           {/* Floating decorative elements with enhanced animations */}
