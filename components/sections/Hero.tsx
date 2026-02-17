@@ -1,0 +1,56 @@
+import Link from "next/link";
+import { ArrowRight } from "lucide-react";
+import Button from "@/components/ui/Button";
+
+export default function Hero() {
+  return (
+    <section className="relative min-h-[90vh] flex items-center pt-20 bg-primary">
+      {/* Subtle pattern overlay */}
+      <div className="absolute inset-0 opacity-10">
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage:
+              'url("data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fillRule="evenodd"%3E%3Cg fill="%23ffffff" fillOpacity="0.4"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")',
+          }}
+        />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-32">
+        <div className="max-w-3xl">
+          <p className="text-accent font-semibold text-xs sm:text-sm tracking-widest uppercase mb-3 sm:mb-4 animate-fadeInUp" style={{ animationDelay: "100ms" }}>
+            Depuis 1977
+          </p>
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight text-balance animate-fadeInUp" style={{ animationDelay: "200ms" }}>
+            L'expertise des matériaux de construction
+          </h1>
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-white/80 max-w-xl leading-relaxed animate-fadeInUp" style={{ animationDelay: "300ms" }}>
+            Toiture, charpente, isolation et façades. Façonnage sur mesure et livraison avec camion-grue partout en
+            Wallonie.
+          </p>
+          <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fadeInUp" style={{ animationDelay: "400ms" }}>
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent text-accent-foreground hover:bg-accent/90 h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base font-semibold rounded-sm group transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
+              <Link href="/do-it-yourself">
+                DO IT YOURSELF
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              variant="outline"
+              size="lg"
+              className="border-white/30 text-white bg-transparent hover:bg-white/10 h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base font-medium rounded-sm transition-all duration-300 hover:scale-105"
+            >
+              <Link href="/produits">Voir nos produits</Link>
+            </Button>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+

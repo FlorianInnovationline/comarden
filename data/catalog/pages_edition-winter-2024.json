@@ -1,0 +1,111 @@
+[
+  {
+    "id": "page-1",
+    "editionId": "edition-winter-2024",
+    "index": 1,
+    "templateType": "HERO",
+    "title": "Catalogue Hiver 2024",
+    "subtitle": "Matériaux de construction de qualité",
+    "backgroundImage": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1920&q=80",
+    "slots": [
+      {
+        "slotId": "slot-1",
+        "productSku": "TTC-CL-001",
+        "hotspotPosition": { "x": 30, "y": 50 }
+      },
+      {
+        "slotId": "slot-2",
+        "productSku": "ARD-NAT-30x20",
+        "hotspotPosition": { "x": 70, "y": 50 }
+      }
+    ]
+  },
+  {
+    "id": "page-2",
+    "editionId": "edition-winter-2024",
+    "index": 2,
+    "templateType": "SPLIT_2",
+    "title": "Produits vedettes",
+    "slots": [
+      {
+        "slotId": "slot-3",
+        "productSku": "TTC-CL-001",
+        "customBadge": "PROMO"
+      },
+      {
+        "slotId": "slot-4",
+        "productSku": "ARD-NAT-30x20"
+      }
+    ]
+  },
+  {
+    "id": "page-3",
+    "editionId": "edition-winter-2024",
+    "index": 3,
+    "templateType": "GRID_4",
+    "title": "Isolation",
+    "slots": [
+      {
+        "slotId": "slot-5",
+        "productSku": "LR-PAN-100",
+        "customBadge": "PROMO"
+      },
+      {
+        "slotId": "slot-6",
+        "productSku": "LV-ROL-200",
+        "customBadge": "PROMO"
+      },
+      {
+        "slotId": "slot-7",
+        "productSku": "EPDM-1.5"
+      },
+      {
+        "slotId": "slot-8",
+        "productSku": "BARD-MEL-145"
+      }
+    ]
+  },
+  {
+    "id": "page-4",
+    "editionId": "edition-winter-2024",
+    "index": 4,
+    "templateType": "STORY",
+    "title": "Charpente en bois",
+    "subtitle": "Des poutres de qualité pour vos projets",
+    "slots": [
+      {
+        "slotId": "slot-9",
+        "productSku": "POUT-CHENE-200"
+      },
+      {
+        "slotId": "slot-10",
+        "productSku": "BARD-COMP-GRIS"
+      }
+    ]
+  },
+  {
+    "id": "page-5",
+    "editionId": "edition-winter-2024",
+    "index": 5,
+    "templateType": "CATEGORY",
+    "title": "Façades et bardages",
+    "slots": [
+      {
+        "slotId": "slot-11",
+        "productSku": "BARD-MEL-145"
+      },
+      {
+        "slotId": "slot-12",
+        "productSku": "BARD-COMP-GRIS"
+      },
+      {
+        "slotId": "slot-13",
+        "productSku": "CROCH-ARD-INOX"
+      },
+      {
+        "slotId": "slot-14",
+        "productSku": "TUILE-PV-50W"
+      }
+    ]
+  }
+]
