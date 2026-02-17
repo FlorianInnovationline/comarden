@@ -88,19 +88,18 @@ export default function InteractiveHouseCard() {
     };
 
     if (containerRef.current) {
-      containerRef.current.addEventListener("mousemove", handleMouseMove);
-      containerRef.current.addEventListener("mouseleave", handleMouseLeave);
-    }
+      const el = containerRef.current as HTMLElement;
+      el.addEventListener("mousemove", handleMouseMove);
+      el.addEventListener("mouseleave", handleMouseLeave);
 
-    return () => {
-      if (containerRef.current) {
-        containerRef.current.removeEventListener("mousemove", handleMouseMove);
-        containerRef.current.removeEventListener("mouseleave", handleMouseLeave);
-      }
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
+      return () => {
+        el.removeEventListener("mousemove", handleMouseMove);
+        el.removeEventListener("mouseleave", handleMouseLeave);
+        if (animationFrameRef.current) {
+          cancelAnimationFrame(animationFrameRef.current);
+        }
+      };
+    }
   }, [isMobile, isCalibrationMode]);
 
   const handleHotspotClick = (part: HousePart, element: HTMLElement) => {

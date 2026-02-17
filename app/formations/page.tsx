@@ -152,7 +152,7 @@ export default function FormationsPage() {
                 </h2>
                 <p className="text-base text-muted-foreground leading-relaxed mb-6">
                   Merci. Notre équipe vous contactera sous 24h pour confirmer la disponibilité et
-                  finaliser l'inscription.
+                  finaliser l&apos;inscription.
                 </p>
                 <p className="text-sm text-muted-foreground">
                   Vous recevrez un email de confirmation à{" "}

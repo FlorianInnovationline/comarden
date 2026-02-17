@@ -55,7 +55,7 @@ export default function NewsArticlePage({
           <Callout variant="info" title="Formation accréditée Constructiv">
             Cette formation est reconnue par Constructiv et peut être prise en
             charge par les fonds sectoriels. Contactez-nous pour plus
-            d'informations sur les modalités d'inscription et de financement.
+            d&apos;informations sur les modalités d&apos;inscription et de financement.
           </Callout>
         </div>
       )}

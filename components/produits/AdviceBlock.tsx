@@ -46,7 +46,7 @@ export default function AdviceBlock() {
               </h2>
             </div>
             <p className="text-xs sm:text-sm lg:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed px-2">
-              Notre équipe d'experts est à votre disposition pour vous guider dans
+              Notre équipe d&apos;experts est à votre disposition pour vous guider dans
               le choix des matériaux adaptés à votre projet.
             </p>
           </div>

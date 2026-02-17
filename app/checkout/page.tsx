@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { CheckCircle, ArrowLeft } from "lucide-react";
 import { useCart } from "@/lib/shop/cart";
@@ -27,8 +27,13 @@ export default function CheckoutPage() {
 
   const total = getTotal();
 
+  useEffect(() => {
+    if (items.length === 0 && !isSuccess) {
+      router.push('/cart');
+    }
+  }, [items.length, isSuccess, router]);
+
   if (items.length === 0 && !isSuccess) {
-    router.push('/cart');
     return null;
   }
 

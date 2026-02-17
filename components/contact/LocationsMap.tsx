@@ -161,6 +161,7 @@ export default function LocationsMap() {
       mapRef.current = null;
       markersRef.current = [];
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

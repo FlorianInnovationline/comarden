@@ -263,7 +263,7 @@ export default function DiyWizard() {
                       Professionnel Comarden
                     </h2>
                     <p className="text-sm text-slate-600">
-                      Souhaitez-vous qu'un professionnel Comarden intervienne sur votre projet ?
+                      Souhaitez-vous qu&apos;un professionnel Comarden intervienne sur votre projet ?
                     </p>
                   </div>
                   <ProToggleCard

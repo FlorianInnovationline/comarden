@@ -40,8 +40,8 @@ export function calculateSchedule(selectedModules: FormationModule[]): DaySchedu
   const placedModules: PlacedModule[] = [];
   let currentHour = 0;
 
-  for (const module of selectedModules) {
-    const duration = module.durationHours;
+  for (const mod of selectedModules) {
+    const duration = mod.durationHours;
     
     // Calculate available hours accounting for lunch break
     let availableHours = 0;
@@ -63,7 +63,7 @@ export function calculateSchedule(selectedModules: FormationModule[]): DaySchedu
       const afternoonUsed = currentHour - AFTERNOON_START_HOUR;
       availableHours = AFTERNOON_HOURS - afternoonUsed;
     }
-    
+
     if (duration > availableHours) {
       // Doesn't fit - skip (should be prevented by UI)
       continue;
@@ -75,7 +75,7 @@ export function calculateSchedule(selectedModules: FormationModule[]): DaySchedu
       if (duration <= morningRemaining) {
         // Fits entirely in morning (before lunch break)
         placedModules.push({
-          module,
+          module: mod,
           startHour: currentHour,
           endHour: currentHour + duration, // endHour is exclusive, so hour 4 (lunch) is never filled
         });
@@ -91,7 +91,7 @@ export function calculateSchedule(selectedModules: FormationModule[]): DaySchedu
         const afternoonEndHour = afternoonStart + afternoonPart; // e.g., 5 + 1 = 6
         
         placedModules.push({
-          module,
+          module: mod,
           startHour: currentHour, // Starts in morning (e.g., 0)
           endHour: afternoonEndHour, // Ends at afternoon end hour (e.g., 6, which is exclusive)
         });
@@ -100,7 +100,7 @@ export function calculateSchedule(selectedModules: FormationModule[]): DaySchedu
     } else if (currentHour >= AFTERNOON_START_HOUR) {
       // Currently in afternoon (after lunch break)
       placedModules.push({
-        module,
+        module: mod,
         startHour: currentHour,
         endHour: currentHour + duration,
       });
@@ -109,7 +109,7 @@ export function calculateSchedule(selectedModules: FormationModule[]): DaySchedu
       // At lunch break (should never happen due to earlier check, but skip to afternoon)
       currentHour = AFTERNOON_START_HOUR;
       placedModules.push({
-        module,
+        module: mod,
         startHour: currentHour,
         endHour: currentHour + duration,
       });

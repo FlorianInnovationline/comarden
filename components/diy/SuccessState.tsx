@@ -19,7 +19,7 @@ export default function SuccessState() {
           Merci — nous vous recontactons sous 24h.
         </h2>
         <p className="text-lg text-slate-600 mb-8">
-          Votre demande a bien été enregistrée. Notre équipe va l'analyser et vous contacter rapidement.
+          Votre demande a bien été enregistrée. Notre équipe va l&apos;analyser et vous contacter rapidement.
         </p>
 
         {/* Phone contact */}
@@ -45,7 +45,7 @@ export default function SuccessState() {
             className="px-8 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl focus:outline-none focus:ring-4 focus:ring-primary/20 flex items-center justify-center gap-2"
           >
             <Home className="w-5 h-5" />
-            Revenir à l'accueil
+            Revenir à l&apos;accueil
           </Link>
           <button
             type="button"

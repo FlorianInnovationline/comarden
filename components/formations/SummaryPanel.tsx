@@ -117,7 +117,7 @@ export default function SummaryPanel({
                       Vos formations sélectionnées apparaîtront ici
                     </h4>
                     <p className="text-[9px] text-foreground/75 leading-tight">
-                      Cliquez sur "<span className="font-semibold text-accent">+ Ajouter</span>" à gauche.
+                      Cliquez sur &quot;<span className="font-semibold text-accent">+ Ajouter</span>&quot; à gauche.
                     </p>
                   </div>
                 </div>
@@ -135,7 +135,7 @@ export default function SummaryPanel({
                   <div className="w-3 h-3 rounded-full bg-accent/30 flex items-center justify-center flex-shrink-0 border border-accent/40 shadow-sm">
                     <span className="text-[7px] font-bold text-accent">2</span>
                   </div>
-                  <span>Cliquez sur "+ Ajouter"</span>
+                  <span>Cliquez sur &quot;+ Ajouter&quot;</span>
                 </div>
                 <div className="flex items-center gap-1.5 animate-fade-in" style={{ animationDelay: '0.3s' }}>
                   <div className="w-3 h-3 rounded-full bg-accent/30 flex items-center justify-center flex-shrink-0 border border-accent/40 shadow-sm">

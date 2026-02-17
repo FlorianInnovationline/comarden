@@ -17,7 +17,7 @@ export default function CarrierePage() {
               Carrières
             </h1>
             <p className="text-lg text-white/80 max-w-2xl">
-              Rejoignez l'équipe Comarden.
+              Rejoignez l&apos;équipe Comarden.
             </p>
           </Reveal>
         </div>

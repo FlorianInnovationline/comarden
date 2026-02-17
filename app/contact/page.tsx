@@ -76,7 +76,7 @@ export default function ContactPage() {
                 Contactez-nous
               </h1>
               <p className="text-lg sm:text-xl text-white/80 leading-relaxed mb-10 max-w-2xl">
-                Besoin d'un devis, de conseils ou d'une alternative produit ?
+                Besoin d&apos;un devis, de conseils ou d&apos;une alternative produit ?
                 Notre équipe est à votre disposition pour répondre à toutes vos
                 questions.
               </p>

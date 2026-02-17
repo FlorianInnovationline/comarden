@@ -81,7 +81,7 @@ export default function ProToggleCard({
           {/* Intervention type */}
           <div>
             <label className="block text-sm font-semibold text-slate-700 mb-3">
-              Type d'intervention
+              Type d&apos;intervention
             </label>
             <div className="grid sm:grid-cols-3 gap-3">
               {INTERVENTION_TYPES.map((type) => {

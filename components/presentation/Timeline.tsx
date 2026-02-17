@@ -13,7 +13,7 @@ export default function Timeline() {
               Notre parcours
             </h2>
             <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-              Plus de 45 ans d'histoire et d'évolution
+              Plus de 45 ans d&apos;histoire et d&apos;évolution
             </p>
           </div>
         </Reveal>

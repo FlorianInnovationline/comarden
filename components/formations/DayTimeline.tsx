@@ -38,7 +38,7 @@ export default function DayTimeline({
                   Comment remplir votre journée ?
                 </h4>
                 <p className="text-xs leading-relaxed mb-2 font-semibold" style={{ color: 'rgb(30 41 59)', opacity: 1 }}>
-                  Cliquez sur "<span className="font-bold text-accent" style={{ opacity: 1 }}>+ Ajouter</span>" à côté de chaque formation dans la liste ci-dessous. Les modules s'afficheront automatiquement sur cette timeline selon leur durée (2h, 4h ou 7h).
+                  Cliquez sur &quot;<span className="font-bold text-accent" style={{ opacity: 1 }}>+ Ajouter</span>&quot; à côté de chaque formation dans la liste ci-dessous. Les modules s&apos;afficheront automatiquement sur cette timeline selon leur durée (2h, 4h ou 7h).
                 </p>
                 <div className="flex items-center gap-2 text-xs text-accent font-bold mt-2" style={{ opacity: 1 }}>
                   <ArrowDown className="w-4 h-4 animate-bounce" style={{ opacity: 1 }} />

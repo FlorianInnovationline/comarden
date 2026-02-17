@@ -79,7 +79,7 @@ export default function ServicesHero() {
             </h1>
 
             <p className="text-lg sm:text-xl text-white/80 leading-relaxed max-w-xl mb-8">
-              Façonnage sur mesure, livraison camion-grue, préparation soignée et conseil technique. Tout ce qu'il faut
+              Façonnage sur mesure, livraison camion-grue, préparation soignée et conseil technique. Tout ce qu&apos;il faut
               pour des chantiers efficaces.
             </p>
 

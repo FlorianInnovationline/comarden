@@ -1,9 +1,11 @@
 "use client";
 
+import dynamic from "next/dynamic";
 import { MapPin } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import LocationCard from "./LocationCard";
-import LocationsMap from "./LocationsMap";
+
+const LocationsMap = dynamic(() => import("./LocationsMap"), { ssr: false });
 import { site } from "@/lib/site";
 
 export default function LocationsGrid() {

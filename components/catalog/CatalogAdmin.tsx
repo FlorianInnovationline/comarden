@@ -19,6 +19,7 @@ export default function CatalogAdmin({ token }: CatalogAdminProps) {
 
   useEffect(() => {
     loadData();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadData = async () => {
@@ -52,6 +53,7 @@ export default function CatalogAdmin({ token }: CatalogAdminProps) {
     if (selectedEdition) {
       loadPages(selectedEdition.id);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedEdition, token]);
 
   const createEdition = () => {
@@ -184,7 +186,7 @@ export default function CatalogAdmin({ token }: CatalogAdminProps) {
               <div className="space-y-6">
                 <div>
                   <label className="block text-sm font-semibold text-primary mb-2">
-                    Titre de l'édition
+                    Titre de l&apos;édition
                   </label>
                   <input
                     type="text"

@@ -19,7 +19,7 @@ export default function ProductNotFound() {
             Retour au magasin
           </Button>
           <Button asChild href="/" variant="outline">
-            Retour à l'accueil
+            Retour à l&apos;accueil
           </Button>
         </div>
       </div>

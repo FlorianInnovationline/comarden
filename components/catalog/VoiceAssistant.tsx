@@ -62,6 +62,7 @@ export default function VoiceAssistant({
     };
 
     recognitionRef.current = recognition;
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const startListening = () => {

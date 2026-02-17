@@ -267,7 +267,7 @@ export default function CatalogAdminPanel() {
                 <div className="space-y-6">
                   <div>
                     <label className="block text-sm font-semibold text-primary mb-2">
-                      Titre de l'édition
+                      Titre de l&apos;édition
                     </label>
                     <input
                       type="text"

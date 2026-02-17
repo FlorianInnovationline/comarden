@@ -22,8 +22,8 @@ export default function PresentationHero() {
               </h1>
               <p className="text-lg sm:text-xl text-white/80 leading-relaxed">
                 Fondée en 1977 à Bertrix, Comarden est devenue un acteur majeur de la
-                distribution de matériaux de construction en Wallonie. De l'ardoise naturelle
-                à nos débuts jusqu'à notre expertise actuelle, découvrez notre parcours.
+                distribution de matériaux de construction en Wallonie. De l&apos;ardoise naturelle
+                à nos débuts jusqu&apos;à notre expertise actuelle, découvrez notre parcours.
               </p>
             </div>
           </Reveal>

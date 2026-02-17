@@ -56,7 +56,7 @@ export default function RequestBox() {
                 Intéressé par une formation ?
               </h2>
               <p className="text-base text-muted-foreground max-w-xl mx-auto">
-                Contactez-nous pour obtenir plus d'informations sur nos formations
+                Contactez-nous pour obtenir plus d&apos;informations sur nos formations
                 ou pour organiser une session sur mesure pour votre équipe.
               </p>
             </div>

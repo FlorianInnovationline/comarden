@@ -22,7 +22,7 @@ export default function Hero() {
             Depuis 1977
           </p>
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight text-balance animate-fadeInUp" style={{ animationDelay: "200ms" }}>
-            L'expertise des matériaux de construction
+            L&apos;expertise des matériaux de construction
           </h1>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-white/80 max-w-xl leading-relaxed animate-fadeInUp" style={{ animationDelay: "300ms" }}>
             Toiture, charpente, isolation et façades. Façonnage sur mesure et livraison avec camion-grue partout en

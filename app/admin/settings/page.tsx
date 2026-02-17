@@ -27,12 +27,12 @@ export default async function AdminSettingsPage() {
       <div className="bg-white rounded-2xl border border-border/50 p-6 sm:p-8 space-y-8">
         <section>
           <h2 className="text-xl font-bold text-primary mb-4">
-            Informations de l'entreprise
+            Informations de l&apos;entreprise
           </h2>
           <div className="space-y-4">
             <div>
               <label className="block text-sm font-semibold text-primary mb-2">
-                Nom de l'entreprise
+                Nom de l&apos;entreprise
               </label>
               <input
                 type="text"

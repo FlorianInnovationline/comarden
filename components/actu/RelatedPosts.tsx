@@ -31,7 +31,7 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
               Articles similaires
             </h2>
             <p className="text-sm text-muted-foreground">
-              Découvrez d'autres actualités qui pourraient vous intéresser
+              Découvrez d&apos;autres actualités qui pourraient vous intéresser
             </p>
           </div>
         </Reveal>
@@ -60,7 +60,7 @@ export default function RelatedPosts({ posts }: RelatedPostsProps) {
                   </div>
                   <div className="p-6 pt-0 mt-auto">
                     <span className="inline-flex items-center text-sm font-semibold text-primary group-hover:gap-2 gap-1 transition-all">
-                      Lire l'article
+                      Lire l&apos;article
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </span>
                   </div>

@@ -274,7 +274,7 @@ export default function CatalogReader({ token, editionId }: CatalogReaderProps) 
         <div className="text-center px-8">
           <BookOpen className="w-16 h-16 text-accent mx-auto mb-4 opacity-50" />
           <p className="text-white text-xl font-medium">Aucun catalogue disponible</p>
-          <p className="text-white/60 text-sm mt-2">Veuillez contacter l'administrateur</p>
+          <p className="text-white/60 text-sm mt-2">Veuillez contacter l&apos;administrateur</p>
         </div>
       </div>
     );

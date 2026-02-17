@@ -13,10 +13,10 @@ export async function getCategories(): Promise<Category[]> {
   }
 
   try {
-    const [rows] = await client.pool.query<Category[]>(
+    const [rows] = await client.pool.query(
       'SELECT * FROM categories ORDER BY name ASC'
     );
-    return Array.isArray(rows) ? rows : [];
+    return (Array.isArray(rows) ? rows : []) as Category[];
   } catch (error) {
     console.error('Error fetching categories:', error);
     return seedData.categories;
@@ -31,11 +31,11 @@ export async function getCategoryBySlug(slug: string): Promise<Category | null> 
   }
 
   try {
-    const [rows] = await client.pool.query<Category[]>(
+    const [rows] = await client.pool.query(
       'SELECT * FROM categories WHERE slug = ? LIMIT 1',
       [slug]
     );
-    const result = Array.isArray(rows) ? rows : [];
+    const result = (Array.isArray(rows) ? rows : []) as Category[];
     return result[0] || null;
   } catch (error) {
     console.error('Error fetching category:', error);
@@ -90,8 +90,8 @@ export async function getProducts(filters?: {
 
     query += ' ORDER BY p.created_at DESC';
 
-    const [rows] = await client.pool.query<any[]>(query, params);
-    const products = Array.isArray(rows) ? rows : [];
+    const [rows] = await client.pool.query(query, params);
+    const products = (Array.isArray(rows) ? rows : []) as Record<string, unknown>[];
     
     return products.map((p) => ({
       ...p,
@@ -102,7 +102,7 @@ export async function getProducts(filters?: {
         name: p.category_name,
         slug: p.category_slug,
       } : undefined,
-    }));
+    })) as Product[];
   } catch (error) {
     console.error('Error fetching products:', error);
     return seedData.products;
@@ -117,28 +117,28 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
   }
 
   try {
-    const [rows] = await client.pool.query<any[]>(
+    const [rows] = await client.pool.query(
       `SELECT p.*, c.name as category_name, c.slug as category_slug, c.description as category_description
        FROM products p 
        LEFT JOIN categories c ON p.category_id = c.id 
        WHERE p.slug = ? LIMIT 1`,
       [slug]
     );
-    const result = Array.isArray(rows) ? rows : [];
+    const result = (Array.isArray(rows) ? rows : []) as Record<string, unknown>[];
     if (result.length === 0) return null;
     
     const p = result[0];
     return {
       ...p,
-      images: typeof p.images === 'string' ? JSON.parse(p.images) : (p.images || []),
-      tags: typeof p.tags === 'string' ? JSON.parse(p.tags) : (p.tags || []),
+      images: typeof p.images === 'string' ? JSON.parse(p.images as string) : (p.images || []),
+      tags: typeof p.tags === 'string' ? JSON.parse(p.tags as string) : (p.tags || []),
       category: p.category_name ? {
         id: p.category_id,
         name: p.category_name,
         slug: p.category_slug,
         description: p.category_description,
       } : undefined,
-    };
+    } as Product;
   } catch (error) {
     console.error('Error fetching product:', error);
     return null;
@@ -153,27 +153,27 @@ export async function getProductById(id: string): Promise<Product | null> {
   }
 
   try {
-    const [rows] = await client.pool.query<any[]>(
+    const [rows] = await client.pool.query(
       `SELECT p.*, c.name as category_name, c.slug as category_slug
        FROM products p 
        LEFT JOIN categories c ON p.category_id = c.id 
        WHERE p.id = ? LIMIT 1`,
       [id]
     );
-    const result = Array.isArray(rows) ? rows : [];
+    const result = (Array.isArray(rows) ? rows : []) as Record<string, unknown>[];
     if (result.length === 0) return null;
     
     const p = result[0];
     return {
       ...p,
-      images: typeof p.images === 'string' ? JSON.parse(p.images) : (p.images || []),
-      tags: typeof p.tags === 'string' ? JSON.parse(p.tags) : (p.tags || []),
+      images: typeof p.images === 'string' ? JSON.parse(p.images as string) : (p.images || []),
+      tags: typeof p.tags === 'string' ? JSON.parse(p.tags as string) : (p.tags || []),
       category: p.category_name ? {
         id: p.category_id,
         name: p.category_name,
         slug: p.category_slug,
       } : undefined,
-    };
+    } as Product;
   } catch (error) {
     console.error('Error fetching product:', error);
     return null;
@@ -203,7 +203,7 @@ export async function createOrder(
       await connection.beginTransaction();
 
       // Insert order
-      const [orderResult] = await connection.query<any>(
+      const [orderResult] = await connection.query(
         `INSERT INTO orders (customer_name, customer_email, customer_phone, company, delivery_address, notes, status, total_cents, currency)
          VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)`,
         [
@@ -240,11 +240,11 @@ export async function createOrder(
       await connection.commit();
 
       // Fetch created order
-      const [orderRows] = await connection.query<any[]>(
+      const [orderRows] = await connection.query(
         'SELECT * FROM orders WHERE id = ?',
         [orderId]
       );
-      const orders = Array.isArray(orderRows) ? orderRows : [];
+      const orders = (Array.isArray(orderRows) ? orderRows : []) as Order[];
       
       return orders[0] || null;
     } catch (error) {
@@ -267,7 +267,7 @@ export async function getOrders(): Promise<Order[]> {
   }
 
   try {
-    const [rows] = await client.pool.query<any[]>(
+    const [rows] = await client.pool.query(
       `SELECT o.*, 
        JSON_ARRAYAGG(
          JSON_OBJECT(
@@ -287,11 +287,11 @@ export async function getOrders(): Promise<Order[]> {
        ORDER BY o.created_at DESC`
     );
     
-    const orders = Array.isArray(rows) ? rows : [];
+    const orders = (Array.isArray(rows) ? rows : []) as Record<string, unknown>[];
     return orders.map((o) => ({
       ...o,
-      items: o.items ? JSON.parse(o.items) : [],
-    }));
+      items: o.items ? JSON.parse(o.items as string) : [],
+    })) as Order[];
   } catch (error) {
     console.error('Error fetching orders:', error);
     return [];
@@ -317,8 +317,8 @@ export async function getPromotions(activeOnly: boolean = true): Promise<Promoti
 
     query += ' ORDER BY created_at DESC';
 
-    const [rows] = await client.pool.query<Promotion[]>(query, params);
-    return Array.isArray(rows) ? rows : [];
+    const [rows] = await client.pool.query(query, params);
+    return (Array.isArray(rows) ? rows : []) as Promotion[];
   } catch (error) {
     console.error('Error fetching promotions:', error);
     return [];

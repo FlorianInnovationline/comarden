@@ -66,7 +66,7 @@ export default function DiyHero() {
             onClick={scrollToPro}
             className="px-8 py-4 bg-white/80 backdrop-blur-sm border-2 border-primary/30 text-primary rounded-2xl font-bold text-base sm:text-lg hover:bg-primary hover:text-white hover:border-primary transition-all duration-500 shadow-lg hover:shadow-2xl focus:outline-none focus:ring-4 focus:ring-primary/30 hover:scale-105"
           >
-            Besoin d'un pro rapidement
+            Besoin d&apos;un pro rapidement
           </button>
         </div>
 

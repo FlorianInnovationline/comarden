@@ -25,7 +25,7 @@ export default function NeedsSelector({
   if (applicableNeeds.length === 0) {
     return (
       <div className="text-center py-8 text-slate-500">
-        <p>Sélectionnez d'abord un type de projet ci-dessus.</p>
+        <p>Sélectionnez d&apos;abord un type de projet ci-dessus.</p>
       </div>
     );
   }

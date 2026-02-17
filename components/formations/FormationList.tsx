@@ -37,7 +37,7 @@ export default function FormationList({
         <div className="mb-2.5 p-2 bg-accent/60 border-2 border-accent/90 rounded-lg flex items-start gap-1.5 text-[10px] sm:text-xs shadow-sm">
           <MousePointerClick className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-accent flex-shrink-0 mt-0.5" />
           <span className="font-semibold leading-tight" style={{ color: 'rgb(15 23 42)', opacity: 1 }}>
-            <span className="font-bold">Astuce:</span> Cliquez sur "<span className="font-bold text-accent" style={{ opacity: 1 }}>+ Ajouter</span>" pour chaque formation (maximum 7h).
+            <span className="font-bold">Astuce:</span> Cliquez sur &quot;<span className="font-bold text-accent" style={{ opacity: 1 }}>+ Ajouter</span>&quot; pour chaque formation (maximum 7h).
           </span>
         </div>
       )}

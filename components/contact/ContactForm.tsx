@@ -415,14 +415,14 @@ export default function ContactForm() {
                     }`}
                   />
                   <span className="text-sm text-foreground leading-relaxed">
-                    J'accepte les{" "}
+                    J&apos;accepte les{" "}
                     <a
                       href="/conditions-dutilisation"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-primary hover:text-accent underline font-medium"
                     >
-                      conditions d'utilisation
+                      conditions d&apos;utilisation
                     </a>{" "}
                     <span className="text-destructive">*</span>
                   </span>
@@ -463,7 +463,7 @@ export default function ContactForm() {
                       Veuillez corriger les erreurs ci-dessus
                     </p>
                     <p className="text-sm text-red-700 leading-relaxed">
-                      Tous les champs marqués d'un astérisque (*) sont
+                      Tous les champs marqués d&apos;un astérisque (*) sont
                       obligatoires.
                     </p>
                   </div>

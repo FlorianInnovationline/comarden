@@ -42,7 +42,7 @@ export default function HoursTable() {
                 </div>
                 <div>
                   <h2 className="text-2xl lg:text-3xl font-bold text-primary group-hover:text-accent transition-colors duration-300">
-                    Horaires d'ouverture
+                    Horaires d&apos;ouverture
                   </h2>
                   <p className="text-sm text-muted-foreground mt-1 flex items-center gap-2">
                     <Calendar className="w-4 h-4" />

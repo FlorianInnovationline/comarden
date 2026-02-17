@@ -38,7 +38,7 @@ export default function JobsTeaser() {
                     <Users className="w-5 h-5 text-accent opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-[-10px] group-hover:translate-x-0" />
                   </div>
                   <p className="text-base text-muted-foreground leading-relaxed group-hover:text-foreground transition-colors duration-300">
-                    Rejoignez l'équipe Comarden ! Découvrez nos offres d'emploi et
+                    Rejoignez l&apos;équipe Comarden ! Découvrez nos offres d&apos;emploi et
                     opportunités de carrière dans le secteur des matériaux de
                     construction.
                   </p>
