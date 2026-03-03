@@ -2,58 +2,56 @@
 
 import Image from "next/image";
 
-const PARTNERS: { name: string; logo?: string }[] = [
-  { name: "ELEVATE", logo: "elevate-logo.png" },
-  { name: "SOPREMA", logo: "soprema-logo.png" },
-  { name: "TYVEK (Dupont)" },
-  { name: "Floratoit" },
-  { name: "STACBOND", logo: "stacbond-logo.png" },
-  { name: "Velux", logo: "velux-logo.png" },
-  { name: "Faynot" },
-  { name: "Steico", logo: "steico-logo.png" },
-  { name: "Wienerberger", logo: "wienenberger-logo.png" },
-  { name: "URSA", logo: "ursa-by-etex-logo.png" },
-  { name: "TERREAL", logo: "terreal-logo.png" },
-  { name: "La Bania", logo: "la-bana-logo.png" },
-  { name: "Cedral", logo: "cedral-logo.png" },
-  { name: "Derbigum", logo: "derbigum-logo.png" },
-  { name: "Unilin", logo: "unilin-logo.png" },
+const LOGOS = [
+  "ardoisieres-de-fonsagrada-logo.png",
+  "cedral-logo.png",
+  "derbigum-logo.png",
+  "dimos-logo.png",
+  "elevate-logo.png",
+  "etanco-logo.png",
+  "industrial-distribution-logo.png",
+  "joriside-logo.png",
+  "la-bana-logo.png",
+  "soprema-logo.png",
+  "stackbond-logo.png",
+  "steico-logo.png",
+  "strato-grip-logo.png",
+  "terreal-logo.png",
+  "unilin-logo.png",
+  "ursa-by-etex-logo.png",
+  "velux-logo.png",
+  "wienenberger-logo.png",
+  "skylux-logo.png",
 ];
 
+function logoAlt(filename: string): string {
+  return filename.replace(/-logo\.png$/, "").replace(/-/g, " ");
+}
+
 export default function PartnersBanner() {
-  const duplicatedPartners = [...PARTNERS, ...PARTNERS];
+  const duplicated = [...LOGOS, ...LOGOS];
 
   return (
-    <section className="py-3 lg:py-4 overflow-hidden border-y border-slate-100/60">
-      <div className="w-full">
-        <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-white via-white/90 to-transparent z-10 pointer-events-none" />
-
-          <div className="flex animate-scroll-slow gap-12 lg:gap-16 xl:gap-20 px-8 items-center">
-            {duplicatedPartners.map((partner, index) => (
-              <div
-                key={`${partner.name}-${index}`}
-                className="flex-shrink-0 flex items-center justify-center h-8 lg:h-10"
-              >
-                {partner.logo ? (
-                  <Image
-                    src={`/images/logos/${partner.logo}`}
-                    alt={partner.name}
-                    width={120}
-                    height={40}
-                    className="h-8 w-auto object-contain object-center lg:h-10 opacity-80 hover:opacity-100 transition-opacity duration-300"
-                  />
-                ) : (
-                  <span className="text-base lg:text-lg xl:text-xl font-bold text-slate-500 hover:text-primary transition-colors duration-300 whitespace-nowrap tracking-tight">
-                    {partner.name}
-                  </span>
-                )}
-              </div>
-            ))}
-          </div>
-
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-white via-white/90 to-transparent z-10 pointer-events-none" />
+    <section className="py-4 lg:py-5 overflow-hidden border-y border-slate-100/80 bg-slate-50/30">
+      <div className="relative">
+        <div className="absolute left-0 top-0 bottom-0 w-20 lg:w-28 bg-gradient-to-r from-slate-50/30 via-slate-50/30 to-transparent z-10 pointer-events-none" />
+        <div className="flex animate-scroll-slow gap-14 lg:gap-20 xl:gap-24 px-6 lg:px-10 items-center min-h-[3rem] lg:min-h-[3.5rem]">
+          {duplicated.map((logo, index) => (
+            <div
+              key={`${logo}-${index}`}
+              className="flex-shrink-0 flex items-center justify-center h-7 lg:h-9"
+            >
+              <Image
+                src={`/images/logos/${logo}`}
+                alt={logoAlt(logo)}
+                width={140}
+                height={48}
+                className="h-7 w-auto max-w-[120px] lg:h-9 lg:max-w-[140px] object-contain object-center opacity-70 hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
+          ))}
         </div>
+        <div className="absolute right-0 top-0 bottom-0 w-20 lg:w-28 bg-gradient-to-l from-slate-50/30 via-slate-50/30 to-transparent z-10 pointer-events-none" />
       </div>
     </section>
   );
