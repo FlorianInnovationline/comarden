@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Clock, Ruler, Layout, Truck, Home, PlusSquare, Barn, Factory, ArrowRight } from "lucide-react";
+import { Clock, Ruler, Layout, Truck, Home, PlusSquare, Warehouse, Factory, ArrowRight } from "lucide-react";
 import CTACompact from "@/components/sections/CTA";
 import Reveal from "@/components/ui/Reveal";
 
@@ -40,7 +40,7 @@ const avantages = [
 const applications = [
   { icon: Home, label: "Maisons unifamiliales" },
   { icon: PlusSquare, label: "Extensions" },
-  { icon: Barn, label: "Bâtiments agricoles" },
+  { icon: Warehouse, label: "Bâtiments agricoles" },
   { icon: Factory, label: "Toitures industrielles" },
 ];
 
