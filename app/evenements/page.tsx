@@ -250,7 +250,7 @@ function EventCard({
 }: {
   event: EventData;
   highlighted: boolean;
-  cardRef: React.RefObject<HTMLDivElement | null>;
+  cardRef: React.Ref<HTMLDivElement>;
 }) {
   const items = event.programme ?? event.contenu ?? [];
 
@@ -362,7 +362,7 @@ function EventCard({
 
 export default function EvenementsPage() {
   const [highlightedId, setHighlightedId] = useState<string | null>(null);
-  const cardRefs = useRef<Map<string, React.RefObject<HTMLDivElement | null>>>(new Map());
+  const cardRefs = useRef<Map<string, React.RefObject<HTMLDivElement>>>(new Map());
 
   const getRef = useCallback((id: string) => {
     if (!cardRefs.current.has(id)) {
