@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   description: "Découvrez notre gamme complète de matériaux de construction.",
 };
 
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
+
 export default function ProduitsPage() {
   return (
     <div className="pt-20">

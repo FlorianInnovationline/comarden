@@ -12,6 +12,9 @@ export const metadata: Metadata = {
     "Des services pensés pour gagner du temps sur chantier : façonnage sur mesure, livraison camion-grue, préparation soignée et conseil technique.",
 };
 
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
+
 export default function ServicesPage() {
   return (
     <div className="pt-20">

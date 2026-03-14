@@ -11,6 +11,9 @@ import NewsPreview from "@/components/sections/NewsPreview";
 import CTACompact from "@/components/sections/CTA";
 import FacadeShowcase from "@/components/sections/FacadeShowcase";
 
+export const revalidate = 0;
+export const dynamic = "force-dynamic";
+
 export default function Home() {
   return (
     <>
