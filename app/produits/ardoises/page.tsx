@@ -386,40 +386,54 @@ export default function ArdoisesPage() {
         </div>
       </section>
 
-      {/* ── STACBOND CLIPS&GO ── */}
+      {/* ── STACBOND — Nouveau service de découpe + CLIPS&GO 2.0 ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="flex items-center gap-4 mb-6">
               <Image
                 src="/images/logos/stackbond-logo.png"
-                alt=""
+                alt="STACBOND"
                 width={140}
                 height={48}
                 className="h-10 w-auto object-contain"
               />
               <h2 className="text-2xl sm:text-3xl font-bold text-primary tracking-tight">
-                STACBOND — Accessoires CLIPS&GO 2.0
+                STACBOND — Nouveau service de découpe
               </h2>
             </div>
-            <p className="text-slate-600 mb-8 max-w-3xl">
-              Comarden a investi dans une toute nouvelle machine panneauteuse pour vous offrir plus de service, de qualité et de flexibilité pour vos chantiers.
+            <p className="text-slate-600 mb-10 max-w-3xl">
+              Comarden a investi dans une toute nouvelle machine panneauteuse pour vous offrir plus de service, de qualité et de flexibilité pour vos chantiers. Découpe STACBOND, pliage et façonnage.
             </p>
-            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm sm:text-base text-slate-700">
+
+            <p className="text-sm font-semibold text-primary mb-4">Accessoires CLIPS&GO 2.0</p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                "CLIPS&GO 2.0 COININT 30×30 R9005ST — Accessoire, Couleur Noir 9005",
-                "CLIPS&GO 2.0 COINEXT 30×30 R9005ST — Accessoire, Couleur Noir 9005",
-                "CLIPS&GO 2.0 RACCORD R9005 STRUC — Accessoire, Couleur Noir 9005",
-                "CLIPS&GO 2.0 PROFIL BASE 3M BRUT — Accessoire, Couleur BRUT",
-                "CLIPS&GO 2.0 COUVRE-JOINT R9005STR — Accessoire, Couleur Noir 9005",
-                "CLIPS&GO EASY CORNER COIN — Accessoire, Couleur BRUT",
+                { name: "CLIPS&GO 2.0 COININT 30×30 R9005ST", color: "Noir 9005", type: "Accessoire coin intérieur" },
+                { name: "CLIPS&GO 2.0 COINEXT 30×30 R9005ST", color: "Noir 9005", type: "Accessoire coin extérieur" },
+                { name: "CLIPS&GO 2.0 RACCORD R9005 STRUC", color: "Noir 9005", type: "Accessoire raccord" },
+                { name: "CLIPS&GO 2.0 PROFIL BASE 3M BRUT", color: "BRUT", type: "Profilé de base 3m" },
+                { name: "CLIPS&GO 2.0 COUVRE-JOINT R9005STR", color: "Noir 9005", type: "Accessoire couvre-joint" },
+                { name: "CLIPS&GO EASY CORNER COIN", color: "BRUT", type: "Accessoire angle" },
               ].map((item, i) => (
-                <li key={i} className="flex items-start gap-2">
-                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
-                  {item}
-                </li>
+                <Reveal key={item.name} delay={i * 50}>
+                  <div className="bg-white rounded-xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
+                    <span className="inline-flex w-fit px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent bg-accent/10 rounded mb-3">
+                      ACCESSOIRE
+                    </span>
+                    <h3 className="font-bold text-primary text-sm sm:text-base mb-2 leading-tight">
+                      {item.name}
+                    </h3>
+                    <p className="text-xs text-slate-600 mb-1">
+                      <span className="font-medium">Couleur :</span> {item.color}
+                    </p>
+                    <p className="text-xs text-slate-600 mt-auto">
+                      <span className="font-medium">Type :</span> {item.type}
+                    </p>
+                  </div>
+                </Reveal>
               ))}
-            </ul>
+            </div>
           </Reveal>
         </div>
       </section>

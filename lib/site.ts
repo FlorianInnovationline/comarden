@@ -69,9 +69,9 @@ export const site = {
       { label: "Isolation", href: "/produits/isolation" },
       { label: "Toitures vertes", href: "/produits/toitures-vertes" },
       { label: "Tôles & Panneaux", href: "/produits/toles-panneaux" },
+      { label: "EPDM & Étanchéité", href: "/produits/epdm" },
       { label: "Visserie", href: "/produits/visserie" },
       { label: "Colles & Mastics", href: "/produits/colles-mastics" },
-      { label: "EPDM & Étanchéité", href: "/produits/epdm" },
     ],
     services: [
       { label: "Façonnage", href: "/services/faconnage" },

@@ -2,90 +2,20 @@ import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 
 const brands = [
-  {
-    name: "URSA",
-    logo: "/images/logos/ursa-by-etex-logo.png",
-    description: "Isolation thermique et phonique pour murs, toitures et sols",
-  },
-  {
-    name: "SOPREMA",
-    logo: "/images/logos/soprema-logo.png",
-    description:
-      "Membranes d&apos;étanchéité, ALSAN FLASHING et produits pour toitures plates et inclinées",
-  },
-  {
-    name: "FAYNOT",
-    logo: null,
-    description:
-      "Systèmes brevetés de piliers et fixations pour isolation par l&apos;extérieur",
-  },
-  {
-    name: "FLORATOIT",
-    logo: null,
-    description:
-      "Toitures végétalisées pour confort et performance énergétique",
-  },
-  {
-    name: "WIENENBERGER",
-    logo: "/images/logos/wienenberger-logo.png",
-    description: "Tuiles et briques pour constructions solides et durables",
-  },
-  {
-    name: "TERREAL",
-    logo: "/images/logos/terreal-logo.png",
-    description:
-      "Produits et accessoires pour revêtements de toitures",
-  },
-  {
-    name: "ETANCO",
-    logo: "/images/logos/etanco-logo.png",
-    description:
-      "Fixations, attaches et solutions de raccordement pour toitures et structures",
-  },
-  {
-    name: "STACBOND",
-    logo: "/images/logos/stackbond-logo.png",
-    description: "Panneaux composites pour façades et bardages innovants",
-  },
-  {
-    name: "STEICO",
-    logo: "/images/logos/steico-logo.png",
-    description: "Isolation écologique en bois et panneaux structurels",
-  },
-  {
-    name: "DERBIGUM",
-    logo: "/images/logos/derbigum-logo.png",
-    description:
-      "Membranes bitumineuses pour étanchéité de toitures plates et terrasses",
-  },
-  {
-    name: "ELEVATE",
-    logo: "/images/logos/elevate-logo.png",
-    description: "Systèmes d&apos;étanchéité EPDM haute performance",
-  },
-  {
-    name: "CEDRAL",
-    logo: "/images/logos/cedral-logo.png",
-    description:
-      "Bardages en fibre-ciment pour façades durables et esthétiques",
-  },
-  {
-    name: "JORISIDE",
-    logo: "/images/logos/joriside-logo.png",
-    description:
-      "Solutions de ventilation et finitions pour toitures et murs",
-  },
-  {
-    name: "STRATO GRIP",
-    logo: "/images/logos/strato-grip-logo.png",
-    description: "Colles de contact multi-matériaux haute performance",
-  },
-  {
-    name: "TYVEK DUPONT",
-    logo: null,
-    description: "Membranes et mastics pour étanchéité à l'air",
-  },
-] as const;
+  { name: "URSA", logo: "/images/logos/ursa-by-etex-logo.png", description: "Isolation thermique et phonique pour murs, toitures et sols." },
+  { name: "SOPREMA", logo: "/images/logos/soprema-logo.png", description: "Membranes d'étanchéité, ALSAN FLASHING et produits pour toitures plates et inclinées." },
+  { name: "FAYNOT", logo: null, description: "Systèmes brevetés de piliers et fixations pour isolation par l'extérieur." },
+  { name: "FLORATOIT", logo: null, description: "Toitures végétalisées pour confort et performance énergétique." },
+  { name: "Ardoises Naturelles", logo: null, description: "Ardoises naturelles pour toitures esthétiques et durables." },
+  { name: "WIENERBERGER", logo: "/images/logos/wienenberger-logo.png", description: "Tuiles et briques pour constructions solides et durables." },
+  { name: "ETANCO", logo: "/images/logos/etanco-logo.png", description: "Fixations, attaches et solutions de raccordement pour toitures et structures." },
+  { name: "STACBOND", logo: "/images/logos/stackbond-logo.png", description: "Panneaux composites pour façades et bardages innovants." },
+  { name: "STEICO", logo: "/images/logos/steico-logo.png", description: "Isolation écologique en bois et panneaux structurels." },
+  { name: "DERBIGUM", logo: "/images/logos/derbigum-logo.png", description: "Membranes bitumineuses pour étanchéité de toitures plates et terrasses." },
+  { name: "ELEVATE (EPDM)", logo: "/images/logos/elevate-logo.png", description: "Systèmes d'étanchéité EPDM haute performance pour toitures et terrasses." },
+  { name: "CEDRAL", logo: "/images/logos/cedral-logo.png", description: "Bardages en fibre-ciment pour façades durables et esthétiques." },
+  { name: "JORISIDE", logo: "/images/logos/joriside-logo.png", description: "Solutions de ventilation et finitions pour toitures et murs." },
+];
 
 export default function BrandPartners() {
   return (
@@ -97,9 +27,7 @@ export default function BrandPartners() {
               Nos marques partenaires pour des projets de qualité
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Chez Comarden, nous travaillons avec des marques européennes et
-              internationales reconnues pour leur fiabilité, durabilité et
-              performance&nbsp;:
+              Chez Comarden, nous travaillons avec des marques européennes et internationales reconnues pour leur fiabilité, durabilité et performance :
             </p>
           </div>
         </Reveal>

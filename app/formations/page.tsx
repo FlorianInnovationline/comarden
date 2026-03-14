@@ -78,13 +78,12 @@ export default function FormationsPage() {
   return (
     <div className="pt-20">
       {/* Hero Section */}
-      <section className="relative py-12 sm:py-16 lg:py-20 xl:py-28 bg-primary text-white overflow-hidden">
+      <section className="relative min-h-[500px] flex items-center py-12 sm:py-16 lg:py-20 xl:py-28 bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80')" }} />
         <div className="absolute inset-0" style={{ backgroundColor: "rgba(10, 25, 60, 0.78)" }} />
         {/* Animated gradient background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#1a2f4a]/60 via-primary/40 to-[#2B4162]/60" />
-          {/* Animated gradient orbs */}
           <div
             className="absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-20"
             style={{
@@ -103,7 +102,6 @@ export default function FormationsPage() {
               animation: "pulse-slow 10s ease-in-out infinite reverse",
             }}
           />
-          {/* Grid pattern overlay */}
           <div
             className="absolute inset-0 opacity-[0.03]"
             style={{
@@ -113,10 +111,10 @@ export default function FormationsPage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
           <Reveal>
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
+            <div className="max-w-3xl mx-auto">
+              <div className="inline-flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent/20 flex items-center justify-center">
                   <Award className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
                 </div>
@@ -126,13 +124,10 @@ export default function FormationsPage() {
               </div>
 
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight">
-                Formations professionnelles
+                Centre de formation
               </h1>
-              <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed mb-3 sm:mb-4 max-w-2xl">
-                Composez votre journée selon vos besoins (7h).
-              </p>
-              <p className="text-xs sm:text-sm text-white/70 leading-relaxed">
-                Confirmation sous 24h.
+              <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
+                La rentabilité et la satisfaction de vos clients passent avant tout par des chantiers professionnels, réalisés par des collaborateurs bien formés.
               </p>
             </div>
           </Reveal>

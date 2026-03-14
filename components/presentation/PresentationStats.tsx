@@ -111,33 +111,33 @@ export default function PresentationStats() {
             return (
               <Reveal key={stat.label} delay={index * 50}>
                 <div
-                  className={`group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-border/50 hover:border-primary transition-all duration-500 hover:bg-primary hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-2 ${
+                  className={`group cursor-pointer relative bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-border/50 hover:border-primary transition-all duration-200 hover:bg-[#1B3A6B] hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-2 ${
                     isVisible ? "animate-zoom-in" : ""
                   }`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
                   <div className="mb-3 sm:mb-4 flex justify-center">
                     <div className="relative">
-                      <div className="relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-white/20">
-                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-accent transition-colors duration-300 group-hover:text-white" strokeWidth={2} />
+                      <div className="relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl flex items-center justify-center transition-all duration-200 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-white/20">
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-accent transition-colors duration-200 group-hover:text-white" strokeWidth={2} />
                       </div>
                     </div>
                   </div>
 
                   <div className="mb-2 text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-primary leading-none transition-all duration-300 group-hover:text-white group-hover:scale-110 inline-block">
+                    <div className="text-2xl sm:text-3xl font-bold text-primary leading-none transition-colors duration-200 group-hover:text-white group-hover:scale-110 inline-block">
                       {stat.value}
                     </div>
                   </div>
 
                   <div className="mb-1 text-center">
-                    <div className="text-[10px] sm:text-xs font-semibold text-primary leading-tight line-clamp-2 transition-colors duration-300 group-hover:text-white">
+                    <div className="text-[10px] sm:text-xs font-semibold text-primary leading-tight line-clamp-2 transition-colors duration-200 group-hover:text-white">
                       {stat.label}
                     </div>
                   </div>
 
                   <div className="hidden sm:block text-center">
-                    <div className="text-[9px] text-muted-foreground leading-tight opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:text-white/70">
+                    <div className="text-[9px] text-muted-foreground leading-tight opacity-0 group-hover:opacity-100 transition-all duration-200 group-hover:text-white/70">
                       {stat.description}
                     </div>
                   </div>
@@ -154,27 +154,27 @@ export default function PresentationStats() {
             
             return (
               <Reveal key={stat.label} delay={index * 100}>
-                <div className="group bg-white rounded-lg p-8 border border-slate-200 hover:border-primary transition-all duration-300 hover:shadow-lg hover:bg-primary hover:-translate-y-1">
+                <div className="group cursor-pointer bg-white rounded-lg p-8 border border-slate-200 hover:border-primary transition-all duration-200 hover:shadow-lg hover:bg-[#1B3A6B] hover:-translate-y-1">
                   <div className="mb-6 flex justify-center">
-                    <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center transition-colors duration-300 group-hover:bg-white/20">
-                      <Icon className="w-8 h-8 text-accent transition-colors duration-300 group-hover:text-white" strokeWidth={2} />
+                    <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center transition-colors duration-200 group-hover:bg-white/20">
+                      <Icon className="w-8 h-8 text-accent transition-colors duration-200 group-hover:text-white" strokeWidth={2} />
                     </div>
                   </div>
 
                   <div className="mb-3 text-center">
-                    <div className="text-5xl font-bold text-primary leading-none transition-colors duration-300 group-hover:text-white">
+                    <div className="text-5xl font-bold text-primary leading-none transition-colors duration-200 group-hover:text-white">
                       {stat.value}
                     </div>
                   </div>
 
                   <div className="mb-2 text-center">
-                    <div className="text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-white">
+                    <div className="text-sm font-semibold text-primary transition-colors duration-200 group-hover:text-white">
                       {stat.label}
                     </div>
                   </div>
 
                   <div className="text-center">
-                    <div className="text-xs text-muted-foreground transition-colors duration-300 group-hover:text-white/70">
+                    <div className="text-xs text-muted-foreground transition-colors duration-200 group-hover:text-white/70">
                       {stat.description}
                     </div>
                   </div>
