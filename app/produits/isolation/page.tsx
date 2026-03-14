@@ -7,44 +7,60 @@ import Reveal from "@/components/ui/Reveal";
 export const metadata: Metadata = {
   title: "Isolation - Comarden",
   description:
-    "Solutions d\u2019isolation pour toiture et bâtiment : PILIER EASY-SARKLING FAYNOT, URSA, ETANCO, ELEVATE, DuPont Tyvek. Disponible chez Comarden en Belgique.",
+    "Isolation de toiture par l'extérieur avec les piliers FAYNOT EASY-SARKLING à Comarden Bertrix et Naninne. Systèmes ITE brevetés, vis sarking et solutions URSA pour professionnels en Belgique.",
 };
 
-const montageSteps = [
-  "01 Retirer ancien isolant / pare-vapeur / 1ère couche",
-  "02 Fixer piliers avec tirefonds",
-  "03 Dérouler 2ème couche",
-  "04 Fixer nouveaux chevrons",
-  "05 Dérouler 3ème couche",
-  "06 Poser couverture",
+const montageStepsH120 = [
+  "01 — Retirer l'ancien isolant, mettre la toiture à nu. Poser un écran pare-vapeur si nécessaire. Installer la 1ère couche d'isolant entre les chevrons existants.",
+  "02 — Fixer chaque pilier directement sur les chevrons existants avec les tirefonds fournis. Positionner un pilier au croisement d'un chevron et d'une panne, deux piliers de part et d'autre de la panne sablière.",
+  "03 — Dérouler la 2ème couche d'isolant d'épaisseur identique à la hauteur des piliers.",
+  "04 — Fixer les nouveaux chevrons latéralement aux piliers avec les tirefonds fournis. Abouter les chevrons au faîtage si nécessaire.",
+  "05 — Dérouler la 3ème couche d'isolant d'épaisseur identique à la hauteur des nouveaux chevrons.",
+  "06 — Installer la couverture (écran souple, liteaux, tuiles ou ardoises) comme pour une charpente traditionnelle.",
 ];
 
 const mainProducts = [
   {
-    title: "PILIER EASY-SARKLING — H120",
+    title: "PILIER ITE H120 — Isolation de toiture par l'extérieur (FAYNOT)",
     brand: "FAYNOT",
     description:
-      "Système breveté d\u2019isolation de toiture par l\u2019extérieur (SARKING). Préserve l\u2019espace intérieur habitable et élimine les ponts thermiques pour une performance énergétique optimale. Acier galvanisé Z275.",
+      "Système breveté pour isolation toiture par l'extérieur sans dérangement intérieur. Acier galvanisé à chaud Z275. Résistance thermique R = 5,7 m².K/W (200mm isolant total, λ35). Compatible tous isolants souples : laine de verre, laine de roche, fibre de bois, chanvre.",
+    avantages: [
+      "Isolation par l'extérieur : préservez votre espace intérieur",
+      "Aucun pont thermique : piliers entièrement enveloppés dans le complexe isolant",
+      "Système breveté et calculé : solidité certifiée",
+      "Compatible tous isolants souples",
+      "Correction planéité jusqu'à 40 mm avec calage complémentaire",
+      "Pas de formation spécifique requise",
+    ],
     specs: [
       "R = 5,7 m².K/W",
-      "200 mm d\u2019isolant total \u03BB35",
+      "200 mm isolant total λ35",
       "Acier galvanisé Z275",
       "Système breveté",
       "Zéro pont thermique",
       "ITE couverture",
     ],
     link: "https://www.faynot.com/isolation-thermique-exterieur/ite-couverture/piliers-et-accessoires.html",
-    steps: montageSteps,
+    steps: montageStepsH120,
   },
   {
-    title: "PILIER ITE H80",
+    title: "PILIER ITE H80 — Isolation de toiture par l'extérieur (FAYNOT)",
     brand: "FAYNOT",
     description:
-      "Version compacte du système EASY-SARKING pour les projets nécessitant une épaisseur d\u2019isolant réduite, tout en conservant d\u2019excellentes performances thermiques.",
+      "Même système que le H120 pour une épaisseur d'isolant réduite. R = 4,5 m².K/W (160mm isolant total, λ35). Aucun pont thermique, compatible tous isolants souples.",
+    avantages: [
+      "Isolation par l'extérieur : préservez votre espace intérieur",
+      "Aucun pont thermique",
+      "Système breveté et calculé",
+      "Compatible tous isolants souples",
+      "Correction planéité jusqu'à 40 mm",
+      "Pas de formation spécifique requise",
+    ],
     specs: [
       "R = 4,5 m².K/W",
-      "160 mm d\u2019isolant total",
-      "\u03BB35",
+      "160 mm isolant total λ35",
+      "Acier galvanisé Z275",
       "Système breveté",
       "Zéro pont thermique",
       "ITE couverture",
@@ -55,16 +71,16 @@ const mainProducts = [
 
 const kitProducts = [
   {
-    title: "Kit H120 + Vis SARKING",
+    title: "KIT ITE H120 — Pilier + Vis tête fraisée Super Bois Ø8 (FAYNOT)",
     brand: "FAYNOT",
     description:
-      "Kit complet comprenant les piliers H120 et les vis SARKING adaptées pour une installation rapide et conforme du système d\u2019isolation par l\u2019extérieur. Vis tête fraisée Super Bois zinguée Ø8 (SARKING).",
+      "Kit complet incluant le pilier H120 et la vis tête fraisée Super Bois zinguée diamètre 8 pour bois (SARKING). Solution tout-en-un pour installation rapide et complète.",
   },
   {
-    title: "Kit H80 + Vis SARKING",
+    title: "KIT ITE H80 — Pilier + Vis tête fraisée Super Bois Ø8 (FAYNOT)",
     brand: "FAYNOT",
     description:
-      "Kit complet comprenant les piliers H80 et les vis SARKING adaptées. Solution prête à poser pour l\u2019ITE couverture. Vis tête fraisée Super Bois zinguée Ø8 (SARKING).",
+      "Kit complet incluant le pilier H80 + vis sarking. R = 4,5 m².K/W. Solution tout-en-un pour installation rapide et complète.",
   },
 ];
 
@@ -126,12 +142,10 @@ export default function IsolationPage() {
                 </span>
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                Isolation
+                Isolation — Piliers ITE, systèmes FAYNOT &amp; solutions URSA
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-                Solutions d&apos;isolation performantes pour toiture et bâtiment.
-                Systèmes SARKING FAYNOT, isolants URSA et accessoires DuPont
-                Tyvek.
+                Isolation de toiture par l&apos;extérieur avec les piliers FAYNOT EASY-SARKLING. Systèmes ITE brevetés, vis sarking et solutions URSA à Bertrix et Naninne.
               </p>
             </div>
           </Reveal>
@@ -173,6 +187,14 @@ export default function IsolationPage() {
                         {product.description}
                       </p>
 
+                      {"avantages" in product && product.avantages && product.avantages.length > 0 && (
+                        <ul className="list-disc list-inside text-sm text-slate-600 space-y-1 mb-4">
+                          {product.avantages.map((a, idx) => (
+                            <li key={idx}>{a}</li>
+                          ))}
+                        </ul>
+                      )}
+
                       <div className="flex flex-wrap gap-2 mb-4">
                         {product.specs.map((spec) => (
                           <span
@@ -193,10 +215,10 @@ export default function IsolationPage() {
                                 key={stepIdx}
                                 className="flex items-start gap-2 rounded-xl bg-slate-50 border border-slate-200 px-4 py-3"
                               >
-                                <span className="flex-shrink-0 w-8 h-8 rounded-lg bg-primary text-white flex items-center justify-center text-sm font-bold">
-                                  {String(stepIdx + 1).padStart(2, "0")}
+                                <span className="flex-shrink-0 text-xs font-bold text-primary">
+                                  {step.slice(0, 4)}
                                 </span>
-                                <span className="text-sm text-slate-700">{step}</span>
+                                <span className="text-sm text-slate-700">{step.slice(4).trim()}</span>
                               </div>
                             ))}
                           </div>
@@ -264,29 +286,24 @@ export default function IsolationPage() {
           <p className="text-slate-600 font-medium mb-6">ETANCO</p>
           <Reveal>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8 max-w-3xl">
-              Cheville monobloc polyamide renforcé fibre de verre pour la fixation
-              des isolants en rénovation de toiture. Tête Ø50 mm, empreinte carrée
-              6 mm. Pas de pré-perçage, aucune corrosion, aucun pont thermique.
+              Cheville monobloc à visser en polyamide renforcé fibre de verre pour fixation d&apos;isolants en rénovation de toiture. Tête large Ø50 mm avec empreinte carrée 6 mm pour parfaite tenue.
             </p>
           </Reveal>
           <div className="grid sm:grid-cols-2 gap-6">
             <Reveal delay={100}>
               <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                <h3 className="text-lg font-bold text-primary mb-2">VIS SAPIN SK-RB 28/20×70</h3>
-                <p className="text-sm text-slate-600 leading-relaxed">
-                  Fixation isolants rénovation toiture. Applications : fixation
-                  isolant sur étanchéité bitumineuse, 2 couches isolant, pare-pluie
-                  façade, bandes périphériques.
+                <h3 className="text-lg font-bold text-primary mb-2">Vis SAPIN SK-RB 28/20×70 — Fixation d&apos;isolants (ETANCO)</h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-3">
+                  Applications : fixation isolant sur étanchéité bitumineuse en rénovation / fixation deux couches d&apos;isolants ensemble / fixation isolants rigides sur rigides (Rockbardage, Cladisol) / fixation pare-pluie façade / fixation bandes périphériques.
                 </p>
+                <p className="text-xs text-slate-600">Avantages : pas de pré-perçage / installation simple embout carré 6 mm / aucune corrosion (polyamide) / aucun pont thermique / excellente tenue mécanique tête large Ø50 mm.</p>
               </div>
             </Reveal>
             <Reveal delay={200}>
               <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
-                <h3 className="text-lg font-bold text-primary mb-2">VIS SAPIN SK-RB 28/40×90</h3>
+                <h3 className="text-lg font-bold text-primary mb-2">Vis SAPIN SK-RB 28/40×90 — Fixation d&apos;isolants (ETANCO)</h3>
                 <p className="text-sm text-slate-600 leading-relaxed">
-                  Même principe pour épaisseurs plus importantes. Applications :
-                  fixation isolant sur étanchéité bitumineuse, 2 couches isolant,
-                  pare-pluie façade, bandes périphériques.
+                  Même description, longueur différente (40×90 au lieu de 20×70). Applications : fixation isolant sur étanchéité bitumineuse, deux couches isolant, pare-pluie façade, bandes périphériques.
                 </p>
               </div>
             </Reveal>
@@ -307,21 +324,22 @@ export default function IsolationPage() {
                 className="object-contain h-10 w-auto"
               />
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight">
-                Ancrage photovoltaïque toiture plate
+                Ancrage Photovoltaïque Toiture Plate — Système ELEVATE
               </h2>
             </div>
           </Reveal>
           <p className="text-slate-600 font-medium mb-4">ELEVATE</p>
           <Reveal>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-4 max-w-3xl">
+              Système de toiture terrasse photovoltaïque durable. Membrane pare-vapeur + couche isolation + membrane d&apos;étanchéité sur laquelle sont installés les panneaux solaires. Étanchéité parfaite autour des points de fixation traversante pour imperméabilité totale du système.
+            </p>
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-6 max-w-3xl">
-              Système pour toiture terrasse photovoltaïque : membrane pare-vapeur +
-              isolation + étanchéité, fixation traversante. Solution complète pour
-              l&apos;intégration du photovoltaïque sur toitures plates.
+              Enjeu : si la membrane de toiture est endommagée, les panneaux solaires doivent être retirés — d&apos;où l&apos;importance de composants de haute qualité dès la conception.
             </p>
           </Reveal>
           <Reveal>
             <a
-              href="https://www.holcimelevate.com/benelux-fr/etancheite-de-toitures/applications/toitures-systeme-photovoltaique"
+              href="https://www.holcimelevate.com/benelux-fr/etancheite-de-toitures/applications/toitures-système-photovoltaïque"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
@@ -349,17 +367,12 @@ export default function IsolationPage() {
               </div>
               <div className="flex-1">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
-                  URSA — Isolation haute performance
+                  URSA — Isolation durable en Belgique chez Comarden
                 </h2>
                 <p className="text-slate-600 font-medium mb-2">URSA, marque du groupe Etex</p>
                 <div className="bg-primary/5 border-l-4 border-accent rounded-r-xl px-6 py-5">
                   <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-                    Chez Comarden à Naninne et Bertrix, découvrez les solutions
-                    d&apos;isolation URSA, leader européen du groupe Etex, pour des
-                    bâtiments plus performants. Grâce à ce partenariat stratégique,
-                    Comarden et URSA offrent performance énergétique, durabilité et
-                    finitions de qualité, avec un service rapide et des produits sur
-                    mesure.
+                    Chez Comarden à Naninne et Bertrix, découvrez les solutions d&apos;isolation URSA, leader européen du groupe Etex, pour des bâtiments plus performants et respectueux de l&apos;environnement. URSA propose des panneaux isolants, toitures isolées et solutions acoustiques, adaptés aux projets résidentiels, industriels et commerciaux en Belgique et au BENELUX. Grâce à ce partenariat stratégique, Comarden et URSA offrent performance énergétique, durabilité et finitions de qualité, avec un service rapide et des produits sur mesure. Optimisez vos bâtiments dès aujourd&apos;hui : contactez Comarden pour un devis rapide et profitez des solutions d&apos;isolation fiables et certifiées URSA.
                   </p>
                 </div>
               </div>

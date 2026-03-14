@@ -8,22 +8,30 @@ import Reveal from "@/components/ui/Reveal";
 export const metadata: Metadata = {
   title: "Colles & Mastics - Comarden",
   description:
-    "Colles de contact STRATOGRIP multi-matériaux, mastics et bandes TYVEK DUPONT. Haute performance pour professionnels. Naninne & Bertrix.",
+    "Découvrez les colles de contact STRATOGRIP et mastics TYVEK disponibles chez Comarden à Bertrix et Naninne. Solutions haute performance pour bardage, isolation et étanchéité en Belgique.",
 };
 
 const stratogripProducts = [
   {
-    title: "STRATOGRIP S110 – Colle de contact Multi-Matériaux (22L)",
+    title: "STRATOGRIP S110 — Colle de contact Multi-Matériaux 22L",
     brand: "STRATO GRIP",
     logo: "/images/logos/strato-grip-logo.png",
-    description:
-      "Colle industrielle haute performance pour HPL, aluminium, MDF, panneaux, contreplaqué. Résistance chaleur jusqu'à 100°C, séchage 1-2 minutes.",
+    body:
+      "Colle industrielle haute performance pour HPL, aluminium, MDF, panneaux de particules, contreplaqué. Adhésion instantanée, résistance chaleur jusqu'à 100°C, séchage ultra-rapide.",
+    avantages: [
+      "Adhésion instantanée forte ténacité",
+      "Résistant aux hautes températures (100°C)",
+      "Haut pouvoir couvrant",
+      "Ultra polyvalent",
+      "Double encollage pour collage permanent",
+    ],
     specs: [
       "Couleur : incolore ou rouge",
       "Format : 22L",
+      "Temps séchage : 1-2 min",
       "Temps ouvert : 40 min",
       "Rendement : 22L → 200m²",
-      "Application : 15–27°C",
+      "Température application : 15-27°C",
       "Stockage : 18 mois",
     ],
     notRecommended:
@@ -33,68 +41,112 @@ const stratogripProducts = [
     link: "https://stratogrip.com/wp-content/uploads/2025/09/Fiche-Technique-STRATOGRIP-S110.pdf",
   },
   {
-    title: "STRATOGRIP S163 – Colle polyvalente haute adhérence (22L)",
+    title: "STRATOGRIP S163 — Colle polyvalente haute adhérence (22L)",
     brand: "STRATO GRIP",
     logo: "/images/logos/strato-grip-logo.png",
-    description:
-      "Ultra high-tack pour bâtiment et isolation, sans chlore, évaporation rapide. Compatible : bois, MDF, plastiques rigides, métaux, XPS/EPS, matériaux minéraux ou alu.",
+    body:
+      "Ultra high-tack pour bâtiment et isolation, sans chlore, évaporation rapide. Compatible bois, MDF, plastiques rigides, métaux, XPS/EPS, matériaux minéraux ou alu.",
+    avantages: [
+      "Adhésion instantanée",
+      "Long temps ouvert",
+      "Haut pouvoir couvrant",
+      "Tack initial élevé",
+      "Sans chlore, respectueuse de l'environnement",
+    ],
     specs: [
-      "Résistance température : 80°C",
+      "Couleur : incolore",
       "Format : 22L",
-      "Tack initial très élevé",
+      "Séchage : 1-2 min",
+      "Résistance temp : 80°C",
+      "Pulvérisation : toile d'araignée",
     ],
     notRecommended: "Non recommandé : vinyles plastifiés",
     link: "https://stratogrip.com/product/s163/",
   },
   {
-    title: "STRATOGRIP M300 – Colle mousse et tissu (22L)",
+    title: "STRATOGRIP M300 — Colle mousse et tissu (22L)",
     brand: "STRATO GRIP",
     logo: "/images/logos/strato-grip-logo.png",
-    description:
-      "Spécialement pour cuir, tissus, mousses, revêtements décoratifs (sellerie, tapisserie). Résistance température : 110°C. Séchage : 1-2 min. Format : 22L.",
-    specs: [
-      "Compatible : mousse synthétique, panneaux MDF, contreplaqué, miroirs, plastiques compatibles",
+    body:
+      "Colle industrielle haute performance pour cuir, tissus, mousses et revêtements décoratifs. Domaine sellerie, tapisserie et ameublement.",
+    avantages: [
+      "Adhésion instantanée",
+      "Résistance chaleur 110°C",
+      "Séchage rapide 1-2 min",
+      "Système pulvérisation \"toile d'araignée\" économique",
     ],
-    notRecommended: "Non recommandé : vinyles plastifiés, EPS/XPS, PE, PP, monochrome",
+    compatibilite:
+      "Compatible : mousse synthétique, panneaux MDF, contreplaqué, aggloméré, miroirs, plastiques compatibles",
+    notRecommended:
+      "Non recommandé : vinyles plastifiés, EPS/XPS, PE, PP, stratifiés teintés monochrome",
+    specs: ["Couleur : incolore ou rouge", "Format : 22L", "Temp résistance : 110°C"],
+    link: undefined,
   },
   {
     title: "Pistolet d'application professionnel STRATOGRIP",
     brand: "STRATO GRIP",
     logo: "/images/logos/strato-grip-logo.png",
-    description:
-      "Jet réglable 2–25 cm selon buse. Pression jusqu'à 17 bars. Ergonomique, léger, pas de nettoyage nécessaire. Compatible avec toutes bonbonnes STRATOGRIP.",
+    body:
+      "Conçu pour précision, confort et efficacité lors de l'application des colles Stratogrip.",
+    avantages: [
+      "Jet réglable de 2 à 25 cm selon buse",
+      "Pression jusqu'à 17 bars",
+      "Ergonomique et léger",
+      "Pas de nettoyage nécessaire",
+      "Compatible toutes bonbonnes STRATOGRIP",
+    ],
+    applications:
+      "Applications : travaux collage industriel / bois et panneaux / fabrication mobilier / chantiers précision et rapidité",
     link: "https://stratogrip.com/product/pistolet-dapplication-professionnel/",
   },
   {
     title: "Raccord flexible caoutchouc 4m STRATOGRIP",
     brand: "STRATO GRIP",
     logo: "/images/logos/strato-grip-logo.png",
-    description:
-      "Ultra souple pour chantiers, ateliers, zones difficiles d'accès. Longueur 4m, caoutchouc haute qualité, léger et ergonomique.",
+    body:
+      "Tuyau professionnel ultra souple pour applications collage, pulvérisation ou fluides.",
+    specs: [
+      "Longueur 4m",
+      "Caoutchouc haute qualité",
+      "Ultra flexible",
+      "Léger et ergonomique",
+    ],
     link: "https://stratogrip.com/product/raccord-flexible/",
   },
 ];
 
 const tyvekProducts = [
   {
-    title: "Mastic AirGuard® (TYVEK DUPONT)",
+    title: "Mastic AirGuard® — Liaison étanche à l'air (TYVEK DUPONT)",
     brand: "TYVEK DUPONT",
     logo: null,
-    description:
-      "Mastic adhésif pour liaison étanche à l'air des joints et connexions structurelles. Connexion pare-vapeur sur béton, plâtre, pierre, plaques de plâtre, bois.",
-    specs: [
+    body:
+      "Mastic adhésif pour liaison élastique permanente et étanche à l'air des joints et connexions structurelles. Connexion des pare-vapeur à des surfaces telles que la pierre.",
+    avantages: [
       "Application par cartouche",
+      "Installation facile",
+      "Recommandé pour couches pare-vapeur AirGuard",
+      "Très faibles émissions COV (GEV-Emicode)",
+      "Excellente adhérence",
       "Installable à -5°C",
-      "GEV-Emicode faibles COV",
     ],
+    supports: "Supports : béton, plâtre, pierre, plaques de plâtre, bois",
     link: "https://www.dupontdenemours.fr/products/mastic-airguard.html",
   },
   {
     title: "Bande adhésive DuPont™ Tyvek® FlexWrap™ NF",
     brand: "TYVEK DUPONT",
     logo: null,
-    description:
-      "Bande auto-adhésive flexible pour étanchéité air/eau autour portes, fenêtres, cheminées. 50% plus rapide que bandes standard, résiste UV, compatible toutes membranes.",
+    body:
+      "Bande auto-adhésive flexible haute performance pour joint étanche à l'air et à l'eau autour des portes, fenêtres, cheminées, entrées de tuyaux, bouches d'air.",
+    avantages: [
+      "50% plus rapide que bandes standard",
+      "Aucune fixation supplémentaire",
+      "Résiste UV",
+      "Compatible membranes de construction",
+      "Bonnes performances températures extrêmes",
+    ],
+    usage: "Usage : intérieur et extérieur pour améliorer efficacité énergétique",
     link: "https://www.dupontdenemours.be/fr/products/dupont-tyvek-flexwrap-flashing-tape.html",
   },
 ];
@@ -103,19 +155,29 @@ function ProductCard({
   title,
   brand,
   logo,
-  description,
+  body,
+  avantages,
   specs = [],
+  compatibilite,
   notRecommended,
   conseil,
+  applications,
+  supports,
+  usage,
   link,
 }: {
   title: string;
   brand: string;
   logo: string | null;
-  description: string;
+  body: string;
+  avantages?: string[];
   specs?: string[];
+  compatibilite?: string;
   notRecommended?: string;
   conseil?: string;
+  applications?: string;
+  supports?: string;
+  usage?: string;
   link?: string;
 }) {
   return (
@@ -125,25 +187,23 @@ function ProductCard({
           <div className="flex items-center gap-3 mb-3">
             {logo && (
               <div className="relative h-8 w-24 flex-shrink-0">
-                <Image
-                  src={logo}
-                  alt=""
-                  fill
-                  className="object-contain object-left"
-                />
+                <Image src={logo} alt="" fill className="object-contain object-left" />
               </div>
             )}
             <span className="text-sm font-bold uppercase tracking-widest text-primary">
               {brand}
             </span>
           </div>
-          <h3 className="text-xl sm:text-2xl font-bold text-primary mb-3">
-            {title}
-          </h3>
-          <p className="text-base text-slate-600 leading-relaxed mb-4">
-            {description}
-          </p>
+          <h3 className="text-xl sm:text-2xl font-bold text-primary mb-3">{title}</h3>
+          <p className="text-base text-slate-600 leading-relaxed mb-4">{body}</p>
 
+          {avantages && avantages.length > 0 && (
+            <ul className="list-disc list-inside text-sm text-slate-600 space-y-1 mb-3">
+              {avantages.map((a, i) => (
+                <li key={i}>{a}</li>
+              ))}
+            </ul>
+          )}
           {specs.length > 0 && (
             <div className="flex flex-wrap gap-2 mb-3">
               {specs.map((spec) => (
@@ -156,7 +216,14 @@ function ProductCard({
               ))}
             </div>
           )}
-
+          {compatibilite && (
+            <p className="text-sm text-slate-600 mb-2">{compatibilite}</p>
+          )}
+          {applications && (
+            <p className="text-sm text-slate-600 mb-2">{applications}</p>
+          )}
+          {supports && <p className="text-sm text-slate-600 mb-2">{supports}</p>}
+          {usage && <p className="text-sm text-slate-600 mb-2">{usage}</p>}
           {notRecommended && (
             <p className="text-sm text-slate-500 italic mb-2">{notRecommended}</p>
           )}
@@ -168,7 +235,6 @@ function ProductCard({
             </div>
           )}
         </div>
-
         {link && (
           <div className="flex-shrink-0">
             <a
@@ -190,7 +256,6 @@ function ProductCard({
 export default function CollesMasticsPage() {
   return (
     <div className="pt-20">
-      {/* ── HERO ── */}
       <section className="relative py-16 sm:py-20 lg:py-28 bg-primary text-white overflow-hidden">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#1a2f4a] via-primary to-[#2B4162]" />
@@ -212,33 +277,23 @@ export default function CollesMasticsPage() {
             }}
           />
         </div>
-
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <span className="flex h-3 w-3 relative">
-                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-accent opacity-75" />
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-accent" />
-                </span>
-                <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm">
-                  Colles & mastics
-                </span>
-              </div>
+              <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm mb-6 inline-block">
+                Colles & mastics
+              </span>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                Colles &amp; Mastics
+                Colles &amp; Mastics — Solutions d&apos;adhésion pour professionnels
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-                Colles de contact STRATO GRIP multi-matériaux et solutions
-                d&apos;étanchéité à l&apos;air TYVEK DUPONT. Haute performance
-                pour professionnels du bâtiment.
+                Colles de contact STRATO GRIP et mastics TYVEK DUPONT disponibles à Bertrix et Naninne. Haute performance pour bardage, isolation et étanchéité.
               </p>
             </div>
           </Reveal>
         </div>
       </section>
 
-      {/* ── STRATO GRIP ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
@@ -256,7 +311,6 @@ export default function CollesMasticsPage() {
               </h2>
             </div>
           </Reveal>
-
           <div className="space-y-6">
             {stratogripProducts.map((product, i) => (
               <Reveal key={product.title} delay={i * 80}>
@@ -264,10 +318,13 @@ export default function CollesMasticsPage() {
                   title={product.title}
                   brand={product.brand}
                   logo={product.logo}
-                  description={product.description}
+                  body={product.body}
+                  avantages={product.avantages}
                   specs={product.specs}
+                  compatibilite={product.compatibilite}
                   notRecommended={product.notRecommended}
                   conseil={product.conseil}
+                  applications={product.applications}
                   link={product.link}
                 />
               </Reveal>
@@ -276,7 +333,6 @@ export default function CollesMasticsPage() {
         </div>
       </section>
 
-      {/* ── TYVEK DUPONT ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
@@ -285,12 +341,10 @@ export default function CollesMasticsPage() {
                 TYVEK DUPONT — Étanchéité à l&apos;air
               </h2>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                Mastics et bandes adhésives pour une étanchéité à l&apos;air
-                performante sur vos chantiers.
+                Mastics et bandes adhésives pour une étanchéité à l&apos;air performante sur vos chantiers.
               </p>
             </div>
           </Reveal>
-
           <div className="space-y-6">
             {tyvekProducts.map((product, i) => (
               <Reveal key={product.title} delay={i * 80}>
@@ -298,8 +352,10 @@ export default function CollesMasticsPage() {
                   title={product.title}
                   brand={product.brand}
                   logo={product.logo}
-                  description={product.description}
-                  specs={product.specs}
+                  body={product.body}
+                  avantages={product.avantages}
+                  supports={product.supports}
+                  usage={product.usage}
                   link={product.link}
                 />
               </Reveal>
@@ -308,7 +364,6 @@ export default function CollesMasticsPage() {
         </div>
       </section>
 
-      {/* ── CTA Formations STRATOGRIP ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-primary/5 border-t border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
@@ -318,8 +373,7 @@ export default function CollesMasticsPage() {
                   Découvrir les formations STRATOGRIP
                 </h2>
                 <p className="text-white/85 text-sm sm:text-base max-w-xl">
-                  Formez-vous aux nouvelles colles multi-matériaux et bonnes
-                  pratiques d&apos;application avec nos formations dédiées.
+                  Formez-vous aux nouvelles colles multi-matériaux et bonnes pratiques d&apos;application avec nos formations dédiées.
                 </p>
               </div>
               <Link

@@ -7,7 +7,7 @@ import Reveal from "@/components/ui/Reveal";
 export const metadata: Metadata = {
   title: "Charpentes préfabriquées - Comarden",
   description:
-    "Charpentes bois préfabriquées prêtes à poser pour constructions résidentielles, industrielles et agricoles en Belgique et en Wallonie.",
+    "Charpentes préfabriquées disponibles chez Comarden à Bertrix et Naninne. Solutions bois sur mesure pour constructions résidentielles, agricoles et industrielles en Wallonie et Belgique.",
 };
 
 const avantages = [
@@ -15,33 +15,34 @@ const avantages = [
     icon: Clock,
     title: "Gain de temps",
     description:
-      "Éléments préparés en atelier : pose sur chantier rapide et planifiée, moins de délais météo.",
+      "Conçues et pré-assemblées en usine, elles réduisent les délais de chantier.",
   },
   {
     icon: Ruler,
-    title: "Précision en usine",
+    title: "Précision d'usine",
     description:
-      "Coupes et assemblages réalisés en usine pour une géométrie parfaite et une mise en œuvre fiable.",
+      "Traçage et assemblage réalisés dans un environnement contrôlé.",
   },
   {
     icon: Layout,
     title: "Adaptation sur mesure",
     description:
-      "Charpentes conçues selon vos plans et contraintes pour s’adapter à tous les projets.",
+      "Dimensionnées selon vos plans et contraintes architecturales.",
   },
   {
     icon: Truck,
     title: "Disponibilité rapide",
     description:
-      "Livraison organisée selon votre planning pour une coordination optimale du chantier.",
+      "Stock et commandes gérés depuis nos sites de Bertrix et Naninne.",
   },
 ];
 
 const applications = [
   { icon: Home, label: "Maisons unifamiliales" },
-  { icon: PlusSquare, label: "Extensions" },
+  { icon: PlusSquare, label: "Extensions et surélévations" },
   { icon: Warehouse, label: "Bâtiments agricoles" },
-  { icon: Factory, label: "Toitures industrielles" },
+  { icon: Factory, label: "Constructions industrielles légères" },
+  { icon: Layout, label: "Toitures à versants complexes" },
 ];
 
 export default function CharpentesPrefabriqueesPage() {
@@ -83,12 +84,23 @@ export default function CharpentesPrefabriqueesPage() {
                 </span>
               </div>
               <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                Charpentes préfabriquées — Solutions bois pour tous vos projets
+                Charpentes préfabriquées — Solutions bois prêtes à poser
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-                Comarden distribue des charpentes bois préfabriquées, prêtes à
-                poser, pour tous types de constructions résidentielles,
-                industrielles et agricoles en Belgique et en Wallonie.
+                Charpentes préfabriquées disponibles chez Comarden à Bertrix et Naninne. Solutions bois sur mesure pour constructions résidentielles, agricoles et industrielles en Wallonie et Belgique.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── PRÉSENTATION ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Comarden propose des charpentes préfabriquées en bois, conçues et assemblées en usine pour une pose rapide et précise sur chantier. Ces solutions adaptées permettent de réduire considérablement les délais de construction tout en garantissant une qualité d&apos;exécution optimale.
               </p>
             </div>
           </Reveal>
@@ -142,13 +154,12 @@ export default function CharpentesPrefabriqueesPage() {
                 Applications
               </h2>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                Nos charpentes préfabriquées conviennent à une large gamme de
-                projets, du résidentiel à l’industriel.
+                Nos charpentes préfabriquées conviennent aux maisons, extensions, bâtiments agricoles, constructions industrielles légères et toitures à versants complexes.
               </p>
             </div>
           </Reveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {applications.map((app, i) => {
               const Icon = app.icon;
               return (
@@ -172,12 +183,10 @@ export default function CharpentesPrefabriqueesPage() {
           <Reveal>
             <div className="text-center max-w-2xl mx-auto">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4">
-                Un projet de charpente ?
+                Vous avez un projet de charpente ?
               </h2>
               <p className="text-base sm:text-lg text-white/80 mb-8 leading-relaxed">
-                Demandez un devis personnalisé pour votre construction ou
-                rénovation. Notre équipe vous accompagne de la conception à la
-                livraison.
+                Contactez nos experts techniques pour une étude personnalisée.
               </p>
               <Link
                 href="/contact"
