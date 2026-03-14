@@ -13,6 +13,12 @@ export interface Location {
   };
 }
 
+/** Safe placeholder images (hosted) to avoid 404s from missing local files */
+export const PLACEHOLDER_PRODUCT_IMAGE =
+  "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=400&fit=crop";
+export const PLACEHOLDER_BUILDING_IMAGE =
+  "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop";
+
 export const site = {
   name: "Comarden",
   tagline: "Matériaux de construction depuis 1977",
@@ -59,9 +65,13 @@ export const site = {
       { label: "Toiture", href: "/produits/toiture" },
       { label: "Ardoises", href: "/produits/ardoises" },
       { label: "Charpente bois", href: "/produits/charpente" },
+      { label: "Charpentes préfabriquées", href: "/produits/charpentes-prefabriquees" },
       { label: "Isolation", href: "/produits/isolation" },
       { label: "Toitures vertes", href: "/produits/toitures-vertes" },
       { label: "Tôles & Panneaux", href: "/produits/toles-panneaux" },
+      { label: "Visserie", href: "/produits/visserie" },
+      { label: "Colles & Mastics", href: "/produits/colles-mastics" },
+      { label: "EPDM & Étanchéité", href: "/produits/epdm" },
     ],
     services: [
       { label: "Façonnage", href: "/services/faconnage" },
@@ -69,6 +79,7 @@ export const site = {
       { label: "Conseil", href: "/services/conseil" },
       { label: "Service Drone", href: "/services/drone" },
       { label: "Pack PRO", href: "/services/pro-pack" },
+      { label: "Trouver un professionnel", href: "/trouver-professionnel" },
     ],
   },
   social: {

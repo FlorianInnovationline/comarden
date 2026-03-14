@@ -66,43 +66,33 @@ export default function OfferGrid() {
                   onMouseEnter={() => setHoveredIndex(index)}
                   onMouseLeave={() => setHoveredIndex(null)}
                 >
-                  <div className="relative aspect-square bg-white rounded-xl border border-border/50 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 hover:scale-[1.02]">
-                    {/* Gradient background overlay */}
+                  <div className="relative bg-white rounded-xl border border-border/50 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 hover:scale-[1.02]">
                     <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
-                    
-                    {/* Content */}
-                    <div className="relative p-3 sm:p-4 lg:p-4 h-full flex flex-col justify-between">
-                      {/* Top section - Icon */}
-                      <div className="flex-shrink-0">
-                        <div className="inline-flex items-center justify-center w-9 h-9 sm:w-10 sm:h-10 lg:w-11 lg:h-11 rounded-lg bg-primary/5 group-hover:bg-accent/10 transition-all duration-500 group-hover:scale-110 group-hover:rotate-3 mb-2 sm:mb-3">
-                          {IconComponent && (
-                            <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-primary group-hover:text-accent transition-colors duration-500" />
-                          )}
-                        </div>
 
-                        {/* Title */}
-                        <h3 className="text-sm sm:text-base lg:text-base font-bold text-primary mb-1.5 sm:mb-2 group-hover:text-accent transition-colors duration-300 leading-tight line-clamp-2">
-                          {category.title}
-                        </h3>
-
-                        {/* Description */}
-                        <p className="text-[10px] sm:text-xs text-muted-foreground leading-relaxed line-clamp-2 sm:line-clamp-3">
-                          {category.description}
-                        </p>
+                    <div className="relative p-3 sm:p-4 flex flex-col">
+                      <div className="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-primary/5 group-hover:bg-accent/10 transition-all duration-500 group-hover:scale-110 mb-2">
+                        {IconComponent && (
+                          <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-primary group-hover:text-accent transition-colors duration-500" />
+                        )}
                       </div>
 
-                      {/* Bottom section - CTA */}
-                      <div className="flex items-center gap-1 text-primary font-semibold text-[10px] sm:text-xs group-hover:text-accent transition-colors duration-300 mt-auto pt-2 flex-shrink-0">
+                      <h3 className="text-sm sm:text-base font-bold text-primary mb-1 group-hover:text-accent transition-colors duration-300 leading-tight line-clamp-2">
+                        {category.title}
+                      </h3>
+
+                      <p className="text-[10px] sm:text-xs text-muted-foreground leading-relaxed line-clamp-2 mb-2">
+                        {category.description}
+                      </p>
+
+                      <div className="flex items-center gap-1 text-primary font-semibold text-[10px] sm:text-xs group-hover:text-accent transition-colors duration-300">
                         <span>Découvrir</span>
                         <ArrowRight className="w-3 h-3 sm:w-3.5 sm:h-3.5 transition-transform duration-300 group-hover:translate-x-1" />
                       </div>
 
-                      {/* Hover accent line */}
-                      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-accent to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
+                      <div className="absolute bottom-0 left-0 right-0 h-0.5 bg-gradient-to-r from-primary via-accent to-primary transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
                     </div>
 
-                    {/* Shine effect on hover */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+                    <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out pointer-events-none" />
                   </div>
                 </Link>
               </Reveal>

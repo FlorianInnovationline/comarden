@@ -22,7 +22,7 @@ function BelgiumWatermark() {
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
       <svg
         viewBox="0 0 100 100"
-        className="w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] lg:w-[700px] lg:h-[700px] opacity-[0.04] text-primary"
+        className="w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] lg:w-[700px] lg:h-[700px] opacity-[0.06] text-slate-400"
         preserveAspectRatio="xMidYMid meet"
         aria-hidden="true"
       >

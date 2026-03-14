@@ -5,6 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ShoppingCart, Package, Truck, CheckCircle } from "lucide-react";
 import { getProductBySlug, getProducts } from "@/lib/shop/queries";
 import { formatPrice, getStockStatus } from "@/lib/shop/utils";
+import { PLACEHOLDER_PRODUCT_IMAGE } from "@/lib/site";
 import ProductCard from "@/components/shop/ProductCard";
 import AddToCartButton from "@/components/shop/AddToCartButton";
 import Reveal from "@/components/ui/Reveal";
@@ -47,9 +48,12 @@ export default async function ProductPage({ params }: PageProps) {
     .filter((p) => p.id !== product.id)
     .slice(0, 4);
 
-  const images = product.images && product.images.length > 0 
-    ? product.images 
-    : ['/images/placeholder-product.jpg'];
+  const rawImages = product.images && product.images.length > 0 ? product.images : [];
+  const images = rawImages.length > 0
+    ? rawImages.map((src) =>
+        src.startsWith("/images/") && !src.startsWith("/images/logos/") ? PLACEHOLDER_PRODUCT_IMAGE : src
+      )
+    : [PLACEHOLDER_PRODUCT_IMAGE];
 
   return (
     <div className="pt-20">

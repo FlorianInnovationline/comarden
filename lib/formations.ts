@@ -143,4 +143,32 @@ export const FORMATION_MODULES: FormationModule[] = [
     description: "Techniques avancées de façonnage des tôles métalliques : découpes, pliages, assemblages et finitions professionnelles pour toiture et façade.",
     tag: "Métallique",
   },
+  {
+    id: "atg-ardoises",
+    title: "ATG Ardoises : Comprendre pour mieux vendre et intervenir",
+    durationHours: 4,
+    description: "Défendre vos projets lors de la vente en utilisant les ATG / Assurer un suivi après-vente / Renforcer votre crédibilité technique.",
+    tag: "Formations",
+  },
+  {
+    id: "vertuoza",
+    title: "VERTUOZA — Logiciel de gestion chantier",
+    durationHours: 7,
+    description: "Maîtrisez VERTUOZA pour vos devis, facturations, suivis de chantier et planning. Un outil complet pour la gestion de votre entreprise.",
+    tag: "Formations",
+  },
+  {
+    id: "strato-grip",
+    title: "STRATO GRIP — Formation nouvelles colles",
+    durationHours: 4,
+    description: "Découvrez les nouvelles colles STRATO GRIP : application, compatibilités et bonnes pratiques pour des chantiers réussis.",
+    tag: "Formations",
+  },
+  {
+    id: "tyvek",
+    title: "TYVEK — Présentation gamme et conseils pratiques",
+    durationHours: 4,
+    description: "Tour d\u2019horizon de la gamme TYVEK : membranes, pare-vapeur et solutions d\u2019étanchéité à l\u2019air. Conseils pratiques de mise en œuvre.",
+    tag: "Formations",
+  },
 ];

@@ -2,7 +2,6 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { Phone, ArrowRight, ChevronDown } from "lucide-react";
 import { site } from "@/lib/site";
 import Button from "@/components/ui/Button";
@@ -41,6 +40,10 @@ export default function Header() {
     };
   }, [isMenuOpen]);
 
+  const linkCls = `relative px-2 xl:px-2.5 py-2 text-[13px] font-medium transition-colors whitespace-nowrap ${
+    scrolled ? "text-primary hover:text-primary/80" : "text-white hover:text-white/90"
+  }`;
+
   return (
     <>
       <header
@@ -50,22 +53,16 @@ export default function Header() {
             : "bg-primary"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-20">
-            {/* Logo */}
+        <div className="max-w-[1400px] mx-auto px-4 sm:px-6 xl:px-8">
+          <div className="flex items-center justify-between h-16 xl:h-20">
             <Link href="/" className="relative z-50 flex-shrink-0">
-              <Image
-                src="/images/logo.png"
-                alt="Comarden"
-                width={1275}
-                height={216}
-                className="h-7 sm:h-9 lg:h-11 w-auto transition-all duration-300"
-                priority
-              />
+              <span className={`text-xl sm:text-2xl xl:text-3xl font-bold tracking-tight transition-colors duration-300 ${scrolled ? "text-primary" : "text-white"}`}>
+                COMARDEN
+              </span>
             </Link>
 
-            {/* Desktop Navigation - Centered */}
-            <nav className="hidden lg:flex items-center justify-center gap-0.5 flex-1 px-8">
+            {/* Desktop Navigation */}
+            <nav className="hidden xl:flex items-center justify-center gap-0 flex-1 px-4">
               {/* Produits Dropdown */}
               <div
                 className="relative"
@@ -74,27 +71,22 @@ export default function Header() {
               >
                 <Link
                   href="/produits"
-                  className={`relative px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 whitespace-nowrap ${
-                    scrolled
-                      ? "text-primary hover:text-primary/80"
-                      : "text-white hover:text-white/90"
-                  }`}
+                  className={`${linkCls} flex items-center gap-1`}
                 >
                   Produits
                   <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform ${
+                    className={`w-3 h-3 transition-transform ${
                       produitsOpen ? "rotate-180" : ""
                     }`}
                   />
                 </Link>
                 {produitsOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-border shadow-lg rounded-sm py-2 animate-slide-down z-50">
-                    {site.nav.produits.map((item, idx) => (
+                  <div className="absolute top-full left-0 mt-1 w-56 bg-white border border-border shadow-lg rounded-sm py-1.5 animate-slide-down z-50">
+                    {site.nav.produits.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="block px-4 py-2 text-sm text-primary hover:bg-neutral/50 transition-all duration-200 hover:translate-x-1"
-                        style={{ animationDelay: `${idx * 50}ms` }}
+                        className="block px-4 py-1.5 text-[13px] text-primary hover:bg-neutral/50 transition-all duration-200 hover:translate-x-1"
                       >
                         {item.label}
                       </Link>
@@ -111,27 +103,22 @@ export default function Header() {
               >
                 <Link
                   href="/services"
-                  className={`relative px-3 py-2 text-sm font-medium transition-colors flex items-center gap-1 whitespace-nowrap ${
-                    scrolled
-                      ? "text-primary hover:text-primary/80"
-                      : "text-white hover:text-white/90"
-                  }`}
+                  className={`${linkCls} flex items-center gap-1`}
                 >
                   Services
                   <ChevronDown
-                    className={`w-3.5 h-3.5 transition-transform ${
+                    className={`w-3 h-3 transition-transform ${
                       servicesOpen ? "rotate-180" : ""
                     }`}
                   />
                 </Link>
                 {servicesOpen && (
-                  <div className="absolute top-full left-0 mt-2 w-56 bg-white border border-border shadow-lg rounded-sm py-2 animate-slide-down z-50">
-                    {site.nav.services.map((item, idx) => (
+                  <div className="absolute top-full left-0 mt-1 w-56 bg-white border border-border shadow-lg rounded-sm py-1.5 animate-slide-down z-50">
+                    {site.nav.services.map((item) => (
                       <Link
                         key={item.href}
                         href={item.href}
-                        className="block px-4 py-2 text-sm text-primary hover:bg-neutral/50 transition-all duration-200 hover:translate-x-1"
-                        style={{ animationDelay: `${idx * 50}ms` }}
+                        className="block px-4 py-1.5 text-[13px] text-primary hover:bg-neutral/50 transition-all duration-200 hover:translate-x-1"
                       >
                         {item.label}
                       </Link>
@@ -140,56 +127,47 @@ export default function Header() {
                 )}
               </div>
 
-              {/* Other nav items */}
               {navItems.map((item) => (
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className={`relative px-3 py-2 text-sm font-medium transition-colors whitespace-nowrap ${
-                    scrolled
-                      ? "text-primary hover:text-primary/80"
-                      : "text-white hover:text-white/90"
-                  }`}
-                >
+                <Link key={item.href} href={item.href} className={linkCls}>
                   {item.label}
                 </Link>
               ))}
             </nav>
 
-            {/* Desktop CTA - Right aligned */}
-            <div className="hidden lg:flex items-center gap-4 flex-shrink-0">
+            {/* Desktop CTA */}
+            <div className="hidden xl:flex items-center gap-3 flex-shrink-0">
               <Link
                 href={`tel:${site.phone.primary}`}
-                className={`flex items-center gap-2 text-sm font-medium transition-colors whitespace-nowrap ${
+                className={`flex items-center gap-1.5 text-[13px] font-medium transition-colors whitespace-nowrap ${
                   scrolled
                     ? "text-primary hover:text-primary/80"
                     : "text-white hover:text-white/90"
                 }`}
               >
                 <div
-                  className={`w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0 ${
+                  className={`w-7 h-7 rounded-full flex items-center justify-center flex-shrink-0 ${
                     scrolled ? "bg-accent/10" : "bg-accent/20"
                   }`}
                 >
-                  <Phone className="w-4 h-4 text-accent" />
+                  <Phone className="w-3.5 h-3.5 text-accent" />
                 </div>
-                <span className="hidden xl:inline">{site.phone.display}</span>
+                <span className="hidden 2xl:inline">{site.phone.display}</span>
               </Link>
               <Button
                 asChild
                 href="/contact"
                 variant={scrolled ? "primary" : "secondary"}
                 size="sm"
-                className="rounded-full whitespace-nowrap"
+                className="rounded-full whitespace-nowrap text-[13px]"
               >
                 Devis gratuit
-                <ArrowRight className="w-4 h-4 ml-1" />
+                <ArrowRight className="w-3.5 h-3.5 ml-1" />
               </Button>
             </div>
 
-            {/* Mobile Menu Button */}
+            {/* Mobile/Tablet Menu Button */}
             <button
-              className="lg:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+              className="xl:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
             >
@@ -225,9 +203,9 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Full-Screen Navigation */}
+      {/* Mobile/Tablet Full-Screen Navigation */}
       <div
-        className={`fixed inset-0 z-40 bg-primary transition-all duration-500 lg:hidden ${
+        className={`fixed inset-0 z-40 bg-primary transition-all duration-500 xl:hidden ${
           isMenuOpen ? "opacity-100 visible" : "opacity-0 invisible"
         }`}
       >
@@ -268,7 +246,6 @@ export default function Header() {
             ))}
           </nav>
 
-          {/* Mobile Contact Info */}
           <div className="mt-12 pt-8 border-t border-white/20">
             <Link
               href={`tel:${site.phone.primary}`}

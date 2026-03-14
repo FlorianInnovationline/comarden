@@ -1,5 +1,4 @@
 import Link from "next/link";
-import Image from "next/image";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { site } from "@/lib/site";
 
@@ -12,13 +11,7 @@ export default function Footer() {
           {/* Brand Column */}
           <div className="col-span-2 md:col-span-1">
             <Link href="/" className="inline-block mb-4 sm:mb-6 transition-transform duration-300 hover:scale-105">
-              <Image
-                src="/images/image.png"
-                alt="Comarden"
-                width={120}
-                height={40}
-                className="h-8 sm:h-10 w-auto brightness-0 invert"
-              />
+              <span className="text-xl sm:text-2xl font-bold text-accent tracking-tight">COMARDEN</span>
             </Link>
             <p className="text-white/70 text-xs sm:text-sm leading-relaxed">
               {site.tagline} en Belgique francophone.
@@ -60,6 +53,14 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
+              <li>
+                <Link
+                  href="/trouver-professionnel"
+                  className="text-xs sm:text-sm text-white/70 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block"
+                >
+                  Trouver un professionnel
+                </Link>
+              </li>
             </ul>
           </div>
 

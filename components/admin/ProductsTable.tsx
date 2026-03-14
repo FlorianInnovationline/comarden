@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Edit, Trash2, Eye, Search } from "lucide-react";
 import type { Product, Category } from "@/types/shop";
 import { formatPrice } from "@/lib/shop/utils";
+import { PLACEHOLDER_PRODUCT_IMAGE } from "@/lib/site";
 import Button from "@/components/ui/Button";
 
 interface ProductsTableProps {
@@ -105,7 +106,8 @@ export default function ProductsTable({ products, categories }: ProductsTablePro
               </tr>
             ) : (
               filteredProducts.map((product) => {
-                const imageUrl = product.images?.[0] || "/images/placeholder-product.jpg";
+                const raw = product.images?.[0];
+                const imageUrl = !raw || raw.startsWith("/images/") ? PLACEHOLDER_PRODUCT_IMAGE : raw;
                 return (
                   <tr
                     key={product.id}

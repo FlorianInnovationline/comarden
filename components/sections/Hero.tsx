@@ -4,18 +4,17 @@ import Button from "@/components/ui/Button";
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden">
-      {/* Background image with slow zoom animation */}
+    <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-primary">
+      {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center animate-[heroZoom_20s_ease-in-out_infinite_alternate]"
+        className="absolute inset-0 bg-cover bg-center opacity-40"
         style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80')",
         }}
       />
 
-      {/* Dark gradient overlay for readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/80 to-primary/60" />
-      <div className="absolute inset-0 bg-gradient-to-t from-primary/70 via-transparent to-primary/40" />
+      {/* Dark overlay to ensure text readability */}
+      <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/70" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-32">
         <div className="max-w-3xl">
@@ -39,7 +38,7 @@ export default function Hero() {
             Wallonie.
           </p>
           <div
-            className="mt-8 sm:mt-10 flex flex-col sm:flex-row gap-3 sm:gap-4 animate-fadeInUp"
+            className="mt-8 sm:mt-10 flex flex-col sm:flex-row flex-wrap gap-3 sm:gap-4 animate-fadeInUp"
             style={{ animationDelay: "400ms" }}
           >
             <Button
@@ -49,6 +48,16 @@ export default function Hero() {
             >
               <Link href="/do-it-yourself">
                 DO IT YOURSELF
+                <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+            <Button
+              asChild
+              size="lg"
+              className="bg-accent text-primary hover:bg-accent/90 h-12 sm:h-14 px-6 sm:px-8 text-sm sm:text-base font-semibold rounded-sm group transition-all duration-300 hover:scale-105 hover:shadow-lg"
+            >
+              <Link href="/trouver-professionnel">
+                Trouver un professionnel
                 <ArrowRight className="ml-2 w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
             </Button>

@@ -4,6 +4,7 @@ import { useState } from "react";
 import Reveal from "@/components/ui/Reveal";
 import Image from "next/image";
 import Link from "next/link";
+import { PLACEHOLDER_BUILDING_IMAGE } from "@/lib/site";
 import { ArrowRight } from "lucide-react";
 
 export default function Gallery() {
@@ -18,7 +19,7 @@ export default function Gallery() {
             <div className="relative aspect-[4/3] rounded-lg overflow-hidden bg-gradient-to-br from-primary/10 to-accent/10">
               {!imageError && (
                 <Image
-                  src="/images/placeholder-building.jpg"
+                  src={PLACEHOLDER_BUILDING_IMAGE}
                   alt="Bâtiment Comarden"
                   fill
                   className="object-cover"

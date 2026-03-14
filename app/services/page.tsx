@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ServicesHero from "@/components/services/ServicesHero";
 import ServicesGrid from "@/components/services/ServicesGrid";
 import ProcessSteps from "@/components/services/ProcessSteps";
+import ClientJourney from "@/components/services/ClientJourney";
 import ProofStrip from "@/components/services/ProofStrip";
 import CTACompact from "@/components/sections/CTA";
 
@@ -17,6 +18,7 @@ export default function ServicesPage() {
       <ServicesHero />
       <ServicesGrid />
       <ProcessSteps />
+      <ClientJourney />
       <ProofStrip />
       <CTACompact />
     </div>

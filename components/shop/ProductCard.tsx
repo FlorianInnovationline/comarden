@@ -6,6 +6,7 @@ import { ShoppingCart, Package } from "lucide-react";
 import type { Product } from "@/types/shop";
 import { formatPrice, getStockStatus } from "@/lib/shop/utils";
 import { useCart } from "@/lib/shop/cart";
+import { PLACEHOLDER_PRODUCT_IMAGE } from "@/lib/site";
 
 interface ProductCardProps {
   product: Product;
@@ -14,7 +15,8 @@ interface ProductCardProps {
 export default function ProductCard({ product }: ProductCardProps) {
   const { addToCart } = useCart();
   const stockStatus = getStockStatus(product.stock);
-  const imageUrl = product.images?.[0] || '/images/placeholder-product.jpg';
+  const raw = product.images?.[0];
+  const imageUrl = !raw || raw.startsWith("/images/") ? PLACEHOLDER_PRODUCT_IMAGE : raw;
 
   const handleAddToCart = (e: React.MouseEvent) => {
     e.preventDefault();

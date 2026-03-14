@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import CategoryGrid from "@/components/produits/CategoryGrid";
 import AdviceBlock from "@/components/produits/AdviceBlock";
+import BrandPartners from "@/components/produits/BrandPartners";
 import PartnersBanner from "@/components/sections/PartnersBanner";
 import CTACompact from "@/components/sections/CTA";
 import Reveal from "@/components/ui/Reveal";
@@ -102,6 +103,8 @@ export default function ProduitsPage() {
       </section>
 
       <PartnersBanner />
+
+      <BrandPartners />
 
       <AdviceBlock />
 

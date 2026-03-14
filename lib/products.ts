@@ -45,13 +45,13 @@ export const productCategories: ProductCategory[] = [
   {
     slug: "visserie",
     title: "Visserie",
-    description: "Fixations, vis et chevilles pour tous vos projets",
+    description: "Vis, fixations et accessoires de fixation pour tous vos chantiers",
     iconName: "Wrench",
   },
   {
-    slug: "colles",
-    title: "Colles",
-    description: "Mastics et colles de construction professionnelles",
+    slug: "colles-mastics",
+    title: "Colles & Mastics",
+    description: "Colles de construction, mastics et produits d\u2019étanchéité d\u2019air",
     iconName: "Paintbrush",
   },
   {

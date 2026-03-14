@@ -79,9 +79,11 @@ export default function FormationsPage() {
     <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 lg:py-20 xl:py-28 bg-primary text-white overflow-hidden">
+        <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80')" }} />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(10, 25, 60, 0.80)" }} />
         {/* Animated gradient background */}
         <div className="absolute inset-0">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#1a2f4a] via-primary to-[#2B4162]" />
+          <div className="absolute inset-0 bg-gradient-to-br from-[#1a2f4a]/60 via-primary/40 to-[#2B4162]/60" />
           {/* Animated gradient orbs */}
           <div
             className="absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-20"
@@ -173,12 +175,16 @@ export default function FormationsPage() {
             {/* Formations Preview Section */}
             <Reveal delay={200}>
               <div className="mt-16 lg:mt-20">
-                <div className="text-center mb-12">
+                <div className="text-center mb-8">
                   <h2 className="text-2xl lg:text-3xl font-bold text-primary tracking-tight mb-3">
                     Formations disponibles
                   </h2>
-                  <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-                  Découvrez nos dates de formations programmées. Et parce que chaque entreprise a des besoins spécifiques, nous vous offrons également la possibilité unique d’organiser des formations à la demande : des journées personnalisées, centrées sur les thématiques qui vous intéressent réellement.
+                </div>
+
+                <div className="mb-12 bg-accent/10 border-l-4 border-accent rounded-r-xl px-6 py-5 max-w-3xl mx-auto">
+                  <p className="text-base text-primary/90 leading-relaxed">
+                    Découvrez nos dates de formations programmées. Et parce que chaque entreprise a des besoins spécifiques, nous vous offrons également la possibilité unique d&apos;organiser des{" "}
+                    <span className="font-semibold text-primary">formations à la demande</span>&nbsp;: des journées personnalisées, centrées sur les thématiques qui vous intéressent réellement.
                   </p>
                 </div>
 
