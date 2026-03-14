@@ -55,8 +55,8 @@ export default function FacadeShowcase() {
       {/* Animated gradient background */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0a1f3f] via-[#0f2a52] to-[#0a1f3f]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(212,175,55,0.1),transparent_50%)] animate-pulse-slow" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(212,175,55,0.05),transparent_50%)] animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(245,192,0,0.1),transparent_50%)] animate-pulse-slow" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(245,192,0,0.05),transparent_50%)] animate-pulse-slow" style={{ animationDelay: '1.5s' }} />
       </div>
 
       {/* Animated background pattern */}

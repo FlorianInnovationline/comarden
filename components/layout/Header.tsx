@@ -11,6 +11,7 @@ const navItems = [
   { label: "Magasin", href: "/shop" },
   { label: "Présentation", href: "/presentation" },
   { label: "Formations", href: "/formations" },
+  { label: "Événements", href: "/evenements" },
   { label: "Actu", href: "/actu" },
   { label: "Contact", href: "/contact" },
 ];

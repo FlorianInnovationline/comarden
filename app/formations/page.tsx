@@ -86,7 +86,7 @@ export default function FormationsPage() {
           <div
             className="absolute w-[600px] h-[600px] rounded-full blur-[120px] opacity-20"
             style={{
-              background: "radial-gradient(circle, rgba(218,165,32,0.4) 0%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(245,192,0,0.4) 0%, transparent 70%)",
               top: "10%",
               right: "-10%",
               animation: "pulse-slow 8s ease-in-out infinite",
@@ -95,7 +95,7 @@ export default function FormationsPage() {
           <div
             className="absolute w-[500px] h-[500px] rounded-full blur-[100px] opacity-15"
             style={{
-              background: "radial-gradient(circle, rgba(218,165,32,0.3) 0%, transparent 70%)",
+              background: "radial-gradient(circle, rgba(245,192,0,0.3) 0%, transparent 70%)",
               bottom: "0%",
               left: "-5%",
               animation: "pulse-slow 10s ease-in-out infinite reverse",
@@ -178,7 +178,7 @@ export default function FormationsPage() {
                     Formations disponibles
                   </h2>
                   <p className="text-base text-muted-foreground max-w-2xl mx-auto">
-                    Découvrez les modules de formation que vous pourrez composer pour votre journée de 7h
+                  Découvrez nos dates de formations programmées. Et parce que chaque entreprise a des besoins spécifiques, nous vous offrons également la possibilité unique d’organiser des formations à la demande : des journées personnalisées, centrées sur les thématiques qui vous intéressent réellement.
                   </p>
                 </div>
 

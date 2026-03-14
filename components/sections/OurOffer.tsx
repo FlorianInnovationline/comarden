@@ -15,9 +15,11 @@ const iconMap: Record<string, keyof typeof Icons> = {
   Leaf: "Leaf",
   Box: "Box",
   Droplets: "Droplets",
+  Wrench: "Wrench",
+  Paintbrush: "Paintbrush",
+  Building2: "Building2",
 };
 
-// Gradient colors for each card
 const gradientColors = [
   "from-blue-500/10 via-primary/5 to-accent/10",
   "from-accent/10 via-blue-500/5 to-primary/10",
@@ -25,6 +27,9 @@ const gradientColors = [
   "from-blue-500/10 via-accent/5 to-primary/10",
   "from-accent/10 via-primary/5 to-blue-500/10",
   "from-primary/10 via-blue-500/5 to-accent/10",
+  "from-blue-500/10 via-accent/10 to-primary/5",
+  "from-accent/10 via-primary/10 to-blue-500/5",
+  "from-primary/10 via-blue-500/10 to-accent/5",
 ];
 
 export default function OfferGrid() {
@@ -48,7 +53,7 @@ export default function OfferGrid() {
         </Reveal>
 
         {/* Single row container - square cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3 sm:gap-4 lg:gap-4">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
           {productCategories.map((category, index) => {
             const IconComponent = Icons[iconMap[category.iconName] || "Package"] as React.ComponentType<{ className?: string }>;
             const gradient = gradientColors[index % gradientColors.length];

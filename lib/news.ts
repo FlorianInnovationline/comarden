@@ -12,6 +12,49 @@ export const categories = ["Tous", "Produits", "Formations", "Actualités"] as c
 
 export const newsPosts: NewsPost[] = [
   {
+    slug: "renforcement-flotte-livraison-2026",
+    title: "Comarden renforce sa flotte de livraison",
+    excerpt:
+      "3 nouveaux camions rejoignent la flotte Comarden. Grand merci à VOLVO Arnould pour ses conseils et son excellent service.",
+    date: "2026-03-01",
+    category: "Actualités",
+    featured: true,
+    content: [
+      "Comarden est fier d\u2019annoncer l\u2019arrivée de 3 nouveaux camions dans sa flotte de livraison. Ces véhicules modernes viennent renforcer notre capacité de livraison pour mieux servir nos clients sur tout le territoire wallon.",
+      "Nous tenons à remercier chaleureusement VOLVO Arnould pour ses précieux conseils, son accompagnement professionnel et son excellent service. Un partenariat de confiance qui nous permet de toujours mieux nous équiper.",
+      "Avec cette flotte renforcée, Comarden confirme son engagement à offrir des délais de livraison optimisés et un service logistique à la hauteur des attentes de ses clients professionnels.",
+    ],
+  },
+  {
+    slug: "impact-situation-iran-couts-materiaux",
+    title: "Impact de la situation en Iran sur les coûts matériaux",
+    excerpt:
+      "La situation actuelle en Iran entraîne des conséquences sur les coûts de l\u2019énergie, du transport et des matières premières. Nos conseils pour anticiper.",
+    date: "2026-03-05",
+    category: "Actualités",
+    featured: true,
+    content: [
+      "La situation géopolitique actuelle en Iran a des répercussions directes sur les coûts de l\u2019énergie, du transport et des matières premières dans notre secteur. En tant que professionnel du bâtiment, il est important d\u2019anticiper ces évolutions.",
+      "Nos conseils pour traverser cette période : anticipez vos devis en intégrant les hausses potentielles, garantissez vos commandes dès que possible pour sécuriser les prix actuels, indiquez clairement la validité de vos prix dans vos offres, et prévoyez des marges de sécurité dans vos calculs.",
+      "L\u2019équipe Comarden reste à votre écoute pour vous accompagner et vous informer des évolutions de prix. N\u2019hésitez pas à nous contacter pour toute question ou pour passer vos commandes.",
+    ],
+  },
+  {
+    slug: "nouvelle-gamme-cedral-alterna",
+    title: "Gamme d\u2019ardoises Cedral Alterna renouvelée",
+    excerpt:
+      "À partir de février 2026, la production Cedral Alterna est transférée en Allemagne. Attention : les anciennes et nouvelles ardoises ne peuvent PAS être mélangées.",
+    date: "2026-02-10",
+    category: "Produits",
+    featured: true,
+    content: [
+      "À partir de février 2026, la production des ardoises Cedral Alterna est transférée vers l\u2019usine de Neubeckum en Allemagne. Ce changement de site de production s\u2019accompagne d\u2019une information technique cruciale.",
+      "IMPORTANT : les anciennes ardoises Alterna produites à Kapelle-op-den-Bos et les nouvelles produites en Allemagne ne peuvent PAS être mélangées sur un même projet. Les caractéristiques techniques et esthétiques diffèrent légèrement entre les deux productions.",
+      "Comarden conserve un stock limité de l\u2019ancienne gamme 2025 pour les chantiers en cours. Si vous avez un projet nécessitant des ardoises de l\u2019ancienne production, contactez-nous rapidement pour vérifier les disponibilités.",
+      "Notre équipe technique se tient à votre disposition pour vous conseiller sur la transition vers la nouvelle gamme et répondre à toutes vos questions.",
+    ],
+  },
+  {
     slug: "panneaux-isolants-haute-performance",
     title: "Nouvelle gamme de panneaux isolants haute performance",
     excerpt:

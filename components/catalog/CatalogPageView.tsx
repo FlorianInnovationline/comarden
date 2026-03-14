@@ -194,7 +194,7 @@ export default function CatalogPageView({
           {page.backgroundImage && (
             <>
               <div className="absolute inset-0 bg-gradient-to-br from-primary/95 via-primary/85 to-primary/95" />
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(212,175,55,0.1),transparent_50%)]" />
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(245,192,0,0.1),transparent_50%)]" />
             </>
           )}
 

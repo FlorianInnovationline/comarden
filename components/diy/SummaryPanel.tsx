@@ -35,7 +35,7 @@ export default function SummaryPanel({ data, onSubmit, errors }: SummaryPanelPro
     complexity === "Simple"
       ? "bg-green-100 text-green-700"
       : complexity === "Modéré"
-      ? "bg-yellow-100 text-yellow-700"
+      ? "bg-accent/15 text-accent-dark"
       : "bg-orange-100 text-orange-700";
 
   const hasMinimalData =

@@ -111,47 +111,36 @@ export default function PresentationStats() {
             return (
               <Reveal key={stat.label} delay={index * 50}>
                 <div
-                  className={`group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-border/50 hover:border-accent/50 transition-all duration-500 hover:shadow-xl hover:shadow-accent/20 hover:-translate-y-2 ${
+                  className={`group relative bg-white/80 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-border/50 hover:border-primary transition-all duration-500 hover:bg-primary hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-2 ${
                     isVisible ? "animate-zoom-in" : ""
                   }`}
                   style={{ animationDelay: `${index * 100}ms` }}
                 >
-                  {/* Animated gradient background on hover */}
-                  <div className={`absolute inset-0 bg-gradient-to-br ${stat.color} rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 -z-10`} />
-                  
-                  {/* Icon with pulse animation */}
                   <div className="mb-3 sm:mb-4 flex justify-center">
                     <div className="relative">
-                      <div className="absolute inset-0 bg-accent/20 rounded-full animate-ping opacity-0 group-hover:opacity-75" />
-                      <div className="relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-accent/30">
-                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-accent transition-transform duration-300 group-hover:scale-110" strokeWidth={2} />
+                      <div className="relative w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-accent/20 to-accent/10 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-3 group-hover:bg-white/20">
+                        <Icon className="w-5 h-5 sm:w-6 sm:h-6 text-accent transition-colors duration-300 group-hover:text-white" strokeWidth={2} />
                       </div>
                     </div>
                   </div>
 
-                  {/* Value with counter animation effect */}
                   <div className="mb-2 text-center">
-                    <div className="text-2xl sm:text-3xl font-bold text-primary leading-none transition-all duration-300 group-hover:text-accent group-hover:scale-110 inline-block">
+                    <div className="text-2xl sm:text-3xl font-bold text-primary leading-none transition-all duration-300 group-hover:text-white group-hover:scale-110 inline-block">
                       {stat.value}
                     </div>
                   </div>
 
-                  {/* Label */}
                   <div className="mb-1 text-center">
-                    <div className="text-[10px] sm:text-xs font-semibold text-primary leading-tight line-clamp-2">
+                    <div className="text-[10px] sm:text-xs font-semibold text-primary leading-tight line-clamp-2 transition-colors duration-300 group-hover:text-white">
                       {stat.label}
                     </div>
                   </div>
 
-                  {/* Description - hidden on mobile, shown on larger screens */}
                   <div className="hidden sm:block text-center">
-                    <div className="text-[9px] text-muted-foreground leading-tight opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                    <div className="text-[9px] text-muted-foreground leading-tight opacity-0 group-hover:opacity-100 transition-all duration-300 group-hover:text-white/70">
                       {stat.description}
                     </div>
                   </div>
-
-                  {/* Decorative corner element */}
-                  <div className="absolute top-2 right-2 w-2 h-2 bg-accent/30 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 </div>
               </Reveal>
             );
@@ -165,31 +154,27 @@ export default function PresentationStats() {
             
             return (
               <Reveal key={stat.label} delay={index * 100}>
-                <div className="group bg-white rounded-lg p-8 border border-slate-200 hover:border-slate-300 transition-all duration-300 hover:shadow-md">
-                  {/* Icon - Simple and clean */}
+                <div className="group bg-white rounded-lg p-8 border border-slate-200 hover:border-primary transition-all duration-300 hover:shadow-lg hover:bg-primary hover:-translate-y-1">
                   <div className="mb-6 flex justify-center">
-                    <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center">
-                      <Icon className="w-8 h-8 text-accent" strokeWidth={2} />
+                    <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center transition-colors duration-300 group-hover:bg-white/20">
+                      <Icon className="w-8 h-8 text-accent transition-colors duration-300 group-hover:text-white" strokeWidth={2} />
                     </div>
                   </div>
 
-                  {/* Value - Large and bold */}
                   <div className="mb-3 text-center">
-                    <div className="text-5xl font-bold text-primary leading-none">
+                    <div className="text-5xl font-bold text-primary leading-none transition-colors duration-300 group-hover:text-white">
                       {stat.value}
                     </div>
                   </div>
 
-                  {/* Label - Clean typography */}
                   <div className="mb-2 text-center">
-                    <div className="text-sm font-semibold text-primary">
+                    <div className="text-sm font-semibold text-primary transition-colors duration-300 group-hover:text-white">
                       {stat.label}
                     </div>
                   </div>
 
-                  {/* Description - Subtle */}
                   <div className="text-center">
-                    <div className="text-xs text-muted-foreground">
+                    <div className="text-xs text-muted-foreground transition-colors duration-300 group-hover:text-white/70">
                       {stat.description}
                     </div>
                   </div>

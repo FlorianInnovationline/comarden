@@ -4,10 +4,75 @@ import { site } from "@/lib/site";
 import Reveal from "@/components/ui/Reveal";
 import Card from "@/components/ui/Card";
 
+function BelgiumWatermark() {
+  const latMin = 49.5;
+  const latMax = 51.5;
+  const lonMin = 2.5;
+  const lonMax = 6.4;
+
+  const toSvg = (lat: number, lon: number) => ({
+    x: ((lon - lonMin) / (lonMax - lonMin)) * 100,
+    y: ((latMax - lat) / (latMax - latMin)) * 100,
+  });
+
+  const bertrix = toSvg(49.86, 5.17);
+  const naninne = toSvg(50.46, 4.84);
+
+  return (
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+      <svg
+        viewBox="0 0 100 100"
+        className="w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] lg:w-[700px] lg:h-[700px] opacity-[0.04] text-primary"
+        preserveAspectRatio="xMidYMid meet"
+        aria-hidden="true"
+      >
+        <path
+          d={[
+            "M", toSvg(51.1,2.5).x, toSvg(51.1,2.5).y,
+            "L", toSvg(51.5,3.4).x, toSvg(51.5,3.4).y,
+            toSvg(51.3,3.8).x, toSvg(51.3,3.8).y,
+            toSvg(51.4,4.2).x, toSvg(51.4,4.2).y,
+            toSvg(51.5,4.3).x, toSvg(51.5,4.3).y,
+            toSvg(51.2,4.4).x, toSvg(51.2,4.4).y,
+            toSvg(50.8,4.1).x, toSvg(50.8,4.1).y,
+            toSvg(50.5,4.0).x, toSvg(50.5,4.0).y,
+            toSvg(50.3,3.6).x, toSvg(50.3,3.6).y,
+            toSvg(50.1,3.1).x, toSvg(50.1,3.1).y,
+            toSvg(49.9,3.4).x, toSvg(49.9,3.4).y,
+            toSvg(49.6,4.0).x, toSvg(49.6,4.0).y,
+            toSvg(49.5,4.4).x, toSvg(49.5,4.4).y,
+            toSvg(49.5,5.0).x, toSvg(49.5,5.0).y,
+            toSvg(49.5,5.5).x, toSvg(49.5,5.5).y,
+            toSvg(49.7,5.7).x, toSvg(49.7,5.7).y,
+            toSvg(49.6,6.1).x, toSvg(49.6,6.1).y,
+            toSvg(49.9,6.4).x, toSvg(49.9,6.4).y,
+            toSvg(50.1,6.2).x, toSvg(50.1,6.2).y,
+            toSvg(50.2,5.9).x, toSvg(50.2,5.9).y,
+            toSvg(50.4,6.0).x, toSvg(50.4,6.0).y,
+            toSvg(50.5,5.8).x, toSvg(50.5,5.8).y,
+            toSvg(50.8,5.7).x, toSvg(50.8,5.7).y,
+            toSvg(50.8,5.6).x, toSvg(50.8,5.6).y,
+            toSvg(51.1,5.0).x, toSvg(51.1,5.0).y,
+            toSvg(51.3,4.2).x, toSvg(51.3,4.2).y,
+            toSvg(51.4,3.4).x, toSvg(51.4,3.4).y,
+            "Z",
+          ].join(" ")}
+          fill="currentColor"
+          stroke="currentColor"
+          strokeWidth="0.5"
+        />
+        <circle cx={bertrix.x} cy={bertrix.y} r="2.2" fill="#F5C000" opacity="1" />
+        <circle cx={naninne.x} cy={naninne.y} r="2.2" fill="#F5C000" opacity="1" />
+      </svg>
+    </div>
+  );
+}
+
 export default function LocationsPreview() {
   return (
-    <section className="pt-6 sm:pt-8 lg:pt-12 pb-12 sm:pb-16 lg:pb-20 xl:pb-28 bg-neutral/50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="relative pt-6 sm:pt-8 lg:pt-12 pb-12 sm:pb-16 lg:pb-20 xl:pb-28 bg-neutral/50">
+      <BelgiumWatermark />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
           <div className="text-center mb-10 sm:mb-12 lg:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary tracking-tight mb-3 sm:mb-4">

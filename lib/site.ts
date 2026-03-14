@@ -57,6 +57,7 @@ export const site = {
   nav: {
     produits: [
       { label: "Toiture", href: "/produits/toiture" },
+      { label: "Ardoises", href: "/produits/ardoises" },
       { label: "Charpente bois", href: "/produits/charpente" },
       { label: "Isolation", href: "/produits/isolation" },
       { label: "Toitures vertes", href: "/produits/toitures-vertes" },
@@ -66,6 +67,8 @@ export const site = {
       { label: "Façonnage", href: "/services/faconnage" },
       { label: "Transport", href: "/services/transport" },
       { label: "Conseil", href: "/services/conseil" },
+      { label: "Service Drone", href: "/services/drone" },
+      { label: "Pack PRO", href: "/services/pro-pack" },
     ],
   },
   social: {

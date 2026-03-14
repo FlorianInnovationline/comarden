@@ -216,15 +216,15 @@ ${codeSnippet}
 
           {/* Calibration Mode Badge */}
           {isCalibrationMode && (
-            <div className="mb-4 p-4 bg-yellow-50 border-2 border-yellow-400 rounded-xl shadow-md">
+            <div className="mb-4 p-4 bg-accent/10 border-2 border-accent rounded-xl shadow-md">
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
                 <div className="flex items-center gap-2">
-                  <div className="w-2 h-2 bg-yellow-500 rounded-full animate-pulse" />
+                  <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
                   <div>
-                    <span className="text-sm font-bold text-yellow-900 block">
+                    <span className="text-sm font-bold text-primary block">
                       Mode calibration activé
                     </span>
-                    <span className="text-xs text-yellow-700">
+                    <span className="text-xs text-primary/70">
                       Déplacez les points pour ajuster les coordonnées
                     </span>
                   </div>
@@ -232,14 +232,14 @@ ${codeSnippet}
                 <div className="flex items-center gap-2 flex-shrink-0">
                   <button
                     onClick={handleResetCoords}
-                    className="px-3 py-1.5 text-xs font-semibold bg-white border border-yellow-400 text-yellow-800 rounded-lg hover:bg-yellow-100 transition-colors flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-yellow-400"
+                    className="px-3 py-1.5 text-xs font-semibold bg-white border border-accent text-primary rounded-lg hover:bg-accent/10 transition-colors flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-accent"
                   >
                     <RotateCcw className="w-3 h-3" strokeWidth={2} />
                     Réinitialiser
                   </button>
                   <button
                     onClick={handleCopyJSON}
-                    className="px-3 py-1.5 text-xs font-semibold bg-yellow-400 text-yellow-900 rounded-lg hover:bg-yellow-500 transition-colors flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-yellow-600"
+                    className="px-3 py-1.5 text-xs font-semibold bg-accent text-primary rounded-lg hover:bg-accent-dark transition-colors flex items-center gap-1.5 focus:outline-none focus:ring-2 focus:ring-accent-dark"
                   >
                     <Copy className="w-3 h-3" strokeWidth={2} />
                     Copier JSON

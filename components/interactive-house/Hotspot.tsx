@@ -366,7 +366,7 @@ export default function Hotspot({
             }`,
             transformOrigin: 'center center',
             boxShadow: isHovered && !isCalibrationMode 
-              ? '0 0 24px rgba(234, 179, 8, 0.8), 0 0 40px rgba(234, 179, 8, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3)' 
+              ? '0 0 24px rgba(245, 192, 0, 0.8), 0 0 40px rgba(245, 192, 0, 0.4), 0 4px 16px rgba(0, 0, 0, 0.3)' 
               : '0 4px 14px rgba(0, 0, 0, 0.15)',
             // CRITICAL: Only transition transform (scale) and visual properties - NEVER position
             transition: isClicked 
@@ -415,10 +415,10 @@ export default function Hotspot({
             visibility: (isHovered && !isCalibrationMode) || isCalibrationMode || isMobile ? "visible" : "hidden",
             opacity: isHovered && !isCalibrationMode ? 1 : isCalibrationMode ? 1 : 0,
             transform: isHovered && !isCalibrationMode ? "scale(1) translateY(0)" : isCalibrationMode ? "scale(1) translateY(0)" : "scale(0.95) translateY(8px)",
-            borderColor: isHovered && !isCalibrationMode ? "rgba(234, 179, 8, 0.6)" : "rgba(234, 179, 8, 0.2)",
+            borderColor: isHovered && !isCalibrationMode ? "rgba(245, 192, 0, 0.6)" : "rgba(245, 192, 0, 0.2)",
             backgroundColor: "#ffffff", // Explicit white background - guaranteed visible
             boxShadow: isHovered && !isCalibrationMode
-              ? "0 12px 32px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(234, 179, 8, 0.3)"
+              ? "0 12px 32px rgba(0, 0, 0, 0.15), 0 6px 20px rgba(245, 192, 0, 0.3)"
               : "0 6px 16px rgba(0, 0, 0, 0.1)",
           }}
         >
@@ -467,7 +467,7 @@ export default function Hotspot({
                 <span 
                   className="text-[10px] font-semibold uppercase tracking-wider"
                   style={{
-                    color: "rgba(234, 179, 8, 0.9)", // accent color
+                    color: "rgba(245, 192, 0, 0.9)",
                   }}
                 >
                   {part.tag}

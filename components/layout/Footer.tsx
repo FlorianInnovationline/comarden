@@ -87,6 +87,14 @@ export default function Footer() {
               </li>
               <li>
                 <Link
+                  href="/evenements"
+                  className="text-xs sm:text-sm text-white/70 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block"
+                >
+                  Événements
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/actu"
                   className="text-xs sm:text-sm text-white/70 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block"
                 >
@@ -95,10 +103,10 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/carriere"
+                  href="/jobs"
                   className="text-xs sm:text-sm text-white/70 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block"
                 >
-                  Carrières
+                  Jobs
                 </Link>
               </li>
             </ul>

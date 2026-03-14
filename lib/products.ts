@@ -42,4 +42,22 @@ export const productCategories: ProductCategory[] = [
     description: "Membranes EPDM et solutions d'étanchéité",
     iconName: "Droplets",
   },
+  {
+    slug: "visserie",
+    title: "Visserie",
+    description: "Fixations, vis et chevilles pour tous vos projets",
+    iconName: "Wrench",
+  },
+  {
+    slug: "colles",
+    title: "Colles",
+    description: "Mastics et colles de construction professionnelles",
+    iconName: "Paintbrush",
+  },
+  {
+    slug: "charpentes-prefabriquees",
+    title: "Charpentes préfabriquées",
+    description: "Charpentes préfabriquées sur mesure, prêtes à poser",
+    iconName: "Building2",
+  },
 ];
