@@ -13,33 +13,63 @@ import Reveal from "@/components/ui/Reveal";
 import CTACompact from "@/components/sections/CTA";
 
 type FormData = {
-  travaux: string;
+  travaux: string[];
   surface: string;
   localite: string;
   nom: string;
+  prenom: string;
   email: string;
   telephone: string;
   message: string;
+  materiauxAlternatifs: boolean;
+  recommandations: boolean;
+  conseils: boolean;
+  posePartielle: boolean;
+  dateRealisation: string;
+  budget: string;
 };
 
 const INITIAL_FORM: FormData = {
-  travaux: "",
-  surface: "",
+  travaux: [],
+  surface: "0",
   localite: "",
   nom: "",
+  prenom: "",
   email: "",
   telephone: "",
   message: "",
+  materiauxAlternatifs: false,
+  recommandations: false,
+  conseils: false,
+  posePartielle: false,
+  dateRealisation: "",
+  budget: "",
 };
 
-const TRAVAUX_OPTIONS = ["Toiture", "Façade", "Isolation", "Charpente", "Autre"];
+const TRAVAUX_OPTIONS = [
+  "Toiture",
+  "Façade",
+  "Isolation",
+  "Tôles acier / Hangar / Bâtiment industriel",
+  "Programme Économie d'Énergie / Isolation de ma maison",
+  "Autre",
+];
 
 export default function TrouverProfessionnelPage() {
   const [form, setForm] = useState<FormData>(INITIAL_FORM);
   const [submitted, setSubmitted] = useState(false);
 
-  const update = (field: keyof FormData, value: string) =>
+  const update = (field: keyof FormData, value: string | string[] | boolean) =>
     setForm((prev) => ({ ...prev, [field]: value }));
+
+  const toggleTravaux = (opt: string) => {
+    setForm((prev) => ({
+      ...prev,
+      travaux: prev.travaux.includes(opt)
+        ? prev.travaux.filter((t) => t !== opt)
+        : [...prev.travaux, opt],
+    }));
+  };
 
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
@@ -243,29 +273,26 @@ export default function TrouverProfessionnelPage() {
                   onSubmit={handleSubmit}
                   className="space-y-5 bg-white rounded-xl border border-border p-6 sm:p-8 shadow-sm"
                 >
-                  {/* Type de travaux */}
+                  {/* Type de travaux (plusieurs choix) */}
                   <div>
-                    <label
-                      htmlFor="travaux"
-                      className="block text-sm font-medium text-foreground mb-1.5"
-                    >
+                    <label className="block text-sm font-medium text-foreground mb-2">
                       Type de travaux
                     </label>
-                    <div className="relative">
-                      <select
-                        id="travaux"
-                        value={form.travaux}
-                        onChange={(e) => update("travaux", e.target.value)}
-                        className="w-full appearance-none rounded-lg border border-border bg-white px-4 py-2.5 pr-10 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition"
-                      >
-                        <option value="">Sélectionnez…</option>
-                        {TRAVAUX_OPTIONS.map((opt) => (
-                          <option key={opt} value={opt}>
-                            {opt}
-                          </option>
-                        ))}
-                      </select>
-                      <ChevronDown className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 w-4 h-4 text-muted-foreground" />
+                    <div className="flex flex-wrap gap-3">
+                      {TRAVAUX_OPTIONS.map((opt) => (
+                        <label
+                          key={opt}
+                          className="inline-flex items-center gap-2 cursor-pointer"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={form.travaux.includes(opt)}
+                            onChange={() => toggleTravaux(opt)}
+                            className="rounded border-border text-accent focus:ring-accent/50"
+                          />
+                          <span className="text-sm text-foreground">{opt}</span>
+                        </label>
+                      ))}
                     </div>
                   </div>
 
@@ -276,16 +303,19 @@ export default function TrouverProfessionnelPage() {
                         htmlFor="surface"
                         className="block text-sm font-medium text-foreground mb-1.5"
                       >
-                        Surface estimée
+                        Surface estimée (m²)
                       </label>
                       <input
                         id="surface"
                         type="text"
-                        placeholder="ex: 120 m²"
+                        placeholder="0"
                         value={form.surface}
                         onChange={(e) => update("surface", e.target.value)}
                         className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition"
                       />
+                      <p className="mt-1 text-xs text-muted-foreground">
+                        {!form.surface.trim() ? "0 m²" : `${form.surface} m²`}
+                      </p>
                     </div>
                     <div>
                       <label
@@ -304,25 +334,36 @@ export default function TrouverProfessionnelPage() {
                     </div>
                   </div>
 
-                  {/* Nom */}
-                  <div>
-                    <label
-                      htmlFor="nom"
-                      className="block text-sm font-medium text-foreground mb-1.5"
-                    >
-                      Nom <span className="text-red-500">*</span>
-                    </label>
-                    <input
-                      id="nom"
-                      type="text"
-                      required
-                      value={form.nom}
-                      onChange={(e) => update("nom", e.target.value)}
-                      className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition"
-                    />
+                  {/* Nom + Prénom */}
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    <div>
+                      <label htmlFor="nom" className="block text-sm font-medium text-foreground mb-1.5">
+                        Nom <span className="text-red-500">*</span>
+                      </label>
+                      <input
+                        id="nom"
+                        type="text"
+                        required
+                        value={form.nom}
+                        onChange={(e) => update("nom", e.target.value)}
+                        className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="prenom" className="block text-sm font-medium text-foreground mb-1.5">
+                        Prénom
+                      </label>
+                      <input
+                        id="prenom"
+                        type="text"
+                        value={form.prenom}
+                        onChange={(e) => update("prenom", e.target.value)}
+                        className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition"
+                      />
+                    </div>
                   </div>
 
-                  {/* Email + Téléphone */}
+                  {/* Email + GSM */}
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
                       <label
@@ -345,13 +386,89 @@ export default function TrouverProfessionnelPage() {
                         htmlFor="telephone"
                         className="block text-sm font-medium text-foreground mb-1.5"
                       >
-                        Téléphone
+                        GSM
                       </label>
                       <input
                         id="telephone"
                         type="tel"
                         value={form.telephone}
                         onChange={(e) => update("telephone", e.target.value)}
+                        className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition"
+                      />
+                    </div>
+                  </div>
+
+                  {/* Options */}
+                  <div className="space-y-2">
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={form.materiauxAlternatifs}
+                        onChange={(e) => update("materiauxAlternatifs", e.target.checked)}
+                        className="rounded border-border text-accent focus:ring-accent/50"
+                      />
+                      <span className="text-sm text-foreground">Matériaux alternatifs si possibilité</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={form.recommandations}
+                        onChange={(e) => update("recommandations", e.target.checked)}
+                        className="rounded border-border text-accent focus:ring-accent/50"
+                      />
+                      <span className="text-sm text-foreground">Recommandations souhaitées</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={form.conseils}
+                        onChange={(e) => update("conseils", e.target.checked)}
+                        className="rounded border-border text-accent focus:ring-accent/50"
+                      />
+                      <span className="text-sm text-foreground">Je n&apos;y connais rien et j&apos;aimerais des conseils</span>
+                    </label>
+                    <label className="flex items-center gap-2 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        checked={form.posePartielle}
+                        onChange={(e) => update("posePartielle", e.target.checked)}
+                        className="rounded border-border text-accent focus:ring-accent/50"
+                      />
+                      <span className="text-sm text-foreground">Pose partielle</span>
+                    </label>
+                  </div>
+
+                  {/* Date de réalisation + Budget */}
+                  <div className="grid sm:grid-cols-2 gap-5">
+                    <div>
+                      <label
+                        htmlFor="dateRealisation"
+                        className="block text-sm font-medium text-foreground mb-1.5"
+                      >
+                        Date de réalisation souhaitée
+                      </label>
+                      <input
+                        id="dateRealisation"
+                        type="date"
+                        value={form.dateRealisation}
+                        onChange={(e) => update("dateRealisation", e.target.value)}
+                        className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition"
+                      />
+                    </div>
+                    <div>
+                      <label
+                        htmlFor="budget"
+                        className="block text-sm font-medium text-foreground mb-1.5"
+                      >
+                        Budget estimé (HTVA) €
+                      </label>
+                      <input
+                        id="budget"
+                        type="text"
+                        inputMode="numeric"
+                        placeholder="0"
+                        value={form.budget}
+                        onChange={(e) => update("budget", e.target.value)}
                         className="w-full rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition"
                       />
                     </div>
@@ -379,7 +496,7 @@ export default function TrouverProfessionnelPage() {
                     className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-accent text-primary font-semibold rounded-full px-8 py-3 text-sm sm:text-base hover:bg-accent/90 transition-all duration-300 hover:scale-105 hover:shadow-lg"
                   >
                     <Send className="w-4 h-4" />
-                    Envoyer ma demande
+                    Démarrer votre projet
                   </button>
                 </form>
               )}

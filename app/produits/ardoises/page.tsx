@@ -386,6 +386,44 @@ export default function ArdoisesPage() {
         </div>
       </section>
 
+      {/* ── STACBOND CLIPS&GO ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="flex items-center gap-4 mb-6">
+              <Image
+                src="/images/logos/stackbond-logo.png"
+                alt=""
+                width={140}
+                height={48}
+                className="h-10 w-auto object-contain"
+              />
+              <h2 className="text-2xl sm:text-3xl font-bold text-primary tracking-tight">
+                STACBOND — Accessoires CLIPS&GO 2.0
+              </h2>
+            </div>
+            <p className="text-slate-600 mb-8 max-w-3xl">
+              Comarden a investi dans une toute nouvelle machine panneauteuse pour vous offrir plus de service, de qualité et de flexibilité pour vos chantiers.
+            </p>
+            <ul className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm sm:text-base text-slate-700">
+              {[
+                "CLIPS&GO 2.0 COININT 30×30 R9005ST — Accessoire, Couleur Noir 9005",
+                "CLIPS&GO 2.0 COINEXT 30×30 R9005ST — Accessoire, Couleur Noir 9005",
+                "CLIPS&GO 2.0 RACCORD R9005 STRUC — Accessoire, Couleur Noir 9005",
+                "CLIPS&GO 2.0 PROFIL BASE 3M BRUT — Accessoire, Couleur BRUT",
+                "CLIPS&GO 2.0 COUVRE-JOINT R9005STR — Accessoire, Couleur Noir 9005",
+                "CLIPS&GO EASY CORNER COIN — Accessoire, Couleur BRUT",
+              ].map((item, i) => (
+                <li key={i} className="flex items-start gap-2">
+                  <CheckCircle2 className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ── CTA ── */}
       <CTACompact />
     </div>

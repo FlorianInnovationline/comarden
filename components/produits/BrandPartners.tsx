@@ -26,7 +26,7 @@ const brands = [
       "Toitures végétalisées pour confort et performance énergétique",
   },
   {
-    name: "WIENERBERGER",
+    name: "WIENENBERGER",
     logo: "/images/logos/wienenberger-logo.png",
     description: "Tuiles et briques pour constructions solides et durables",
   },
@@ -34,7 +34,7 @@ const brands = [
     name: "TERREAL",
     logo: "/images/logos/terreal-logo.png",
     description:
-      "Produits et accessoires pour revêtements de toitures et sols",
+      "Produits et accessoires pour revêtements de toitures",
   },
   {
     name: "ETANCO",
@@ -74,6 +74,16 @@ const brands = [
     logo: "/images/logos/joriside-logo.png",
     description:
       "Solutions de ventilation et finitions pour toitures et murs",
+  },
+  {
+    name: "STRATO GRIP",
+    logo: "/images/logos/strato-grip-logo.png",
+    description: "Colles de contact multi-matériaux haute performance",
+  },
+  {
+    name: "TYVEK DUPONT",
+    logo: null,
+    description: "Membranes et mastics pour étanchéité à l'air",
   },
 ] as const;
 

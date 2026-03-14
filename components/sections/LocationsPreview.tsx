@@ -11,8 +11,8 @@ function BelgiumWatermark() {
   const lonMax = 6.4;
 
   const toSvg = (lat: number, lon: number) => ({
-    x: ((lon - lonMin) / (lonMax - lonMin)) * 100,
-    y: ((latMax - lat) / (latMax - latMin)) * 100,
+    x: ((lon - lonMin) / (lonMax - lonMin)) * 500,
+    y: ((latMax - lat) / (latMax - latMin)) * 400,
   });
 
   const bertrix = toSvg(49.86, 5.17);
@@ -21,8 +21,9 @@ function BelgiumWatermark() {
   return (
     <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
       <svg
-        viewBox="0 0 100 100"
-        className="w-[500px] h-[500px] sm:w-[600px] sm:h-[600px] lg:w-[700px] lg:h-[700px] opacity-[0.06] text-slate-400"
+        viewBox="0 0 500 400"
+        className="w-full max-w-[420px] sm:max-w-[520px] lg:max-w-[600px] h-auto aspect-[5/4] opacity-25"
+        style={{ color: "#DDE3EA" }}
         preserveAspectRatio="xMidYMid meet"
         aria-hidden="true"
       >
@@ -61,8 +62,8 @@ function BelgiumWatermark() {
           stroke="currentColor"
           strokeWidth="0.5"
         />
-        <circle cx={bertrix.x} cy={bertrix.y} r="2.2" fill="#F5C000" opacity="1" />
-        <circle cx={naninne.x} cy={naninne.y} r="2.2" fill="#F5C000" opacity="1" />
+        <circle cx={bertrix.x} cy={bertrix.y} r="11" fill="#F5C000" opacity="1" />
+        <circle cx={naninne.x} cy={naninne.y} r="11" fill="#F5C000" opacity="1" />
       </svg>
     </div>
   );

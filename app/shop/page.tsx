@@ -66,7 +66,7 @@ export default async function ShopPage() {
           <div className="bg-accent/10 border border-accent/30 rounded-xl p-4 text-center flex items-center justify-center gap-3">
             <ShoppingBag className="w-5 h-5 text-accent flex-shrink-0" />
             <p className="text-sm sm:text-base text-primary font-medium">
-              Boutique en ligne — Sélection initiale de produits disponibles. Notre gamme s&apos;enrichira progressivement.
+              Boutique en ligne — Sélection initiale de produits disponibles. Notre gamme s&apos;enrichira dans les prochains mois.
             </p>
           </div>
         </Reveal>

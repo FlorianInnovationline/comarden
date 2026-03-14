@@ -80,7 +80,7 @@ export default function FormationsPage() {
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 lg:py-20 xl:py-28 bg-primary text-white overflow-hidden">
         <div className="absolute inset-0 bg-cover bg-center" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1581094794329-c8112a89af12?w=1920&q=80')" }} />
-        <div className="absolute inset-0" style={{ backgroundColor: "rgba(10, 25, 60, 0.80)" }} />
+        <div className="absolute inset-0" style={{ backgroundColor: "rgba(10, 25, 60, 0.78)" }} />
         {/* Animated gradient background */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-br from-[#1a2f4a]/60 via-primary/40 to-[#2B4162]/60" />

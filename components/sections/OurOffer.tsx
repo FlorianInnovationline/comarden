@@ -36,13 +36,13 @@ export default function OfferGrid() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-b from-neutral/30 via-white to-neutral/30 relative overflow-hidden">
+    <section className="py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-neutral/30 via-white to-neutral/30 relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(12,41,82,0.03),transparent_50%)]" />
       
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <Reveal>
-          <div className="text-center mb-8 sm:mb-10 lg:mb-12">
+          <div className="text-center mb-5 sm:mb-6 lg:mb-8">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
               Notre offre
             </h2>
@@ -53,7 +53,7 @@ export default function OfferGrid() {
         </Reveal>
 
         {/* Single row container - square cards */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-3 sm:gap-4 lg:gap-5">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2 sm:gap-3 lg:gap-4">
           {productCategories.map((category, index) => {
             const IconComponent = Icons[iconMap[category.iconName] || "Package"] as React.ComponentType<{ className?: string }>;
             const gradient = gradientColors[index % gradientColors.length];
@@ -69,7 +69,7 @@ export default function OfferGrid() {
                   <div className="relative bg-white rounded-xl border border-border/50 overflow-hidden transition-all duration-500 hover:shadow-xl hover:shadow-primary/10 hover:-translate-y-1 hover:scale-[1.02]">
                     <div className={`absolute inset-0 bg-gradient-to-br ${gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
 
-                    <div className="relative p-3 sm:p-4 flex flex-col">
+                    <div className="relative py-3 px-3 sm:py-3 sm:px-4 flex flex-col">
                       <div className="inline-flex items-center justify-center w-8 h-8 sm:w-9 sm:h-9 rounded-lg bg-primary/5 group-hover:bg-accent/10 transition-all duration-500 group-hover:scale-110 mb-2">
                         {IconComponent && (
                           <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 text-primary group-hover:text-accent transition-colors duration-500" />

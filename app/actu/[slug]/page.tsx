@@ -60,6 +60,17 @@ export default function NewsArticlePage({
         </div>
       )}
 
+      {post.slug === "nouvelle-gamme-cedral-alterna" && (
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 mt-8">
+          <Callout variant="info" title="Besoin de stock ou d'un devis ?">
+            <a href="/contact" className="text-primary font-semibold underline hover:text-accent">
+              Contactez-nous
+            </a>{" "}
+            pour connaître les quantités disponibles Cedral Alterna 2025 ou pour toute question technique.
+          </Callout>
+        </div>
+      )}
+
       {relatedPosts.length > 0 && <RelatedPosts posts={relatedPosts} />}
 
       <CTACompact />

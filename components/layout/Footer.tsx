@@ -53,14 +53,6 @@ export default function Footer() {
                   </Link>
                 </li>
               ))}
-              <li>
-                <Link
-                  href="/trouver-professionnel"
-                  className="text-xs sm:text-sm text-white/70 hover:text-white transition-all duration-200 hover:translate-x-1 inline-block"
-                >
-                  Trouver un professionnel
-                </Link>
-              </li>
             </ul>
           </div>
 

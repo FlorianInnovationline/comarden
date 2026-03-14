@@ -48,10 +48,10 @@ export const newsPosts: NewsPost[] = [
     category: "Produits",
     featured: true,
     content: [
-      "À partir de février 2026, la production des ardoises Cedral Alterna est transférée vers l\u2019usine de Neubeckum en Allemagne. Ce changement de site de production s\u2019accompagne d\u2019une information technique cruciale.",
-      "IMPORTANT : les anciennes ardoises Alterna produites à Kapelle-op-den-Bos et les nouvelles produites en Allemagne ne peuvent PAS être mélangées sur un même projet. Les caractéristiques techniques et esthétiques diffèrent légèrement entre les deux productions.",
-      "Comarden conserve un stock limité de l\u2019ancienne gamme 2025 pour les chantiers en cours. Si vous avez un projet nécessitant des ardoises de l\u2019ancienne production, contactez-nous rapidement pour vérifier les disponibilités.",
-      "Notre équipe technique se tient à votre disposition pour vous conseiller sur la transition vers la nouvelle gamme et répondre à toutes vos questions.",
+      "ETEX — Cedral Alterna (ancienne gamme 2025) : Si vous avez besoin de compléter un chantier, de prendre du stock pour l\u2019après-vente ou pour toute autre raison, Comarden est là pour vous dépanner. Nous avons conservé un stock limité de la gamme Cedral Alterna 2025, afin de vous assurer une disponibilité rapide et fiable. N\u2019hésitez pas à nous contacter pour connaître les quantités disponibles et sécuriser votre commande.",
+      "Gamme d\u2019ardoises Cedral Alterna renouvelée : À partir de février 2026, la production sera transférée vers notre usine en Allemagne (Neubeckum). IMPORTANT : les anciennes ardoises Alterna de Kapelle-op-den-Bos et les nouvelles ardoises produites en Allemagne ne peuvent PAS être mélangées sur un même projet. Pensez à en informer vos clients !",
+      "Comarden a investi dans une toute nouvelle machine panneauteuse pour vous offrir plus de service, de qualité et de flexibilité pour vos chantiers.",
+      "Notre équipe technique se tient à votre disposition pour vous conseiller sur la transition vers la nouvelle gamme et répondre à toutes vos questions. Contactez-nous pour les quantités disponibles ou un devis.",
     ],
   },
   {
