@@ -171,4 +171,11 @@ export const FORMATION_MODULES: FormationModule[] = [
     description: "Tour d\u2019horizon de la gamme TYVEK : membranes, pare-vapeur et solutions d\u2019étanchéité à l\u2019air. Conseils pratiques de mise en œuvre.",
     tag: "Formations",
   },
+  {
+    id: "toitures-vegetales",
+    title: "Formation Toitures végétales",
+    durationHours: 4,
+    description: "Découvrez les solutions de toitures végétalisées Floratoit : systèmes Hydropack® et IDMAT®, techniques de pose, réglementation belge et avantages écologiques. Formation pratique avec les experts Floratoit.",
+    tag: "Végétal",
+  },
 ];
