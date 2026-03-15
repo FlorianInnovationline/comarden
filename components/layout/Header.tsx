@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, ArrowRight, ChevronDown } from "lucide-react";
 import { site } from "@/lib/site";
 import Button from "@/components/ui/Button";
@@ -56,9 +57,16 @@ export default function Header() {
         <div className="max-w-[1400px] mx-auto px-4 sm:px-6 xl:px-8">
           <div className="flex items-center justify-between h-16 xl:h-20">
             <Link href="/" className="relative z-50 flex-shrink-0">
-              <span className={`text-xl sm:text-2xl xl:text-3xl font-bold tracking-tight transition-colors duration-300 ${scrolled ? "text-primary" : "text-white"}`}>
-                COMARDEN
-              </span>
+              <Image
+                src="/images/logo.png"
+                alt="Comarden"
+                width={160}
+                height={48}
+                className={`h-8 xl:h-10 w-auto object-contain transition-all duration-300 ${
+                  scrolled ? "" : "brightness-0 invert"
+                }`}
+                priority
+              />
             </Link>
 
             {/* Desktop Navigation */}
