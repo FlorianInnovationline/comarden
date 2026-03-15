@@ -307,6 +307,24 @@ export default function IsolationPage() {
                 </p>
               </div>
             </Reveal>
+            <Reveal delay={300}>
+              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                <h3 className="text-lg font-bold text-primary mb-2">Vis SAPIN SK-RB 28/60×110 — Fixation d&apos;isolants (ETANCO)</h3>
+                <p className="text-sm text-slate-600 leading-relaxed mb-3">
+                  Polyamide renforcé fibre de verre, tête Ø50 mm empreinte carrée 6 mm. Applications : fixation isolant sur étanchéité bitumineuse, deux couches isolant, pare-pluie façade, bandes périphériques.
+                </p>
+                <p className="text-xs text-slate-600">Avantages : pas de pré-perçage / embout carré 6 mm / aucune corrosion / aucun pont thermique / tenue mécanique tête large Ø50 mm.</p>
+              </div>
+            </Reveal>
+            <Reveal delay={400}>
+              <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200">
+                <h3 className="text-lg font-bold text-primary mb-2">Vis SAPIN SK-RB 28/120×175 — Fixation d&apos;isolants (ETANCO)</h3>
+                <p className="text-sm text-slate-600 leading-relaxed">
+                  Même description que les précédentes, pour isolants 120 mm d&apos;épaisseur. Polyamide renforcé fibre de verre, tête Ø50 mm empreinte carrée 6 mm. Applications : fixation isolant sur étanchéité bitumineuse, deux couches isolant, pare-pluie façade, bandes périphériques.
+                </p>
+                <p className="text-xs text-slate-600 mt-2">Avantages : pas de pré-perçage / embout carré 6 mm / aucune corrosion / aucun pont thermique / tenue mécanique tête large Ø50 mm.</p>
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
