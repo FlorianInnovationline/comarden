@@ -15,7 +15,11 @@ export const metadata: Metadata = {
     "Des services pensés pour gagner du temps sur chantier : façonnage sur mesure, livraison camion-grue, préparation soignée et conseil technique.",
 };
 
-export default function ServicesPage() {
+export default function ServicesPage({
+  searchParams,
+}: {
+  searchParams: Record<string, string | string[] | undefined>;
+}) {
   return (
     <div className="pt-20">
       <ServicesHero />
