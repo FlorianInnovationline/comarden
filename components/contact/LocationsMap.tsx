@@ -107,7 +107,7 @@ export default function LocationsMap() {
 
     // Add markers for each location
     locations.forEach((location, index) => {
-      const markerColor = index === 0 ? "#F5C000" : "#1e293b";
+      const markerColor = index === 0 ? "#FDD000" : "#1e293b";
       
       const marker = L.marker([location.lat, location.lng], {
         icon: createCustomIcon(markerColor, location.name),
@@ -129,7 +129,7 @@ export default function LocationsMap() {
               align-items: center;
               gap: 6px;
               margin-top: 8px;
-              color: #F5C000;
+              color: #FDD000;
               text-decoration: none;
               font-weight: 600;
               font-size: 14px;

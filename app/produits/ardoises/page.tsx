@@ -406,15 +406,22 @@ export default function ArdoisesPage() {
               Comarden a investi dans une toute nouvelle machine panneauteuse pour vous offrir plus de service, de qualité et de flexibilité pour vos chantiers. Découpe STACBOND, pliage et façonnage.
             </p>
 
-            <p className="text-sm font-semibold text-primary mb-4">Accessoires CLIPS&GO 2.0</p>
+            <p className="text-sm font-semibold text-primary mb-2">Accessoires CLIPS&GO 2.0</p>
+            <p className="text-xs text-slate-500 mb-4">
+              Système 2 pièces (profilé base + bourrelet), compatible bitume 4-5 mm, joint dilatation 5 mm / 3 mm.
+            </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {[
-                { name: "CLIPS&GO 2.0 COININT 30×30 R9005ST", color: "Noir 9005", type: "Accessoire coin intérieur" },
-                { name: "CLIPS&GO 2.0 COINEXT 30×30 R9005ST", color: "Noir 9005", type: "Accessoire coin extérieur" },
-                { name: "CLIPS&GO 2.0 RACCORD R9005 STRUC", color: "Noir 9005", type: "Accessoire raccord" },
-                { name: "CLIPS&GO 2.0 PROFIL BASE 3M BRUT", color: "BRUT", type: "Profilé de base 3m" },
-                { name: "CLIPS&GO 2.0 COUVRE-JOINT R9005STR", color: "Noir 9005", type: "Accessoire couvre-joint" },
-                { name: "CLIPS&GO EASY CORNER COIN", color: "BRUT", type: "Accessoire angle" },
+                { name: "Rive 100 mm, longueur 3 m", color: "Noir 9005", type: "Rive" },
+                { name: "Rive 70 mm, longueur 3 m", color: "Noir 9005", type: "Rive" },
+                { name: "Arrêt 100 mm", color: "Noir 9005", type: "Arrêt" },
+                { name: "Arrêt 70 mm", color: "Noir 9005", type: "Arrêt" },
+                { name: "Coin intérieur 100 mm 30×30", color: "Noir 9005", type: "Coin intérieur" },
+                { name: "Coin extérieur 100 mm 30×30", color: "Noir 9005", type: "Coin extérieur" },
+                { name: "Raccord 100 mm", color: "Noir 9005", type: "Raccord" },
+                { name: "Profil base 3 m", color: "BRUT", type: "Profilé de base" },
+                { name: "Couvre-joint 100 mm", color: "Noir 9005", type: "Couvre-joint" },
+                { name: "Easy Corner", color: "BRUT", type: "Angle" },
               ].map((item, i) => (
                 <Reveal key={item.name} delay={i * 50}>
                   <div className="bg-white rounded-xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">

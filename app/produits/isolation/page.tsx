@@ -21,10 +21,10 @@ const montageStepsH120 = [
 
 const mainProducts = [
   {
-    title: "PILIER ITE H120 — Isolation de toiture par l'extérieur (FAYNOT)",
+    title: "PILIER ITE H120 SUPPORT CHEVRONS — Isolation de toiture par l'extérieur (FAYNOT)",
     brand: "FAYNOT",
     description:
-      "Système breveté pour isolation toiture par l'extérieur sans dérangement intérieur. Acier galvanisé à chaud Z275. Résistance thermique R = 5,7 m².K/W (200mm isolant total, λ35). Compatible tous isolants souples : laine de verre, laine de roche, fibre de bois, chanvre.",
+      "Système breveté pour isolation toiture par l'extérieur sans dérangement intérieur. Acier galvanisé à chaud Z275. Résistance thermique R = 5,7 m².K/W (200mm isolant total, λ35). Fixation sur tôle métallique ondulée, en creux d'onde. Compatible tous isolants souples : laine de verre, laine de roche, fibre de bois, chanvre.",
     avantages: [
       "Isolation par l'extérieur : préservez votre espace intérieur",
       "Aucun pont thermique : piliers entièrement enveloppés dans le complexe isolant",
@@ -48,7 +48,7 @@ const mainProducts = [
     title: "PILIER ITE H80 — Isolation de toiture par l'extérieur (FAYNOT)",
     brand: "FAYNOT",
     description:
-      "Même système que le H120 pour une épaisseur d'isolant réduite. R = 4,5 m².K/W (160mm isolant total, λ35). Aucun pont thermique, compatible tous isolants souples.",
+      "Même système que le H120 pour une épaisseur d'isolant réduite. R = 4,5 m².K/W (160mm isolant total, λ35). Fixation sur tôle métallique ondulée, en creux d'onde. Aucun pont thermique, compatible tous isolants souples.",
     avantages: [
       "Isolation par l'extérieur : préservez votre espace intérieur",
       "Aucun pont thermique",

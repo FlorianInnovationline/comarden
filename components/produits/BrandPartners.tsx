@@ -15,6 +15,8 @@ const brands = [
   { name: "ELEVATE (EPDM)", logo: "/images/logos/elevate-logo.png", description: "Systèmes d'étanchéité EPDM haute performance pour toitures et terrasses." },
   { name: "CEDRAL", logo: "/images/logos/cedral-logo.png", description: "Bardages en fibre-ciment pour façades durables et esthétiques." },
   { name: "JORISIDE", logo: "/images/logos/joriside-logo.png", description: "Solutions de ventilation et finitions pour toitures et murs." },
+  { name: "TERREAL", logo: "/images/logos/terreal-logo.png", description: "Produits et accessoires pour revêtements de toitures et sols." },
+  { name: "INDDIS", logo: null, description: "Accessoires de toiture et éléments de sécurité." },
 ];
 
 export default function BrandPartners() {

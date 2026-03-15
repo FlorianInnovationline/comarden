@@ -80,7 +80,7 @@ const stratogripProducts = [
     notRecommended:
       "Non recommandé : vinyles plastifiés, EPS/XPS, PE, PP, stratifiés teintés monochrome",
     specs: ["Couleur : incolore ou rouge", "Format : 22L", "Temp résistance : 110°C"],
-    link: undefined,
+    link: "https://stratogrip.com/product/m300/",
   },
   {
     title: "Pistolet d'application professionnel STRATOGRIP",
@@ -360,6 +360,75 @@ export default function CollesMasticsPage() {
                 />
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── PRODUITS COMPLÉMENTAIRES ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="max-w-3xl mb-12">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
+                Préparation &amp; Entretien toiture
+              </h2>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Produits de préparation, séchage et traitement pour garantir la longévité de vos toitures.
+              </p>
+            </div>
+          </Reveal>
+          <div className="space-y-6">
+            <Reveal>
+              <ProductCard
+                title="Poudre asséchante EXPRESS (1 kg × 6)"
+                brand="EXPRESS"
+                logo={null}
+                body="Absorbe l'eau de pluie sur toitures plates avant travaux d'étanchéité. Permet une intervention rapide même par temps humide."
+                specs={["Réf. 848", "6 × 1 kg", "Toitures plates"]}
+                link={undefined}
+              />
+            </Reveal>
+            <Reveal delay={80}>
+              <ProductCard
+                title="Rouleau de séchage toiture plate"
+                brand="IMPORT ALLEMAGNE"
+                logo={null}
+                body="Rouleau en mousse haute absorption pour le séchage rapide des toitures plates. Largeur 60 cm, longueur 130 cm, fabrication allemande."
+                specs={["60 × 130 cm", "Mousse haute absorption", "Fabrication allemande"]}
+                link="https://www.asphaltequipment.be/fr/rouleau-de-sechage/"
+              />
+            </Reveal>
+            <Reveal delay={160}>
+              <ProductCard
+                title="ALGIMOUSS PRO (5L) — Traitement toiture / façade"
+                brand="ALGIMOUSS"
+                logo={null}
+                body="Élimine algues, lichens et moisissures sur toitures et façades. Sans chlore, sans rinçage, double biocide pour une efficacité longue durée."
+                avantages={[
+                  "Sans chlore",
+                  "Sans rinçage",
+                  "Double biocide",
+                  "Application pulvérisateur basse pression",
+                ]}
+                specs={["Format : 5L", "Toiture & façade"]}
+                link="https://algimouss.com/produit/anti-mousse-toiture-algimouss-pro/"
+              />
+            </Reveal>
+            <Reveal delay={240}>
+              <ProductCard
+                title="ALGIFUGE BOIS (5L) — Hydrofuge bois"
+                brand="ALGIMOUSS"
+                logo={null}
+                body="Hydrofuge bois en phase aqueuse sans silicone. Protège contre les UV et le gel, retarde le grisaillement naturel du bois."
+                avantages={[
+                  "Phase aqueuse sans silicone",
+                  "Protection UV et gel",
+                  "Retarde le grisaillement",
+                ]}
+                specs={["Format : 5L", "Bois extérieur"]}
+                link="https://algimouss.com/produit/hydrofuge-bois-algifuge-bois/"
+              />
+            </Reveal>
           </div>
         </div>
       </section>

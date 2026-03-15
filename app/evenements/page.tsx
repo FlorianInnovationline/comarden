@@ -222,7 +222,7 @@ function EventCalendar({
                 relative flex items-center justify-center h-10 rounded-lg text-sm font-medium transition-all
                 ${
                   isEvent
-                    ? "bg-[#F5C000] text-[#0C2952] font-bold cursor-pointer hover:scale-110 hover:shadow-md ring-2 ring-[#F5C000]/30"
+                    ? "bg-[#FDD000] text-[#0C2952] font-bold cursor-pointer hover:scale-110 hover:shadow-md ring-2 ring-[#FDD000]/30"
                     : "text-slate-600 cursor-default"
                 }
               `}
@@ -261,11 +261,11 @@ function EventCard({
         id={event.id}
         className={`
           rounded-2xl border-2 transition-all duration-500 bg-white overflow-hidden
-          ${highlighted ? "border-[#F5C000] shadow-xl shadow-[#F5C000]/20 scale-[1.01]" : "border-slate-100 shadow-md hover:shadow-lg"}
+          ${highlighted ? "border-[#FDD000] shadow-xl shadow-[#FDD000]/20 scale-[1.01]" : "border-slate-100 shadow-md hover:shadow-lg"}
         `}
       >
         {/* Accent bar */}
-        <div className="h-1.5 bg-gradient-to-r from-[#0C2952] to-[#F5C000]" />
+        <div className="h-1.5 bg-gradient-to-r from-[#0C2952] to-[#FDD000]" />
 
         <div className="p-5 sm:p-7">
           {/* Title */}
@@ -276,20 +276,20 @@ function EventCard({
           {/* Meta */}
           <div className="flex flex-wrap gap-x-5 gap-y-2 text-sm text-slate-600 mb-4">
             <div className="flex items-center gap-1.5">
-              <CalendarDays className="w-4 h-4 text-[#F5C000]" />
+              <CalendarDays className="w-4 h-4 text-[#FDD000]" />
               <span>
                 {event.dates.map((d) => d.label).join(" + ")}
               </span>
             </div>
             {event.lieu && (
               <div className="flex items-center gap-1.5">
-                <MapPin className="w-4 h-4 text-[#F5C000]" />
+                <MapPin className="w-4 h-4 text-[#FDD000]" />
                 <span>{event.lieu}</span>
               </div>
             )}
             {event.horaires && (
               <div className="flex items-center gap-1.5">
-                <Clock className="w-4 h-4 text-[#F5C000]" />
+                <Clock className="w-4 h-4 text-[#FDD000]" />
                 <span>{event.horaires}</span>
               </div>
             )}
@@ -309,16 +309,16 @@ function EventCard({
 
           {/* Clôture */}
           {event.cloture && (
-            <div className="flex items-center gap-2 text-sm text-[#0C2952] font-medium bg-[#F5C000]/10 rounded-lg px-3 py-2 mb-4">
-              <UtensilsCrossed className="w-4 h-4 text-[#F5C000]" />
+            <div className="flex items-center gap-2 text-sm text-[#0C2952] font-medium bg-[#FDD000]/10 rounded-lg px-3 py-2 mb-4">
+              <UtensilsCrossed className="w-4 h-4 text-[#FDD000]" />
               Clôture : {event.cloture}
             </div>
           )}
 
           {/* Extra */}
           {event.extra && (
-            <div className="flex items-center gap-2 text-sm text-[#0C2952] font-medium bg-[#F5C000]/10 rounded-lg px-3 py-2 mb-4">
-              <Coffee className="w-4 h-4 text-[#F5C000]" />
+            <div className="flex items-center gap-2 text-sm text-[#0C2952] font-medium bg-[#FDD000]/10 rounded-lg px-3 py-2 mb-4">
+              <Coffee className="w-4 h-4 text-[#FDD000]" />
               {event.extra}
             </div>
           )}
@@ -389,7 +389,7 @@ export default function EvenementsPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
           <Reveal>
             <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-[#F5C000]/15 text-[#F5C000] text-xs font-semibold uppercase tracking-wider rounded-full px-4 py-1.5 mb-6">
+              <div className="inline-flex items-center gap-2 bg-[#FDD000]/15 text-[#FDD000] text-xs font-semibold uppercase tracking-wider rounded-full px-4 py-1.5 mb-6">
                 <CalendarDays className="w-4 h-4" />
                 Événements 2026
               </div>
@@ -406,8 +406,8 @@ export default function EvenementsPage() {
                     key={label}
                     className="flex flex-col items-center gap-2 bg-white/5 backdrop-blur rounded-xl px-3 py-4 border border-white/10"
                   >
-                    <div className="w-10 h-10 rounded-full bg-[#F5C000]/20 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-[#F5C000]" />
+                    <div className="w-10 h-10 rounded-full bg-[#FDD000]/20 flex items-center justify-center">
+                      <Icon className="w-5 h-5 text-[#FDD000]" />
                     </div>
                     <span className="text-xs sm:text-sm font-medium text-center">{label}</span>
                   </div>

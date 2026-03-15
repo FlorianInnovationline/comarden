@@ -203,6 +203,55 @@ export default function VisseriePage() {
         </div>
       </section>
 
+      {/* ── VIS SAPIN SK-RB — ETANCO ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="max-w-3xl mb-10">
+              <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">ETANCO</p>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
+                Vis Sapin SK-RB — Fixation d&apos;isolants
+              </h2>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Cheville monobloc à visser en polyamide renforcé fibre de verre. Tête large Ø50 mm,
+                empreinte carrée 6 mm. Pas de pré-perçage, aucune corrosion, aucun pont thermique.
+              </p>
+            </div>
+          </Reveal>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {[
+              { ref: "SK-RB 28/20×70", usage: "1 couche isolant 20 mm" },
+              { ref: "SK-RB 28/40×90", usage: "Isolant 40 mm" },
+              { ref: "SK-RB 28/60×110", usage: "Isolant 60 mm" },
+              { ref: "SK-RB 28/120×175", usage: "Isolant 120 mm" },
+            ].map((vis, i) => (
+              <Reveal key={vis.ref} delay={i * 80}>
+                <div className="bg-white rounded-xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow h-full">
+                  <span className="inline-flex w-fit px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent bg-accent/10 rounded mb-3">
+                    ETANCO
+                  </span>
+                  <h3 className="font-bold text-primary text-base mb-2">{vis.ref}</h3>
+                  <p className="text-xs text-slate-600">Tête Ø50 mm — {vis.usage}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={400}>
+            <div className="mt-6">
+              <a
+                href="https://www.etanco.fr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
+              >
+                Voir sur etanco.fr
+                <ExternalLink className="w-4 h-4" />
+              </a>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
       {/* ── CTA ── */}
       <CTACompact />
     </div>
