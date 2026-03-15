@@ -7,14 +7,14 @@ export default function Hero() {
     <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden bg-primary">
       {/* Background image */}
       <div
-        className="absolute inset-0 bg-cover bg-center opacity-40"
+        className="absolute inset-0 bg-cover bg-center opacity-50"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1920&q=80')",
+          backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80')",
         }}
       />
 
       {/* Dark overlay to ensure text readability */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary via-primary/90 to-primary/70" />
+      <div className="absolute inset-0 bg-gradient-to-r from-primary/85 via-primary/75 to-primary/60" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-32">
         <div className="max-w-3xl">
