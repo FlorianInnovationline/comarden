@@ -237,7 +237,7 @@ export default function RegistrationCard({ onSubmit }: RegistrationCardProps) {
               Traitement...
             </>
           ) : (
-            "Accéder au planning"
+            "Construire ma journée"
           )}
         </Button>
       </form>
