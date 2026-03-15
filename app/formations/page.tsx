@@ -172,7 +172,7 @@ export default function FormationsPage() {
               <div className="mt-16 lg:mt-20">
                 <div className="text-center mb-8">
                   <h2 className="text-2xl lg:text-3xl font-bold text-primary tracking-tight mb-3">
-                    Formations disponibles
+                    Construisez votre journée de formation à la carte
                   </h2>
                 </div>
 
@@ -183,6 +183,7 @@ export default function FormationsPage() {
                   </p>
                 </div>
 
+                <h3 className="text-xl font-bold text-primary mb-6">Catalogue des formations</h3>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {FORMATION_MODULES.map((module, index) => (
                     <Reveal key={module.id} delay={index * 50}>
