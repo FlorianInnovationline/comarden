@@ -58,6 +58,10 @@ export default function FormationCard({
           {module.description}
         </p>
 
+        {module.brandName && (
+          <span className="text-[10px] font-bold text-primary/50 mt-1 block">{module.brandName}</span>
+        )}
+
         {/* Action button */}
         <div className="flex items-center justify-between mt-1.5 pt-1.5 border-t border-border/50">
           {isSelected ? (

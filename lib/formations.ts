@@ -91,6 +91,8 @@ export interface FormationModule {
   durationHours: FormationModuleDuration;
   description: string;
   tag?: string;
+  brandName?: string;
+  brandLogo?: string | null;
 }
 
 export const FORMATION_MODULES: FormationModule[] = [
@@ -114,6 +116,8 @@ export const FORMATION_MODULES: FormationModule[] = [
     durationHours: 4,
     description: "Formation complète sur les membranes EPDM : installation professionnelle, techniques de soudure, raccordements et maintenance préventive.",
     tag: "Étanchéité",
+    brandName: "ELEVATE",
+    brandLogo: "/images/logos/elevate-logo.png",
   },
   {
     id: "toiture-zinc",
@@ -121,6 +125,8 @@ export const FORMATION_MODULES: FormationModule[] = [
     durationHours: 4,
     description: "Techniques avancées de façonnage et pose de couverture zinc. Maîtrise des pliages, raccords complexes et détails d'exécution.",
     tag: "Métallique",
+    brandName: "VM ZINC",
+    brandLogo: null,
   },
   {
     id: "pose-tuiles-ardoises",
@@ -149,6 +155,8 @@ export const FORMATION_MODULES: FormationModule[] = [
     durationHours: 4,
     description: "Défendre vos projets lors de la vente en utilisant les ATG / Assurer un suivi après-vente / Renforcer votre crédibilité technique.",
     tag: "Formations",
+    brandName: "CAMPO & BANIA",
+    brandLogo: null,
   },
   {
     id: "vertuoza",
@@ -156,6 +164,8 @@ export const FORMATION_MODULES: FormationModule[] = [
     durationHours: 7,
     description: "Maîtrisez VERTUOZA pour vos devis, facturations, suivis de chantier et planning. Un outil complet pour la gestion de votre entreprise.",
     tag: "Formations",
+    brandName: "VERTUOZA",
+    brandLogo: null,
   },
   {
     id: "strato-grip",
@@ -163,6 +173,8 @@ export const FORMATION_MODULES: FormationModule[] = [
     durationHours: 4,
     description: "Découvrez les nouvelles colles STRATO GRIP : application, compatibilités et bonnes pratiques pour des chantiers réussis.",
     tag: "Formations",
+    brandName: "STRATO GRIP",
+    brandLogo: "/images/logos/strato-grip-logo.png",
   },
   {
     id: "tyvek",
@@ -170,6 +182,8 @@ export const FORMATION_MODULES: FormationModule[] = [
     durationHours: 4,
     description: "Tour d\u2019horizon de la gamme TYVEK : membranes, pare-vapeur et solutions d\u2019étanchéité à l\u2019air. Conseils pratiques de mise en œuvre.",
     tag: "Formations",
+    brandName: "TYVEK",
+    brandLogo: null,
   },
   {
     id: "toitures-vegetales",
@@ -177,5 +191,7 @@ export const FORMATION_MODULES: FormationModule[] = [
     durationHours: 4,
     description: "Découvrez les solutions de toitures végétalisées Floratoit : systèmes Hydropack® et IDMAT®, techniques de pose, réglementation belge et avantages écologiques. Formation pratique avec les experts Floratoit.",
     tag: "Végétal",
+    brandName: "FLORATOIT",
+    brandLogo: null,
   },
 ];

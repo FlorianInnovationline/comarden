@@ -215,6 +215,10 @@ export default function FormationsPage() {
                             </div>
                           </div>
 
+                          {module.brandName && (
+                            <span className="text-[10px] font-bold text-primary/50 mt-2 block">{module.brandName}</span>
+                          )}
+
                           <div className="flex items-center justify-between pt-4 mt-auto border-t border-border">
                             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-accent/20 bg-accent/10 group-hover:bg-accent/20 text-sm font-semibold text-accent transition-colors duration-300">
                               <Clock className="w-4 h-4" />
