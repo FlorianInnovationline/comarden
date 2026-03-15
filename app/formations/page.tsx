@@ -1,7 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import { CheckCircle2, Award, Clock } from "lucide-react";
+import Link from "next/link";
+import { CheckCircle2, Award, Clock, CalendarDays, MapPin, ArrowRight } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import Card from "@/components/ui/Card";
 import RegistrationCard, { type RegistrationData } from "@/components/formations/RegistrationCard";
@@ -229,6 +230,79 @@ export default function FormationsPage() {
                       </Card>
                     </Reveal>
                   ))}
+                </div>
+
+                {/* Agenda des formations à venir */}
+                <div className="mt-16">
+                  <h3 className="text-xl font-bold text-primary mb-6">Agenda des formations à venir</h3>
+                  <div className="space-y-4">
+                    {[
+                      {
+                        title: "Journée UNIQUE ARDOISES",
+                        date: "Jeudi 26 mars 2026",
+                        lieu: "MOREPIRE, Bertrix",
+                        horaire: "16h30 – fin",
+                        brands: "ATG Ardoises, VERTUOZA, STRATO GRIP, TYVEK",
+                      },
+                      {
+                        title: "JEUDIREDI ETEX Cedral & Equitone",
+                        date: "Jeudi 26 mars 2026",
+                        lieu: "Naninne + Bertrix",
+                        horaire: "15h – 19h",
+                      },
+                      {
+                        title: "PETIT DÉJEUNER SOLID JOHN",
+                        date: "Vendredi 22 mai 2026",
+                        lieu: "Bertrix",
+                        horaire: "7h15 – 11h",
+                      },
+                      {
+                        title: "Journée UNIQUE SOPREMA",
+                        date: "Jeudi 28 mai 2026",
+                        lieu: "Infos à venir",
+                        horaire: "",
+                      },
+                      {
+                        title: "Journée EPDM ELEVATE + Toiture végétale",
+                        date: "Jeudi 4 juin 2026",
+                        lieu: "Namur",
+                        horaire: "",
+                      },
+                    ].map((evt) => (
+                      <Reveal key={evt.title}>
+                        <div className="flex flex-col sm:flex-row sm:items-center gap-3 bg-white rounded-xl border border-slate-200 p-4 sm:p-5 hover:shadow-md transition-shadow">
+                          <div className="flex items-center gap-3 flex-shrink-0">
+                            <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                              <CalendarDays className="w-5 h-5 text-accent" />
+                            </div>
+                            <div className="sm:w-40">
+                              <p className="text-sm font-semibold text-primary">{evt.date}</p>
+                              {evt.horaire && <p className="text-xs text-slate-500">{evt.horaire}</p>}
+                            </div>
+                          </div>
+                          <div className="flex-1">
+                            <h4 className="text-sm font-bold text-primary">{evt.title}</h4>
+                            <div className="flex items-center gap-1 text-xs text-slate-500 mt-0.5">
+                              <MapPin className="w-3 h-3" />
+                              {evt.lieu}
+                            </div>
+                            {evt.brands && (
+                              <p className="text-[10px] text-primary/50 font-medium mt-1">{evt.brands}</p>
+                            )}
+                          </div>
+                        </div>
+                      </Reveal>
+                    ))}
+                  </div>
+                  <div className="mt-6 text-center">
+                    <Link
+                      href="/evenements"
+                      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
+                    >
+                      Voir tous les événements
+                      <ArrowRight className="w-4 h-4" />
+                    </Link>
+                  </div>
                 </div>
               </div>
             </Reveal>
