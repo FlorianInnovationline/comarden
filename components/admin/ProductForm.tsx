@@ -26,6 +26,12 @@ export default function ProductForm({ product, categories }: ProductFormProps) {
     category_id: product?.category_id || "",
     images: product?.images?.join("\n") || "",
     tags: product?.tags?.join(", ") || "",
+    brand: product?.brand || "",
+    specs: product?.specs?.join("\n") || "",
+    avantages: product?.avantages?.join("\n") || "",
+    lien_produit: product?.lien_produit || "",
+    warning: product?.warning || "",
+    variants: product?.variants?.join("\n") || "",
   });
 
   const handleTitleChange = (title: string) => {
@@ -51,12 +57,31 @@ export default function ProductForm({ product, categories }: ProductFormProps) {
         .map((tag) => tag.trim())
         .filter((tag) => tag.length > 0);
 
+      const specs = formData.specs
+        .split("\n")
+        .map((s) => s.trim())
+        .filter((s) => s.length > 0);
+      const avantages = formData.avantages
+        .split("\n")
+        .map((a) => a.trim())
+        .filter((a) => a.length > 0);
+      const variants = formData.variants
+        .split("\n")
+        .map((v) => v.trim())
+        .filter((v) => v.length > 0);
+
       const payload = {
         ...formData,
         price_cents: Math.round(formData.price_cents * 100),
         images,
         tags: tags.length > 0 ? tags : null,
         category_id: formData.category_id || null,
+        brand: formData.brand || null,
+        specs: specs.length > 0 ? specs : null,
+        avantages: avantages.length > 0 ? avantages : null,
+        lien_produit: formData.lien_produit || null,
+        warning: formData.warning || null,
+        variants: variants.length > 0 ? variants : null,
       };
 
       // In a real app, this would be a server action
@@ -218,6 +243,73 @@ export default function ProductForm({ product, categories }: ProductFormProps) {
                   onChange={(e) => setFormData({ ...formData, tags: e.target.value })}
                   placeholder="toiture, isolation, professionnel"
                   className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* Custom Product Fields */}
+          <section>
+            <h2 className="text-xl font-bold text-primary mb-4">Informations produit</h2>
+            <div className="space-y-4">
+              <div>
+                <label className="block text-sm font-semibold text-primary mb-2">Marque</label>
+                <input
+                  type="text"
+                  value={formData.brand}
+                  onChange={(e) => setFormData({ ...formData, brand: e.target.value })}
+                  placeholder="FAYNOT, ETANCO, STRATOGRIP..."
+                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-primary mb-2">Caractéristiques techniques (une par ligne)</label>
+                <textarea
+                  value={formData.specs}
+                  onChange={(e) => setFormData({ ...formData, specs: e.target.value })}
+                  rows={4}
+                  placeholder="R thermique : 5,7 m².K/W&#10;Matériau : acier galvanisé Z275"
+                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-primary mb-2">Avantages (un par ligne)</label>
+                <textarea
+                  value={formData.avantages}
+                  onChange={(e) => setFormData({ ...formData, avantages: e.target.value })}
+                  rows={4}
+                  placeholder="Aucun pont thermique&#10;Système breveté et calculé"
+                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-primary mb-2">Variantes (une par ligne)</label>
+                <textarea
+                  value={formData.variants}
+                  onChange={(e) => setFormData({ ...formData, variants: e.target.value })}
+                  rows={3}
+                  placeholder="RAL 9005&#10;RAL 7016"
+                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-primary mb-2">Lien fiche produit (URL)</label>
+                <input
+                  type="url"
+                  value={formData.lien_produit}
+                  onChange={(e) => setFormData({ ...formData, lien_produit: e.target.value })}
+                  placeholder="https://www.faynot.com/..."
+                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent font-mono text-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-sm font-semibold text-primary mb-2">Avertissement</label>
+                <input
+                  type="text"
+                  value={formData.warning}
+                  onChange={(e) => setFormData({ ...formData, warning: e.target.value })}
+                  placeholder="Non recommandé : vinyles plastifiés, PE, PP..."
+                  className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm"
                 />
               </div>
             </div>

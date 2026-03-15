@@ -7,10 +7,10 @@ import Button from "@/components/ui/Button";
 import Reveal from "@/components/ui/Reveal";
 
 const serviceHighlights = [
-  { icon: Scissors, title: "Façonnage", desc: "Zinc, acier, EPDM", delay: 0 },
-  { icon: Truck, title: "Livraison", desc: "Camion-grue", delay: 0.1 },
-  { icon: Ruler, title: "Sur mesure", desc: "Découpe précise", delay: 0.2 },
-  { icon: ShieldCheck, title: "Expertise", desc: "Conseil technique", delay: 0.3 },
+  { icon: Scissors, title: "Façonnage & découpes", desc: "Zinc, acier, EPDM", delay: 0 },
+  { icon: Truck, title: "Livraison", desc: "Camion-grue, livraison soignée et réfléchie !", delay: 0.1 },
+  { icon: Ruler, title: "Sur mesure", desc: "Découpe précise. Découpe STACBOND, pliage et façonnage.", delay: 0.2 },
+  { icon: ShieldCheck, title: "Expertise", desc: "Conseils techniques, réponses rapides, analyse d'alternatives, …", delay: 0.3 },
 ];
 
 export default function ServicesHero() {

@@ -51,7 +51,7 @@ const stats: StatCard[] = [
   },
   {
     icon: Users,
-    value: "1000+",
+    value: "2500+",
     label: "Clients professionnels",
     description: "Fidèles partenaires",
     color: "from-accent/20 to-accent/10",

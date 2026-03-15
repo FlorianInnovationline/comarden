@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ShoppingCart, Package, Truck, CheckCircle } from "lucide-react";
+import { ArrowLeft, ShoppingCart, Package, Truck, CheckCircle, ExternalLink, AlertTriangle } from "lucide-react";
 import { getProductBySlug, getProducts } from "@/lib/shop/queries";
 import { formatPrice, getStockStatus } from "@/lib/shop/utils";
 import { PLACEHOLDER_PRODUCT_IMAGE } from "@/lib/site";
@@ -141,10 +141,23 @@ export default async function ProductPage({ params }: PageProps) {
                   {product.title}
                 </h1>
 
+                {product.brand && (
+                  <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-primary/5 text-primary border border-primary/10">
+                    {product.brand}
+                  </span>
+                )}
+
                 {product.description && (
                   <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                     {product.description}
                   </p>
+                )}
+
+                {product.warning && (
+                  <div className="flex items-start gap-3 bg-amber-50 border border-amber-200 rounded-lg p-4">
+                    <AlertTriangle className="w-5 h-5 text-amber-600 flex-shrink-0 mt-0.5" />
+                    <p className="text-sm text-amber-800">{product.warning}</p>
+                  </div>
                 )}
 
                 {/* Price & Stock */}
@@ -212,23 +225,75 @@ export default async function ProductPage({ params }: PageProps) {
         </div>
       </section>
 
-      {/* Product Details Tabs */}
-      {product.description && (
-        <section className="py-8 sm:py-12 bg-neutral/20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <Reveal>
-              <div className="max-w-3xl">
-                <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-6">
-                  Description
-                </h2>
-                <div className="prose prose-sm sm:prose-base max-w-none text-muted-foreground">
-                  <p className="leading-relaxed whitespace-pre-line">{product.description}</p>
+      {/* Detailed Product Information */}
+      <section className="py-8 sm:py-12 bg-neutral/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid lg:grid-cols-2 gap-8">
+            {product.specs && product.specs.length > 0 && (
+              <Reveal>
+                <div className="bg-white rounded-xl p-6 border border-border/50">
+                  <h2 className="text-xl font-bold text-primary mb-4">Caractéristiques techniques</h2>
+                  <ul className="space-y-2">
+                    {product.specs.map((spec, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0 mt-1.5" />
+                        {spec}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
+              </Reveal>
+            )}
+
+            {product.avantages && product.avantages.length > 0 && (
+              <Reveal delay={100}>
+                <div className="bg-white rounded-xl p-6 border border-border/50">
+                  <h2 className="text-xl font-bold text-primary mb-4">Avantages</h2>
+                  <ul className="space-y-2">
+                    {product.avantages.map((a, i) => (
+                      <li key={i} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <CheckCircle className="w-4 h-4 text-green-600 flex-shrink-0 mt-0.5" />
+                        {a}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </Reveal>
+            )}
+
+            {product.variants && product.variants.length > 0 && (
+              <Reveal delay={200}>
+                <div className="bg-white rounded-xl p-6 border border-border/50 lg:col-span-2">
+                  <h2 className="text-xl font-bold text-primary mb-4">Variantes disponibles</h2>
+                  <div className="flex flex-wrap gap-2">
+                    {product.variants.map((v, i) => (
+                      <span key={i} className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/5 text-primary border border-primary/10">
+                        {v}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
+            )}
+          </div>
+
+          {product.lien_produit && (
+            <Reveal delay={300}>
+              <div className="mt-6">
+                <a
+                  href={product.lien_produit}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
+                >
+                  Fiche produit
+                  <ExternalLink className="w-4 h-4" />
+                </a>
               </div>
             </Reveal>
-          </div>
-        </section>
-      )}
+          )}
+        </div>
+      </section>
 
       {/* Related Products */}
       {filteredRelated.length > 0 && (

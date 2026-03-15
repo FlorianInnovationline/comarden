@@ -44,8 +44,11 @@ export const newsPosts: NewsPost[] = [
     category: "Produits",
     featured: true,
     content: [
-      "Nous renouvelons la gamme d'ardoises Cedral Alterna. À partir de février 2026, la production sera transférée vers notre usine en Allemagne (Neubeckum). Important : les anciennes ardoises Alterna de Kapelle-op-den-Bos et les nouvelles ardoises produites en Allemagne ne peuvent pas être mélangées sur un même projet. Pensez à en informer vos clients !",
-      "De plus, si vous avez besoin de compléter un chantier ou prendre du stock pour l'après-vente, Comarden a conservé un stock limité de la gamme Cedral Alterna 2025. Contactez-nous pour connaître les quantités disponibles.",
+      "Nous renouvelons la gamme d'ardoises Cedral Alterna. À partir de février 2026, la production sera transférée vers notre usine en Allemagne (Neubeckum).",
+      "Les ardoises 60×30 gris foncé viennent déjà d'Allemagne.",
+      "IMPORTANT : les anciennes ardoises Alterna de Kapelle-op-den-Bos et les nouvelles ardoises produites en Allemagne ne peuvent PAS être mélangées sur un même projet. Pensez à en informer vos clients !",
+      "STACBOND — Comarden a investi dans une toute nouvelle machine panneauteuse pour vous offrir plus de service, de qualité et de flexibilité pour vos chantiers. Découpe STACBOND, pliage et façonnage.",
+      "Si vous avez besoin de compléter un chantier ou prendre du stock pour l'après-vente, Comarden a conservé un stock limité de la gamme Cedral Alterna 2025. Contactez-nous pour connaître les quantités disponibles.",
     ],
   },
 ];

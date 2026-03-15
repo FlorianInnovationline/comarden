@@ -23,6 +23,12 @@ export interface Product {
   category_id?: string;
   images: string[];
   tags?: string[];
+  brand?: string;
+  specs?: string[];
+  avantages?: string[];
+  lien_produit?: string;
+  warning?: string;
+  variants?: string[];
   created_at: string;
   updated_at: string;
   category?: Category;
