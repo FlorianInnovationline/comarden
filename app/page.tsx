@@ -30,7 +30,7 @@ export default function Home() {
       <NewsPreview />
       {/* Slogan */}
       <section className="py-8 sm:py-10 bg-primary text-center">
-        <p className="text-lg sm:text-xl lg:text-2xl font-semibold text-white italic max-w-3xl mx-auto px-4">
+        <p className="text-base sm:text-lg lg:text-xl font-semibold text-white italic max-w-5xl mx-auto px-4 lg:whitespace-nowrap">
           &ldquo;Comarden. Venez une fois… vous comprendrez pourquoi on revient.&rdquo;
         </p>
       </section>
