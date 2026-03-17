@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { ExternalLink, ArrowRight } from "lucide-react";
+import { ArrowRight, ShoppingCart } from "lucide-react";
 import CTACompact from "@/components/sections/CTA";
 import Reveal from "@/components/ui/Reveal";
 
@@ -38,7 +38,7 @@ const stratogripProducts = [
       "Non recommandé : vinyles plastifiés, plastiques flexibles, polystyrène EPS/XPS, PE, PP",
     conseil:
       "Les colles STRATOGRIP : si vous n'en utilisez pas aujourd'hui, vous ne pourrez plus vous en passer demain !",
-    link: "https://stratogrip.com/wp-content/uploads/2025/09/Fiche-Technique-STRATOGRIP-S110.pdf",
+    shopSlug: "stratogrip-s110-22l",
   },
   {
     title: "STRATOGRIP S163 — Colle polyvalente haute adhérence (22L)",
@@ -61,7 +61,7 @@ const stratogripProducts = [
       "Pulvérisation : toile d'araignée",
     ],
     notRecommended: "Non recommandé : vinyles plastifiés",
-    link: "https://stratogrip.com/product/s163/",
+    shopSlug: "stratogrip-s163-22l",
   },
   {
     title: "STRATOGRIP M300 — Colle mousse et tissu (22L)",
@@ -80,7 +80,7 @@ const stratogripProducts = [
     notRecommended:
       "Non recommandé : vinyles plastifiés, EPS/XPS, PE, PP, stratifiés teintés monochrome",
     specs: ["Couleur : incolore ou rouge", "Format : 22L", "Temp résistance : 110°C"],
-    link: "https://stratogrip.com/product/m300/",
+    shopSlug: "stratogrip-m300-22l",
   },
   {
     title: "Pistolet d'application professionnel STRATOGRIP",
@@ -97,7 +97,7 @@ const stratogripProducts = [
     ],
     applications:
       "Applications : travaux collage industriel / bois et panneaux / fabrication mobilier / chantiers précision et rapidité",
-    link: "https://stratogrip.com/product/pistolet-dapplication-professionnel/",
+    shopSlug: "pistolet-stratogrip",
   },
   {
     title: "Raccord flexible caoutchouc 4m STRATOGRIP",
@@ -111,7 +111,7 @@ const stratogripProducts = [
       "Ultra flexible",
       "Léger et ergonomique",
     ],
-    link: "https://stratogrip.com/product/raccord-flexible/",
+    shopSlug: "raccord-flexible-stratogrip",
   },
 ];
 
@@ -131,7 +131,7 @@ const tyvekProducts = [
       "Installable à -5°C",
     ],
     supports: "Supports : béton, plâtre, pierre, plaques de plâtre, bois",
-    link: "https://www.dupontdenemours.fr/products/mastic-airguard.html",
+    shopSlug: "mastic-airguard-tyvek",
   },
   {
     title: "Bande adhésive DuPont™ Tyvek® FlexWrap™ NF",
@@ -147,7 +147,7 @@ const tyvekProducts = [
       "Bonnes performances températures extrêmes",
     ],
     usage: "Usage : intérieur et extérieur pour améliorer efficacité énergétique",
-    link: "https://www.dupontdenemours.be/fr/products/dupont-tyvek-flexwrap-flashing-tape.html",
+    shopSlug: "bande-tyvek-flexwrap-nf",
   },
 ];
 
@@ -164,7 +164,7 @@ function ProductCard({
   applications,
   supports,
   usage,
-  link,
+  shopSlug,
 }: {
   title: string;
   brand: string;
@@ -178,7 +178,7 @@ function ProductCard({
   applications?: string;
   supports?: string;
   usage?: string;
-  link?: string;
+  shopSlug?: string;
 }) {
   return (
     <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
@@ -235,17 +235,15 @@ function ProductCard({
             </div>
           )}
         </div>
-        {link && (
+        {shopSlug && (
           <div className="flex-shrink-0">
-            <a
-              href={link}
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              href={`/shop/produit/${shopSlug}`}
               className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
             >
-              Fiche produit
-              <ExternalLink className="w-4 h-4" />
-            </a>
+              Voir dans le magasin
+              <ShoppingCart className="w-4 h-4" />
+            </Link>
           </div>
         )}
       </div>
@@ -325,7 +323,7 @@ export default function CollesMasticsPage() {
                   notRecommended={product.notRecommended}
                   conseil={product.conseil}
                   applications={product.applications}
-                  link={product.link}
+                  shopSlug={product.shopSlug}
                 />
               </Reveal>
             ))}
@@ -356,7 +354,7 @@ export default function CollesMasticsPage() {
                   avantages={product.avantages}
                   supports={product.supports}
                   usage={product.usage}
-                  link={product.link}
+                  shopSlug={product.shopSlug}
                 />
               </Reveal>
             ))}
@@ -385,7 +383,7 @@ export default function CollesMasticsPage() {
                 logo={null}
                 body="Absorbe l'eau de pluie sur toitures plates avant travaux d'étanchéité. Permet une intervention rapide même par temps humide."
                 specs={["Réf. 848", "6 × 1 kg", "Toitures plates"]}
-                link={undefined}
+                shopSlug="poudre-assechante-express"
               />
             </Reveal>
             <Reveal delay={80}>
@@ -395,7 +393,7 @@ export default function CollesMasticsPage() {
                 logo={null}
                 body="Rouleau en mousse haute absorption pour le séchage rapide des toitures plates. Largeur 60 cm, longueur 130 cm, fabrication allemande."
                 specs={["60 × 130 cm", "Mousse haute absorption", "Fabrication allemande"]}
-                link="https://www.asphaltequipment.be/fr/rouleau-de-sechage/"
+                shopSlug="rouleau-sechage-toiture"
               />
             </Reveal>
             <Reveal delay={160}>
@@ -411,7 +409,7 @@ export default function CollesMasticsPage() {
                   "Application pulvérisateur basse pression",
                 ]}
                 specs={["Format : 5L", "Toiture & façade"]}
-                link="https://algimouss.com/produit/anti-mousse-toiture-algimouss-pro/"
+                shopSlug="algimouss-pro-5l"
               />
             </Reveal>
             <Reveal delay={240}>
@@ -426,7 +424,7 @@ export default function CollesMasticsPage() {
                   "Retarde le grisaillement",
                 ]}
                 specs={["Format : 5L", "Bois extérieur"]}
-                link="https://algimouss.com/produit/hydrofuge-bois-algifuge-bois/"
+                shopSlug="algifuge-bois-5l"
               />
             </Reveal>
           </div>

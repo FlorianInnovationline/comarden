@@ -147,34 +147,34 @@ export default function PresentationStats() {
           })}
         </div>
 
-        {/* Desktop Grid - Clean, minimal, 3 columns */}
-        <div className="hidden lg:grid grid-cols-3 gap-6">
+        {/* Desktop Grid - Compact, 6 columns */}
+        <div className="hidden lg:grid grid-cols-6 gap-4">
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             
             return (
-              <Reveal key={stat.label} delay={index * 100}>
-                <div className="group cursor-pointer bg-white rounded-lg p-8 border border-slate-200 hover:border-primary transition-all duration-200 hover:shadow-lg hover:bg-[#1B3A6B] hover:-translate-y-1">
-                  <div className="mb-6 flex justify-center">
-                    <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center transition-colors duration-200 group-hover:bg-white/20">
-                      <Icon className="w-8 h-8 text-accent transition-colors duration-200 group-hover:text-white" strokeWidth={2} />
-                    </div>
-                  </div>
-
-                  <div className="mb-3 text-center">
-                    <div className="text-5xl font-bold text-primary leading-none transition-colors duration-200 group-hover:text-white">
-                      {stat.value}
+              <Reveal key={stat.label} delay={index * 80}>
+                <div className="group cursor-pointer bg-white rounded-lg p-4 border border-slate-200 hover:border-primary transition-all duration-200 hover:shadow-lg hover:bg-[#1B3A6B] hover:-translate-y-1">
+                  <div className="mb-3 flex justify-center">
+                    <div className="w-10 h-10 bg-accent/10 rounded-lg flex items-center justify-center transition-colors duration-200 group-hover:bg-white/20">
+                      <Icon className="w-5 h-5 text-accent transition-colors duration-200 group-hover:text-white" strokeWidth={2} />
                     </div>
                   </div>
 
                   <div className="mb-2 text-center">
-                    <div className="text-sm font-semibold text-primary transition-colors duration-200 group-hover:text-white">
+                    <div className="text-2xl font-bold text-primary leading-none transition-colors duration-200 group-hover:text-white">
+                      {stat.value}
+                    </div>
+                  </div>
+
+                  <div className="mb-1 text-center">
+                    <div className="text-xs font-semibold text-primary transition-colors duration-200 group-hover:text-white leading-tight">
                       {stat.label}
                     </div>
                   </div>
 
                   <div className="text-center">
-                    <div className="text-xs text-muted-foreground transition-colors duration-200 group-hover:text-white/70">
+                    <div className="text-[10px] text-muted-foreground transition-colors duration-200 group-hover:text-white/70">
                       {stat.description}
                     </div>
                   </div>

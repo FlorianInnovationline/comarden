@@ -163,9 +163,8 @@ export default function ProPackPage() {
             l&apos;investissement constant de Comarden auprès de ses clients.
           </p>
 
-          <p className="text-xl sm:text-2xl font-bold text-primary italic">
-            &ldquo;Comarden. Venez une fois… vous comprendrez pourquoi on
-            revient.&rdquo;
+          <p className="text-base sm:text-lg lg:text-xl font-bold text-primary italic lg:whitespace-nowrap">
+            &ldquo;Comarden. Venez une fois… vous comprendrez pourquoi on revient.&rdquo;
           </p>
         </div>
       </section>

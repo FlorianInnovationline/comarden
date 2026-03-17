@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { CheckCircle2, Award, Clock, CalendarDays, MapPin, ArrowRight } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import Card from "@/components/ui/Card";
@@ -165,17 +166,99 @@ export default function FormationsPage() {
         <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-neutral/20">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <Reveal>
-              <RegistrationCard onSubmit={handleRegistration} />
+              <div id="inscription">
+                <RegistrationCard onSubmit={handleRegistration} />
+              </div>
+            </Reveal>
+
+            {/* Agenda des formations à venir */}
+            <Reveal delay={200}>
+              <div className="mt-16 lg:mt-20">
+                <h2 className="text-2xl lg:text-3xl font-bold text-primary tracking-tight mb-6">
+                  Agenda des formations à venir
+                </h2>
+                <div className="space-y-4">
+                  {[
+                    {
+                      title: "Journée UNIQUE ARDOISES",
+                      date: "Jeudi 26 mars 2026",
+                      lieu: "MOREPIRE, Bertrix",
+                      horaire: "16h30 – fin",
+                      brands: "ATG Ardoises, VERTUOZA, STRATO GRIP, TYVEK",
+                    },
+                    {
+                      title: "JEUDIREDI ETEX Cedral & Equitone",
+                      date: "Jeudi 26 mars 2026",
+                      lieu: "Naninne + Bertrix",
+                      horaire: "15h – 19h",
+                    },
+                    {
+                      title: "PETIT DÉJEUNER SOLID JOHN",
+                      date: "Vendredi 22 mai 2026",
+                      lieu: "Bertrix",
+                      horaire: "7h15 – 11h",
+                    },
+                    {
+                      title: "Journée UNIQUE SOPREMA",
+                      date: "Jeudi 28 mai 2026",
+                      lieu: "Infos à venir",
+                      horaire: "",
+                    },
+                    {
+                      title: "Journée EPDM ELEVATE + Toiture végétale",
+                      date: "Jeudi 4 juin 2026",
+                      lieu: "Namur",
+                      horaire: "",
+                    },
+                  ].map((evt) => (
+                    <Reveal key={evt.title}>
+                      <div className="flex flex-col sm:flex-row sm:items-center gap-3 bg-white rounded-xl border border-slate-200 p-4 sm:p-5 hover:shadow-md transition-shadow">
+                        <div className="flex items-center gap-3 flex-shrink-0">
+                          <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
+                            <CalendarDays className="w-5 h-5 text-accent" />
+                          </div>
+                          <div className="sm:w-40">
+                            <p className="text-sm font-semibold text-primary">{evt.date}</p>
+                            {evt.horaire && <p className="text-xs text-slate-500">{evt.horaire}</p>}
+                          </div>
+                        </div>
+                        <div className="flex-1">
+                          <h4 className="text-sm font-bold text-primary">{evt.title}</h4>
+                          <div className="flex items-center gap-1 text-xs text-slate-500 mt-0.5">
+                            <MapPin className="w-3 h-3" />
+                            {evt.lieu}
+                          </div>
+                          {evt.brands && (
+                            <p className="text-[10px] text-primary/50 font-medium mt-1">{evt.brands}</p>
+                          )}
+                        </div>
+                        <div className="flex flex-col sm:flex-row gap-2 sm:items-center sm:justify-end">
+                          <Link
+                            href="#inscription"
+                            className="inline-flex items-center justify-center rounded-full bg-accent text-primary font-semibold px-4 py-2 text-xs sm:text-sm hover:bg-accent/90 transition-colors"
+                          >
+                            Je m&apos;inscris
+                          </Link>
+                          <Link
+                            href="/contact"
+                            className="inline-flex items-center justify-center rounded-full border border-primary/20 text-primary font-semibold px-4 py-2 text-xs sm:text-sm hover:bg-primary/5 transition-colors"
+                          >
+                            Formulaire
+                          </Link>
+                        </div>
+                      </div>
+                    </Reveal>
+                  ))}
+                </div>
+              </div>
             </Reveal>
 
             {/* Formations Preview Section */}
-            <Reveal delay={200}>
+            <Reveal delay={300}>
               <div className="mt-16 lg:mt-20">
-                <div className="text-center mb-8">
-                  <h2 className="text-2xl lg:text-3xl font-bold text-primary tracking-tight mb-3">
-                    Construisez votre journée de formation à la carte
-                  </h2>
-                </div>
+                <h2 className="text-2xl lg:text-3xl font-bold text-primary tracking-tight mb-3 text-center">
+                  Construisez votre journée de formation à la carte
+                </h2>
 
                 <div className="mb-12 bg-accent/10 border-l-4 border-accent rounded-r-xl px-6 py-5 max-w-3xl mx-auto">
                   <p className="text-base text-primary/90 leading-relaxed">
@@ -184,15 +267,14 @@ export default function FormationsPage() {
                   </p>
                 </div>
 
-                <h3 className="text-xl font-bold text-primary mb-6">Catalogue des formations</h3>
+                <h2 className="text-2xl lg:text-3xl font-bold text-primary tracking-tight mb-6">
+                  Catalogue des formations
+                </h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {FORMATION_MODULES.map((module, index) => (
                     <Reveal key={module.id} delay={index * 50}>
                       <Card variant="minimal" className="p-6 hover:shadow-xl transition-all duration-300 group border-0 hover:border-2 hover:border-accent/20 relative overflow-hidden h-full bg-white rounded-xl">
-                        {/* Background gradient on hover */}
                         <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none rounded-xl" />
-
-                        {/* Decorative corner element */}
                         <div className="absolute top-0 right-0 w-16 h-16 bg-accent/10 rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 transform group-hover:scale-110" />
 
                         <div className="relative z-10 flex flex-col h-full">
@@ -216,7 +298,18 @@ export default function FormationsPage() {
                             </div>
                           </div>
 
-                          {module.brandName && (
+                          {module.brandName && module.brandLogo && (
+                            <div className="mt-2">
+                              <Image
+                                src={module.brandLogo}
+                                alt={module.brandName}
+                                width={80}
+                                height={24}
+                                className="h-5 w-auto object-contain opacity-50 grayscale"
+                              />
+                            </div>
+                          )}
+                          {module.brandName && !module.brandLogo && (
                             <span className="text-[10px] font-bold text-primary/50 mt-2 block">{module.brandName}</span>
                           )}
 
@@ -230,79 +323,6 @@ export default function FormationsPage() {
                       </Card>
                     </Reveal>
                   ))}
-                </div>
-
-                {/* Agenda des formations à venir */}
-                <div className="mt-16">
-                  <h3 className="text-xl font-bold text-primary mb-6">Agenda des formations à venir</h3>
-                  <div className="space-y-4">
-                    {[
-                      {
-                        title: "Journée UNIQUE ARDOISES",
-                        date: "Jeudi 26 mars 2026",
-                        lieu: "MOREPIRE, Bertrix",
-                        horaire: "16h30 – fin",
-                        brands: "ATG Ardoises, VERTUOZA, STRATO GRIP, TYVEK",
-                      },
-                      {
-                        title: "JEUDIREDI ETEX Cedral & Equitone",
-                        date: "Jeudi 26 mars 2026",
-                        lieu: "Naninne + Bertrix",
-                        horaire: "15h – 19h",
-                      },
-                      {
-                        title: "PETIT DÉJEUNER SOLID JOHN",
-                        date: "Vendredi 22 mai 2026",
-                        lieu: "Bertrix",
-                        horaire: "7h15 – 11h",
-                      },
-                      {
-                        title: "Journée UNIQUE SOPREMA",
-                        date: "Jeudi 28 mai 2026",
-                        lieu: "Infos à venir",
-                        horaire: "",
-                      },
-                      {
-                        title: "Journée EPDM ELEVATE + Toiture végétale",
-                        date: "Jeudi 4 juin 2026",
-                        lieu: "Namur",
-                        horaire: "",
-                      },
-                    ].map((evt) => (
-                      <Reveal key={evt.title}>
-                        <div className="flex flex-col sm:flex-row sm:items-center gap-3 bg-white rounded-xl border border-slate-200 p-4 sm:p-5 hover:shadow-md transition-shadow">
-                          <div className="flex items-center gap-3 flex-shrink-0">
-                            <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
-                              <CalendarDays className="w-5 h-5 text-accent" />
-                            </div>
-                            <div className="sm:w-40">
-                              <p className="text-sm font-semibold text-primary">{evt.date}</p>
-                              {evt.horaire && <p className="text-xs text-slate-500">{evt.horaire}</p>}
-                            </div>
-                          </div>
-                          <div className="flex-1">
-                            <h4 className="text-sm font-bold text-primary">{evt.title}</h4>
-                            <div className="flex items-center gap-1 text-xs text-slate-500 mt-0.5">
-                              <MapPin className="w-3 h-3" />
-                              {evt.lieu}
-                            </div>
-                            {evt.brands && (
-                              <p className="text-[10px] text-primary/50 font-medium mt-1">{evt.brands}</p>
-                            )}
-                          </div>
-                        </div>
-                      </Reveal>
-                    ))}
-                  </div>
-                  <div className="mt-6 text-center">
-                    <Link
-                      href="/evenements"
-                      className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
-                    >
-                      Voir tous les événements
-                      <ArrowRight className="w-4 h-4" />
-                    </Link>
-                  </div>
                 </div>
               </div>
             </Reveal>

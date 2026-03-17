@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
-import { ExternalLink } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { Shield, Award, Leaf, Users, ShoppingCart } from "lucide-react";
 import CTACompact from "@/components/sections/CTA";
 import Reveal from "@/components/ui/Reveal";
 
@@ -22,7 +24,7 @@ const products = [
       "Durée de vie > 50 ans",
       "Résistant UV / ozone",
     ],
-    link: "https://www.holcimelevate.com/benelux-fr/etancheite-de-toitures/epdm/rubbergard-epdm-sa",
+    shopSlug: "rubbergard-epdm-sa-elevate",
   },
   {
     title: "Sopraguard Stick — Membrane EPDM auto-adhésive",
@@ -35,7 +37,7 @@ const products = [
       "Épaisseur 1,14 mm",
       "Toitures plates",
     ],
-    link: "https://sopraguard.com/en/products/sopraguard-stick",
+    shopSlug: "sopraguard-stick-epdm",
   },
   {
     title: "Ancrage Photovoltaïque Toiture Plate",
@@ -47,7 +49,7 @@ const products = [
       "Étanchéité garantie",
       "Toitures plates",
     ],
-    link: "https://www.holcimelevate.com/benelux-fr/etancheite-de-toitures/applications/toitures-syst\u00E8me-photovolta\u00EFque",
+    shopSlug: "ancrage-photovoltaique-elevate",
   },
 ];
 
@@ -145,21 +147,145 @@ export default function EpdmPage() {
                       </div>
                     </div>
 
-                    <div className="flex-shrink-0">
-                      <a
-                        href={product.link}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
-                      >
-                        Fiche produit
-                        <ExternalLink className="w-4 h-4" />
-                      </a>
-                    </div>
+                    {product.shopSlug && (
+                      <div className="flex-shrink-0">
+                        <Link
+                          href={`/shop/produit/${product.shopSlug}`}
+                          className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
+                        >
+                          Voir dans le magasin
+                          <ShoppingCart className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    )}
                   </div>
                 </div>
               </Reveal>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── ELEVATE ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-red-700 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
+              <div className="max-w-2xl">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4">
+                  ELEVATE
+                </h2>
+                <p className="text-lg sm:text-xl font-medium text-white/90 mb-2">
+                  Comarden, distributeur officiel ELEVATE en Belgique
+                </p>
+                <p className="text-base text-white/75 leading-relaxed">
+                  Les systèmes de toitures EPDM de Holcim Building Envelope assurent une solution durable et fiable pour les applications de toitures commerciales, industrielles et résidentielles.
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/logos/elevate-logo.png"
+                  alt="Elevate"
+                  width={180}
+                  height={60}
+                  className="h-12 sm:h-14 w-auto object-contain brightness-0 invert"
+                />
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <Reveal delay={100}>
+              <div>
+                <h3 className="text-sm font-bold uppercase tracking-widest text-white/60 mb-4">Industriel / Commercial</h3>
+                <div className="space-y-4">
+                  {[
+                    { name: "RubberGard EPDM", description: "Membrane haute performance pour toitures plates commerciales et industrielles." },
+                    { name: "RubberGard EPDM SA", description: "Version auto-adhésive pour une pose simplifiée et rapide." },
+                  ].map((product) => (
+                    <div key={product.name} className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/15 hover:bg-white/15 transition-colors">
+                      <h4 className="font-semibold text-lg mb-1">{product.name}</h4>
+                      <p className="text-sm text-white/70">{product.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+
+            <Reveal delay={200}>
+              <div>
+                <h3 className="text-sm font-bold uppercase tracking-widest text-white/60 mb-4">Résidentiel</h3>
+                <div className="space-y-4">
+                  {[
+                    { name: "RubberCover EPDM", description: "Solution EPDM dédiée aux toitures plates résidentielles." },
+                    { name: "RubberGutter EPDM SA", description: "Membrane spécialement conçue pour les chéneaux et gouttières." },
+                  ].map((product) => (
+                    <div key={product.name} className="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/15 hover:bg-white/15 transition-colors">
+                      <h4 className="font-semibold text-lg mb-1">{product.name}</h4>
+                      <p className="text-sm text-white/70">{product.description}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          <Reveal>
+            <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/15">
+              <Shield className="w-6 h-6 text-white/80 flex-shrink-0" />
+              <p className="text-sm sm:text-base text-white/90">
+                Bénéficiez des garanties solides d&apos;un des plus grands groupes mondiaux&nbsp;: <strong className="text-white">HOLCIM</strong>.
+              </p>
+            </div>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ── SOPREMA ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#003366] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
+              <div className="max-w-2xl">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4">
+                  SOPREMA
+                </h2>
+                <p className="text-base sm:text-lg text-white/80 leading-relaxed">
+                  Comarden partenaire officiel SOPREMA. Comarden distribue en Belgique la gamme complète SOPREMA, référence mondiale en étanchéité, isolation et toiture plate.
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/logos/soprema-logo.png"
+                  alt="Soprema"
+                  width={180}
+                  height={60}
+                  className="h-12 sm:h-14 w-auto object-contain"
+                />
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Award, title: "Qualité professionnelle reconnue", description: "Des produits certifiés et éprouvés, plébiscités par les professionnels du bâtiment à travers le monde." },
+              { icon: Shield, title: "Gamme complète pour les couvreurs", description: "Étanchéité, isolation, toiture plate : une réponse à chaque besoin technique de vos chantiers." },
+              { icon: Leaf, title: "Performance énergétique & durabilité", description: "Des solutions qui contribuent à l\u2019efficacité thermique et à la longévité des bâtiments." },
+              { icon: Users, title: "Expertise et proximité Comarden", description: "Un accompagnement technique personnalisé et un stock disponible en Belgique." },
+            ].map((arg, i) => {
+              const Icon = arg.icon;
+              return (
+                <Reveal key={arg.title} delay={i * 100}>
+                  <div className="bg-white rounded-2xl p-6 h-full shadow-sm hover:shadow-md transition-shadow">
+                    <div className="w-10 h-10 rounded-xl bg-[#003366]/10 flex items-center justify-center mb-4">
+                      <Icon className="w-5 h-5 text-[#003366]" />
+                    </div>
+                    <h3 className="font-semibold text-[#003366] text-lg mb-2">{arg.title}</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed">{arg.description}</p>
+                  </div>
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>

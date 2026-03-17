@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import {
   Leaf,
@@ -172,6 +173,100 @@ export default function ToituresVertesPage() {
               </p>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* ── FLORATOIT ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10">
+              <div className="flex items-center gap-4">
+                <Image
+                  src="/images/logos/floratoit-logo.png"
+                  alt="Floratoit"
+                  width={220}
+                  height={70}
+                  className="h-10 sm:h-12 w-auto object-contain"
+                  priority={false}
+                />
+                <div>
+                  <p className="text-xs font-bold uppercase tracking-widest text-emerald-700 mb-1">
+                    Partenaire
+                  </p>
+                  <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight">
+                    Floratoit
+                  </h2>
+                </div>
+              </div>
+              <div className="flex items-center gap-3">
+                <a
+                  href="https://www.floratoit.be"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 rounded-full bg-emerald-700 text-white font-semibold px-5 py-2.5 text-sm hover:bg-emerald-700/90 transition-colors"
+                >
+                  Découvrir Floratoit
+                  <ExternalLink className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="grid lg:grid-cols-2 gap-6">
+            {[
+              {
+                num: "1",
+                title: "Ramenez la nature sur votre toiture",
+                text: "La toiture végétalisée est l’avenir des toitures plates en Belgique, déjà encouragée et parfois obligatoire dans certaines villes comme Bruxelles.",
+                icon: Leaf,
+              },
+              {
+                num: "2",
+                title: "Protégez votre toiture pour des décennies",
+                text: "Une toiture verte protège l’EPDM ou le bitume des UV et des chocs thermiques et peut prolonger la durée de vie de votre étanchéité jusqu’à 30 ans.",
+                icon: Shield,
+              },
+              {
+                num: "3",
+                title: "Une solution écologique et performante",
+                text: "Gestion des eaux de pluie, réduction des îlots de chaleur, amélioration de l’isolation : le toit vert améliore le confort du bâtiment et l’environnement urbain.",
+                icon: Trees,
+              },
+              {
+                num: "4",
+                title: "Une installation simple avec Floratoit",
+                text: "Grâce aux solutions Hydropack® et IDMAT®, Floratoit propose des systèmes fiables, rapides à poser et adaptés aux toitures plates ou inclinées.",
+                icon: Sprout,
+              },
+            ].map((b, i) => {
+              const Icon = b.icon;
+              return (
+                <Reveal key={b.num} delay={i * 80}>
+                  <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm hover:shadow-md transition-shadow h-full">
+                    <div className="flex items-start gap-4">
+                      <div className="flex-shrink-0 w-10 h-10 rounded-xl bg-emerald-100 flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-emerald-700" />
+                      </div>
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-2">
+                          <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-primary/5 text-primary text-xs font-bold">
+                            {b.num}
+                          </span>
+                          <h3 className="text-base sm:text-lg font-bold text-primary">
+                            {b.title}
+                          </h3>
+                        </div>
+                        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                          {b.text}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
         </div>
       </section>
 

@@ -20,11 +20,11 @@ export default function PresentationPage() {
   return (
     <div className="pt-0">
       <PresentationHero />
-      <PresentationStats />
       <CommitmentsGrid />
       <Gallery />
       <Timeline />
       <HistoryContent />
+      <PresentationStats />
       <Commitments />
       <LocationsPreview />
       <NewsPreview />

@@ -1,8 +1,8 @@
 "use client";
 
+import Image from "next/image";
 import { Clock, Plus, X } from "lucide-react";
 import Card from "@/components/ui/Card";
-import Button from "@/components/ui/Button";
 import type { FormationModule } from "@/lib/formations";
 
 interface FormationCardProps {
@@ -58,7 +58,18 @@ export default function FormationCard({
           {module.description}
         </p>
 
-        {module.brandName && (
+        {module.brandName && module.brandLogo && (
+          <div className="mt-1">
+            <Image
+              src={module.brandLogo}
+              alt={module.brandName}
+              width={60}
+              height={18}
+              className="h-4 w-auto object-contain opacity-50 grayscale"
+            />
+          </div>
+        )}
+        {module.brandName && !module.brandLogo && (
           <span className="text-[10px] font-bold text-primary/50 mt-1 block">{module.brandName}</span>
         )}
 

@@ -62,9 +62,7 @@ export default function Header() {
                 alt="Comarden"
                 width={160}
                 height={48}
-                className={`h-8 xl:h-10 w-auto object-contain transition-all duration-300 ${
-                  scrolled ? "" : "brightness-0 invert"
-                }`}
+                className="h-8 xl:h-10 w-auto object-contain transition-all duration-300"
                 priority
               />
             </Link>

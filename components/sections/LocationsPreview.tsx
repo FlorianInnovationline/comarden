@@ -7,15 +7,23 @@ import Card from "@/components/ui/Card";
 function BelgiumWatermark() {
   return (
     <svg
-      viewBox="0 0 500 400"
+      viewBox="0 0 600 500"
       xmlns="http://www.w3.org/2000/svg"
-      className="absolute inset-0 w-full h-full object-contain opacity-25 pointer-events-none"
+      className="absolute inset-0 w-full h-full pointer-events-none"
+      preserveAspectRatio="xMidYMid meet"
       aria-hidden="true"
     >
       <path
-        fill="#DDE3EA"
-        d="M 60 180 L 80 140 L 100 110 L 140 80 L 190 60 L 250 45 L 310 50 L 360 65 L 400 85 L 430 115 L 445 150 L 440 185 L 420 215 L 390 240 L 355 265 L 310 285 L 265 300 L 220 305 L 175 295 L 135 275 L 100 250 L 75 220 Z"
+        fill="none"
+        stroke="#CBD5E1"
+        strokeWidth="1.5"
+        opacity="0.5"
+        d="M108,88 L120,82 L132,78 L148,72 L168,66 L180,62 L196,58 L210,56 L226,54 L240,52 L258,48 L276,46 L290,44 L306,42 L318,46 L328,52 L342,58 L352,68 L360,78 L368,86 L380,90 L392,88 L404,84 L416,82 L428,86 L436,94 L442,104 L448,116 L454,128 L460,136 L468,142 L478,148 L488,156 L494,168 L496,180 L492,192 L484,200 L476,210 L470,222 L468,236 L472,248 L478,260 L482,272 L478,284 L470,296 L460,306 L448,314 L434,318 L420,322 L406,328 L394,336 L386,346 L380,358 L372,368 L360,374 L348,376 L336,372 L324,366 L312,362 L298,364 L286,370 L274,378 L262,386 L248,390 L234,388 L222,382 L210,374 L198,370 L186,372 L174,378 L162,384 L150,386 L138,382 L128,374 L120,364 L116,352 L118,340 L122,328 L124,316 L120,304 L114,294 L106,286 L98,278 L92,268 L88,256 L86,244 L88,232 L92,220 L98,210 L106,200 L110,188 L112,176 L110,164 L106,152 L102,142 L100,130 L102,118 L106,106 L108,94 Z"
       />
+      <circle cx="310" cy="260" r="5" fill="#FDD000" opacity="0.6" />
+      <circle cx="250" cy="340" r="5" fill="#FDD000" opacity="0.6" />
+      <text x="318" y="264" fontSize="10" fill="#0C2952" opacity="0.4" fontFamily="sans-serif" fontWeight="600">Naninne</text>
+      <text x="258" y="344" fontSize="10" fill="#0C2952" opacity="0.4" fontFamily="sans-serif" fontWeight="600">Bertrix</text>
     </svg>
   );
 }

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ShoppingCart, Package, Truck, CheckCircle, ExternalLink, AlertTriangle } from "lucide-react";
+import { ArrowLeft, ShoppingCart, Package, Truck, CheckCircle, AlertTriangle } from "lucide-react";
 import { getProductBySlug, getProducts } from "@/lib/shop/queries";
 import { formatPrice, getStockStatus } from "@/lib/shop/utils";
 import { PLACEHOLDER_PRODUCT_IMAGE } from "@/lib/site";
@@ -277,21 +277,7 @@ export default async function ProductPage({ params }: PageProps) {
             )}
           </div>
 
-          {product.lien_produit && (
-            <Reveal delay={300}>
-              <div className="mt-6">
-                <a
-                  href={product.lien_produit}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
-                >
-                  Fiche produit
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
-            </Reveal>
-          )}
+          
         </div>
       </section>
 

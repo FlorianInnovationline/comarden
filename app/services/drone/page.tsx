@@ -125,8 +125,9 @@ export default function DronePage() {
               Comment ça fonctionne&nbsp;?
             </h2>
             <p className="text-base sm:text-lg text-primary/70 leading-relaxed">
-              Notre pilote professionnel se déplace sur votre chantier. Vous
-              recevez sous 72&nbsp;h&nbsp;:
+              Notre pilote professionnel se déplace sur votre chantier. Vous recevez sous 72&nbsp;h&nbsp;:
+              <br />
+              Disponible partout en Wallonie.
             </p>
           </div>
 

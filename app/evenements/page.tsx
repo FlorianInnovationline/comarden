@@ -78,7 +78,7 @@ const EVENTS: EventData[] = [
       "Nespresso",
       "Démos technico",
     ],
-    logos: [],
+    logos: [{ src: "/images/logos/solid-john-logo.png", alt: "Solid John" }],
   },
   {
     id: "journee-soprema",
@@ -335,9 +335,9 @@ function EventCard({
                     key={logo.alt}
                     src={logo.src}
                     alt={logo.alt}
-                    width={80}
-                    height={40}
-                    className="h-8 w-auto object-contain"
+                    width={120}
+                    height={50}
+                    className="h-10 sm:h-12 w-auto object-contain"
                   />
                 ) : (
                   <span

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { ExternalLink } from "lucide-react";
+import Link from "next/link";
+import { ShoppingCart, ExternalLink } from "lucide-react";
 import CTACompact from "@/components/sections/CTA";
 import Reveal from "@/components/ui/Reveal";
 
@@ -23,7 +24,7 @@ const products = [
       "Vis autoforeuses P1 Ø6,3×18mm pour fixation de tôles et accessoires de bardage. Solution rapide et fiable pour les professionnels de la couverture et du bardage.",
     specs: ["Acier inox A2", "Zingué", "TK12", "Vendu par 100 pièces"],
     ral: true,
-    link: "https://www.faynot.com/vis-tr-p1.html",
+    shopSlug: "vis-tete-rivet-p1-faynot",
   },
   {
     title: "Vis tête fraisée Super Bois zinguée Ø8",
@@ -31,7 +32,7 @@ const products = [
     description:
       "Vis spécialement conçue pour les systèmes SARKING et l\u2019isolation de toiture par l\u2019extérieur (ITE). Fixation performante dans le bois pour une tenue optimale de l\u2019isolant.",
     specs: ["SARKING / ITE couverture", "Tête fraisée", "Zinguée", "Ø8"],
-    link: "https://www.faynot.com/isolation-thermique-exterieur/ite-couverture/piliers-et-accessoires.html",
+    shopSlug: "vis-super-bois-sarking-faynot",
   },
   {
     title: "Cheville MARCOVIS FM-X3/PA + Vis TF/Zn",
@@ -46,7 +47,7 @@ const products = [
       "Parpaing",
       "Haute performance",
     ],
-    link: "https://www.etanco.fr/MARCOVIS-FM-X3-PA-%2BVis-TF-Zn/p-MA1634",
+    shopSlug: "marcovis-fm-x3-etanco",
   },
   {
     title: "Dispositif anti-faune / anti-pigeons",
@@ -66,7 +67,7 @@ const products = [
     description:
       "Grille de protection pour bardage ventilé contre les rongeurs et insectes. Solution discrète et durable pour préserver l\u2019intégrité de vos façades ventilées.",
     specs: ["Acier S250GD", "Finition ZPRO", "Rouleaux de 25 m"],
-    link: "https://www.simpson.fr/fr-FR/produits/grille-anti-rongeurs-gar",
+    shopSlug: "grille-anti-rongeur-gar-simpson",
   },
 ];
 
@@ -182,17 +183,15 @@ export default function VisseriePage() {
                       )}
                     </div>
 
-                    {product.link && (
+                    {product.shopSlug && (
                       <div className="flex-shrink-0">
-                        <a
-                          href={product.link}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                        <Link
+                          href={`/shop/produit/${product.shopSlug}`}
                           className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
                         >
-                          Fiche produit
-                          <ExternalLink className="w-4 h-4" />
-                        </a>
+                          Voir dans le magasin
+                          <ShoppingCart className="w-4 h-4" />
+                        </Link>
                       </div>
                     )}
                   </div>
