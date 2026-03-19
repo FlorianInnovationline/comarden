@@ -166,65 +166,6 @@ export default function TolesPanneauxPage() {
         </div>
       </section>
 
-      {/* ── STACBOND — Découpe & CLIPS&GO 2.0 ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="flex items-center gap-4 mb-6">
-              <Image
-                src="/images/logos/stackbond-logo.png"
-                alt="STACBOND"
-                width={140}
-                height={48}
-                className="h-10 w-auto object-contain"
-              />
-              <h2 className="text-2xl sm:text-3xl font-bold text-primary tracking-tight">
-                STACBOND — Nouveau service de découpe
-              </h2>
-            </div>
-            <p className="text-slate-600 mb-10 max-w-3xl">
-              Comarden a investi dans une toute nouvelle machine panneauteuse pour vous offrir plus de service, de qualité et de flexibilité pour vos chantiers. Découpe STACBOND, pliage et façonnage.
-            </p>
-
-            <p className="text-sm font-semibold text-primary mb-2">Accessoires CLIPS&GO 2.0</p>
-            <p className="text-xs text-slate-500 mb-4">
-              Système 2 pièces (profilé base + bourrelet), compatible bitume 4-5 mm, joint dilatation 5 mm / 3 mm.
-            </p>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-              {[
-                { name: "Rive 100 mm, longueur 3 m", color: "Noir 9005", type: "Rive" },
-                { name: "Rive 70 mm, longueur 3 m", color: "Noir 9005", type: "Rive" },
-                { name: "Arrêt 100 mm", color: "Noir 9005", type: "Arrêt" },
-                { name: "Arrêt 70 mm", color: "Noir 9005", type: "Arrêt" },
-                { name: "Coin intérieur 100 mm 30×30", color: "Noir 9005", type: "Coin intérieur" },
-                { name: "Coin extérieur 100 mm 30×30", color: "Noir 9005", type: "Coin extérieur" },
-                { name: "Raccord 100 mm", color: "Noir 9005", type: "Raccord" },
-                { name: "Profil base 3 m", color: "BRUT", type: "Profilé de base" },
-                { name: "Couvre-joint 100 mm", color: "Noir 9005", type: "Couvre-joint" },
-                { name: "Easy Corner", color: "BRUT", type: "Angle" },
-              ].map((item, i) => (
-                <Reveal key={item.name} delay={i * 50}>
-                  <div className="bg-white rounded-xl p-5 border border-slate-200 shadow-sm hover:shadow-md transition-shadow h-full flex flex-col">
-                    <span className="inline-flex w-fit px-2 py-0.5 text-[10px] font-bold uppercase tracking-wider text-accent bg-accent/10 rounded mb-3">
-                      ACCESSOIRE
-                    </span>
-                    <h3 className="font-bold text-primary text-sm sm:text-base mb-2 leading-tight">
-                      {item.name}
-                    </h3>
-                    <p className="text-xs text-slate-600 mb-1">
-                      <span className="font-medium">Couleur :</span> {item.color}
-                    </p>
-                    <p className="text-xs text-slate-600 mt-auto">
-                      <span className="font-medium">Type :</span> {item.type}
-                    </p>
-                  </div>
-                </Reveal>
-              ))}
-            </div>
-          </Reveal>
-        </div>
-      </section>
-
       <CTACompact />
     </div>
   );

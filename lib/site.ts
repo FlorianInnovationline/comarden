@@ -70,6 +70,7 @@ export const site = {
       { label: "Toitures vertes", href: "/produits/toitures-vertes" },
       { label: "Tôles & Panneaux", href: "/produits/toles-panneaux" },
       { label: "EPDM & Étanchéité", href: "/produits/epdm" },
+      { label: "Façade", href: "/produits/facade" },
       { label: "Visserie", href: "/produits/visserie" },
       { label: "Colles & Mastics", href: "/produits/colles-mastics" },
     ],

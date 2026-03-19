@@ -202,21 +202,23 @@ export default function IsolationPage() {
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10">
+              <div className="max-w-2xl">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
+                  Isolation fibre de bois pour toiture
+                </h2>
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                  Une isolation toiture haute performance, <strong className="text-primary">100 % naturelle</strong>, qui régule la chaleur en été comme en hiver et répond aux exigences RE2020.
+                </p>
+              </div>
               <Image
                 src="/images/logos/steico-logo.png"
                 alt="STEICO"
-                width={140}
-                height={50}
-                className="h-8 sm:h-10 w-auto object-contain"
+                width={240}
+                height={80}
+                className="h-16 sm:h-20 lg:h-24 w-auto object-contain flex-shrink-0"
               />
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight">
-                Isolation fibre de bois pour toiture
-              </h2>
             </div>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mb-10">
-              Une isolation toiture haute performance, <strong className="text-primary">100 % naturelle</strong>, qui régule la chaleur en été comme en hiver et répond aux exigences RE2020.
-            </p>
           </Reveal>
 
           <Reveal delay={50}>
