@@ -187,9 +187,9 @@ export default function ToituresVertesPage() {
               <Image
                 src="/images/logos/floratoit-logo.png"
                 alt="Floratoit"
-                width={320}
-                height={100}
-                className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
+                width={440}
+                height={130}
+                className="h-[5.5rem] sm:h-24 lg:h-28 w-auto object-contain"
                 priority={false}
               />
               <a

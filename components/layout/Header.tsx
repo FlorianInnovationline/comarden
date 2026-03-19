@@ -61,9 +61,9 @@ export default function Header() {
               <Image
                 src="/images/logo.png"
                 alt="Comarden"
-                width={160}
-                height={48}
-                className="h-8 xl:h-10 w-auto object-contain transition-all duration-300"
+                width={320}
+                height={100}
+                className="h-11 xl:h-14 w-auto object-contain object-left transition-all duration-300"
                 priority
               />
             </Link>
