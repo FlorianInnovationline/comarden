@@ -286,27 +286,25 @@ export default function IsolationPage() {
       {/* ── FAYNOT ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-5 gap-8 items-center mb-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-10">
             <Reveal>
-              <div className="lg:col-span-3">
+              <div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
                   FAYNOT — Systèmes ITE couverture
                 </h2>
-                <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
                   Le système breveté FAYNOT pour l&apos;isolation thermique de toiture par l&apos;extérieur. Performances élevées sans perte d&apos;espace intérieur.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={50}>
-              <div className="lg:col-span-2">
-                <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                    src="/images/placeholder/isolation/isolation3.jpg"
-                    alt="Système ITE FAYNOT — isolation toiture extérieur"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/placeholder/pilier-ite.jpg"
+                  alt="Système ITE FAYNOT — isolation toiture extérieur"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </Reveal>
           </div>
@@ -334,27 +332,25 @@ export default function IsolationPage() {
       {/* ── PILIER ITE ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-5 gap-8 items-center mb-12">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-12">
             <Reveal>
-              <div className="lg:col-span-3">
+              <div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
                   Pilier ITE — EASY-SARKLING / Support chevrons
                 </h2>
-                <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
                   Piliers ITE FAYNOT pour isolation de toiture par l&apos;extérieur : H120 et H80. Compatible laine minérale et fibre de bois, zéro pont thermique.
                 </p>
               </div>
             </Reveal>
             <Reveal delay={50}>
-              <div className="lg:col-span-2">
-                <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
-                  <Image
-                    src="/images/placeholder/pilier-ite.jpg"
-                    alt="Pilier ITE FAYNOT — support chevrons isolation"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
+                <Image
+                  src="/images/placeholder/isolation/isolation3.jpg"
+                  alt="Pilier ITE FAYNOT — support chevrons isolation"
+                  fill
+                  className="object-cover"
+                />
               </div>
             </Reveal>
           </div>

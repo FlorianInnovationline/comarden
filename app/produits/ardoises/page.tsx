@@ -71,27 +71,41 @@ export default function ArdoisesPage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <span className="flex h-3 w-3 relative">
-                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-accent opacity-75" />
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-accent" />
-                </span>
-                <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm">
-                  Toiture &amp; couverture
-                </span>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <Reveal>
+              <div>
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <span className="flex h-3 w-3 relative">
+                    <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-accent opacity-75" />
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-accent" />
+                  </span>
+                  <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm">
+                    Toiture &amp; couverture
+                  </span>
+                </div>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                  Ardoises
+                </h1>
+                <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
+                  Spécialiste de l&apos;ardoise naturelle, Comarden vous propose une
+                  sélection rigoureuse de matériaux pour des toitures durables,
+                  esthétiques et performantes.
+                </p>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                Ardoises
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-                Spécialiste de l&apos;ardoise naturelle, Comarden vous propose une
-                sélection rigoureuse de matériaux pour des toitures durables,
-                esthétiques et performantes.
-              </p>
-            </div>
-          </Reveal>
+            </Reveal>
+            <Reveal delay={200}>
+              <div className="hidden lg:block">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+                  <Image
+                    src="/images/placeholder/ardoises-hero.jpg"
+                    alt="Ardoises naturelles"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 

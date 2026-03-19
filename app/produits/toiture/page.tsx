@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Shield, Layers, Droplets, Home } from "lucide-react";
 import CTACompact from "@/components/sections/CTA";
@@ -57,26 +58,40 @@ export default function ToiturePage() {
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <span className="flex h-3 w-3 relative">
-                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-accent opacity-75" />
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-accent" />
-                </span>
-                <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm">
-                  Matériaux de couverture
-                </span>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <Reveal>
+              <div>
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <span className="flex h-3 w-3 relative">
+                    <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-accent opacity-75" />
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-accent" />
+                  </span>
+                  <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm">
+                    Matériaux de couverture
+                  </span>
+                </div>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                  Toiture
+                </h1>
+                <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
+                  Comarden propose une gamme complète de matériaux pour toitures inclinées et plates :
+                  ardoises, tuiles, tôles, EPDM, isolation et accessoires. Deux sites en Wallonie à votre service.
+                </p>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                Toiture
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-                Comarden propose une gamme complète de matériaux pour toitures inclinées et plates :
-                ardoises, tuiles, tôles, EPDM, isolation et accessoires. Deux sites en Wallonie à votre service.
-              </p>
-            </div>
-          </Reveal>
+            </Reveal>
+            <Reveal delay={200}>
+              <div className="hidden lg:block">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+                  <Image
+                    src="/images/placeholder/toiture-hero.jpg"
+                    alt="Matériaux de toiture"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 

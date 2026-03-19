@@ -127,7 +127,7 @@ export default function TolesPanneauxPage() {
               </div>
 
               <div className="hidden lg:block">
-                <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                   <Image
                     src="/images/placeholder/panneaux/toles-pan2.jpg"
                     alt="Tôles et panneaux industriels"
