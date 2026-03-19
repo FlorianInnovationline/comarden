@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     "Membranes EPDM d\u2019étanchéité pour toitures plates : Elevate RubberGard, Sopraguard Stick. Solutions professionnelles disponibles chez Comarden en Belgique.",
 };
 
-const products = [
+const elevateProducts = [
   {
     title: "Elevate RubberGard EPDM SA",
     brand: "ELEVATE (Holcim)",
@@ -27,19 +27,6 @@ const products = [
     shopSlug: "rubbergard-epdm-sa-elevate",
   },
   {
-    title: "Sopraguard Stick — Membrane EPDM auto-adhésive",
-    brand: "SOPREMA",
-    description:
-      "Membrane EPDM auto-adhésive en rouleaux de 30\u00A0m, épaisseur 1,14\u00A0mm. Solution performante et rapide à mettre en œuvre pour l\u2019étanchéité des toitures plates résidentielles et commerciales.",
-    specs: [
-      "Auto-adhésive",
-      "Rouleaux 30 m",
-      "Épaisseur 1,14 mm",
-      "Toitures plates",
-    ],
-    shopSlug: "sopraguard-stick-epdm",
-  },
-  {
     title: "Ancrage Photovoltaïque Toiture Plate",
     brand: "ELEVATE (Holcim)",
     description:
@@ -52,6 +39,20 @@ const products = [
     shopSlug: "ancrage-photovoltaique-elevate",
   },
 ];
+
+const sopremaProduct = {
+  title: "Sopraguard Stick — Membrane EPDM auto-adhésive",
+  brand: "SOPREMA",
+  description:
+    "Membrane EPDM auto-adhésive en rouleaux de 30\u00A0m, épaisseur 1,14\u00A0mm. Solution performante et rapide à mettre en œuvre pour l\u2019étanchéité des toitures plates résidentielles et commerciales.",
+  specs: [
+    "Auto-adhésive",
+    "Rouleaux 30 m",
+    "Épaisseur 1,14 mm",
+    "Toitures plates",
+  ],
+  shopSlug: "sopraguard-stick-epdm",
+};
 
 export default function EpdmPage() {
   return (
@@ -101,68 +102,6 @@ export default function EpdmPage() {
               </p>
             </div>
           </Reveal>
-        </div>
-      </section>
-
-      {/* ── PRODUCTS ── */}
-      <section className="py-16 sm:py-20 lg:py-24 bg-slate-100">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="max-w-3xl mb-12">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
-                Nos solutions EPDM
-              </h2>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
-                Des membranes d&apos;étanchéité de référence pour des toitures
-                plates durables, fiables et faciles à mettre en œuvre.
-              </p>
-            </div>
-          </Reveal>
-
-          <div className="space-y-6">
-            {products.map((product, i) => (
-              <Reveal key={product.title} delay={i * 100}>
-                <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-                    <div className="flex-1">
-                      <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">
-                        {product.brand}
-                      </p>
-                      <h3 className="text-xl sm:text-2xl font-bold text-primary mb-3">
-                        {product.title}
-                      </h3>
-                      <p className="text-base text-slate-600 leading-relaxed mb-4">
-                        {product.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-2">
-                        {product.specs.map((spec) => (
-                          <span
-                            key={spec}
-                            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/5 text-primary border border-primary/10"
-                          >
-                            {spec}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {product.shopSlug && (
-                      <div className="flex-shrink-0">
-                        <Link
-                          href={`/shop/produit/${product.shopSlug}`}
-                          className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
-                        >
-                          Voir dans le magasin
-                          <ShoppingCart className="w-4 h-4" />
-                        </Link>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
         </div>
       </section>
 
@@ -241,6 +180,68 @@ export default function EpdmPage() {
         </div>
       </section>
 
+      {/* ── ELEVATE PRODUCTS ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-slate-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="max-w-3xl mb-12">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
+                Nos solutions EPDM — ELEVATE
+              </h2>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Des membranes d&apos;étanchéité de référence pour des toitures
+                plates durables, fiables et faciles à mettre en œuvre.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="space-y-6">
+            {elevateProducts.map((product, i) => (
+              <Reveal key={product.title} delay={i * 100}>
+                <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                    <div className="flex-1">
+                      <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">
+                        {product.brand}
+                      </p>
+                      <h3 className="text-xl sm:text-2xl font-bold text-primary mb-3">
+                        {product.title}
+                      </h3>
+                      <p className="text-base text-slate-600 leading-relaxed mb-4">
+                        {product.description}
+                      </p>
+
+                      <div className="flex flex-wrap gap-2">
+                        {product.specs.map((spec) => (
+                          <span
+                            key={spec}
+                            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/5 text-primary border border-primary/10"
+                          >
+                            {spec}
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+
+                    {product.shopSlug && (
+                      <div className="flex-shrink-0">
+                        <Link
+                          href={`/shop/produit/${product.shopSlug}`}
+                          className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
+                        >
+                          Voir dans le magasin
+                          <ShoppingCart className="w-4 h-4" />
+                        </Link>
+                      </div>
+                    )}
+                  </div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── SOPREMA ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-[#003366] text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -266,12 +267,52 @@ export default function EpdmPage() {
             </div>
           </Reveal>
 
+          {/* Sopraguard product card */}
+          <Reveal delay={50}>
+            <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/15 mb-10">
+              <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
+                <div className="flex-1">
+                  <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">
+                    {sopremaProduct.brand}
+                  </p>
+                  <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">
+                    {sopremaProduct.title}
+                  </h3>
+                  <p className="text-base text-white/80 leading-relaxed mb-4">
+                    {sopremaProduct.description}
+                  </p>
+                  <div className="flex flex-wrap gap-2">
+                    {sopremaProduct.specs.map((spec) => (
+                      <span
+                        key={spec}
+                        className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-white/10 text-white/90 border border-white/20"
+                      >
+                        {spec}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+                {sopremaProduct.shopSlug && (
+                  <div className="flex-shrink-0">
+                    <Link
+                      href={`/shop/produit/${sopremaProduct.shopSlug}`}
+                      className="inline-flex items-center gap-2 bg-white text-[#003366] font-semibold px-6 py-3 rounded-full hover:bg-white/90 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
+                    >
+                      Voir dans le magasin
+                      <ShoppingCart className="w-4 h-4" />
+                    </Link>
+                  </div>
+                )}
+              </div>
+            </div>
+          </Reveal>
+
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { icon: Award, title: "Qualité professionnelle reconnue", description: "Des produits certifiés et éprouvés, plébiscités par les professionnels du bâtiment à travers le monde." },
-              { icon: Shield, title: "Gamme complète pour les couvreurs", description: "Étanchéité, isolation, toiture plate : une réponse à chaque besoin technique de vos chantiers." },
-              { icon: Leaf, title: "Performance énergétique & durabilité", description: "Des solutions qui contribuent à l\u2019efficacité thermique et à la longévité des bâtiments." },
-              { icon: Users, title: "Expertise et proximité Comarden", description: "Un accompagnement technique personnalisé et un stock disponible en Belgique." },
+              { icon: Award, title: "Qualité professionnelle reconnue", description: "Des solutions d\u2019étanchéité et d\u2019isolation pour toitures plates et inclinées issues d\u2019une marque leader mondiale dans le secteur du bâtiment." },
+              { icon: Shield, title: "Gamme complète pour les couvreurs", description: "Membranes bitumineuses, EPDM, résines liquides ALSAN, isolants PIR et bois, colles et accessoires\u00A0: tout pour réaliser un système toiture complet et performant." },
+              { icon: Leaf, title: "Performance énergétique & durabilité", description: "Produits conçus pour améliorer l\u2019isolation thermique, la longévité des toitures et la conformité aux normes belges." },
+              { icon: Users, title: "Expertise et proximité Comarden", description: "Un partenaire technique en Belgique, avec conseil, disponibilité produit et solutions adaptées aux professionnels de la toiture et de l\u2019étanchéité." },
             ].map((arg, i) => {
               const Icon = arg.icon;
               return (

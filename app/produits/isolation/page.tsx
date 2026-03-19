@@ -202,69 +202,59 @@ export default function IsolationPage() {
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="flex items-start gap-5 flex-col lg:flex-row lg:items-center lg:justify-between mb-10">
-              <div className="flex items-center gap-4">
-                <Image
-                  src="/images/logos/steico-logo.png"
-                  alt="STEICO"
-                  width={160}
-                  height={60}
-                  className="h-10 w-auto object-contain"
-                />
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight">
-                  STEICO — Isolation fibre de bois pour toiture
-                </h2>
-              </div>
+            <div className="flex items-center gap-4 mb-4">
+              <Image
+                src="/images/logos/steico-logo.png"
+                alt="STEICO"
+                width={140}
+                height={50}
+                className="h-8 sm:h-10 w-auto object-contain"
+              />
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight">
+                Isolation fibre de bois pour toiture
+              </h2>
+            </div>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mb-10">
+              Une isolation toiture haute performance, <strong className="text-primary">100 % naturelle</strong>, qui régule la chaleur en été comme en hiver et répond aux exigences RE2020.
+            </p>
+          </Reveal>
+
+          <Reveal delay={50}>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
+              {[
+                { title: "Confort d\u2019été supérieur", text: "La densité élevée de la fibre de bois lui confère une inertie thermique exceptionnelle — elle ralentit la chaleur estivale bien mieux que la laine minérale." },
+                { title: "Confort d\u2019hiver", text: "Excellente performance thermique pour une toiture plus stable et plus agréable en toutes saisons." },
+                { title: "Acoustique", text: "Réduction des bruits d\u2019impact et amélioration significative du confort sonore intérieur." },
+              ].map((b) => (
+                <div key={b.title} className="bg-slate-50 rounded-2xl p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                  <h3 className="text-base font-bold text-primary mb-2">{b.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{b.text}</p>
+                </div>
+              ))}
             </div>
           </Reveal>
 
-          <div className="grid lg:grid-cols-5 gap-6 items-stretch">
-            <Reveal>
-              <div className="lg:col-span-2 bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 h-full">
-                <p className="text-base sm:text-lg text-slate-700 leading-relaxed">
-                  Une isolation toiture haute performance, <strong>100% naturelle</strong>, qui régule la chaleur en été comme en hiver et répond aux exigences actuelles de performance énergétique.
-                </p>
-                <div className="mt-6 space-y-3">
+          <Reveal delay={100}>
+            <div className="bg-primary rounded-2xl p-6 sm:p-8 text-white overflow-hidden relative">
+              <div className="absolute inset-0 opacity-25 bg-[radial-gradient(ellipse_at_top_right,rgba(245,208,0,0.35),transparent_60%)]" />
+              <div className="relative">
+                <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-2">Points clés</p>
+                <h3 className="text-xl sm:text-2xl font-bold mb-6">Pourquoi choisir la fibre de bois ?</h3>
+                <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
                   {[
-                    { title: "Confort d'été supérieur", text: "Inertie thermique élevée : ralentit la chaleur estivale bien mieux que la laine minérale." },
-                    { title: "Confort d'hiver", text: "Excellente performance thermique pour une toiture plus stable et plus agréable." },
-                    { title: "Acoustique", text: "Réduction des bruits d'impact et amélioration du confort sonore." },
-                  ].map((b) => (
-                    <div key={b.title} className="rounded-xl bg-white border border-slate-200 p-4">
-                      <p className="text-sm font-bold text-primary mb-1">{b.title}</p>
-                      <p className="text-sm text-slate-600 leading-relaxed">{b.text}</p>
+                    "Améliore le confort du bâtiment et l\u2019environnement urbain",
+                    "Protection de l\u2019étanchéité (EPDM / bitume) et durée de vie prolongée",
+                    "Systèmes adaptés aux toitures plates ou inclinées",
+                    "Pose professionnelle, solutions fiables et durables",
+                  ].map((p) => (
+                    <div key={p} className="rounded-xl bg-white/10 border border-white/15 p-4">
+                      <p className="text-sm text-white/90 leading-relaxed">{p}</p>
                     </div>
                   ))}
                 </div>
               </div>
-            </Reveal>
-
-            <Reveal delay={100}>
-              <div className="lg:col-span-3 bg-primary rounded-2xl p-6 sm:p-8 text-white h-full overflow-hidden relative">
-                <div className="absolute inset-0 opacity-25 bg-[radial-gradient(ellipse_at_top_right,rgba(245,208,0,0.35),transparent_60%)]" />
-                <div className="relative">
-                  <p className="text-xs font-bold uppercase tracking-widest text-white/70 mb-2">
-                    Points clés
-                  </p>
-                  <h3 className="text-xl sm:text-2xl font-bold mb-4">
-                    Pourquoi choisir la fibre de bois ?
-                  </h3>
-                  <div className="grid sm:grid-cols-2 gap-4">
-                    {[
-                      "Améliore le confort du bâtiment et l'environnement urbain",
-                      "Protection de l'étanchéité (EPDM/bitume) et durée de vie prolongée",
-                      "Systèmes adaptés aux toitures plates ou inclinées",
-                      "Pose professionnelle, solutions fiables et durables",
-                    ].map((p) => (
-                      <div key={p} className="rounded-xl bg-white/10 border border-white/15 p-4">
-                        <p className="text-sm text-white/90 leading-relaxed">{p}</p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          </div>
+            </div>
+          </Reveal>
         </div>
       </section>
 

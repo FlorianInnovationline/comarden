@@ -129,7 +129,7 @@ export default function FormationsPage() {
                 Centre de formation
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
-                La rentabilité et la satisfaction de vos clients passent avant tout par des chantiers professionnels, réalisés par des collaborateurs bien formés.
+                Découvrez nos dates de formations programmées. Et parce que chaque entreprise a des besoins spécifiques, nous vous offrons également la possibilité unique d&apos;organiser des <span className="font-semibold text-white">formations à la demande</span>&nbsp;: des journées personnalisées, centrées sur les thématiques qui vous intéressent réellement.
               </p>
             </div>
           </Reveal>

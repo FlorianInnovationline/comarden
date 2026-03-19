@@ -181,13 +181,13 @@ export default function ToituresVertesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10">
-              <div className="flex items-center gap-4">
+              <div className="flex items-center gap-5">
                 <Image
                   src="/images/logos/floratoit-logo.png"
                   alt="Floratoit"
-                  width={220}
-                  height={70}
-                  className="h-10 sm:h-12 w-auto object-contain"
+                  width={280}
+                  height={90}
+                  className="h-16 sm:h-20 w-auto object-contain"
                   priority={false}
                 />
                 <div>

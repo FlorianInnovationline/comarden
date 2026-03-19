@@ -7,6 +7,12 @@ import {
   ClipboardCheck,
   Play,
   ArrowRight,
+  Camera,
+  FileText,
+  Clock,
+  MapPin,
+  CheckCircle,
+  Zap,
 } from "lucide-react";
 import CTACompact from "@/components/sections/CTA";
 
@@ -153,6 +159,83 @@ export default function DronePage() {
           <p className="text-center text-sm sm:text-base text-primary/60 font-medium">
             Disponible en Wallonie, à Bruxelles et dans toute la Belgique.
           </p>
+        </div>
+      </section>
+
+      {/* ── Detailed Info ── */}
+      <section className="py-16 sm:py-20 lg:py-28 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
+            <span className="text-xs font-bold uppercase tracking-widest text-accent mb-3 block">Service professionnel</span>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
+              Ce que comprend le service drone
+            </h2>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+              Comarden met à disposition un pilote certifié équipé d&apos;un drone professionnel pour mesurer, inspecter et documenter vos chantiers de toiture.
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-14">
+            {[
+              { icon: Camera, title: "Photos haute résolution", text: "Photos aériennes HD de l\u2019ensemble de la toiture : état général, détails, points singuliers et défauts." },
+              { icon: Ruler, title: "Métrés précis", text: "Relevé complet des surfaces, longueurs de rives, faîtages, noues et pénétrations. Métrés exploitables directement pour devis." },
+              { icon: FileText, title: "Rapport complet", text: "Rapport PDF détaillé avec photos annotées, plans cotés et recommandations techniques. Livré sous 72\u00A0h." },
+              { icon: Clock, title: "Intervention rapide", text: "Prise de rendez-vous sous 48\u00A0h, intervention d\u2019une demi-journée maximum. Aucune installation nécessaire." },
+              { icon: MapPin, title: "Wallonie & Bruxelles", text: "Disponible partout en Wallonie et à Bruxelles. Déplacements inclus dans le tarif du service." },
+              { icon: Zap, title: "Sécurité chantier", text: "Aucun échafaudage, aucune nacelle. Inspection complète de la toiture sans intervention en hauteur." },
+            ].map((item) => {
+              const Icon = item.icon;
+              return (
+                <div key={item.title} className="bg-white rounded-2xl p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                  <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                    <Icon className="w-6 h-6 text-accent" />
+                  </div>
+                  <h3 className="text-lg font-bold text-primary mb-2">{item.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">{item.text}</p>
+                </div>
+              );
+            })}
+          </div>
+
+          <div className="bg-primary rounded-2xl p-6 sm:p-8 lg:p-10 text-white overflow-hidden relative">
+            <div className="absolute inset-0 opacity-25 bg-[radial-gradient(ellipse_at_top_right,rgba(245,208,0,0.35),transparent_60%)]" />
+            <div className="relative grid lg:grid-cols-2 gap-8 items-center">
+              <div>
+                <h3 className="text-xl sm:text-2xl font-bold mb-4">Pourquoi choisir le mesurage par drone ?</h3>
+                <div className="space-y-3">
+                  {[
+                    "Des devis plus précis = moins de pertes et plus de rentabilité",
+                    "Gain de temps considérable sur la phase de métré",
+                    "Professionnalisme renforcé auprès de vos clients",
+                    "Aucun risque en hauteur pour vos équipes",
+                    "Détection de défauts invisibles depuis le sol",
+                  ].map((point) => (
+                    <div key={point} className="flex items-start gap-3">
+                      <CheckCircle className="w-5 h-5 text-accent flex-shrink-0 mt-0.5" />
+                      <p className="text-sm sm:text-base text-white/90 leading-relaxed">{point}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/15">
+                <p className="text-xs font-bold uppercase tracking-widest text-white/60 mb-3">Livrables</p>
+                <ul className="space-y-2.5">
+                  {[
+                    "Photos aériennes annotées de la toiture",
+                    "Plan coté avec surfaces et dimensions",
+                    "Identification des points singuliers",
+                    "Rapport d\u2019état avec recommandations",
+                    "Fichiers exploitables pour devis",
+                  ].map((item) => (
+                    <li key={item} className="flex items-center gap-2.5 text-sm text-white/85">
+                      <span className="w-1.5 h-1.5 rounded-full bg-accent flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
