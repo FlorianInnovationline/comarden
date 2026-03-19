@@ -294,7 +294,7 @@ export default function CollesMasticsPage() {
               <div className="hidden lg:block">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
                   <Image
-                    src="/images/placeholders/colles/colle1.jpg"
+                    src="/images/placeholder/colles/colle1.jpg"
                     alt="Colles et mastics professionnels"
                     fill
                     className="object-cover"

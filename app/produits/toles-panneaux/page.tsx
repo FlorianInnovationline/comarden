@@ -74,7 +74,7 @@ export default function TolesPanneauxPage() {
               <div className="hidden lg:block">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
                   <Image
-                    src="/images/placeholders/panneaux/toles-pan1.jpg"
+                    src="/images/placeholder/panneaux/toles-pan1.jpg"
                     alt="Tôles acier et panneaux"
                     fill
                     className="object-cover"
@@ -129,7 +129,7 @@ export default function TolesPanneauxPage() {
               <div className="hidden lg:block">
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                   <Image
-                    src="/images/placeholders/panneaux/toles-pan2.jpg"
+                    src="/images/placeholder/panneaux/toles-pan2.jpg"
                     alt="Tôles et panneaux industriels"
                     fill
                     className="object-cover"
