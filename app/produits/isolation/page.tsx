@@ -162,7 +162,7 @@ export default function IsolationPage() {
               <div className="lg:col-span-2">
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                    src="/images/placeholder/isolation-ursa.jpg"
+                    src="/images/placeholders/isolation/isolation1.jpg"
                     alt="Isolation URSA — panneaux isolants"
                     fill
                     className="object-cover"
@@ -182,7 +182,7 @@ export default function IsolationPage() {
               <div className="lg:col-span-2">
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                    src="/images/placeholder/isolation-pavatex.jpg"
+                    src="/images/placeholders/isolation/isolation2.jpg"
                     alt="Isolation fibre de bois PAVATEX"
                     fill
                     className="object-cover"
@@ -301,7 +301,7 @@ export default function IsolationPage() {
               <div className="lg:col-span-2">
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
                   <Image
-                    src="/images/placeholder/isolation-faynot.jpg"
+                    src="/images/placeholders/isolation/isolation3.jpg"
                     alt="Système ITE FAYNOT — isolation toiture extérieur"
                     fill
                     className="object-cover"

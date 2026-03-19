@@ -105,7 +105,7 @@ export default function ContactPage() {
               <div className="hidden lg:block">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
                   <Image
-                    src="/images/placeholder/team-comarden.jpg"
+                    src="/images/presentation/equipe.jpg"
                     alt="L'équipe Comarden"
                     fill
                     className="object-cover"

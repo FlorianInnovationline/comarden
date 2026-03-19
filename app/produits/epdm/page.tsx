@@ -86,7 +86,7 @@ export default function EpdmPage() {
               <div className="hidden lg:block">
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
                   <Image
-                    src="/images/placeholder/epdm-etancheite.jpg"
+                    src="/images/placeholders/epdm/epdm2.jpg"
                     alt="Membrane EPDM — étanchéité toiture plate"
                     fill
                     className="object-cover"

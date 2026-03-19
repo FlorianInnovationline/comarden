@@ -58,16 +58,29 @@ export default function TolesPanneauxPage() {
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="max-w-3xl">
-              <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm mb-6 inline-block">
-                Tôles & panneaux
-              </span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                Tôles acier et couvertures industrielles chez Comarden — Naninne & Bertrix
-              </h1>
-              <p className="text-base sm:text-lg text-white/80 leading-relaxed">
-                Revêtements métalliques, panneaux sandwich et fibrociment pour toitures industrielles et agricoles.
-              </p>
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div className="max-w-3xl">
+                <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm mb-6 inline-block">
+                  Tôles & panneaux
+                </span>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                  Tôles acier et couvertures industrielles chez Comarden — Naninne & Bertrix
+                </h1>
+                <p className="text-base sm:text-lg text-white/80 leading-relaxed">
+                  Revêtements métalliques, panneaux sandwich et fibrociment pour toitures industrielles et agricoles.
+                </p>
+              </div>
+
+              <div className="hidden lg:block">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+                  <Image
+                    src="/images/placeholders/panneaux/toles-pan1.jpg"
+                    alt="Tôles acier et panneaux"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>
@@ -99,16 +112,31 @@ export default function TolesPanneauxPage() {
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <h2 className="text-2xl sm:text-3xl font-bold text-primary tracking-tight mb-4">
-              Toitures industrielles et agricoles en acier ou fibrociment
-            </h2>
-            <p className="text-slate-600 mb-6">
-              COMARDEN est importateur BENELUX des produits ISOPAN et distribue également JORISIDE, Lattonedil et REX Panels.
-            </p>
-            <ul className="space-y-2 text-slate-700 mb-4">
-              <li>• Revêtements métalliques : 3 modèles de tôles sèches en plusieurs couleurs + 2 types panneaux sandwich</li>
-              <li>• Plaques en fibrociment : incombustibles, résistantes humidité, bâtiments industriels et agricoles</li>
-            </ul>
+            <div className="grid lg:grid-cols-2 gap-12 items-start">
+              <div>
+                <h2 className="text-2xl sm:text-3xl font-bold text-primary tracking-tight mb-4">
+                  Toitures industrielles et agricoles en acier ou fibrociment
+                </h2>
+                <p className="text-slate-600 mb-6">
+                  COMARDEN est importateur BENELUX des produits ISOPAN et distribue également JORISIDE, Lattonedil et REX Panels.
+                </p>
+                <ul className="space-y-2 text-slate-700 mb-4">
+                  <li>• Revêtements métalliques : 3 modèles de tôles sèches en plusieurs couleurs + 2 types panneaux sandwich</li>
+                  <li>• Plaques en fibrociment : incombustibles, résistantes humidité, bâtiments industriels et agricoles</li>
+                </ul>
+              </div>
+
+              <div className="hidden lg:block">
+                <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+                  <Image
+                    src="/images/placeholders/panneaux/toles-pan2.jpg"
+                    alt="Tôles et panneaux industriels"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           </Reveal>
         </div>
       </section>
