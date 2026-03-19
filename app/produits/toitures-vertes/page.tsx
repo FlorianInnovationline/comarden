@@ -180,31 +180,27 @@ export default function ToituresVertesPage() {
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10">
-              <div className="flex flex-col gap-2">
-                <p className="text-xs font-bold uppercase tracking-widest text-emerald-700">
-                  Partenaire
-                </p>
-                <Image
-                  src="/images/logos/floratoit-logo.png"
-                  alt="Floratoit"
-                  width={400}
-                  height={120}
-                  className="h-20 sm:h-24 lg:h-28 w-auto object-contain"
-                  priority={false}
-                />
-              </div>
-              <div className="flex items-center gap-3">
-                <a
-                  href="https://www.floratoit.be"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-emerald-700 text-white font-semibold px-5 py-2.5 text-sm hover:bg-emerald-700/90 transition-colors"
-                >
-                  Découvrir Floratoit
-                  <ExternalLink className="w-4 h-4" />
-                </a>
-              </div>
+            <div className="flex flex-col items-center text-center gap-3 mb-12">
+              <p className="text-xs font-bold uppercase tracking-widest text-emerald-700">
+                Partenaire
+              </p>
+              <Image
+                src="/images/logos/floratoit-logo.png"
+                alt="Floratoit"
+                width={360}
+                height={110}
+                className="h-16 sm:h-20 lg:h-24 w-auto object-contain"
+                priority={false}
+              />
+              <a
+                href="https://www.floratoit.be"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-full bg-emerald-700 text-white font-semibold px-5 py-2.5 text-sm hover:bg-emerald-700/90 transition-colors mt-2"
+              >
+                Découvrir Floratoit
+                <ExternalLink className="w-4 h-4" />
+              </a>
             </div>
           </Reveal>
 
