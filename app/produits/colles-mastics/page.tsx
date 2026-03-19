@@ -276,19 +276,33 @@ export default function CollesMasticsPage() {
           />
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="max-w-3xl">
-              <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm mb-6 inline-block">
-                Colles & mastics
-              </span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                Colles &amp; Mastics — Solutions d&apos;adhésion pour professionnels
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-                Colles de contact STRATO GRIP et mastics TYVEK DUPONT disponibles à Bertrix et Naninne. Haute performance pour bardage, isolation et étanchéité.
-              </p>
-            </div>
-          </Reveal>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <Reveal>
+              <div>
+                <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm mb-6 inline-block">
+                  Colles &amp; mastics
+                </span>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                  Colles &amp; Mastics — Solutions d&apos;adhésion pour professionnels
+                </h1>
+                <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
+                  Colles de contact STRATO GRIP et mastics TYVEK DUPONT disponibles à Bertrix et Naninne. Haute performance pour bardage, isolation et étanchéité.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={200}>
+              <div className="hidden lg:block">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+                  <Image
+                    src="/images/placeholder/colles-mastics.jpg"
+                    alt="Colles et mastics professionnels"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 

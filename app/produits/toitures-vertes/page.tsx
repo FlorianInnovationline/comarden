@@ -128,25 +128,39 @@ export default function ToituresVertesPage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <span className="flex h-3 w-3 relative">
-                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-emerald-400 opacity-75" />
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400" />
-                </span>
-                <span className="text-emerald-400 font-medium tracking-wide uppercase text-xs sm:text-sm">
-                  Partenaire FLORATOIT
-                </span>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <Reveal>
+              <div>
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <span className="flex h-3 w-3 relative">
+                    <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-emerald-400 opacity-75" />
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-400" />
+                  </span>
+                  <span className="text-emerald-400 font-medium tracking-wide uppercase text-xs sm:text-sm">
+                    Partenaire FLORATOIT
+                  </span>
+                </div>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                  Toitures Végétalisées
+                </h1>
+                <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
+                  Solutions écologiques pour toitures plates et inclinées
+                </p>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                Toitures Végétalisées
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-                Solutions écologiques pour toitures plates et inclinées
-              </p>
-            </div>
-          </Reveal>
+            </Reveal>
+            <Reveal delay={200}>
+              <div className="hidden lg:block">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+                  <Image
+                    src="/images/placeholder/toiture-vegetale.jpg"
+                    alt="Toiture végétalisée — toit vert"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 

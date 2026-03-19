@@ -138,17 +138,17 @@ export default function IsolationPage() {
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="max-w-4xl mx-auto flex flex-col sm:flex-row sm:items-start gap-6">
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/logos/ursa-by-etex-logo.png"
-                  alt="URSA by Etex"
-                  width={160}
-                  height={60}
-                  className="object-contain h-12 w-auto"
-                />
-              </div>
-              <div className="flex-1">
+            <div className="grid lg:grid-cols-5 gap-8 items-center">
+              <div className="lg:col-span-3">
+                <div className="flex items-center gap-4 mb-4">
+                  <Image
+                    src="/images/logos/ursa-by-etex-logo.png"
+                    alt="URSA by Etex"
+                    width={160}
+                    height={60}
+                    className="object-contain h-12 w-auto"
+                  />
+                </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
                   URSA — Isolation durable en Belgique chez Comarden
                 </h2>
@@ -159,6 +159,16 @@ export default function IsolationPage() {
                   </p>
                 </div>
               </div>
+              <div className="lg:col-span-2">
+                <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/placeholder/isolation-ursa.jpg"
+                    alt="Isolation URSA — panneaux isolants"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
             </div>
           </Reveal>
         </div>
@@ -167,34 +177,47 @@ export default function IsolationPage() {
       {/* ── PAVATEX ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="max-w-3xl mb-10">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
-                PAVATEX — Fibre de bois
-              </h2>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
-                Isolation en fibre de bois pour la toiture : confort été/hiver, régulation hygrométrique et performance durable. Solutions adaptées aux toitures inclinées en rénovation ou neuf.
-              </p>
-            </div>
-          </Reveal>
-
-          <Reveal delay={100}>
-            <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
-              <div className="grid sm:grid-cols-2 gap-4">
-                {[
-                  "Confort d'été supérieur (inertie)",
-                  "Matériau 100% naturel",
-                  "Bonne régulation de l'humidité",
-                  "Compatible sarking / sous-toiture",
-                ].map((item) => (
-                  <div key={item} className="flex items-start gap-3">
-                    <span className="mt-1 h-2 w-2 rounded-full bg-accent flex-shrink-0" />
-                    <p className="text-sm text-slate-700">{item}</p>
-                  </div>
-                ))}
+          <div className="grid lg:grid-cols-5 gap-8 items-center">
+            <Reveal>
+              <div className="lg:col-span-2">
+                <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/placeholder/isolation-pavatex.jpg"
+                    alt="Isolation fibre de bois PAVATEX"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
               </div>
+            </Reveal>
+            <div className="lg:col-span-3">
+              <Reveal>
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
+                  PAVATEX — Fibre de bois
+                </h2>
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mb-8">
+                  Isolation en fibre de bois pour la toiture : confort été/hiver, régulation hygrométrique et performance durable. Solutions adaptées aux toitures inclinées en rénovation ou neuf.
+                </p>
+              </Reveal>
+              <Reveal delay={100}>
+                <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200 shadow-sm">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    {[
+                      "Confort d'été supérieur (inertie)",
+                      "Matériau 100% naturel",
+                      "Bonne régulation de l'humidité",
+                      "Compatible sarking / sous-toiture",
+                    ].map((item) => (
+                      <div key={item} className="flex items-start gap-3">
+                        <span className="mt-1 h-2 w-2 rounded-full bg-accent flex-shrink-0" />
+                        <p className="text-sm text-slate-700">{item}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              </Reveal>
             </div>
-          </Reveal>
+          </div>
         </div>
       </section>
 
@@ -263,16 +286,30 @@ export default function IsolationPage() {
       {/* ── FAYNOT ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="max-w-3xl mb-10">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
-                FAYNOT — Systèmes ITE couverture
-              </h2>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
-                Le système breveté FAYNOT pour l&apos;isolation thermique de toiture par l&apos;extérieur. Performances élevées sans perte d&apos;espace intérieur.
-              </p>
-            </div>
-          </Reveal>
+          <div className="grid lg:grid-cols-5 gap-8 items-center mb-10">
+            <Reveal>
+              <div className="lg:col-span-3">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
+                  FAYNOT — Systèmes ITE couverture
+                </h2>
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+                  Le système breveté FAYNOT pour l&apos;isolation thermique de toiture par l&apos;extérieur. Performances élevées sans perte d&apos;espace intérieur.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={50}>
+              <div className="lg:col-span-2">
+                <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/placeholder/isolation-faynot.jpg"
+                    alt="Système ITE FAYNOT — isolation toiture extérieur"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </Reveal>
+          </div>
 
           <div className="grid sm:grid-cols-2 gap-6">
             {kitProducts.map((kit, i) => (
@@ -297,16 +334,30 @@ export default function IsolationPage() {
       {/* ── PILIER ITE ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="max-w-3xl mb-12">
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
-                Pilier ITE — EASY-SARKLING / Support chevrons
-              </h2>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
-                Piliers ITE FAYNOT pour isolation de toiture par l&apos;extérieur : H120 et H80. Compatible laine minérale et fibre de bois, zéro pont thermique.
-              </p>
-            </div>
-          </Reveal>
+          <div className="grid lg:grid-cols-5 gap-8 items-center mb-12">
+            <Reveal>
+              <div className="lg:col-span-3">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
+                  Pilier ITE — EASY-SARKLING / Support chevrons
+                </h2>
+                <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+                  Piliers ITE FAYNOT pour isolation de toiture par l&apos;extérieur : H120 et H80. Compatible laine minérale et fibre de bois, zéro pont thermique.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={50}>
+              <div className="lg:col-span-2">
+                <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/placeholder/pilier-ite.jpg"
+                    alt="Pilier ITE FAYNOT — support chevrons isolation"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </Reveal>
+          </div>
 
           <div className="space-y-6">
             {mainProducts.map((product, i) => (
