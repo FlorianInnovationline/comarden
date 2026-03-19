@@ -180,23 +180,23 @@ export default function ToituresVertesPage() {
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
-            <div className="flex flex-col items-center text-center gap-3 mb-12">
-              <p className="text-xs font-bold uppercase tracking-widest text-emerald-700">
+            <div className="flex items-center justify-between gap-6 mb-12">
+              <p className="text-sm font-bold uppercase tracking-widest text-emerald-700 flex-shrink-0">
                 Partenaire
               </p>
               <Image
                 src="/images/logos/floratoit-logo.png"
                 alt="Floratoit"
-                width={360}
-                height={110}
-                className="h-16 sm:h-20 lg:h-24 w-auto object-contain"
+                width={320}
+                height={100}
+                className="h-14 sm:h-16 lg:h-20 w-auto object-contain"
                 priority={false}
               />
               <a
                 href="https://www.floratoit.be"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-emerald-700 text-white font-semibold px-5 py-2.5 text-sm hover:bg-emerald-700/90 transition-colors mt-2"
+                className="inline-flex items-center gap-2 rounded-full bg-emerald-700 text-white font-semibold px-5 py-2.5 text-sm hover:bg-emerald-700/90 transition-colors flex-shrink-0"
               >
                 Découvrir Floratoit
                 <ExternalLink className="w-4 h-4" />
