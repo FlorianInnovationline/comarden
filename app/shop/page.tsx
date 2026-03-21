@@ -13,15 +13,15 @@ export const metadata: Metadata = {
 };
 
 export default async function ShopPage() {
-  const categories = await getCategories();
-  const featuredProducts = await getProducts({ active: true });
-  const topProducts = featuredProducts.slice(0, 6);
+  const [categories, allProducts] = await Promise.all([
+    getCategories(),
+    getProducts({ active: true }),
+  ]);
 
   return (
     <div className="pt-20">
       {/* Hero Section */}
       <section className="relative py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-primary via-primary to-[#1a2f4a] text-white overflow-hidden">
-        {/* Animated background */}
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-0 right-0 w-96 h-96 bg-accent/30 rounded-full blur-3xl animate-float" />
           <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }} />
@@ -37,9 +37,9 @@ export default async function ShopPage() {
                 Commandez vos matériaux de construction en ligne. Livraison rapide en Wallonie.
               </p>
 
-              {/* Search Bar */}
+              {/* Search Bar — redirects to /shop/produits */}
               <div className="max-w-2xl mx-auto">
-                <form action="/shop" method="get" className="relative">
+                <form action="/shop/produits" method="get" className="relative">
                   <input
                     type="text"
                     name="search"
@@ -87,44 +87,58 @@ export default async function ShopPage() {
           </Reveal>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
-            {categories.map((category, index) => (
-              <Reveal key={category.id} delay={index * 100}>
-                <CategoryCard category={category} />
-              </Reveal>
-            ))}
+            {categories.map((category, index) => {
+              const count = allProducts.filter((p) => p.category_id === category.id).length;
+              return (
+                <Reveal key={category.id} delay={index * 100}>
+                  <CategoryCard category={category} productCount={count} />
+                </Reveal>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      {/* Featured Products */}
+      {/* All Products */}
       <section className="py-10 sm:py-12 lg:py-16 bg-gradient-to-b from-white to-neutral/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="flex items-center justify-between mb-8 sm:mb-10">
               <div>
                 <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-primary tracking-tight mb-2">
-                  Produits en vedette
+                  Tous nos produits
                 </h2>
                 <p className="text-sm sm:text-base text-muted-foreground">
-                  Nos produits les plus populaires
+                  {allProducts.length} produit{allProducts.length > 1 ? 's' : ''} disponible{allProducts.length > 1 ? 's' : ''}
                 </p>
               </div>
               <Link
-                href="/shop?featured=true"
+                href="/shop/produits"
                 className="hidden sm:inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
               >
-                Voir tout
+                Filtrer &amp; rechercher
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 lg:gap-6">
-            {topProducts.map((product, index) => (
-              <Reveal key={product.id} delay={index * 80}>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
+            {allProducts.map((product, index) => (
+              <Reveal key={product.id} delay={Math.min(index * 40, 400)}>
                 <ProductCard product={product} />
               </Reveal>
             ))}
+          </div>
+
+          {/* Mobile link */}
+          <div className="mt-8 text-center sm:hidden">
+            <Link
+              href="/shop/produits"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-accent transition-colors"
+            >
+              Filtrer &amp; rechercher
+              <ArrowRight className="w-4 h-4" />
+            </Link>
           </div>
         </div>
       </section>

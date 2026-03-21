@@ -12,8 +12,8 @@ interface CategoryCardProps {
 }
 
 export default function CategoryCard({ category, productCount }: CategoryCardProps) {
-  const raw = category.image_url;
-  const imageUrl = !raw || raw.startsWith("/images/") ? PLACEHOLDER_PRODUCT_IMAGE : raw;
+  const raw = category.image_url?.trim();
+  const imageUrl = raw || PLACEHOLDER_PRODUCT_IMAGE;
 
   return (
     <Link href={`/shop/categorie/${category.slug}`}>
