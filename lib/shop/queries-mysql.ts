@@ -3,6 +3,7 @@
 import { getDatabaseClient } from './db';
 import type { Product, Category, Order, OrderItem, Promotion } from '@/types/shop';
 import { seedData } from './seed';
+import { withMergedProductImages } from './productFolderImages';
 
 // Categories
 export async function getCategories(): Promise<Category[]> {
@@ -67,7 +68,7 @@ export async function getProducts(filters?: {
           p.description?.toLowerCase().includes(searchLower)
       );
     }
-    return products;
+    return products.map((p) => withMergedProductImages({ ...p }));
   }
 
   try {
@@ -93,7 +94,7 @@ export async function getProducts(filters?: {
     const [rows] = await client.pool.query(query, params);
     const products = (Array.isArray(rows) ? rows : []) as Record<string, unknown>[];
     
-    return products.map((p) => ({
+    const mapped = products.map((p) => ({
       ...p,
       images: typeof p.images === 'string' ? JSON.parse(p.images) : (p.images || []),
       tags: typeof p.tags === 'string' ? JSON.parse(p.tags) : (p.tags || []),
@@ -103,9 +104,10 @@ export async function getProducts(filters?: {
         slug: p.category_slug,
       } : undefined,
     })) as Product[];
+    return mapped.map((p) => withMergedProductImages(p));
   } catch (error) {
     console.error('Error fetching products:', error);
-    return seedData.products;
+    return seedData.products.map((p) => withMergedProductImages({ ...p }));
   }
 }
 
@@ -113,7 +115,8 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
   const client = getDatabaseClient();
   
   if (client.type === 'fallback') {
-    return seedData.products.find((p) => p.slug === slug) || null;
+    const p = seedData.products.find((x) => x.slug === slug);
+    return p ? withMergedProductImages({ ...p }) : null;
   }
 
   try {
@@ -128,7 +131,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
     if (result.length === 0) return null;
     
     const p = result[0];
-    return {
+    const product = {
       ...p,
       images: typeof p.images === 'string' ? JSON.parse(p.images as string) : (p.images || []),
       tags: typeof p.tags === 'string' ? JSON.parse(p.tags as string) : (p.tags || []),
@@ -139,6 +142,7 @@ export async function getProductBySlug(slug: string): Promise<Product | null> {
         description: p.category_description,
       } : undefined,
     } as Product;
+    return withMergedProductImages(product);
   } catch (error) {
     console.error('Error fetching product:', error);
     return null;
@@ -149,7 +153,8 @@ export async function getProductById(id: string): Promise<Product | null> {
   const client = getDatabaseClient();
   
   if (client.type === 'fallback') {
-    return seedData.products.find((p) => p.id === id) || null;
+    const p = seedData.products.find((x) => x.id === id);
+    return p ? { ...p } : null;
   }
 
   try {
