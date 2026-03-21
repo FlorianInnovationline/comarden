@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { slugify } from "@/lib/shop/utils";
 import type { Product, Category } from "@/types/shop";
@@ -13,7 +13,9 @@ interface ProductFormProps {
 
 export default function ProductForm({ product, categories }: ProductFormProps) {
   const router = useRouter();
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isUploading, setIsUploading] = useState(false);
   const [formData, setFormData] = useState({
     title: product?.title || "",
     slug: product?.slug || "",
@@ -107,6 +109,58 @@ export default function ProductForm({ product, categories }: ProductFormProps) {
       alert("Erreur lors de l'enregistrement");
     } finally {
       setIsSubmitting(false);
+    }
+  };
+
+  /** Slug used for uploads: existing product slug, or draft slug from the form */
+  const uploadSlug = (product?.slug || formData.slug || "").trim();
+
+  const appendImageUrl = (url: string) => {
+    setFormData((prev) => {
+      const lines = prev.images
+        .split("\n")
+        .map((l) => l.trim())
+        .filter(Boolean);
+      if (lines.includes(url)) return prev;
+      const next = [...lines, url].join("\n");
+      return { ...prev, images: next };
+    });
+  };
+
+  const handleImageFiles = async (files: FileList | null) => {
+    if (!files?.length) return;
+    if (!uploadSlug) {
+      alert("Définissez d'abord le slug du produit (champ « Slug (URL) ») avant d'uploader des images.");
+      return;
+    }
+
+    setIsUploading(true);
+    try {
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const fd = new FormData();
+        fd.set("slug", uploadSlug);
+        fd.set("file", file);
+
+        const res = await fetch("/api/admin/products/upload", {
+          method: "POST",
+          body: fd,
+          credentials: "same-origin",
+        });
+
+        const data = (await res.json().catch(() => ({}))) as { url?: string; error?: string };
+        if (!res.ok) {
+          alert(data.error || `Échec upload : ${file.name}`);
+          continue;
+        }
+        if (data.url) appendImageUrl(data.url);
+      }
+    } catch (e) {
+      console.error(e);
+      alert("Erreur réseau lors de l'upload");
+    } finally {
+      setIsUploading(false);
+      if (fileInputRef.current) fileInputRef.current.value = "";
     }
   };
 
@@ -225,11 +279,41 @@ export default function ProductForm({ product, categories }: ProductFormProps) {
                 <label className="block text-sm font-semibold text-primary mb-2">
                   URLs des images (une par ligne)
                 </label>
+                <p className="text-xs text-muted-foreground mb-2">
+                  Dossier sur le serveur :{" "}
+                  <code className="rounded bg-neutral/30 px-1 py-0.5">
+                    public/images/products/{uploadSlug || "…votre-slug…"}
+                  </code>
+                </p>
+                <div className="flex flex-wrap items-center gap-3 mb-2">
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp,image/gif"
+                    multiple
+                    className="hidden"
+                    onChange={(e) => void handleImageFiles(e.target.files)}
+                  />
+                  <Button
+                    type="button"
+                    variant="outline"
+                    disabled={isUploading || !uploadSlug}
+                    onClick={() => fileInputRef.current?.click()}
+                    className="text-sm"
+                  >
+                    {isUploading ? "Upload en cours…" : "Uploader des images"}
+                  </Button>
+                  {!uploadSlug && (
+                    <span className="text-xs text-amber-700">
+                      Renseignez le slug pour activer l&apos;upload.
+                    </span>
+                  )}
+                </div>
                 <textarea
                   value={formData.images}
                   onChange={(e) => setFormData({ ...formData, images: e.target.value })}
                   rows={4}
-                  placeholder="/images/products/product-1.jpg&#10;/images/products/product-2.jpg"
+                  placeholder={`/images/products/${uploadSlug || "mon-produit"}/main-1234567890.jpg`}
                   className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent font-mono text-sm"
                 />
               </div>

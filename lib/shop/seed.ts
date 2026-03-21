@@ -345,3 +345,6 @@ export const seedData = {
 
   promotions: [] as Promotion[],
 };
+
+/** Slugs of all seed catalogue products — used for image folders & admin upload validation */
+export const SEED_PRODUCT_SLUGS: readonly string[] = seedData.products.map((p) => p.slug);
