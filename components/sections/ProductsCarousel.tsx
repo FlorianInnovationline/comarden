@@ -5,7 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type { Product } from "@/types/shop";
 import { formatPrice } from "@/lib/shop/utils";
-import { PLACEHOLDER_PRODUCT_IMAGE } from "@/lib/site";
+import { resolveProductImageSrc } from "@/lib/shop/productImages";
 import { ShoppingBag, ArrowRight, ChevronLeft, ChevronRight } from "lucide-react";
 
 export default function ProductsCarousel() {
@@ -177,8 +177,7 @@ export default function ProductsCarousel() {
           >
             {/* Render products twice for seamless loop */}
             {[...products, ...products].map((product, index) => {
-              const raw = product.images?.[0];
-                const imageUrl = !raw || raw.startsWith("/images/") ? PLACEHOLDER_PRODUCT_IMAGE : raw;
+              const imageUrl = resolveProductImageSrc(product.images?.[0]);
               
               return (
                 <Link

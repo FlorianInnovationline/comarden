@@ -5,7 +5,7 @@ import Image from "next/image";
 import { Trash2, Plus, Minus, ShoppingBag, ArrowRight } from "lucide-react";
 import { useCart } from "@/lib/shop/cart";
 import { formatPrice } from "@/lib/shop/utils";
-import { PLACEHOLDER_PRODUCT_IMAGE } from "@/lib/site";
+import { resolveProductImageSrc } from "@/lib/shop/productImages";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
 import Link from "next/link";
@@ -52,8 +52,7 @@ export default function CartPage() {
           {/* Cart Items */}
           <div className="lg:col-span-2 space-y-4">
             {items.map((item, index) => {
-              const raw = item.product.images?.[0];
-              const imageUrl = !raw || raw.startsWith("/images/") ? PLACEHOLDER_PRODUCT_IMAGE : raw;
+              const imageUrl = resolveProductImageSrc(item.product.images?.[0]);
               
               return (
                 <Reveal key={item.product_id} delay={index * 50}>
