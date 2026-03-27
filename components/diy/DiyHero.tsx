@@ -45,7 +45,7 @@ export default function DiyHero() {
         
         {/* Subtitle with better typography */}
         <p className="text-lg sm:text-xl lg:text-2xl text-slate-600 mb-12 max-w-3xl mx-auto leading-relaxed font-light animate-fadeIn" style={{ animationDelay: "0.1s" }}>
-          Vous réalisez vous-même ? Nous vous conseillons et pouvons aussi envoyer des professionnels.
+          Vous souhaitez réaliser vos travaux vous-même ? Comarden vous conseille sur les techniques et les produits adaptés à votre projet. Besoin d&apos;un professionnel ? Nous vous mettons en relation avec des artisans qualifiés et fiables près de chez vous
         </p>
 
         {/* Modern CTAs with better spacing */}

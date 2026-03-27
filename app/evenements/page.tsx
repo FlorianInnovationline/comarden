@@ -56,10 +56,10 @@ const EVENTS: EventData[] = [
     id: "jeudiredi-etex",
     title: "JEUDIREDI ETEX – Cedral & Equitone",
     dates: [
-      { label: "Jeudi 26 mars 2026 (Naninne)", year: 2026, month: 2, day: 26 },
-      { label: "Jeudi 26 mars 2026 (Bertrix)", year: 2026, month: 2, day: 26 },
+      { label: "Jeudi 16 avril 2026 (Naninne)", year: 2026, month: 3, day: 16 },
+      { label: "Jeudi 21 mai 2026 (Bertrix)", year: 2026, month: 4, day: 21 },
     ],
-    horaires: "15h00 – 19h00",
+    horaires: "Apd 15h",
     contenu: [
       "Conseils techniques Cedral & Equitone",
       "Actions commerciales exclusives",

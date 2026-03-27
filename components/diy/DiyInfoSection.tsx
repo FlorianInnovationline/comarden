@@ -114,7 +114,7 @@ export default function DiyInfoSection() {
                 </h3>
               </div>
               <p className="text-slate-600 leading-relaxed">
-                Besoin d&apos;un professionnel ? Nos équipes qualifiées interviennent pour tous types de travaux, avec garantie et assurance.
+                Comarden vous connecte avec les meilleurs professionnels de votre région, sélectionnés pour leurs compétences, leur sérieux et leur fiabilité.
               </p>
             </div>
 

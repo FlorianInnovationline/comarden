@@ -5,7 +5,6 @@ import Reveal from "@/components/ui/Reveal";
 import Image from "next/image";
 import Link from "next/link";
 import { PLACEHOLDER_BUILDING_IMAGE } from "@/lib/site";
-import { ArrowRight } from "lucide-react";
 
 export default function Gallery() {
   const [imageError, setImageError] = useState(false);
@@ -98,14 +97,6 @@ export default function Gallery() {
                 </p>
               </div>
 
-              {/* CTA Link */}
-              <Link
-                href="/presentation"
-                className="inline-flex items-center gap-2 text-primary font-semibold hover:text-accent transition-colors group mt-6"
-              >
-                Rencontrer notre équipe
-                <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-              </Link>
             </div>
           </Reveal>
         </div>

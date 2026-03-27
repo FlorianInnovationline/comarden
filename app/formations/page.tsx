@@ -267,9 +267,17 @@ export default function FormationsPage() {
                   </p>
                 </div>
 
-                <h2 className="text-2xl lg:text-3xl font-bold text-primary tracking-tight mb-6">
-                  Catalogue des formations
-                </h2>
+                <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 mb-6">
+                  <h2 className="text-2xl lg:text-3xl font-bold text-primary tracking-tight">
+                    Catalogue des formations
+                  </h2>
+                  <Link
+                    href="#inscription"
+                    className="inline-flex items-center justify-center rounded-full bg-primary text-white font-semibold px-5 py-2.5 text-sm hover:bg-primary/90 transition-colors"
+                  >
+                    Construire ma journée de formation
+                  </Link>
+                </div>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                   {FORMATION_MODULES.map((module, index) => (
                     <Reveal key={module.id} delay={index * 50}>
