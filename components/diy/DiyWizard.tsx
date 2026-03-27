@@ -28,6 +28,10 @@ export default function DiyWizard() {
       areaM2: 50,
       urgency: "Flexible",
       location: "",
+      clientName: "",
+      clientEmail: "",
+      clientPhone: "",
+      clientAddress: "",
       notes: "",
     },
     pro: {
@@ -84,8 +88,21 @@ export default function DiyWizard() {
         return;
       }
     } else if (currentStep === 3) {
+      const stepErrors: string[] = [];
       if (!data.details?.location || data.details.location.trim() === "") {
-        setErrors(["Veuillez sélectionner un lieu"]);
+        stepErrors.push("Veuillez sélectionner une province");
+      }
+      if (!data.details?.clientName || data.details.clientName.trim() === "") {
+        stepErrors.push("Veuillez indiquer votre nom");
+      }
+      if (!data.details?.clientEmail || data.details.clientEmail.trim() === "") {
+        stepErrors.push("Veuillez indiquer votre e-mail");
+      }
+      if (!data.details?.clientPhone || data.details.clientPhone.trim() === "") {
+        stepErrors.push("Veuillez indiquer votre téléphone");
+      }
+      if (stepErrors.length > 0) {
+        setErrors(stepErrors);
         return;
       }
     }
@@ -113,7 +130,16 @@ export default function DiyWizard() {
       newErrors.push("Au moins un besoin est requis");
     }
     if (!data.details?.location || data.details.location.trim() === "") {
-      newErrors.push("Le lieu est requis");
+      newErrors.push("La province est requise");
+    }
+    if (!data.details?.clientName || data.details.clientName.trim() === "") {
+      newErrors.push("Le nom est requis");
+    }
+    if (!data.details?.clientEmail || data.details.clientEmail.trim() === "") {
+      newErrors.push("L'e-mail est requis");
+    }
+    if (!data.details?.clientPhone || data.details.clientPhone.trim() === "") {
+      newErrors.push("Le téléphone est requis");
     }
 
     if (newErrors.length > 0) {
@@ -137,6 +163,10 @@ export default function DiyWizard() {
         areaM2: data.details?.areaM2 || 0,
         urgency: data.details?.urgency || "Flexible",
         location: data.details?.location || "",
+        clientName: data.details?.clientName || "",
+        clientEmail: data.details?.clientEmail || "",
+        clientPhone: data.details?.clientPhone || "",
+        clientAddress: data.details?.clientAddress || "",
         notes: data.details?.notes || "",
       },
       pro: {
@@ -159,7 +189,7 @@ export default function DiyWizard() {
   };
 
   if (isSubmitted) {
-    return <SuccessState />;
+    return <SuccessState location={data.details?.location || ""} />;
   }
 
   return (
@@ -226,6 +256,10 @@ export default function DiyWizard() {
                     areaM2={data.details?.areaM2 || 50}
                     urgency={data.details?.urgency || "Flexible"}
                     location={data.details?.location || ""}
+                    clientName={data.details?.clientName || ""}
+                    clientEmail={data.details?.clientEmail || ""}
+                    clientPhone={data.details?.clientPhone || ""}
+                    clientAddress={data.details?.clientAddress || ""}
                     notes={data.details?.notes || ""}
                     onAreaChange={(area) =>
                       setData((prev) => ({
@@ -243,6 +277,30 @@ export default function DiyWizard() {
                       setData((prev) => ({
                         ...prev,
                         details: { ...prev.details!, location },
+                      }))
+                    }
+                    onClientNameChange={(clientName) =>
+                      setData((prev) => ({
+                        ...prev,
+                        details: { ...prev.details!, clientName },
+                      }))
+                    }
+                    onClientEmailChange={(clientEmail) =>
+                      setData((prev) => ({
+                        ...prev,
+                        details: { ...prev.details!, clientEmail },
+                      }))
+                    }
+                    onClientPhoneChange={(clientPhone) =>
+                      setData((prev) => ({
+                        ...prev,
+                        details: { ...prev.details!, clientPhone },
+                      }))
+                    }
+                    onClientAddressChange={(clientAddress) =>
+                      setData((prev) => ({
+                        ...prev,
+                        details: { ...prev.details!, clientAddress },
                       }))
                     }
                     onNotesChange={(notes) =>

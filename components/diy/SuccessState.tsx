@@ -1,9 +1,16 @@
 "use client";
 
-import { CheckCircle2, Phone, Home } from "lucide-react";
+import { CheckCircle2, Phone, Home, MapPin } from "lucide-react";
 import Link from "next/link";
+import { getDepotForLocation } from "@/lib/diyOptions";
 
-export default function SuccessState() {
+interface SuccessStateProps {
+  location: string;
+}
+
+export default function SuccessState({ location }: SuccessStateProps) {
+  const depot = getDepotForLocation(location);
+
   return (
     <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-12 lg:py-16">
       <div className="text-center">
@@ -22,19 +29,23 @@ export default function SuccessState() {
           Votre demande a bien été enregistrée. Notre équipe va l&apos;analyser et vous contacter rapidement.
         </p>
 
-        {/* Phone contact */}
+        {/* Phone contact — adapted to depot */}
         <div className="mb-10 p-6 bg-slate-50 rounded-xl border border-slate-200 inline-block">
           <div className="flex items-center gap-3">
             <Phone className="w-6 h-6 text-accent" />
             <div className="text-left">
               <p className="text-sm text-slate-500 mb-1">Vous pouvez aussi nous appeler :</p>
               <a
-                href="tel:061412706"
+                href={`tel:${depot.phone}`}
                 className="text-xl font-bold text-primary hover:text-accent transition-colors"
               >
-                061 41 27 06
+                {depot.phoneDisplay}
               </a>
             </div>
+          </div>
+          <div className="flex items-center gap-2 mt-3 text-sm text-slate-500">
+            <MapPin className="w-4 h-4 text-accent" />
+            <span>Dépôt de {depot.name}</span>
           </div>
         </div>
 

@@ -2,16 +2,24 @@
 
 import { useState } from "react";
 import { Upload } from "lucide-react";
-import { URGENCY_OPTIONS } from "@/lib/diyOptions";
+import { URGENCY_OPTIONS, LOCATION_OPTIONS } from "@/lib/diyOptions";
 
 interface ProjectDetailsProps {
   areaM2: number;
   urgency: "Cette semaine" | "Ce mois-ci" | "Flexible";
   location: string;
+  clientName: string;
+  clientEmail: string;
+  clientPhone: string;
+  clientAddress: string;
   notes: string;
   onAreaChange: (area: number) => void;
   onUrgencyChange: (urgency: "Cette semaine" | "Ce mois-ci" | "Flexible") => void;
   onLocationChange: (location: string) => void;
+  onClientNameChange: (v: string) => void;
+  onClientEmailChange: (v: string) => void;
+  onClientPhoneChange: (v: string) => void;
+  onClientAddressChange: (v: string) => void;
   onNotesChange: (notes: string) => void;
 }
 
@@ -19,10 +27,18 @@ export default function ProjectDetails({
   areaM2,
   urgency,
   location,
+  clientName,
+  clientEmail,
+  clientPhone,
+  clientAddress,
   notes,
   onAreaChange,
   onUrgencyChange,
   onLocationChange,
+  onClientNameChange,
+  onClientEmailChange,
+  onClientPhoneChange,
+  onClientAddressChange,
   onNotesChange,
 }: ProjectDetailsProps) {
   const [localArea, setLocalArea] = useState(areaM2.toString());
@@ -117,12 +133,67 @@ export default function ProjectDetails({
           className="w-full px-5 py-4 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-primary/20 focus:border-accent transition-all text-base font-medium"
           aria-required="true"
         >
-          <option value="">Sélectionnez une région</option>
-          <option value="Bruxelles">Bruxelles</option>
-          <option value="Wallonie">Wallonie</option>
-          <option value="Flandre">Flandre</option>
-          <option value="Autre">Autre</option>
+          <option value="">Sélectionnez une province</option>
+          {LOCATION_OPTIONS.map((opt) => (
+            <option key={opt} value={opt}>{opt}</option>
+          ))}
         </select>
+      </div>
+
+      {/* Client info */}
+      <div>
+        <label className="block text-base font-bold text-slate-700 mb-4">
+          Vos coordonnées
+        </label>
+        <div className="grid sm:grid-cols-2 gap-4">
+          <div>
+            <label htmlFor="clientName" className="block text-sm font-semibold text-slate-600 mb-1.5">Nom complet *</label>
+            <input
+              id="clientName"
+              type="text"
+              value={clientName}
+              onChange={(e) => onClientNameChange(e.target.value)}
+              placeholder="Jean Dupont"
+              className="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-primary/20 focus:border-accent transition-all text-base"
+              aria-required="true"
+            />
+          </div>
+          <div>
+            <label htmlFor="clientEmail" className="block text-sm font-semibold text-slate-600 mb-1.5">E-mail *</label>
+            <input
+              id="clientEmail"
+              type="email"
+              value={clientEmail}
+              onChange={(e) => onClientEmailChange(e.target.value)}
+              placeholder="jean@example.com"
+              className="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-primary/20 focus:border-accent transition-all text-base"
+              aria-required="true"
+            />
+          </div>
+          <div>
+            <label htmlFor="clientPhone" className="block text-sm font-semibold text-slate-600 mb-1.5">Téléphone *</label>
+            <input
+              id="clientPhone"
+              type="tel"
+              value={clientPhone}
+              onChange={(e) => onClientPhoneChange(e.target.value)}
+              placeholder="0476 12 34 56"
+              className="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-primary/20 focus:border-accent transition-all text-base"
+              aria-required="true"
+            />
+          </div>
+          <div>
+            <label htmlFor="clientAddress" className="block text-sm font-semibold text-slate-600 mb-1.5">Adresse</label>
+            <input
+              id="clientAddress"
+              type="text"
+              value={clientAddress}
+              onChange={(e) => onClientAddressChange(e.target.value)}
+              placeholder="Rue de la Toiture 12, 5000 Namur"
+              className="w-full px-4 py-3 border-2 border-slate-200 rounded-xl focus:outline-none focus:ring-4 focus:ring-primary/20 focus:border-accent transition-all text-base"
+            />
+          </div>
+        </div>
       </div>
 
       {/* Upload placeholder */}

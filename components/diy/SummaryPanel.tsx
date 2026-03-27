@@ -44,7 +44,13 @@ export default function SummaryPanel({ data, onSubmit, errors }: SummaryPanelPro
     data.needs &&
     data.needs.length > 0 &&
     data.details?.location &&
-    data.details.location.trim() !== "";
+    data.details.location.trim() !== "" &&
+    data.details?.clientName &&
+    data.details.clientName.trim() !== "" &&
+    data.details?.clientEmail &&
+    data.details.clientEmail.trim() !== "" &&
+    data.details?.clientPhone &&
+    data.details.clientPhone.trim() !== "";
 
   return (
     <div className="lg:sticky lg:top-8">
@@ -110,6 +116,39 @@ export default function SummaryPanel({ data, onSubmit, errors }: SummaryPanelPro
                 <div className="flex justify-between">
                   <span className="font-medium">Lieu:</span>
                   <span className="text-primary font-semibold">{data.details.location}</span>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* Client info */}
+        {(data.details?.clientName || data.details?.clientEmail || data.details?.clientPhone) && (
+          <div className="mb-5 pb-5 border-b border-slate-200">
+            <h4 className="text-xs font-bold text-slate-700 mb-2 uppercase tracking-wide">Contact</h4>
+            <div className="space-y-1.5 text-sm text-slate-600">
+              {data.details?.clientName && (
+                <div className="flex justify-between">
+                  <span className="font-medium">Nom:</span>
+                  <span className="text-primary font-semibold">{data.details.clientName}</span>
+                </div>
+              )}
+              {data.details?.clientEmail && (
+                <div className="flex justify-between">
+                  <span className="font-medium">E-mail:</span>
+                  <span className="text-primary font-semibold text-xs">{data.details.clientEmail}</span>
+                </div>
+              )}
+              {data.details?.clientPhone && (
+                <div className="flex justify-between">
+                  <span className="font-medium">Tél:</span>
+                  <span className="text-primary font-semibold">{data.details.clientPhone}</span>
+                </div>
+              )}
+              {data.details?.clientAddress && (
+                <div className="flex justify-between">
+                  <span className="font-medium">Adresse:</span>
+                  <span className="text-primary font-semibold text-xs">{data.details.clientAddress}</span>
                 </div>
               )}
             </div>

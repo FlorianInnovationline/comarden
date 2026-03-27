@@ -6,9 +6,9 @@ import CTACompact from "@/components/sections/CTA";
 import Reveal from "@/components/ui/Reveal";
 
 export const metadata: Metadata = {
-  title: "EPDM & Étanchéité - Comarden",
+  title: "Toiture Plates - Comarden",
   description:
-    "Membranes EPDM d\u2019étanchéité pour toitures plates : Elevate RubberGard, Sopraguard Stick. Solutions professionnelles disponibles chez Comarden en Belgique.",
+    "Membranes EPDM d\u2019étanchéité pour toitures plates : Elevate RubberGard, Sopraguard Stick, Derbigum. Solutions professionnelles disponibles chez Comarden en Belgique.",
 };
 
 const elevateProducts = [
@@ -106,11 +106,11 @@ export default function EpdmPage() {
                   </span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                  EPDM &amp; Étanchéité
+                  Toiture Plates
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
                   Membranes EPDM haute performance pour l&apos;étanchéité de vos
-                  toitures plates. Solutions Elevate et SOPREMA disponibles chez
+                  toitures plates. Solutions Elevate, SOPREMA et Derbigum disponibles chez
                   Comarden.
                 </p>
               </div>
@@ -336,6 +336,68 @@ export default function EpdmPage() {
                       <Icon className="w-5 h-5 text-[#003366]" />
                     </div>
                     <h3 className="font-semibold text-[#003366] text-lg mb-2">{arg.title}</h3>
+                    <p className="text-sm text-slate-500 leading-relaxed">{arg.description}</p>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ── DERBIGUM ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-[#1a1a1a] text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
+              <div className="max-w-2xl">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4">
+                  DERBIGUM
+                </h2>
+                <p className="text-base sm:text-lg text-white/80 leading-relaxed">
+                  Comarden distribue en Belgique la gamme Derbigum, référence en membranes d&apos;étanchéité bitumineuses pour toitures plates depuis plus de 50 ans.
+                </p>
+              </div>
+              <div className="flex-shrink-0">
+                <Image
+                  src="/images/logos/derbigum-logo.png"
+                  alt="Derbigum"
+                  width={180}
+                  height={60}
+                  className="h-12 sm:h-14 w-auto object-contain"
+                />
+              </div>
+            </div>
+          </Reveal>
+
+          <Reveal delay={50}>
+            <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/10 mb-10">
+              <div className="flex-1">
+                <h3 className="text-xl sm:text-2xl font-bold text-[#F5C300] mb-3">
+                  Des solutions de qualité pour votre projet, circulaires dès la conception
+                </h3>
+                <p className="text-base text-white/80 leading-relaxed">
+                  Derbigum propose des membranes d&apos;étanchéité bitumineuses durables et performantes, ainsi que des systèmes complets pour toitures plates. Avec une durée de vie prouvée de plus de 50&nbsp;ans, nos solutions sont conçues pour résister au temps. Et lorsqu&apos;une toiture arrive en fin de vie, nous valorisons les matériaux grâce à notre propre procédé de recyclage. Ainsi, nous contribuons concrètement à un avenir circulaire et durable dans le secteur de la construction.
+                </p>
+              </div>
+            </div>
+          </Reveal>
+
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              { icon: Shield, title: "50+ ans de durabilité prouvée", description: "Des membranes testées et éprouvées sur le terrain depuis plus d'un demi-siècle, garantissant performance et longévité." },
+              { icon: Leaf, title: "Économie circulaire", description: "Un procédé de recyclage unique qui valorise les matériaux en fin de vie — pour une construction responsable et durable." },
+              { icon: Award, title: "Solutions complètes", description: "Membranes bitumineuses, systèmes d'isolation, accessoires : une gamme intégrée pour des toitures plates performantes." },
+              { icon: Users, title: "Accompagnement Comarden", description: "Conseil technique, disponibilité produit et solutions sur mesure pour les professionnels de la toiture en Belgique." },
+            ].map((arg, i) => {
+              const Icon = arg.icon;
+              return (
+                <Reveal key={arg.title} delay={i * 100}>
+                  <div className="bg-white rounded-2xl p-6 h-full shadow-sm hover:shadow-md transition-shadow">
+                    <div className="w-10 h-10 rounded-xl bg-[#1a1a1a]/10 flex items-center justify-center mb-4">
+                      <Icon className="w-5 h-5 text-[#1a1a1a]" />
+                    </div>
+                    <h3 className="font-semibold text-[#1a1a1a] text-lg mb-2">{arg.title}</h3>
                     <p className="text-sm text-slate-500 leading-relaxed">{arg.description}</p>
                   </div>
                 </Reveal>

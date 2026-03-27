@@ -149,7 +149,7 @@ export default function ArdoisesPage() {
               <div className="flex items-center gap-3 mb-6">
                 <div className="h-1 w-8 rounded-full bg-accent" />
                 <span className="text-sm font-semibold text-primary uppercase tracking-wide">
-                  2 marques, 2 références qualité, 2 gammes de prix
+                  3 marques, 3 références qualité, 3 gammes de prix
                 </span>
               </div>
               <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-16">
@@ -163,6 +163,13 @@ export default function ArdoisesPage() {
                 <Image
                   src="/images/logos/la-bana-logo.png"
                   alt="La Bana"
+                  width={160}
+                  height={60}
+                  className="h-10 sm:h-12 w-auto object-contain"
+                />
+                <Image
+                  src="/images/logo/cafersa-logo.png"
+                  alt="Cafersa"
                   width={160}
                   height={60}
                   className="h-10 sm:h-12 w-auto object-contain"

@@ -63,7 +63,12 @@ export default function Header() {
                 alt="Comarden"
                 width={320}
                 height={100}
-                className="h-11 xl:h-14 w-auto object-contain object-left transition-all duration-300"
+                className={`h-11 xl:h-14 w-auto object-contain object-left transition-all duration-300 ${
+                  scrolled
+                    ? "brightness-0 sepia saturate-[5] hue-rotate-[190deg]"
+                    : ""
+                }`}
+                style={scrolled ? { filter: "brightness(0) saturate(100%) invert(12%) sepia(50%) saturate(2000%) hue-rotate(190deg) brightness(90%)" } : undefined}
                 priority
               />
             </Link>

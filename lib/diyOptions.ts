@@ -32,6 +32,10 @@ export type DiyRequest = {
     areaM2: number;
     urgency: "Cette semaine" | "Ce mois-ci" | "Flexible";
     location: string;
+    clientName?: string;
+    clientEmail?: string;
+    clientPhone?: string;
+    clientAddress?: string;
     notes?: string;
   };
   pro: {
@@ -45,6 +49,28 @@ export type DiyRequest = {
     source: "do-it-yourself";
   };
 };
+
+export const LOCATION_OPTIONS = [
+  "Liège",
+  "Namur",
+  "Brabant Wallon",
+  "Bruxelles",
+  "Luxembourg",
+  "Autre",
+] as const;
+
+export function getDepotForLocation(location: string): { name: string; phone: string; phoneDisplay: string } {
+  switch (location) {
+    case "Liège":
+    case "Luxembourg":
+      return { name: "Bertrix", phone: "+3261412706", phoneDisplay: "061 41 27 06" };
+    case "Namur":
+    case "Brabant Wallon":
+    case "Bruxelles":
+    default:
+      return { name: "Naninne", phone: "+3281401133", phoneDisplay: "081 40 11 33" };
+  }
+}
 
 export const PROJECT_TYPES: ProjectType[] = [
   {

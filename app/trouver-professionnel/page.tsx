@@ -9,6 +9,7 @@ import {
   ChevronDown,
   Send,
 } from "lucide-react";
+import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 import CTACompact from "@/components/sections/CTA";
 
@@ -113,17 +114,31 @@ export default function TrouverProfessionnelPage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="max-w-3xl">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight">
-                Trouver un entrepreneur professionnel et sérieux
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl">
-                Vous avez un projet de toiture ou de façade ? Chez Comarden,
-                vous frappez à la bonne porte.
-              </p>
-            </div>
-          </Reveal>
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <Reveal>
+              <div>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight">
+                  Trouver un entrepreneur professionnel et sérieux
+                </h1>
+                <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl">
+                  Vous avez un projet de toiture ou de façade ? Chez Comarden,
+                  vous frappez à la bonne porte.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={200}>
+              <div className="hidden lg:block">
+                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+                  <Image
+                    src="/images/placeholder/trouver-pro-hero.jpg"
+                    alt="Trouver un professionnel"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
