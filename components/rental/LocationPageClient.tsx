@@ -13,6 +13,7 @@ import { RentalProduct } from "@/lib/rental/data";
 import { site } from "@/lib/site";
 import RentalCard from "./RentalCard";
 import RentalModal from "./RentalModal";
+import ProductDetailModal from "./ProductDetailModal";
 
 interface Props {
   products: RentalProduct[];
@@ -22,9 +23,8 @@ interface Props {
 export default function LocationPageClient({ products, categories }: Props) {
   const [activeCategory, setActiveCategory] = useState("Tous");
   const [search, setSearch] = useState("");
-  const [selectedProduct, setSelectedProduct] = useState<RentalProduct | null>(
-    null
-  );
+  const [rentalProduct, setRentalProduct] = useState<RentalProduct | null>(null);
+  const [viewProduct, setViewProduct] = useState<RentalProduct | null>(null);
 
   const filtered = useMemo(() => {
     let list = products;
@@ -219,7 +219,8 @@ export default function LocationPageClient({ products, categories }: Props) {
                 <RentalCard
                   key={product.id}
                   product={product}
-                  onRequest={setSelectedProduct}
+                  onRequest={setRentalProduct}
+                  onView={setViewProduct}
                 />
               ))}
             </div>
@@ -254,10 +255,17 @@ export default function LocationPageClient({ products, categories }: Props) {
         </div>
       </section>
 
-      {/* Modal */}
+      {/* Detail Modal */}
+      <ProductDetailModal
+        product={viewProduct}
+        onClose={() => setViewProduct(null)}
+        onRequest={setRentalProduct}
+      />
+
+      {/* Rental Request Modal */}
       <RentalModal
-        product={selectedProduct}
-        onClose={() => setSelectedProduct(null)}
+        product={rentalProduct}
+        onClose={() => setRentalProduct(null)}
       />
     </>
   );
