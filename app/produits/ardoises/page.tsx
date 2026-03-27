@@ -170,9 +170,9 @@ export default function ArdoisesPage() {
                 <Image
                   src="/images/logos/cafersa-logo.png"
                   alt="Cafersa"
-                  width={160}
-                  height={60}
-                  className="h-10 sm:h-12 w-auto object-contain"
+                  width={220}
+                  height={80}
+                  className="h-12 sm:h-14 w-auto object-contain"
                 />
               </div>
             </div>
