@@ -19,12 +19,13 @@ interface AdminLayoutProps {
   children: React.ReactNode;
 }
 
-import { BookOpen } from "lucide-react";
+import { BookOpen, Truck } from "lucide-react";
 
 const navItems = [
   { href: "/admin", label: "Tableau de bord", icon: LayoutDashboard },
   { href: "/admin/products", label: "Produits", icon: Package },
   { href: "/admin/orders", label: "Commandes", icon: ShoppingCart },
+  { href: "/admin/rentals", label: "Locations", icon: Truck },
   { href: "/admin/promotions", label: "Promotions", icon: Tag },
   { href: "/admin/catalog", label: "Catalogue", icon: BookOpen },
   { href: "/admin/settings", label: "Paramètres", icon: Settings },
