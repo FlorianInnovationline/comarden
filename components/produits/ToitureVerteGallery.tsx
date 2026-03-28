@@ -15,11 +15,12 @@ export default function ToitureVerteGallery({ images }: Props) {
   const closeLightbox = () => setLightboxIndex(null);
 
   const prev = () =>
-    setLightboxIndex((i) => (i !== null ? (i - 1 + images.length) % images.length : null));
+    setLightboxIndex((i) =>
+      i !== null ? (i - 1 + images.length) % images.length : null
+    );
   const next = () =>
     setLightboxIndex((i) => (i !== null ? (i + 1) % images.length : null));
 
-  // Masonry-like pattern: assign sizes to images
   const getSizeClass = (i: number) => {
     const pattern = i % 8;
     if (pattern === 0 || pattern === 5) return "col-span-2 row-span-2";
@@ -54,50 +55,65 @@ export default function ToitureVerteGallery({ images }: Props) {
         ))}
       </div>
 
-      {/* Lightbox */}
+      {/* Lightbox — parent must have explicit dimensions for next/image fill */}
       {lightboxIndex !== null && (
         <div
-          className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center animate-fade-in"
+          className="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black/92 backdrop-blur-sm p-4 sm:p-6"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Agrandir la photo"
           onClick={closeLightbox}
         >
           <button
+            type="button"
             onClick={closeLightbox}
-            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            className="absolute top-4 right-4 z-20 p-2.5 rounded-full bg-white/15 hover:bg-white/25 text-white transition-colors"
+            aria-label="Fermer"
           >
             <X className="w-6 h-6" />
           </button>
 
           <button
-            onClick={(e) => { e.stopPropagation(); prev(); }}
-            className="absolute left-4 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              prev();
+            }}
+            className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/15 hover:bg-white/25 text-white transition-colors"
+            aria-label="Photo précédente"
           >
-            <ChevronLeft className="w-6 h-6" />
+            <ChevronLeft className="w-7 h-7" />
           </button>
 
           <button
-            onClick={(e) => { e.stopPropagation(); next(); }}
-            className="absolute right-4 z-10 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors"
+            type="button"
+            onClick={(e) => {
+              e.stopPropagation();
+              next();
+            }}
+            className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 z-20 p-3 rounded-full bg-white/15 hover:bg-white/25 text-white transition-colors"
+            aria-label="Photo suivante"
           >
-            <ChevronRight className="w-6 h-6" />
+            <ChevronRight className="w-7 h-7" />
           </button>
 
           <div
-            className="relative w-full max-w-5xl max-h-[85vh] aspect-auto mx-4"
+            className="relative z-10 h-[min(85vh,900px)] w-full max-w-6xl rounded-xl overflow-hidden shadow-2xl ring-1 ring-white/10"
             onClick={(e) => e.stopPropagation()}
           >
             <Image
               src={images[lightboxIndex]}
               alt={`Toiture végétalisée ${lightboxIndex + 1}`}
               fill
-              className="object-contain"
-              sizes="100vw"
+              className="object-contain bg-black/40"
+              sizes="(max-width: 1280px) 100vw, 1152px"
               priority
             />
           </div>
 
-          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 text-white/60 text-sm font-medium">
+          <p className="absolute bottom-4 left-1/2 -translate-x-1/2 z-20 text-white/80 text-sm font-medium tabular-nums">
             {lightboxIndex + 1} / {images.length}
-          </div>
+          </p>
         </div>
       )}
     </>
