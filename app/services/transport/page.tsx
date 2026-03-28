@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Truck, Clock, MapPin, ShieldCheck } from "lucide-react";
 import CTACompact from "@/components/sections/CTA";
@@ -52,19 +53,33 @@ export default function TransportPage() {
           }}
         />
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="max-w-3xl">
-              <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm">
-                Services
-              </span>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6 mt-3 leading-tight">
-                Transport &amp; Livraison
-              </h1>
-              <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl">
-                Camion-grue, livraison soignée et réfléchie. Comarden renforce sa flotte pour vous offrir un service de livraison toujours plus rapide et fiable.
-              </p>
-            </div>
-          </Reveal>
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+            <Reveal>
+              <div>
+                <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm">
+                  Services
+                </span>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white tracking-tight mb-6 mt-3 leading-tight">
+                  Transport &amp; Livraison
+                </h1>
+                <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl">
+                  Camion-grue, livraison soignée et réfléchie. Comarden renforce sa flotte pour vous offrir un service de livraison toujours plus rapide et fiable.
+                </p>
+              </div>
+            </Reveal>
+            <Reveal delay={150}>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+                <Image
+                  src="/images/Services/Transport/1.jpg"
+                  alt="Transport et livraison Comarden — camion-grue"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 
