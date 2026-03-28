@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import Link from "next/link";
-import { Shield, Award, Leaf, Users, ShoppingCart } from "lucide-react";
+import { Shield, Award, Leaf, Users } from "lucide-react";
 import CTACompact from "@/components/sections/CTA";
 import Reveal from "@/components/ui/Reveal";
+import EpdmProductCards from "@/components/produits/EpdmProductCards";
 
 export const metadata: Metadata = {
   title: "Toiture Plates - Comarden",
@@ -53,6 +53,23 @@ const sopremaProduct = {
   ],
   shopSlug: "sopraguard-stick-epdm",
 };
+
+const derbigumProducts = [
+  {
+    name: "DERBIGUM\u00AE SP FR",
+    image: "/images/Produits/ToiturePlate/Derbigum001.jpg",
+    description:
+      "Membrane bitumineuse haute performance avec finition FR. Solution éprouvée pour l\u2019étanchéité durable des toitures plates.",
+    badges: ["Multicouche", "Résistant au feu"],
+  },
+  {
+    name: "DERBIGUM\u00AE SP AR",
+    image: "/images/Produits/ToiturePlate/Derbigum002.jpg",
+    description:
+      "Membrane bitumineuse avec armature renforcée, conçue pour les conditions d\u2019exposition les plus exigeantes.",
+    badges: ["Multicouche", "Éco-responsable"],
+  },
+];
 
 export default function EpdmPage() {
   return (
@@ -127,9 +144,13 @@ export default function EpdmPage() {
           <Reveal>
             <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 mb-12">
               <div className="max-w-2xl">
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4">
-                  ELEVATE
-                </h2>
+                <Image
+                  src="/images/logos/elevate-logo.png"
+                  alt="Elevate"
+                  width={260}
+                  height={80}
+                  className="h-14 sm:h-16 w-auto object-contain brightness-0 invert mb-5"
+                />
                 <p className="text-lg sm:text-xl font-medium text-white/90 mb-2">
                   Comarden, distributeur officiel ELEVATE en Belgique
                 </p>
@@ -137,14 +158,16 @@ export default function EpdmPage() {
                   Les systèmes de toitures EPDM de Holcim Building Envelope assurent une solution durable et fiable pour les applications de toitures commerciales, industrielles et résidentielles.
                 </p>
               </div>
-              <div className="flex-shrink-0">
-                <Image
-                  src="/images/logos/elevate-logo.png"
-                  alt="Elevate"
-                  width={180}
-                  height={60}
-                  className="h-12 sm:h-14 w-auto object-contain brightness-0 invert"
-                />
+              <div className="flex-shrink-0 hidden lg:block">
+                <div className="relative w-64 h-48 rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+                  <Image
+                    src="/images/Produits/ToiturePlate/2.jpg"
+                    alt="Toiture plate EPDM Elevate"
+                    fill
+                    className="object-cover"
+                    sizes="256px"
+                  />
+                </div>
               </div>
             </div>
           </Reveal>
@@ -196,7 +219,7 @@ export default function EpdmPage() {
         </div>
       </section>
 
-      {/* ── ELEVATE PRODUCTS ── */}
+      {/* ── ELEVATE PRODUCTS (clickable) ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
@@ -211,50 +234,7 @@ export default function EpdmPage() {
             </div>
           </Reveal>
 
-          <div className="space-y-6">
-            {elevateProducts.map((product, i) => (
-              <Reveal key={product.title} delay={i * 100}>
-                <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-                    <div className="flex-1">
-                      <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">
-                        {product.brand}
-                      </p>
-                      <h3 className="text-xl sm:text-2xl font-bold text-primary mb-3">
-                        {product.title}
-                      </h3>
-                      <p className="text-base text-slate-600 leading-relaxed mb-4">
-                        {product.description}
-                      </p>
-
-                      <div className="flex flex-wrap gap-2">
-                        {product.specs.map((spec) => (
-                          <span
-                            key={spec}
-                            className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-primary/5 text-primary border border-primary/10"
-                          >
-                            {spec}
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-
-                    {product.shopSlug && (
-                      <div className="flex-shrink-0">
-                        <Link
-                          href={`/shop/produit/${product.shopSlug}`}
-                          className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
-                        >
-                          Voir dans le magasin
-                          <ShoppingCart className="w-4 h-4" />
-                        </Link>
-                      </div>
-                    )}
-                  </div>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          <EpdmProductCards products={elevateProducts} />
         </div>
       </section>
 
@@ -283,7 +263,6 @@ export default function EpdmPage() {
             </div>
           </Reveal>
 
-          {/* Sopraguard product card */}
           <Reveal delay={50}>
             <div className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/15 mb-10">
               <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
@@ -308,17 +287,6 @@ export default function EpdmPage() {
                     ))}
                   </div>
                 </div>
-                {sopremaProduct.shopSlug && (
-                  <div className="flex-shrink-0">
-                    <Link
-                      href={`/shop/produit/${sopremaProduct.shopSlug}`}
-                      className="inline-flex items-center gap-2 bg-white text-[#003366] font-semibold px-6 py-3 rounded-full hover:bg-white/90 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
-                    >
-                      Voir dans le magasin
-                      <ShoppingCart className="w-4 h-4" />
-                    </Link>
-                  </div>
-                )}
               </div>
             </div>
           </Reveal>
@@ -385,7 +353,7 @@ export default function EpdmPage() {
             </div>
           </Reveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {[
               { icon: Shield, title: "50+ ans de durabilité prouvée", description: "Des membranes testées et éprouvées sur le terrain depuis plus d'un demi-siècle, garantissant performance et longévité." },
               { icon: Leaf, title: "Économie circulaire", description: "Un procédé de recyclage unique qui valorise les matériaux en fin de vie — pour une construction responsable et durable." },
@@ -405,6 +373,54 @@ export default function EpdmPage() {
                 </Reveal>
               );
             })}
+          </div>
+
+          {/* ── DERBIGUM PRODUCTS ── */}
+          <Reveal>
+            <div className="mb-8">
+              <h3 className="text-xl sm:text-2xl font-bold text-[#F5C300] mb-2">
+                Nos membranes Derbigum
+              </h3>
+              <p className="text-base text-white/70">
+                Solutions bitumineuses multicouches de haute qualité pour toitures plates professionnelles.
+              </p>
+            </div>
+          </Reveal>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {derbigumProducts.map((product, i) => (
+              <Reveal key={product.name} delay={i * 100}>
+                <div className="group bg-[#252525] rounded-2xl overflow-hidden border border-white/10 hover:border-[#F5C300]/30 transition-all duration-500 hover:shadow-xl hover:shadow-[#F5C300]/5">
+                  <div className="relative aspect-[16/10] overflow-hidden bg-white">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-contain p-4 group-hover:scale-105 transition-transform duration-700"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                  </div>
+                  <div className="p-6">
+                    <h4 className="text-lg font-bold text-white mb-2 group-hover:text-[#F5C300] transition-colors">
+                      {product.name}
+                    </h4>
+                    <p className="text-sm text-white/70 leading-relaxed mb-4">
+                      {product.description}
+                    </p>
+                    <div className="flex flex-wrap gap-2">
+                      {product.badges.map((badge) => (
+                        <span
+                          key={badge}
+                          className="px-3 py-1 bg-[#F5C300]/10 border border-[#F5C300]/20 text-xs font-semibold text-[#F5C300] rounded-full"
+                        >
+                          {badge}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            ))}
           </div>
         </div>
       </section>

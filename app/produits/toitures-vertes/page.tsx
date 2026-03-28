@@ -15,9 +15,13 @@ import {
   ArrowRight,
   ExternalLink,
   CheckCircle2,
+  Camera,
 } from "lucide-react";
 import CTACompact from "@/components/sections/CTA";
 import Reveal from "@/components/ui/Reveal";
+import ToitureVerteGallery from "@/components/produits/ToitureVerteGallery";
+
+const GALLERY_IMAGES = Array.from({ length: 14 }, (_, i) => `/images/Produits/ToitureVerte/${i + 1}.jpeg`);
 
 export const metadata: Metadata = {
   title: "Toitures Végétalisées - Comarden",
@@ -272,6 +276,29 @@ export default function ToituresVertesPage() {
               );
             })}
           </div>
+        </div>
+      </section>
+
+      {/* ── GALLERY ── */}
+      <section className="py-16 sm:py-20 lg:py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <Reveal>
+            <div className="text-center mb-10">
+              <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-emerald-100 mb-4">
+                <Camera className="w-7 h-7 text-emerald-600" />
+              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
+                Nos réalisations en toiture végétalisée
+              </h2>
+              <p className="text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+                Découvrez nos projets de toitures vertes réalisés en Belgique avec les systèmes Floratoit.
+              </p>
+            </div>
+          </Reveal>
+
+          <Reveal delay={100}>
+            <ToitureVerteGallery images={GALLERY_IMAGES} />
+          </Reveal>
         </div>
       </section>
 
