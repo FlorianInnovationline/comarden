@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Star,
   TrendingUp,
@@ -229,25 +230,38 @@ export default function ProPackPage() {
       {/* ── PACK 1 Detail ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="mb-10">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <span className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-primary font-bold text-sm">1</span>
-              <span className="text-sm font-semibold text-accent uppercase tracking-widest">Pro Pack 1</span>
+          {/* Header with image */}
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 mb-10 items-center">
+            <div className="lg:col-span-3">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <span className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-primary font-bold text-sm">1</span>
+                <span className="text-sm font-semibold text-accent uppercase tracking-widest">Pro Pack 1</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
+                Libérez-vous de l&apos;administratif
+              </h2>
+              <p className="text-lg text-primary/60 font-medium italic mb-5">
+                &ldquo;Concentrez-vous sur votre métier, on gère le reste.&rdquo;
+              </p>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Vous êtes un professionnel passionné par votre métier, mais l&apos;administratif
+                et la comptabilité vous freinent au quotidien ? Avec le Pro PACK 1, Comarden
+                vous accompagne dans la gestion complète de votre administratif et comptable :
+                secrétariat social, suivi des dossiers, organisation, comptabilité et autres
+                tâches chronophages.
+              </p>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
-              Libérez-vous de l&apos;administratif
-            </h2>
-            <p className="text-lg text-primary/60 font-medium italic mb-5">
-              &ldquo;Concentrez-vous sur votre métier, on gère le reste.&rdquo;
-            </p>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
-              Vous êtes un professionnel passionné par votre métier, mais l&apos;administratif
-              et la comptabilité vous freinent au quotidien ? Avec le Pro PACK 1, Comarden
-              vous accompagne dans la gestion complète de votre administratif et comptable :
-              secrétariat social, suivi des dossiers, organisation, comptabilité et autres
-              tâches chronophages.
-            </p>
+            <div className="lg:col-span-2">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+                <Image
+                  src="/images/placeholder/pro-pack-1.jpg"
+                  alt="Pro Pack 1 — Accompagnement administratif"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Two columns: includes + benefits */}
@@ -295,24 +309,37 @@ export default function ProPackPage() {
       {/* ── PACK 2 Detail ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="mb-10">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <span className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-primary font-bold text-sm">2</span>
-              <span className="text-sm font-semibold text-accent uppercase tracking-widest">Pro Pack 2</span>
+          {/* Header with image — reversed layout */}
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 mb-10 items-center">
+            <div className="lg:col-span-2 order-2 lg:order-1">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+                <Image
+                  src="/images/placeholder/pro-pack-2.jpg"
+                  alt="Pro Pack 2 — Accompagnement commercial"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+              </div>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
-              Vendez mieux, gagnez plus
-            </h2>
-            <p className="text-lg text-primary/60 font-medium italic mb-5">
-              &ldquo;Structurez vos offres, améliorez vos devis, augmentez votre rentabilité.&rdquo;
-            </p>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
-              Vous débutez ou souhaitez améliorer vos performances commerciales et techniques ?
-              Avec le Pro PACK 2, Comarden vous accompagne pour structurer vos offres, améliorer
-              vos devis et augmenter votre rentabilité. Notre mission : vous aider à mieux vendre
-              et à sécuriser vos chantiers.
-            </p>
+            <div className="lg:col-span-3 order-1 lg:order-2">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <span className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-primary font-bold text-sm">2</span>
+                <span className="text-sm font-semibold text-accent uppercase tracking-widest">Pro Pack 2</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
+                Vendez mieux, gagnez plus
+              </h2>
+              <p className="text-lg text-primary/60 font-medium italic mb-5">
+                &ldquo;Structurez vos offres, améliorez vos devis, augmentez votre rentabilité.&rdquo;
+              </p>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Vous débutez ou souhaitez améliorer vos performances commerciales et techniques ?
+                Avec le Pro PACK 2, Comarden vous accompagne pour structurer vos offres, améliorer
+                vos devis et augmenter votre rentabilité. Notre mission : vous aider à mieux vendre
+                et à sécuriser vos chantiers.
+              </p>
+            </div>
           </div>
 
           {/* Two columns: includes + benefits */}
@@ -371,25 +398,38 @@ export default function ProPackPage() {
       {/* ── PACK 3 Detail ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-50">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header */}
-          <div className="mb-10">
-            <div className="inline-flex items-center gap-2 mb-4">
-              <span className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-primary font-bold text-sm">3</span>
-              <span className="text-sm font-semibold text-accent uppercase tracking-widest">Pro Pack 3</span>
+          {/* Header with image */}
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 mb-10 items-center">
+            <div className="lg:col-span-3">
+              <div className="inline-flex items-center gap-2 mb-4">
+                <span className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-primary font-bold text-sm">3</span>
+                <span className="text-sm font-semibold text-accent uppercase tracking-widest">Pro Pack 3</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
+                Accélérez votre croissance
+              </h2>
+              <p className="text-lg text-primary/60 font-medium italic mb-5">
+                &ldquo;Structurez votre développement, professionnalisez votre organisation.&rdquo;
+              </p>
+              <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
+                Vous êtes une entreprise ambitieuse avec une réelle volonté de croissance ?
+                Le Pro PACK 3 est conçu pour vous aider à passer un cap : structurer votre
+                développement, professionnaliser votre organisation et maximiser votre
+                performance globale. La croissance ne s&apos;improvise pas — elle nécessite une
+                vision claire, des processus structurés et un accompagnement stratégique.
+              </p>
             </div>
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
-              Accélérez votre croissance
-            </h2>
-            <p className="text-lg text-primary/60 font-medium italic mb-5">
-              &ldquo;Structurez votre développement, professionnalisez votre organisation.&rdquo;
-            </p>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
-              Vous êtes une entreprise ambitieuse avec une réelle volonté de croissance ?
-              Le Pro PACK 3 est conçu pour vous aider à passer un cap : structurer votre
-              développement, professionnaliser votre organisation et maximiser votre
-              performance globale. La croissance ne s&apos;improvise pas — elle nécessite une
-              vision claire, des processus structurés et un accompagnement stratégique.
-            </p>
+            <div className="lg:col-span-2">
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
+                <Image
+                  src="/images/placeholder/pro-pack-3.jpg"
+                  alt="Pro Pack 3 — Accompagnement croissance"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 40vw"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Two columns: includes + benefits */}
