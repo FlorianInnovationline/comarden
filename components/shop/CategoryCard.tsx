@@ -4,7 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight } from "lucide-react";
 import type { Category } from "@/types/shop";
-import { PLACEHOLDER_PRODUCT_IMAGE } from "@/lib/site";
+import { resolveShopCategoryImageUrl } from "@/lib/shop/magasinCategoryImages";
 
 interface CategoryCardProps {
   category: Category;
@@ -12,8 +12,7 @@ interface CategoryCardProps {
 }
 
 export default function CategoryCard({ category, productCount }: CategoryCardProps) {
-  const raw = category.image_url?.trim();
-  const imageUrl = raw || PLACEHOLDER_PRODUCT_IMAGE;
+  const imageUrl = resolveShopCategoryImageUrl(category.slug, category.image_url);
 
   return (
     <Link href={`/shop/categorie/${category.slug}`}>

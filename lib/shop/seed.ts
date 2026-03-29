@@ -1,17 +1,18 @@
 // Seed data for development (fallback when Supabase not configured)
 
 import type { Category, Product, Promotion } from '@/types/shop';
+import { MAGASIN_CATEGORY_IMAGES } from '@/lib/shop/magasinCategoryImages';
 
 const ts = new Date().toISOString();
 
 export const seedData = {
   categories: [
-    { id: 'cat-etancheite', name: 'Étanchéité & EPDM', slug: 'etancheite-epdm', description: 'Membranes, mastics et systèmes d\'étanchéité pour toitures plates et inclinées', image_url: '/images/categories/etancheite-epdm.jpg', created_at: ts, updated_at: ts },
-    { id: 'cat-isolation', name: 'Isolation ITE', slug: 'isolation-ite', description: 'Piliers, kits et accessoires pour isolation de toiture par l\'extérieur', image_url: '/images/categories/isolation-ite.jpg', created_at: ts, updated_at: ts },
-    { id: 'cat-visserie', name: 'Visserie & Fixations', slug: 'visserie-fixations', description: 'Vis, chevilles, grilles et dispositifs de fixation pour toiture et façade', image_url: '/images/categories/visserie-fixations.jpg', created_at: ts, updated_at: ts },
-    { id: 'cat-colles', name: 'Colles & Mastics', slug: 'colles-mastics', description: 'Colles de contact STRATOGRIP et accessoires d\'application', image_url: '/images/categories/colles-mastics.jpg', created_at: ts, updated_at: ts },
-    { id: 'cat-entretien', name: 'Entretien toiture', slug: 'entretien-toiture', description: 'Produits de nettoyage, séchage et traitement pour toitures', image_url: '/images/categories/entretien-toiture.jpg', created_at: ts, updated_at: ts },
-    { id: 'cat-accessoires', name: 'Accessoires rives', slug: 'accessoires-rives', description: 'Système Clips & Go 2.0 — finitions rives pour toitures bitumées', image_url: '/images/categories/accessoires-rives.jpg', created_at: ts, updated_at: ts },
+    { id: 'cat-etancheite', name: 'Étanchéité & EPDM', slug: 'etancheite-epdm', description: 'Membranes, mastics et systèmes d\'étanchéité pour toitures plates et inclinées', image_url: MAGASIN_CATEGORY_IMAGES['etancheite-epdm'], created_at: ts, updated_at: ts },
+    { id: 'cat-isolation', name: 'Isolation ITE', slug: 'isolation-ite', description: 'Piliers, kits et accessoires pour isolation de toiture par l\'extérieur', image_url: MAGASIN_CATEGORY_IMAGES['isolation-ite'], created_at: ts, updated_at: ts },
+    { id: 'cat-visserie', name: 'Visserie & Fixations', slug: 'visserie-fixations', description: 'Vis, chevilles, grilles et dispositifs de fixation pour toiture et façade', image_url: MAGASIN_CATEGORY_IMAGES['visserie-fixations'], created_at: ts, updated_at: ts },
+    { id: 'cat-colles', name: 'Colles & Mastics', slug: 'colles-mastics', description: 'Colles de contact STRATOGRIP et accessoires d\'application', image_url: MAGASIN_CATEGORY_IMAGES['colles-mastics'], created_at: ts, updated_at: ts },
+    { id: 'cat-entretien', name: 'Entretien toiture', slug: 'entretien-toiture', description: 'Produits de nettoyage, séchage et traitement pour toitures', image_url: MAGASIN_CATEGORY_IMAGES['entretien-toiture'], created_at: ts, updated_at: ts },
+    { id: 'cat-accessoires', name: 'Accessoires rives', slug: 'accessoires-rives', description: 'Système Clips & Go 2.0 — finitions rives pour toitures bitumées', image_url: MAGASIN_CATEGORY_IMAGES['accessoires-rives'], created_at: ts, updated_at: ts },
   ] as Category[],
 
   products: [
