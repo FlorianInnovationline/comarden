@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import Image from "next/image";
 import { GraduationCap, Heart, Briefcase, Lightbulb, Upload, CheckCircle } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import CTACompact from "@/components/sections/CTA";
@@ -103,26 +104,40 @@ export default function JobsPage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <span className="flex h-3 w-3">
-                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-accent opacity-75" />
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-accent" />
-                </span>
-                <span className="text-accent font-medium tracking-wide uppercase text-sm">
-                  Rejoignez-nous
-                </span>
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+            <Reveal>
+              <div>
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <span className="flex h-3 w-3 relative">
+                    <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-accent opacity-75" />
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-accent" />
+                  </span>
+                  <span className="text-accent font-medium tracking-wide uppercase text-sm">
+                    Rejoignez-nous
+                  </span>
+                </div>
+                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                  Pourquoi travailler chez&nbsp;Comarden&nbsp;?
+                </h1>
+                <p className="text-lg sm:text-xl text-white/80 leading-relaxed max-w-2xl">
+                  Rejoignez une entreprise familiale dynamique, spécialisée dans les matériaux de
+                  construction en Belgique. Ici, chaque talent compte et chaque parcours est unique.
+                </p>
               </div>
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                Pourquoi travailler chez&nbsp;Comarden&nbsp;?
-              </h1>
-              <p className="text-lg sm:text-xl text-white/80 leading-relaxed max-w-2xl">
-                Rejoignez une entreprise familiale dynamique, spécialisée dans les matériaux de
-                construction en Belgique. Ici, chaque talent compte et chaque parcours est unique.
-              </p>
-            </div>
-          </Reveal>
+            </Reveal>
+            <Reveal delay={120}>
+              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+                <Image
+                  src="/images/Jobs/1.jpg"
+                  alt="Équipe Comarden — carrières"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+            </Reveal>
+          </div>
         </div>
       </section>
 

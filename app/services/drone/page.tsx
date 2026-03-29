@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Plane,
   Ruler,
@@ -96,14 +97,15 @@ export default function DronePage() {
               </Link>
             </div>
 
-            {/* Placeholder hero image */}
-            <div className="hidden lg:flex items-center justify-center">
-              <div className="w-full aspect-[4/3] rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex flex-col items-center justify-center gap-4">
-                <Plane className="w-16 h-16 text-accent/60" />
-                <span className="text-white/40 text-sm font-medium">
-                  Image drone — à venir
-                </span>
-              </div>
+            <div className="relative w-full aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+              <Image
+                src="/images/services/Drone/1.jpg"
+                alt="Service de mesurage par drone Comarden"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                priority
+              />
             </div>
           </div>
         </div>
@@ -123,42 +125,56 @@ export default function DronePage() {
         </div>
       </section>
 
-      {/* ── Content / Features ── */}
+      {/* ── Comment ça fonctionne — texte + visuel ── */}
       <section className="py-16 sm:py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-3xl mx-auto text-center mb-12 lg:mb-16">
-            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
-              Comment ça fonctionne&nbsp;?
-            </h2>
-            <p className="text-base sm:text-lg text-primary/70 leading-relaxed">
-              Notre pilote professionnel se déplace sur votre chantier. Vous recevez sous 72&nbsp;h&nbsp;:
-              <br />
-              Disponible partout en Wallonie.
-            </p>
-          </div>
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 lg:items-start">
+            <div className="text-left">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
+                Comment ça fonctionne&nbsp;?
+              </h2>
+              <p className="text-base sm:text-lg text-primary/70 leading-relaxed max-w-xl">
+                Notre pilote professionnel se déplace sur votre chantier. Vous recevez sous 72&nbsp;h&nbsp;:
+                <br />
+                Disponible partout en Wallonie.
+              </p>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
-            {features.map((feature) => {
-              const Icon = feature.icon;
-              return (
-                <div
-                  key={feature.title}
-                  className="group relative p-8 rounded-2xl bg-neutral border border-transparent hover:border-accent/40 hover:shadow-xl hover:shadow-accent/10 transition-all duration-300"
-                >
-                  <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-5 group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
-                    <Icon className="w-7 h-7 text-accent" />
-                  </div>
-                  <h3 className="text-lg font-bold text-primary mb-1">
-                    {feature.title}
-                  </h3>
-                </div>
-              );
-            })}
-          </div>
+              <div className="grid sm:grid-cols-1 gap-4 mt-8">
+                {features.map((feature) => {
+                  const Icon = feature.icon;
+                  return (
+                    <div
+                      key={feature.title}
+                      className="group relative p-6 sm:p-7 rounded-2xl bg-neutral border border-slate-100 hover:border-accent/40 hover:shadow-lg hover:shadow-accent/5 transition-all duration-300"
+                    >
+                      <div className="flex items-start gap-4">
+                        <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-all duration-300">
+                          <Icon className="w-6 h-6 text-accent" />
+                        </div>
+                        <h3 className="text-base sm:text-lg font-bold text-primary leading-snug pt-1">
+                          {feature.title}
+                        </h3>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
 
-          <p className="text-center text-sm sm:text-base text-primary/60 font-medium">
-            Disponible en Wallonie, à Bruxelles et dans toute la Belgique.
-          </p>
+              <p className="text-sm sm:text-base text-primary/60 font-medium mt-8 max-w-xl">
+                Disponible en Wallonie, à Bruxelles et dans toute la Belgique.
+              </p>
+            </div>
+
+            <div className="relative w-full aspect-[4/3] min-h-[240px] rounded-2xl overflow-hidden shadow-xl border border-slate-200/80">
+              <Image
+                src="/images/services/Drone/2.jpg"
+                alt="Intervention drone sur chantier"
+                fill
+                className="object-cover"
+                sizes="(max-width: 1024px) 100vw, 45vw"
+              />
+            </div>
+          </div>
         </div>
       </section>
 
