@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
-import fs from "fs";
-import path from "path";
-import { RENTAL_PRODUCTS, RENTAL_CATEGORIES } from "@/lib/rental/data";
+import { RENTAL_CATEGORIES } from "@/lib/rental/data";
 import type { RentalProduct } from "@/lib/rental/data";
+import { getMergedRentalProducts } from "@/lib/rental/catalog";
 import LocationPageClient from "@/components/rental/LocationPageClient";
 
 export const metadata: Metadata = {
@@ -13,22 +12,10 @@ export const metadata: Metadata = {
 
 export const dynamic = "force-dynamic";
 
-function getCustomProducts(): RentalProduct[] {
-  try {
-    const filePath = path.join(process.cwd(), "data", "rental-products.json");
-    if (!fs.existsSync(filePath)) return [];
-    const raw = fs.readFileSync(filePath, "utf-8");
-    return JSON.parse(raw);
-  } catch {
-    return [];
-  }
-}
-
 export default function LocationPage() {
-  const customProducts = getCustomProducts();
-  const allProducts = [...RENTAL_PRODUCTS, ...customProducts];
+  const allProducts: RentalProduct[] = getMergedRentalProducts();
 
-  const customCats = customProducts
+  const customCats = allProducts
     .map((p) => p.category)
     .filter((c) => !(RENTAL_CATEGORIES as readonly string[]).includes(c));
   const uniqueCustomCats = [...new Set(customCats)];

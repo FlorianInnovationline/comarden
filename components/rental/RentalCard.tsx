@@ -19,13 +19,20 @@ export default function RentalCard({ product, onRequest, onView }: RentalCardPro
         onClick={() => onView(product)}
         className="relative aspect-[4/3] bg-neutral/30 overflow-hidden cursor-pointer text-left"
       >
-        <Image
-          src={product.image || "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=400&fit=crop"}
-          alt={product.name}
-          fill
-          className="object-cover group-hover:scale-105 transition-transform duration-700"
-          sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-        />
+        {product.image ? (
+          <Image
+            src={product.image}
+            alt={product.name}
+            fill
+            className="object-cover group-hover:scale-105 transition-transform duration-700"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        ) : (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 bg-gradient-to-br from-neutral/50 to-neutral/30">
+            <Wrench className="w-14 h-14 text-muted-foreground/40" />
+            <span className="text-xs font-medium text-muted-foreground/70">Image à ajouter (admin)</span>
+          </div>
+        )}
         <div className="absolute top-3 left-3">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/90 backdrop-blur-sm text-white text-xs font-semibold rounded-full">
             <Wrench className="w-3 h-3" />

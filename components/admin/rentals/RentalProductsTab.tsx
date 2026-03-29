@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import {
   Plus,
   Search,
@@ -15,9 +15,12 @@ import {
   Tag,
   Layers,
   Image as ImageIcon,
+  Upload,
 } from "lucide-react";
 import { RENTAL_PRODUCTS, RENTAL_CATEGORIES } from "@/lib/rental/data";
 import type { RentalProduct, PriceUnit } from "@/lib/rental/data";
+
+type CatalogProduct = RentalProduct & { isSeed: boolean };
 
 type FormProduct = {
   id?: string;
@@ -62,8 +65,23 @@ function productToForm(p: RentalProduct): FormProduct {
   };
 }
 
+function buildJsonPayload(form: FormProduct) {
+  return {
+    name: form.name,
+    ref: form.ref || null,
+    category: form.category,
+    description: form.description,
+    features: form.features.split("\n").map((s) => s.trim()).filter(Boolean),
+    applications: form.applications.split("\n").map((s) => s.trim()).filter(Boolean),
+    variants: form.variants.split("\n").map((s) => s.trim()).filter(Boolean),
+    priceCents: Number(form.priceCents),
+    priceUnit: form.priceUnit,
+    image: form.image.trim() || null,
+  };
+}
+
 export default function RentalProductsTab() {
-  const [customProducts, setCustomProducts] = useState<RentalProduct[]>([]);
+  const [catalogProducts, setCatalogProducts] = useState<CatalogProduct[]>([]);
   const [loading, setLoading] = useState(true);
   const [search, setSearch] = useState("");
   const [showForm, setShowForm] = useState(false);
@@ -71,27 +89,33 @@ export default function RentalProductsTab() {
   const [saving, setSaving] = useState(false);
   const [deleting, setDeleting] = useState<string | null>(null);
   const [viewSeed, setViewSeed] = useState(true);
+  const [pendingImageFile, setPendingImageFile] = useState<File | null>(null);
+  const [uploadHint, setUploadHint] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
-  const fetchCustomProducts = useCallback(async () => {
+  const fetchCatalog = useCallback(async () => {
     setLoading(true);
     try {
-      const res = await fetch("/api/rentals/products");
-      if (res.ok) setCustomProducts(await res.json());
+      const res = await fetch("/api/rentals/catalog");
+      if (res.ok) {
+        const data = await res.json();
+        setCatalogProducts(data.products || []);
+      }
     } catch (err) {
-      console.error("Failed to fetch custom rental products:", err);
+      console.error("Failed to fetch rental catalog:", err);
     } finally {
       setLoading(false);
     }
   }, []);
 
   useEffect(() => {
-    fetchCustomProducts();
-  }, [fetchCustomProducts]);
+    fetchCatalog();
+  }, [fetchCatalog]);
 
-  const allProducts: (RentalProduct & { isCustom?: boolean })[] = [
-    ...customProducts.map((p) => ({ ...p, isCustom: true as const })),
-    ...(viewSeed ? RENTAL_PRODUCTS.map((p) => ({ ...p, isCustom: false as const })) : []),
-  ];
+  const allProducts = catalogProducts.filter((p) => {
+    if (!viewSeed && p.isSeed) return false;
+    return true;
+  });
 
   const filtered = allProducts.filter((p) => {
     if (!search.trim()) return true;
@@ -103,46 +127,104 @@ export default function RentalProductsTab() {
     );
   });
 
-  const openEditForm = (product: RentalProduct) => {
+  const openEditForm = (product: CatalogProduct) => {
+    setPendingImageFile(null);
+    setUploadHint(null);
     setForm(productToForm(product));
     setShowForm(true);
   };
 
   const openNewForm = () => {
+    setPendingImageFile(null);
+    setUploadHint(null);
     setForm(emptyForm);
     setShowForm(true);
+  };
+
+  const tryUploadImage = async (productId: string, file: File): Promise<string | null> => {
+    const fd = new FormData();
+    fd.append("file", file);
+    fd.append("productId", productId);
+    const up = await fetch("/api/admin/rentals/upload", { method: "POST", body: fd });
+    if (up.status === 501) {
+      setUploadHint(
+        "Upload disque indisponible sur Vercel : placez le fichier dans public/images/rental/" +
+          productId +
+          "/ puis indiquez l’URL ci-dessous, ou déployez depuis un environnement avec disque inscriptible."
+      );
+      return null;
+    }
+    if (!up.ok) {
+      const err = await up.json().catch(() => ({}));
+      setUploadHint(typeof err.error === "string" ? err.error : "Échec de l’upload");
+      return null;
+    }
+    const data = await up.json();
+    setUploadHint(null);
+    return data.url as string;
   };
 
   const handleSave = async () => {
     if (!form.name || !form.category || !form.description || !form.priceCents) return;
     setSaving(true);
+    setUploadHint(null);
 
-    const payload = {
-      id: form.id,
-      name: form.name,
-      ref: form.ref || null,
-      category: form.category,
-      description: form.description,
-      features: form.features.split("\n").map((s) => s.trim()).filter(Boolean),
-      applications: form.applications.split("\n").map((s) => s.trim()).filter(Boolean),
-      variants: form.variants.split("\n").map((s) => s.trim()).filter(Boolean),
-      priceCents: Number(form.priceCents),
-      priceUnit: form.priceUnit,
-      image: form.image || null,
-    };
+    const basePayload = buildJsonPayload(form);
 
     try {
-      const isEdit = !!form.id;
-      const res = await fetch("/api/rentals/products", {
-        method: isEdit ? "PUT" : "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
-      });
-
-      if (res.ok) {
+      if (form.id) {
+        let imageUrl = form.image.trim() || null;
+        if (pendingImageFile) {
+          const url = await tryUploadImage(form.id, pendingImageFile);
+          if (url) imageUrl = url;
+        }
+        const res = await fetch("/api/rentals/products", {
+          method: "PUT",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            id: form.id,
+            ...basePayload,
+            image: imageUrl,
+          }),
+        });
+        if (res.ok) {
+          setShowForm(false);
+          setForm(emptyForm);
+          setPendingImageFile(null);
+          if (fileInputRef.current) fileInputRef.current.value = "";
+          fetchCatalog();
+        }
+      } else {
+        const res = await fetch("/api/rentals/products", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            ...basePayload,
+            image: pendingImageFile ? null : basePayload.image,
+          }),
+        });
+        if (!res.ok) return;
+        const data = await res.json();
+        const newId = data.product?.id as string | undefined;
+        if (newId && pendingImageFile) {
+          const url = await tryUploadImage(newId, pendingImageFile);
+          if (url) {
+            await fetch("/api/rentals/products", {
+              method: "PUT",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({
+                id: newId,
+                ...basePayload,
+                image: url,
+              }),
+            });
+          }
+        }
         setShowForm(false);
         setForm(emptyForm);
-        fetchCustomProducts();
+        setPendingImageFile(null);
+        if (fileInputRef.current) fileInputRef.current.value = "";
+        fetchCatalog();
       }
     } catch (err) {
       console.error("Failed to save product:", err);
@@ -156,7 +238,7 @@ export default function RentalProductsTab() {
     setDeleting(id);
     try {
       const res = await fetch(`/api/rentals/products?id=${id}`, { method: "DELETE" });
-      if (res.ok) fetchCustomProducts();
+      if (res.ok) fetchCatalog();
     } catch (err) {
       console.error("Failed to delete product:", err);
     } finally {
@@ -164,9 +246,10 @@ export default function RentalProductsTab() {
     }
   };
 
+  const customOnly = catalogProducts.filter((p) => !p.isSeed);
   const allCategories = [
     ...(RENTAL_CATEGORIES as unknown as string[]).slice(1),
-    ...customProducts
+    ...customOnly
       .map((p) => p.category)
       .filter((c) => !(RENTAL_CATEGORIES as readonly string[]).includes(c)),
   ];
@@ -189,7 +272,7 @@ export default function RentalProductsTab() {
               />
             </div>
             <button
-              onClick={fetchCustomProducts}
+              onClick={fetchCatalog}
               className="p-2.5 border border-border rounded-xl text-muted-foreground hover:text-primary hover:bg-neutral/50 transition-all"
             >
               <RefreshCw className={`w-4 h-4 ${loading ? "animate-spin" : ""}`} />
@@ -234,7 +317,7 @@ export default function RentalProductsTab() {
             </div>
             <span className="text-sm font-medium text-muted-foreground">Produits ajoutés</span>
           </div>
-          <p className="text-3xl font-bold text-primary">{customProducts.length}</p>
+          <p className="text-3xl font-bold text-primary">{customOnly.length}</p>
         </div>
         <div className="bg-white rounded-2xl border border-border/30 shadow-sm p-5">
           <div className="flex items-center gap-3 mb-2">
@@ -296,6 +379,7 @@ export default function RentalProductsTab() {
                       <div className="flex items-center gap-3">
                         <div className="w-10 h-10 rounded-xl bg-neutral/30 flex items-center justify-center flex-shrink-0 overflow-hidden">
                           {product.image ? (
+                            // eslint-disable-next-line @next/next/no-img-element
                             <img src={product.image} alt="" className="w-full h-full object-cover" />
                           ) : (
                             <Wrench className="w-4 h-4 text-muted-foreground" />
@@ -319,23 +403,25 @@ export default function RentalProductsTab() {
                       </span>
                     </td>
                     <td className="py-4 px-4">
-                      {product.isCustom ? (
-                        <span className="px-2.5 py-1 bg-accent/10 text-xs font-semibold text-accent rounded-full border border-accent/20">Personnalisé</span>
-                      ) : (
+                      {product.isSeed ? (
                         <span className="px-2.5 py-1 bg-neutral/40 text-xs font-medium text-muted-foreground rounded-full">Par défaut</span>
+                      ) : (
+                        <span className="px-2.5 py-1 bg-accent/10 text-xs font-semibold text-accent rounded-full border border-accent/20">Personnalisé</span>
                       )}
                     </td>
                     <td className="py-4 px-6 text-right">
-                      {product.isCustom ? (
-                        <div className="flex items-center justify-end gap-2">
+                      <div className="flex items-center justify-end gap-2">
+                        <button
+                          type="button"
+                          onClick={() => openEditForm(product)}
+                          className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-neutral/50 transition-all"
+                          title="Modifier"
+                        >
+                          <Pencil className="w-4 h-4" />
+                        </button>
+                        {!product.isSeed && (
                           <button
-                            onClick={() => openEditForm(product)}
-                            className="p-2 rounded-lg text-muted-foreground hover:text-primary hover:bg-neutral/50 transition-all"
-                            title="Modifier"
-                          >
-                            <Pencil className="w-4 h-4" />
-                          </button>
-                          <button
+                            type="button"
                             onClick={() => handleDelete(product.id)}
                             disabled={deleting === product.id}
                             className="p-2 rounded-lg text-muted-foreground hover:text-red-600 hover:bg-red-50 transition-all disabled:opacity-50"
@@ -343,10 +429,8 @@ export default function RentalProductsTab() {
                           >
                             <Trash2 className={`w-4 h-4 ${deleting === product.id ? "animate-spin" : ""}`} />
                           </button>
-                        </div>
-                      ) : (
-                        <span className="text-xs text-muted-foreground/50">—</span>
-                      )}
+                        )}
+                      </div>
                     </td>
                   </tr>
                 ))}
@@ -360,27 +444,25 @@ export default function RentalProductsTab() {
       {showForm && (
         <div className="fixed inset-0 z-[100] flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm animate-fade-in">
           <div className="relative w-full max-w-2xl max-h-[90vh] bg-white rounded-2xl shadow-2xl overflow-hidden animate-fade-in-scale flex flex-col">
-            {/* Header */}
             <div className="px-6 py-5 bg-gradient-to-r from-primary to-primary/90 flex items-center justify-between">
               <div>
                 <h2 className="text-lg font-bold text-white">
                   {form.id ? "Modifier le produit" : "Ajouter un produit"}
                 </h2>
                 <p className="text-sm text-white/70">
-                  {form.id ? "Mettez à jour les informations" : "Créez un nouveau produit de location"}
+                  {form.id ? "Mettez à jour les informations et l’image" : "Créez un nouveau produit de location"}
                 </p>
               </div>
               <button
-                onClick={() => { setShowForm(false); setForm(emptyForm); }}
+                type="button"
+                onClick={() => { setShowForm(false); setForm(emptyForm); setPendingImageFile(null); setUploadHint(null); if (fileInputRef.current) fileInputRef.current.value = ""; }}
                 className="p-1.5 rounded-full text-white/70 hover:text-white hover:bg-white/10 transition-colors"
               >
                 <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Form */}
             <div className="overflow-y-auto flex-1 p-6 space-y-5">
-              {/* Name + Ref */}
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 <div className="sm:col-span-2">
                   <label className="flex items-center gap-1.5 text-sm font-semibold text-primary mb-1.5">
@@ -410,7 +492,6 @@ export default function RentalProductsTab() {
                 </div>
               </div>
 
-              {/* Category */}
               <div>
                 <label className="flex items-center gap-1.5 text-sm font-semibold text-primary mb-1.5">
                   <Wrench className="w-3.5 h-3.5" />
@@ -418,7 +499,7 @@ export default function RentalProductsTab() {
                 </label>
                 <div className="flex gap-2">
                   <select
-                    value={form.category}
+                    value={uniqueCategories.includes(form.category) ? form.category : ""}
                     onChange={(e) => setForm({ ...form, category: e.target.value })}
                     className="flex-1 px-4 py-2.5 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all bg-white"
                   >
@@ -437,7 +518,6 @@ export default function RentalProductsTab() {
                 </div>
               </div>
 
-              {/* Description */}
               <div>
                 <label className="text-sm font-semibold text-primary mb-1.5 block">
                   Description <span className="text-red-500">*</span>
@@ -451,7 +531,6 @@ export default function RentalProductsTab() {
                 />
               </div>
 
-              {/* Price + Unit */}
               <div className="grid grid-cols-2 gap-4">
                 <div>
                   <label className="flex items-center gap-1.5 text-sm font-semibold text-primary mb-1.5">
@@ -488,22 +567,68 @@ export default function RentalProductsTab() {
                 </div>
               </div>
 
-              {/* Image */}
-              <div>
-                <label className="flex items-center gap-1.5 text-sm font-semibold text-primary mb-1.5">
+              <div className="rounded-xl border border-border/60 bg-neutral/10 p-4 space-y-3">
+                <label className="flex items-center gap-1.5 text-sm font-semibold text-primary">
                   <ImageIcon className="w-3.5 h-3.5" />
-                  URL de l&apos;image
+                  Image du produit
                 </label>
-                <input
-                  type="text"
-                  value={form.image}
-                  onChange={(e) => setForm({ ...form, image: e.target.value })}
-                  className="w-full px-4 py-2.5 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
-                  placeholder="https://images.unsplash.com/..."
-                />
+                <p className="text-xs text-muted-foreground">
+                  Enregistrez le produit pour pouvoir envoyer un fichier (produits du catalogue ou ajoutés). Même chemin que le Magasin : dossier <code className="text-primary/90">public/images/rental/&lt;id&gt;/</code>.
+                </p>
+                <div className="flex flex-wrap items-center gap-3">
+                  <input
+                    ref={fileInputRef}
+                    type="file"
+                    accept="image/jpeg,image/png,image/webp,image/gif"
+                    className="hidden"
+                    onChange={(e) => {
+                      const f = e.target.files?.[0];
+                      setPendingImageFile(f ?? null);
+                      setUploadHint(null);
+                    }}
+                  />
+                  <button
+                    type="button"
+                    onClick={() => fileInputRef.current?.click()}
+                    className="inline-flex items-center gap-2 px-4 py-2 border border-border rounded-xl text-sm font-semibold text-primary hover:bg-white transition-all"
+                  >
+                    <Upload className="w-4 h-4" />
+                    {pendingImageFile ? pendingImageFile.name : "Choisir une image"}
+                  </button>
+                  {pendingImageFile && (
+                    <button
+                      type="button"
+                      className="text-xs text-muted-foreground hover:text-primary underline"
+                      onClick={() => {
+                        setPendingImageFile(null);
+                        if (fileInputRef.current) fileInputRef.current.value = "";
+                      }}
+                    >
+                      Retirer le fichier
+                    </button>
+                  )}
+                </div>
+                <div>
+                  <label className="text-xs font-medium text-muted-foreground mb-1 block">Ou URL (chemin public, ex. /images/rental/loc-01/photo.jpg)</label>
+                  <input
+                    type="text"
+                    value={form.image}
+                    onChange={(e) => setForm({ ...form, image: e.target.value })}
+                    className="w-full px-4 py-2.5 border border-border rounded-xl text-sm focus:outline-none focus:ring-2 focus:ring-accent/50 focus:border-accent transition-all"
+                    placeholder="/images/rental/..."
+                  />
+                </div>
+                {form.image && !pendingImageFile && (
+                  <div className="relative w-24 h-24 rounded-lg overflow-hidden border border-border bg-white">
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
+                    <img src={form.image} alt="Aperçu" className="w-full h-full object-cover" />
+                  </div>
+                )}
+                {uploadHint && (
+                  <p className="text-xs text-amber-700 bg-amber-50 border border-amber-200 rounded-lg p-2">{uploadHint}</p>
+                )}
               </div>
 
-              {/* Features */}
               <div>
                 <label className="flex items-center gap-1.5 text-sm font-semibold text-primary mb-1.5">
                   <Layers className="w-3.5 h-3.5" />
@@ -518,7 +643,6 @@ export default function RentalProductsTab() {
                 />
               </div>
 
-              {/* Applications */}
               <div>
                 <label className="text-sm font-semibold text-primary mb-1.5 block">
                   Applications <span className="text-xs text-muted-foreground font-normal">(une par ligne)</span>
@@ -532,7 +656,6 @@ export default function RentalProductsTab() {
                 />
               </div>
 
-              {/* Variants */}
               <div>
                 <label className="text-sm font-semibold text-primary mb-1.5 block">
                   Variantes <span className="text-xs text-muted-foreground font-normal">(une par ligne)</span>
@@ -547,15 +670,16 @@ export default function RentalProductsTab() {
               </div>
             </div>
 
-            {/* Footer */}
             <div className="border-t border-border/50 bg-neutral/10 px-6 py-4 flex items-center justify-end gap-3">
               <button
-                onClick={() => { setShowForm(false); setForm(emptyForm); }}
+                type="button"
+                onClick={() => { setShowForm(false); setForm(emptyForm); setPendingImageFile(null); setUploadHint(null); if (fileInputRef.current) fileInputRef.current.value = ""; }}
                 className="px-5 py-2.5 border border-border rounded-xl text-sm font-semibold text-muted-foreground hover:text-primary hover:bg-white transition-all"
               >
                 Annuler
               </button>
               <button
+                type="button"
                 onClick={handleSave}
                 disabled={saving || !form.name || !form.category || !form.description || !form.priceCents}
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent hover:bg-accent/90 text-primary text-sm font-bold rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"

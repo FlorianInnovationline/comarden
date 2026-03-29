@@ -74,17 +74,21 @@ export default function ProductDetailModal({
         <div className="overflow-y-auto flex-1">
           {/* Image header */}
           <div className="relative aspect-[16/9] bg-neutral/30">
-            <Image
-              src={
-                product.image ||
-                "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=800&h=450&fit=crop"
-              }
-              alt={product.name}
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 768px"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent" />
+            {product.image ? (
+              <Image
+                src={product.image}
+                alt={product.name}
+                fill
+                className="object-cover"
+                sizes="(max-width: 768px) 100vw, 768px"
+              />
+            ) : (
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-3 bg-gradient-to-br from-neutral/60 to-neutral/40">
+                <Wrench className="w-16 h-16 text-muted-foreground/35" />
+                <span className="text-sm text-muted-foreground/80">Photo disponible prochainement</span>
+              </div>
+            )}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent pointer-events-none" />
             <div className="absolute bottom-0 left-0 right-0 p-6">
               <div className="flex items-center gap-2 mb-2">
                 <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-primary/90 backdrop-blur-sm text-white text-xs font-semibold rounded-full">

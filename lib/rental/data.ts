@@ -60,7 +60,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
     ],
     priceCents: 2500,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=400&fit=crop",
   },
   {
     id: "loc-02",
@@ -84,7 +83,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
     ],
     priceCents: 2500,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=400&fit=crop",
   },
   {
     id: "loc-03",
@@ -116,7 +114,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
     ],
     priceCents: 2500,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=400&fit=crop",
   },
   {
     id: "loc-04",
@@ -126,7 +123,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
       "Cloueur autonome à gaz bois sur bois. Clous de 50 à 90 mm, lisses ou crantés. Système Start & Go, batterie lithium. Puissance 105 J, autonomie batterie 7500 tirs, autonomie cartouche 1250 tirs, poids 3,8 kg.",
     priceCents: 2500,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=400&fit=crop",
   },
   {
     id: "loc-05",
@@ -151,7 +147,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
     ],
     priceCents: 2500,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=400&fit=crop",
   },
   {
     id: "loc-06",
@@ -175,7 +170,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
     ],
     priceCents: 2500,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?w=400&h=400&fit=crop",
   },
   {
     id: "loc-07",
@@ -185,7 +179,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
     variants: ["20 cm", "22 cm"],
     priceCents: 2000,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=400&h=400&fit=crop",
   },
   {
     id: "loc-08",
@@ -195,7 +188,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
     variants: ["15 cm", "22 cm N°1", "22 cm N°2", "25 cm"],
     priceCents: 3000,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1590479773265-7464e5d48118?w=400&h=400&fit=crop",
   },
   {
     id: "loc-09",
@@ -205,7 +197,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
       "Location d'un camion grue avec opérateur inclus pour livraison et manutention sur chantier.",
     priceCents: 9000,
     priceUnit: "heure",
-    image: "https://images.unsplash.com/photo-1580901368919-7738efb0f87e?w=400&h=400&fit=crop",
   },
   {
     id: "loc-10",
@@ -216,7 +207,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
     variants: ["Diam 80mm", "Diam 100mm"],
     priceCents: 2000,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=400&h=400&fit=crop",
   },
   {
     id: "loc-11",
@@ -226,7 +216,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
       "Grignoteuse électrique filaire haute précision 400W pour découpe acier allié & aluminium. Base fixe, poids 1,6 kg, alimentation secteur pour autonomie illimitée. Découpe nette sans déformation.",
     priceCents: 2500,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400&h=400&fit=crop",
   },
   {
     id: "loc-12",
@@ -236,7 +225,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
       "Outil de fraisage de précision pour alliages d'aluminium. Rainure en V à 135°, profondeur de fraisage jusqu'à 8mm. Livré avec 2 positionneurs de coupe + 1 déflecteur. Poids 1,25 kg.",
     priceCents: 2500,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400&h=400&fit=crop",
   },
   {
     id: "loc-13",
@@ -252,7 +240,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
     ],
     priceCents: 10000,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400&h=400&fit=crop",
   },
   {
     id: "loc-14a",
@@ -262,7 +249,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
       "Rail de guidage professionnel 1,1m pour scie circulaire et fraiseuse. Surface oxydée électrolytiquement, pare-éclats caoutchouc antidéchirure, semelles antidérapantes. Rallongeable.",
     priceCents: 1000,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400&h=400&fit=crop",
   },
   {
     id: "loc-14b",
@@ -272,7 +258,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
       "Rail de guidage professionnel 1,6m pour scie circulaire et fraiseuse. Surface oxydée électrolytiquement, pare-éclats caoutchouc antidéchirure, semelles antidérapantes. Rallongeable.",
     priceCents: 1000,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400&h=400&fit=crop",
   },
   {
     id: "loc-14c",
@@ -282,7 +267,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
       "Rail de guidage professionnel 3,1m pour scie circulaire et fraiseuse. Surface oxydée électrolytiquement, pare-éclats caoutchouc antidéchirure, semelles antidérapantes. Rallongeable.",
     priceCents: 1500,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=400&h=400&fit=crop",
   },
   {
     id: "loc-15",
@@ -292,7 +276,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
       "Solution professionnelle pour transporter les fenêtres de toit VELUX jusqu'aux combles via grue. Charge max 120 kg. Livré en paire. Compatible toutes fenêtres VELUX courantes.",
     priceCents: 2500,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1580901368919-7738efb0f87e?w=400&h=400&fit=crop",
   },
   {
     id: "loc-16",
@@ -301,7 +284,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
     description: "Pince de levage pour panneaux de toiture type UNILIN & UNIDEK.",
     priceCents: 5000,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1580901368919-7738efb0f87e?w=400&h=400&fit=crop",
   },
   {
     id: "loc-17",
@@ -317,7 +299,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
     ],
     priceCents: 2000,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=400&h=400&fit=crop",
   },
   {
     id: "loc-18",
@@ -335,7 +316,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
     ],
     priceCents: 4000,
     priceUnit: "jour",
-    image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=400&h=400&fit=crop",
   },
   {
     id: "loc-19",
@@ -344,7 +324,6 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
     description: "Dérouleur professionnel pour membranes EPDM.",
     priceCents: 25000,
     priceUnit: "an",
-    image: "https://images.unsplash.com/photo-1581783898377-1c85bf937427?w=400&h=400&fit=crop",
   },
 ];
 
