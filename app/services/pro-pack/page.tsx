@@ -228,31 +228,33 @@ export default function ProPackPage() {
 
       {/* ── PACK 1 Detail ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-            {/* Left: content */}
-            <div>
-              <div className="inline-flex items-center gap-2 mb-4">
-                <span className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-primary font-bold text-sm">1</span>
-                <span className="text-sm font-semibold text-accent uppercase tracking-widest">Pro Pack 1</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
-                Libérez-vous de l&apos;administratif
-              </h2>
-              <p className="text-lg text-primary/60 font-medium italic mb-6">
-                &ldquo;Concentrez-vous sur votre métier, on gère le reste.&rdquo;
-              </p>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
-                Vous êtes un professionnel passionné par votre métier, mais l&apos;administratif
-                et la comptabilité vous freinent au quotidien ? Avec le Pro PACK 1, Comarden
-                vous accompagne dans la gestion complète de votre administratif et comptable :
-                secrétariat social, suivi des dossiers, organisation, comptabilité et autres
-                tâches chronophages.
-              </p>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="mb-10">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <span className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-primary font-bold text-sm">1</span>
+              <span className="text-sm font-semibold text-accent uppercase tracking-widest">Pro Pack 1</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
+              Libérez-vous de l&apos;administratif
+            </h2>
+            <p className="text-lg text-primary/60 font-medium italic mb-5">
+              &ldquo;Concentrez-vous sur votre métier, on gère le reste.&rdquo;
+            </p>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+              Vous êtes un professionnel passionné par votre métier, mais l&apos;administratif
+              et la comptabilité vous freinent au quotidien ? Avec le Pro PACK 1, Comarden
+              vous accompagne dans la gestion complète de votre administratif et comptable :
+              secrétariat social, suivi des dossiers, organisation, comptabilité et autres
+              tâches chronophages.
+            </p>
+          </div>
 
-              {/* Included list */}
+          {/* Two columns: includes + benefits */}
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
               <h3 className="text-sm font-bold text-primary uppercase tracking-widest mb-4">Ce qui est inclus</h3>
-              <div className="space-y-3 mb-8">
+              <div className="space-y-3">
                 {pack1Includes.map((item) => {
                   const Icon = item.icon;
                   return (
@@ -267,38 +269,57 @@ export default function ProPackPage() {
               </div>
             </div>
 
-            {/* Right: benefits + callout */}
             <div>
               <h3 className="text-sm font-bold text-primary uppercase tracking-widest mb-4">Vos avantages</h3>
-              <div className="flex flex-wrap gap-2 mb-8">
+              <div className="space-y-2 mb-8">
                 {pack1Benefits.map((b) => (
-                  <span key={b} className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full px-4 py-2 text-sm font-medium">
-                    <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
-                    {b}
-                  </span>
+                  <div key={b} className="flex items-center gap-2.5 bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <span className="text-sm font-medium text-emerald-700">{b}</span>
+                  </div>
                 ))}
               </div>
-
-              {/* Result callout */}
-              <div className="relative bg-primary rounded-2xl p-6 sm:p-8">
-                <Quote className="absolute top-4 right-4 w-10 h-10 text-white/10" />
-                <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed">
-                  &ldquo;Une activité plus fluide, plus rentable, et moins de stress au quotidien.&rdquo;
-                </p>
-              </div>
             </div>
+          </div>
+
+          {/* Quote callout full-width */}
+          <div className="relative bg-primary rounded-2xl p-6 sm:p-8 mt-8">
+            <Quote className="absolute top-4 right-4 w-10 h-10 text-white/10" />
+            <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed">
+              &ldquo;Une activité plus fluide, plus rentable, et moins de stress au quotidien.&rdquo;
+            </p>
           </div>
         </div>
       </section>
 
       {/* ── PACK 2 Detail ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-            {/* Left: benefits + callout */}
-            <div className="order-2 lg:order-1">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="mb-10">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <span className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-primary font-bold text-sm">2</span>
+              <span className="text-sm font-semibold text-accent uppercase tracking-widest">Pro Pack 2</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
+              Vendez mieux, gagnez plus
+            </h2>
+            <p className="text-lg text-primary/60 font-medium italic mb-5">
+              &ldquo;Structurez vos offres, améliorez vos devis, augmentez votre rentabilité.&rdquo;
+            </p>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+              Vous débutez ou souhaitez améliorer vos performances commerciales et techniques ?
+              Avec le Pro PACK 2, Comarden vous accompagne pour structurer vos offres, améliorer
+              vos devis et augmenter votre rentabilité. Notre mission : vous aider à mieux vendre
+              et à sécuriser vos chantiers.
+            </p>
+          </div>
+
+          {/* Two columns: includes + benefits */}
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
               <h3 className="text-sm font-bold text-primary uppercase tracking-widest mb-4">Notre accompagnement</h3>
-              <div className="space-y-3 mb-8">
+              <div className="space-y-3 mb-6">
                 {pack2Includes.map((item) => {
                   const Icon = item.icon;
                   return (
@@ -312,13 +333,12 @@ export default function ProPackPage() {
                 })}
               </div>
 
-              {/* Special feature callout */}
-              <div className="bg-accent/10 border-2 border-accent/30 rounded-2xl p-6">
-                <div className="flex items-center gap-2 mb-3">
+              <div className="bg-accent/10 border-2 border-accent/30 rounded-2xl p-5">
+                <div className="flex items-center gap-2 mb-2">
                   <BarChart3 className="w-5 h-5 text-accent" />
                   <h4 className="text-base font-bold text-primary">L&apos;analyse de vos performances</h4>
                 </div>
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+                <p className="text-sm text-slate-600 leading-relaxed">
                   Nous analysons avec vous les écarts entre votre devis initial,
                   la commande finale de matériaux, et la réalité du chantier.
                   Objectif : identifier les erreurs, les corriger durablement et augmenter votre marge.
@@ -326,70 +346,55 @@ export default function ProPackPage() {
               </div>
             </div>
 
-            {/* Right: content */}
-            <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 mb-4">
-                <span className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-primary font-bold text-sm">2</span>
-                <span className="text-sm font-semibold text-accent uppercase tracking-widest">Pro Pack 2</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
-                Vendez mieux, gagnez plus
-              </h2>
-              <p className="text-lg text-primary/60 font-medium italic mb-6">
-                &ldquo;Structurez vos offres, améliorez vos devis, augmentez votre rentabilité.&rdquo;
-              </p>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
-                Vous débutez ou souhaitez améliorer vos performances commerciales et techniques ?
-                Avec le Pro PACK 2, Comarden vous accompagne pour structurer vos offres, améliorer
-                vos devis et augmenter votre rentabilité. Notre mission : vous aider à mieux vendre
-                et à sécuriser vos chantiers.
-              </p>
-
+            <div>
               <h3 className="text-sm font-bold text-primary uppercase tracking-widest mb-4">Vos avantages</h3>
-              <div className="flex flex-wrap gap-2 mb-8">
+              <div className="space-y-2">
                 {pack2Benefits.map((b) => (
-                  <span key={b} className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full px-4 py-2 text-sm font-medium">
-                    <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
-                    {b}
-                  </span>
+                  <div key={b} className="flex items-center gap-2.5 bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <span className="text-sm font-medium text-emerald-700">{b}</span>
+                  </div>
                 ))}
               </div>
-
-              <div className="relative bg-primary rounded-2xl p-6 sm:p-8">
-                <Quote className="absolute top-4 right-4 w-10 h-10 text-white/10" />
-                <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed">
-                  &ldquo;Vous gagnez en crédibilité, en efficacité et en rentabilité. Sans investissement de départ.&rdquo;
-                </p>
-              </div>
             </div>
+          </div>
+
+          <div className="relative bg-primary rounded-2xl p-6 sm:p-8 mt-8">
+            <Quote className="absolute top-4 right-4 w-10 h-10 text-white/10" />
+            <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed">
+              &ldquo;Vous gagnez en crédibilité, en efficacité et en rentabilité. Sans investissement de départ.&rdquo;
+            </p>
           </div>
         </div>
       </section>
 
       {/* ── PACK 3 Detail ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
-            {/* Left */}
-            <div>
-              <div className="inline-flex items-center gap-2 mb-4">
-                <span className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-primary font-bold text-sm">3</span>
-                <span className="text-sm font-semibold text-accent uppercase tracking-widest">Pro Pack 3</span>
-              </div>
-              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
-                Accélérez votre croissance
-              </h2>
-              <p className="text-lg text-primary/60 font-medium italic mb-6">
-                &ldquo;Structurez votre développement, professionnalisez votre organisation.&rdquo;
-              </p>
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
-                Vous êtes une entreprise ambitieuse avec une réelle volonté de croissance ?
-                Le Pro PACK 3 est conçu pour vous aider à passer un cap : structurer votre
-                développement, professionnaliser votre organisation et maximiser votre
-                performance globale. La croissance ne s&apos;improvise pas — elle nécessite une
-                vision claire, des processus structurés et un accompagnement stratégique.
-              </p>
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="mb-10">
+            <div className="inline-flex items-center gap-2 mb-4">
+              <span className="w-8 h-8 rounded-lg bg-accent flex items-center justify-center text-primary font-bold text-sm">3</span>
+              <span className="text-sm font-semibold text-accent uppercase tracking-widest">Pro Pack 3</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-3">
+              Accélérez votre croissance
+            </h2>
+            <p className="text-lg text-primary/60 font-medium italic mb-5">
+              &ldquo;Structurez votre développement, professionnalisez votre organisation.&rdquo;
+            </p>
+            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl">
+              Vous êtes une entreprise ambitieuse avec une réelle volonté de croissance ?
+              Le Pro PACK 3 est conçu pour vous aider à passer un cap : structurer votre
+              développement, professionnaliser votre organisation et maximiser votre
+              performance globale. La croissance ne s&apos;improvise pas — elle nécessite une
+              vision claire, des processus structurés et un accompagnement stratégique.
+            </p>
+          </div>
 
+          {/* Two columns: includes + benefits */}
+          <div className="grid md:grid-cols-2 gap-8">
+            <div>
               <h3 className="text-sm font-bold text-primary uppercase tracking-widest mb-4">Accompagnement complet</h3>
               <div className="space-y-3">
                 {pack3Includes.map((item) => {
@@ -406,25 +411,24 @@ export default function ProPackPage() {
               </div>
             </div>
 
-            {/* Right */}
             <div>
               <h3 className="text-sm font-bold text-primary uppercase tracking-widest mb-4">Vos avantages</h3>
-              <div className="flex flex-wrap gap-2 mb-8">
+              <div className="space-y-2">
                 {pack3Benefits.map((b) => (
-                  <span key={b} className="inline-flex items-center gap-1.5 bg-emerald-50 text-emerald-700 border border-emerald-200 rounded-full px-4 py-2 text-sm font-medium">
-                    <CheckCircle2 className="w-4 h-4 flex-shrink-0" />
-                    {b}
-                  </span>
+                  <div key={b} className="flex items-center gap-2.5 bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-3">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 flex-shrink-0" />
+                    <span className="text-sm font-medium text-emerald-700">{b}</span>
+                  </div>
                 ))}
               </div>
-
-              <div className="relative bg-primary rounded-2xl p-6 sm:p-8">
-                <Quote className="absolute top-4 right-4 w-10 h-10 text-white/10" />
-                <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed">
-                  &ldquo;Une entreprise plus solide, plus rentable et prête à grandir sereinement.&rdquo;
-                </p>
-              </div>
             </div>
+          </div>
+
+          <div className="relative bg-primary rounded-2xl p-6 sm:p-8 mt-8">
+            <Quote className="absolute top-4 right-4 w-10 h-10 text-white/10" />
+            <p className="text-lg sm:text-xl text-white font-semibold leading-relaxed">
+              &ldquo;Une entreprise plus solide, plus rentable et prête à grandir sereinement.&rdquo;
+            </p>
           </div>
         </div>
       </section>

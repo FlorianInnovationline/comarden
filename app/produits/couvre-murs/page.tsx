@@ -237,22 +237,22 @@ export default function CouvreMursPage() {
             </div>
           </Reveal>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-            {benefits.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <Reveal key={item.title} delay={i * 80}>
-                  <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300 h-full">
+          <Reveal delay={80}>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+              {benefits.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200 shadow-sm hover:shadow-md hover:border-accent/30 transition-all duration-300">
                     <div className="w-11 h-11 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
                       <Icon className="w-5 h-5 text-accent" />
                     </div>
                     <h3 className="text-lg font-bold text-primary mb-2">{item.title}</h3>
                     <p className="text-sm text-slate-500 leading-relaxed">{item.description}</p>
                   </div>
-                </Reveal>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -287,21 +287,21 @@ export default function CouvreMursPage() {
             </div>
           </Reveal>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6 max-w-4xl mx-auto">
-            {useCases.map((item, i) => {
-              const Icon = item.icon;
-              return (
-                <Reveal key={item.label} delay={i * 80}>
-                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 sm:p-6 text-center hover:bg-white/10 transition-colors">
-                    <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-3">
+          <Reveal delay={80}>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 lg:gap-6 max-w-4xl mx-auto">
+              {useCases.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.label} className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl p-5 sm:p-6 text-center hover:bg-white/10 transition-colors flex flex-col items-center justify-center min-h-[130px]">
+                    <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mb-3">
                       <Icon className="w-6 h-6 text-accent" />
                     </div>
-                    <span className="text-sm sm:text-base font-medium text-white/90">{item.label}</span>
+                    <span className="text-sm sm:text-base font-medium text-white/90 leading-tight">{item.label}</span>
                   </div>
-                </Reveal>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          </Reveal>
         </div>
       </section>
 
