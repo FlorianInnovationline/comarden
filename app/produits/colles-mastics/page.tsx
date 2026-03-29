@@ -4,6 +4,8 @@ import Link from "next/link";
 import { ArrowRight, ShoppingCart } from "lucide-react";
 import CTACompact from "@/components/sections/CTA";
 import Reveal from "@/components/ui/Reveal";
+import { listProductImageUrlsFromDisk } from "@/lib/shop/productFolderImages";
+import { PLACEHOLDER_PRODUCT_IMAGE } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Colles & Mastics - Comarden",
@@ -165,6 +167,7 @@ function ProductCard({
   supports,
   usage,
   shopSlug,
+  coverImage,
 }: {
   title: string;
   brand: string;
@@ -179,12 +182,13 @@ function ProductCard({
   supports?: string;
   usage?: string;
   shopSlug?: string;
+  coverImage: string;
 }) {
   return (
     <div className="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 hover:shadow-md transition-shadow">
-      <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6">
-        <div className="flex-1">
-          <div className="flex items-center gap-3 mb-3">
+      <div className="grid grid-cols-1 lg:grid-cols-[1fr_min(100%,280px)] xl:grid-cols-[1fr_320px] gap-8 lg:gap-10 lg:items-start">
+        <div className="min-w-0">
+          <div className="flex flex-wrap items-center gap-3 mb-3">
             {logo && (
               <div className="relative h-8 w-24 flex-shrink-0">
                 <Image src={logo} alt="" fill className="object-contain object-left" />
@@ -235,20 +239,36 @@ function ProductCard({
             </div>
           )}
         </div>
-        {shopSlug && (
-          <div className="flex-shrink-0">
+
+        <div className="flex flex-col gap-4 w-full max-w-sm mx-auto lg:max-w-none lg:mx-0 lg:sticky lg:top-28">
+          {shopSlug && (
             <Link
               href={`/shop/produit/${shopSlug}`}
-              className="inline-flex items-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition-all duration-300 hover:scale-105 hover:shadow-lg text-sm"
+              className="inline-flex w-full items-center justify-center gap-2 bg-primary text-white font-semibold px-6 py-3 rounded-full hover:bg-primary/90 transition-all duration-300 hover:shadow-lg text-sm whitespace-nowrap"
             >
               Voir dans le magasin
-              <ShoppingCart className="w-4 h-4" />
+              <ShoppingCart className="w-4 h-4 flex-shrink-0" />
             </Link>
+          )}
+          <div className="relative aspect-[4/5] w-full rounded-2xl overflow-hidden bg-slate-50 border border-slate-200 shadow-inner">
+            <Image
+              src={coverImage}
+              alt={title}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 320px"
+            />
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
+}
+
+function coverImageForShopSlug(shopSlug: string | undefined): string {
+  if (!shopSlug) return PLACEHOLDER_PRODUCT_IMAGE;
+  const urls = listProductImageUrlsFromDisk(shopSlug);
+  return urls[0] ?? PLACEHOLDER_PRODUCT_IMAGE;
 }
 
 export default function CollesMasticsPage() {
@@ -338,6 +358,7 @@ export default function CollesMasticsPage() {
                   conseil={product.conseil}
                   applications={product.applications}
                   shopSlug={product.shopSlug}
+                  coverImage={coverImageForShopSlug(product.shopSlug)}
                 />
               </Reveal>
             ))}
@@ -369,6 +390,7 @@ export default function CollesMasticsPage() {
                   supports={product.supports}
                   usage={product.usage}
                   shopSlug={product.shopSlug}
+                  coverImage={coverImageForShopSlug(product.shopSlug)}
                 />
               </Reveal>
             ))}
@@ -398,6 +420,7 @@ export default function CollesMasticsPage() {
                 body="Absorbe l'eau de pluie sur toitures plates avant travaux d'étanchéité. Permet une intervention rapide même par temps humide."
                 specs={["Réf. 848", "6 × 1 kg", "Toitures plates"]}
                 shopSlug="poudre-assechante-express"
+                coverImage={coverImageForShopSlug("poudre-assechante-express")}
               />
             </Reveal>
             <Reveal delay={80}>
@@ -408,6 +431,7 @@ export default function CollesMasticsPage() {
                 body="Rouleau en mousse haute absorption pour le séchage rapide des toitures plates. Largeur 60 cm, longueur 130 cm, fabrication allemande."
                 specs={["60 × 130 cm", "Mousse haute absorption", "Fabrication allemande"]}
                 shopSlug="rouleau-sechage-toiture"
+                coverImage={coverImageForShopSlug("rouleau-sechage-toiture")}
               />
             </Reveal>
             <Reveal delay={160}>
@@ -424,6 +448,7 @@ export default function CollesMasticsPage() {
                 ]}
                 specs={["Format : 5L", "Toiture & façade"]}
                 shopSlug="algimouss-pro-5l"
+                coverImage={coverImageForShopSlug("algimouss-pro-5l")}
               />
             </Reveal>
             <Reveal delay={240}>
@@ -439,6 +464,7 @@ export default function CollesMasticsPage() {
                 ]}
                 specs={["Format : 5L", "Bois extérieur"]}
                 shopSlug="algifuge-bois-5l"
+                coverImage={coverImageForShopSlug("algifuge-bois-5l")}
               />
             </Reveal>
           </div>
