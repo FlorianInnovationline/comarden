@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ConditionalLayout from "@/components/layout/ConditionalLayout";
-import PageShell from "@/components/layout/PageShell";
+import ScrollProgress from "@/components/layout/ScrollProgress";
 import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
@@ -34,6 +34,7 @@ export default function RootLayout({
       <body style={{ position: 'relative' }}>
         <Providers>
           <ConditionalLayout>{children}</ConditionalLayout>
+          <ScrollProgress />
         </Providers>
       </body>
     </html>
