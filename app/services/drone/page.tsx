@@ -128,7 +128,7 @@ export default function DronePage() {
       {/* ── Comment ça fonctionne — texte + visuel ── */}
       <section className="py-16 sm:py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 lg:items-start">
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 lg:items-center">
             <div className="text-left">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
                 Comment ça fonctionne&nbsp;?
@@ -165,14 +165,16 @@ export default function DronePage() {
               </p>
             </div>
 
-            <div className="relative w-full aspect-[4/3] min-h-[240px] rounded-2xl overflow-hidden shadow-xl border border-slate-200/80">
-              <Image
-                src="/images/services/Drone/2.jpg"
-                alt="Intervention drone sur chantier"
-                fill
-                className="object-cover"
-                sizes="(max-width: 1024px) 100vw, 45vw"
-              />
+            <div className="flex w-full justify-center lg:py-1">
+              <div className="relative aspect-[4/3] w-full max-w-md sm:max-w-lg rounded-2xl overflow-hidden shadow-xl border border-slate-200/80">
+                <Image
+                  src="/images/services/Drone/2.jpg"
+                  alt="Intervention drone sur chantier"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 420px"
+                />
+              </div>
             </div>
           </div>
         </div>
