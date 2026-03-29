@@ -2,11 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Image from "next/image";
 import {
-  Plane,
   Ruler,
   Eye,
   ClipboardCheck,
-  Play,
   ArrowRight,
   Camera,
   FileText,
@@ -265,31 +263,53 @@ export default function DronePage() {
           </h2>
 
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-            {/* Image placeholder 1 */}
-            <div className="group aspect-[4/3] rounded-2xl bg-white border border-primary/10 flex flex-col items-center justify-center gap-3 hover:shadow-lg hover:border-accent/30 transition-all duration-300">
-              <Plane className="w-12 h-12 text-primary/30 group-hover:text-accent transition-colors duration-300" />
-              <span className="text-sm text-primary/40 font-medium">
-                Drone en vol
-              </span>
-            </div>
-
-            {/* Image placeholder 2 */}
-            <div className="group aspect-[4/3] rounded-2xl bg-white border border-primary/10 flex flex-col items-center justify-center gap-3 hover:shadow-lg hover:border-accent/30 transition-all duration-300">
-              <Ruler className="w-12 h-12 text-primary/30 group-hover:text-accent transition-colors duration-300" />
-              <span className="text-sm text-primary/40 font-medium">
-                Mesurage de toiture
-              </span>
-            </div>
-
-            {/* Video placeholder */}
-            <div className="group aspect-[4/3] rounded-2xl bg-primary/5 border border-primary/10 flex flex-col items-center justify-center gap-3 hover:shadow-lg hover:border-accent/30 transition-all duration-300 md:col-span-2 lg:col-span-1">
-              <div className="w-16 h-16 rounded-full bg-accent/10 flex items-center justify-center group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
-                <Play className="w-8 h-8 text-accent" />
+            <figure className="flex flex-col gap-2">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-sm transition-shadow hover:shadow-lg">
+                <Image
+                  src="/images/services/Drone/1.jpg"
+                  alt="Drone en vol"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
               </div>
-              <span className="text-sm text-primary/40 font-medium">
-                Vidéo à venir
-              </span>
-            </div>
+              <figcaption className="text-center text-sm font-medium text-primary/80">
+                Drone en vol
+              </figcaption>
+            </figure>
+
+            <figure className="flex flex-col gap-2">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-primary/10 bg-white shadow-sm transition-shadow hover:shadow-lg">
+                <Image
+                  src="/images/services/Drone/3.jpg"
+                  alt="Mesurage de toiture"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </div>
+              <figcaption className="text-center text-sm font-medium text-primary/80">
+                Mesurage de toiture
+              </figcaption>
+            </figure>
+
+            <figure className="flex flex-col gap-2">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-primary/10 bg-primary/5 shadow-sm transition-shadow hover:shadow-lg">
+                <video
+                  className="absolute inset-0 h-full w-full object-cover"
+                  controls
+                  playsInline
+                  preload="metadata"
+                  poster="/images/services/Drone/1.jpg"
+                  aria-label="Vidéo du service drone Comarden"
+                >
+                  <source src="/images/services/Drone/1.mp4" type="video/mp4" />
+                </video>
+              </div>
+              <figcaption className="text-center text-sm font-medium text-primary/80">
+                Vidéo — service drone
+              </figcaption>
+            </figure>
           </div>
         </div>
       </section>
