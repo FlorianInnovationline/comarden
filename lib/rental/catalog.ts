@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { RENTAL_PRODUCTS, type RentalProduct } from "./data";
+import { RENTAL_SEED_IMAGES } from "./locationImages";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const OVERRIDES_FILE = path.join(DATA_DIR, "rental-product-overrides.json");
@@ -49,9 +50,13 @@ export function writeCustomRentalProducts(products: RentalProduct[]) {
 export function getMergedRentalProducts(): RentalProduct[] {
   const overrides = readRentalOverridesFile();
   const seedMerged = RENTAL_PRODUCTS.map((p) => {
+    const defaultImage = RENTAL_SEED_IMAGES[p.id];
+    const base: RentalProduct = defaultImage
+      ? { ...p, image: defaultImage }
+      : { ...p };
     const o = overrides[p.id];
-    if (!o) return { ...p };
-    return { ...p, ...o, id: p.id };
+    if (!o) return base;
+    return { ...base, ...o, id: p.id };
   });
   const custom = readCustomRentalProducts();
   return [...seedMerged, ...custom];
