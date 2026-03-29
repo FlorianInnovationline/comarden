@@ -314,7 +314,7 @@ export default function ProPackPage() {
             <div className="lg:col-span-2 order-2 lg:order-1">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                 <Image
-                  src="/images/placeholder/pro-pack-2.jpg"
+                  src="/images/services/PackPro/2.jpg"
                   alt="Pro Pack 2 — Accompagnement commercial"
                   fill
                   className="object-cover"
