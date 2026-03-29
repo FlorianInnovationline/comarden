@@ -72,6 +72,7 @@ export const site = {
       { label: "Façade", href: "/produits/facade" },
       { label: "Visserie", href: "/produits/visserie" },
       { label: "Colles & Mastics", href: "/produits/colles-mastics" },
+      { label: "Couvre Murs", href: "/produits/couvre-murs" },
     ],
     services: [
       { label: "Façonnage", href: "/services/faconnage" },

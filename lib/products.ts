@@ -16,4 +16,5 @@ export const productCategories: ProductCategory[] = [
   { slug: "facade", title: "Façade", description: "Bardages, panneaux et solutions de revêtement de façade", iconName: "Building2" },
   { slug: "visserie", title: "Visserie", description: "Vis, fixations et accessoires pour toiture et bardage", iconName: "Wrench" },
   { slug: "colles-mastics", title: "Colles & Mastics", description: "Colles de contact STRATO GRIP, mastics TYVEK", iconName: "Paintbrush" },
+  { slug: "couvre-murs", title: "Couvre Murs", description: "Protection et design pour vos murets extérieurs, standard ou sur mesure", iconName: "Shield" },
 ];
