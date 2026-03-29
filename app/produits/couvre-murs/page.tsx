@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Shield,
   Paintbrush,
@@ -15,7 +16,6 @@ import {
   Building2,
   RefreshCw,
   Sparkles,
-  CheckCircle2,
 } from "lucide-react";
 import CTACompact from "@/components/sections/CTA";
 import Reveal from "@/components/ui/Reveal";
@@ -106,31 +106,45 @@ export default function CouvreMursPage() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <Reveal>
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-3 mb-6">
-                <span className="flex h-3 w-3 relative">
-                  <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-accent opacity-75" />
-                  <span className="relative inline-flex rounded-full h-3 w-3 bg-accent" />
-                </span>
-                <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm">
-                  Nouveau produit
-                </span>
+          <div className="grid lg:grid-cols-2 gap-10 lg:gap-12 items-center">
+            <Reveal>
+              <div>
+                <div className="inline-flex items-center gap-3 mb-6">
+                  <span className="flex h-3 w-3 relative">
+                    <span className="animate-ping absolute inline-flex h-3 w-3 rounded-full bg-accent opacity-75" />
+                    <span className="relative inline-flex rounded-full h-3 w-3 bg-accent" />
+                  </span>
+                  <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm">
+                    Nouveau produit
+                  </span>
+                </div>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
+                  Couvre-murs Comarden
+                  <span className="block text-accent text-2xl sm:text-3xl md:text-4xl mt-2">
+                    Protection &amp; design pour vos murets
+                  </span>
+                </h1>
+                <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
+                  Protégez et valorisez vos murets extérieurs avec les couvre-murs
+                  Comarden. Une gamme pensée pour durer, facile d&apos;entretien,
+                  disponible en standard ou sur mesure pour s&apos;adapter
+                  parfaitement à chaque projet.
+                </p>
               </div>
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                Couvre-murs Comarden
-                <span className="block text-accent text-2xl sm:text-3xl md:text-4xl mt-2">
-                  Protection &amp; design pour vos murets
-                </span>
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
-                Protégez et valorisez vos murets extérieurs avec les couvre-murs
-                Comarden. Une gamme pensée pour durer, facile d&apos;entretien,
-                disponible en standard ou sur mesure pour s&apos;adapter
-                parfaitement à chaque projet.
-              </p>
-            </div>
-          </Reveal>
+            </Reveal>
+            <Reveal delay={150}>
+              <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+                <Image
+                  src="/images/produits/CouvreMurs/1.jpg"
+                  alt="Couvre-murs Comarden"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  priority
+                />
+              </div>
+            </Reveal>
+          </div>
         </div>
 
         <div className="absolute bottom-0 left-0 right-0">
@@ -334,6 +348,32 @@ export default function CouvreMursPage() {
               </Link>
             </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* Gallery — breaks up consecutive yellow CTAs */}
+      <section className="py-12 sm:py-16 lg:py-20 bg-slate-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200/80">
+              <Image
+                src="/images/produits/CouvreMurs/2.jpg"
+                alt="Réalisation couvre-mur Comarden"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
+            <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200/80">
+              <Image
+                src="/images/produits/CouvreMurs/3.jpg"
+                alt="Couvre-mur — détail de pose"
+                fill
+                className="object-cover"
+                sizes="(max-width: 640px) 100vw, 50vw"
+              />
+            </div>
+          </div>
         </div>
       </section>
 

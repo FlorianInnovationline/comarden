@@ -254,7 +254,7 @@ export default function ProPackPage() {
             <div className="lg:col-span-2">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                 <Image
-                  src="/images/placeholder/pro-pack-1.jpg"
+                  src="/images/services/PackPro/1.jpg"
                   alt="Pro Pack 1 — Accompagnement administratif"
                   fill
                   className="object-cover"
@@ -422,7 +422,7 @@ export default function ProPackPage() {
             <div className="lg:col-span-2">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                 <Image
-                  src="/images/placeholder/pro-pack-3.jpg"
+                  src="/images/services/PackPro/3.jpg"
                   alt="Pro Pack 3 — Accompagnement croissance"
                   fill
                   className="object-cover"
