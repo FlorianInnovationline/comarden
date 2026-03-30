@@ -28,7 +28,7 @@ export default function Hero() {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight tracking-tight text-balance animate-fadeInUp"
             style={{ animationDelay: "200ms" }}
           >
-            L&apos;expertise des matériaux de construction
+            L&apos;expert en matériaux de construction. Toiture & Façade
           </h1>
           <p
             className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl text-white/80 max-w-xl leading-relaxed animate-fadeInUp"

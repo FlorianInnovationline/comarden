@@ -140,7 +140,6 @@ export default function ProPackPage() {
               </div>
 
               <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight tracking-tight mb-6">
-                UNIQUE EN BELGIQUE —{" "}
                 <span className="relative inline-block">
                   <span className="relative z-10">Les PACK PRO</span>
                   <span className="absolute bottom-2 left-0 w-full h-3 bg-accent/30 -skew-x-3" />
