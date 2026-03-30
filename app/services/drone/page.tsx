@@ -14,6 +14,7 @@ import {
   Zap,
 } from "lucide-react";
 import CTACompact from "@/components/sections/CTA";
+import YouTubeEmbed from "@/components/media/YouTubeEmbed";
 
 export const metadata: Metadata = {
   title: "Service Drone - Comarden",
@@ -37,6 +38,7 @@ const features = [
 ];
 
 export default function DronePage() {
+  const videoId = "";
   return (
     <div className="pt-20">
       {/* ── Hero ── */}
@@ -294,18 +296,12 @@ export default function DronePage() {
             </figure>
 
             <figure className="flex flex-col gap-2">
-              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl border border-primary/10 bg-primary/5 shadow-sm transition-shadow hover:shadow-lg">
-                <video
-                  className="absolute inset-0 h-full w-full object-cover"
-                  controls
-                  playsInline
-                  preload="metadata"
-                  poster="/images/services/Drone/1.jpg"
-                  aria-label="Vidéo du service drone Comarden"
-                >
-                  <source src="/images/services/Drone/1.mp4" type="video/mp4" />
-                </video>
-              </div>
+              <YouTubeEmbed
+                videoId={videoId}
+                title="Vidéo — service drone"
+                eyebrow="YouTube"
+                className="border-primary/10 shadow-sm hover:shadow-lg transition-shadow bg-primary/5"
+              />
               <figcaption className="text-center text-sm font-medium text-primary/80">
                 Vidéo — service drone
               </figcaption>

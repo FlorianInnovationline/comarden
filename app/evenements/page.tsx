@@ -22,6 +22,7 @@ import {
 } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 import CTACompact from "@/components/sections/CTA";
+import YouTubeEmbed from "@/components/media/YouTubeEmbed";
 
 /* ------------------------------------------------------------------ */
 /*  Data                                                               */
@@ -464,6 +465,7 @@ function EventCard({
 export default function EvenementsPage() {
   const [highlightedId, setHighlightedId] = useState<string | null>(null);
   const cardRefs = useRef<Map<string, React.RefObject<HTMLDivElement>>>(new Map());
+  const videoId = "";
 
   const getRef = useCallback((id: string) => {
     if (!cardRefs.current.has(id)) {
@@ -489,26 +491,38 @@ export default function EvenementsPage() {
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(245,192,0,0.15),transparent_60%)]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-28">
           <Reveal>
-            <div className="max-w-3xl">
-              <div className="inline-flex items-center gap-2 bg-[#FDD000]/15 text-[#FDD000] text-xs font-semibold uppercase tracking-wider rounded-full px-4 py-1.5 mb-6">
-                <CalendarDays className="w-4 h-4" />
-                Événements 2026
-              </div>
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-5">
-                Événements Comarden&nbsp;: dynamisme, rencontres et opportunités pour les professionnels
-              </h1>
-              <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl mb-8">
-                Chez Comarden, le dynamisme et le relationnel font partie de notre ADN. Chaque événement est conçu pour être sympathique, instructif et rentable.
-              </p>
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
-                {VALUE_BULLETS.map(({ icon: Icon, label }) => (
-                  <div key={label} className="flex flex-col items-center gap-2 bg-white/5 backdrop-blur rounded-xl px-3 py-4 border border-white/10">
-                    <div className="w-10 h-10 rounded-full bg-[#FDD000]/20 flex items-center justify-center">
-                      <Icon className="w-5 h-5 text-[#FDD000]" />
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+              <div className="max-w-3xl">
+                <div className="inline-flex items-center gap-2 bg-[#FDD000]/15 text-[#FDD000] text-xs font-semibold uppercase tracking-wider rounded-full px-4 py-1.5 mb-6">
+                  <CalendarDays className="w-4 h-4" />
+                  Événements 2026
+                </div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold leading-tight tracking-tight mb-5">
+                  Événements Comarden&nbsp;: dynamisme, rencontres et opportunités pour les professionnels
+                </h1>
+                <p className="text-base sm:text-lg text-white/80 leading-relaxed max-w-2xl mb-8">
+                  Chez Comarden, le dynamisme et le relationnel font partie de notre ADN. Chaque événement est conçu pour être sympathique, instructif et rentable.
+                </p>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                  {VALUE_BULLETS.map(({ icon: Icon, label }) => (
+                    <div key={label} className="flex flex-col items-center gap-2 bg-white/5 backdrop-blur rounded-xl px-3 py-4 border border-white/10">
+                      <div className="w-10 h-10 rounded-full bg-[#FDD000]/20 flex items-center justify-center">
+                        <Icon className="w-5 h-5 text-[#FDD000]" />
+                      </div>
+                      <span className="text-xs sm:text-sm font-medium text-center">{label}</span>
                     </div>
-                    <span className="text-xs sm:text-sm font-medium text-center">{label}</span>
-                  </div>
-                ))}
+                  ))}
+                </div>
+              </div>
+
+              {/* Visual placeholder (YouTube) */}
+              <div className="hidden lg:block">
+                <YouTubeEmbed
+                  videoId={videoId}
+                  title="Vidéo — événements Comarden"
+                  eyebrow="YouTube"
+                  className="border-white/15"
+                />
               </div>
             </div>
           </Reveal>
