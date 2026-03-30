@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, ChevronDown } from "lucide-react";
 import Button from "@/components/ui/Button";
 
 export default function Hero() {
@@ -70,6 +70,16 @@ export default function Hero() {
               <Link href="/produits">Voir nos produits</Link>
             </Button>
           </div>
+        </div>
+      </div>
+
+      {/* Subtle scroll hint */}
+      <div className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 z-10">
+        <div className="flex flex-col items-center gap-2">
+          <div className="h-10 w-6 rounded-full border border-white/25 bg-white/5 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.25)] flex items-start justify-center p-1">
+            <span className="h-2 w-2 rounded-full bg-white/70 animate-bounce" />
+          </div>
+          <ChevronDown className="w-4 h-4 text-white/60 animate-bounce [animation-delay:120ms]" />
         </div>
       </div>
     </section>

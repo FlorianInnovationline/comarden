@@ -131,7 +131,7 @@ export default function JobsPage() {
                   src="/images/Jobs/1.jpg"
                   alt="Équipe Comarden — carrières"
                   fill
-                  className="object-cover"
+                  className="object-contain bg-white/5"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />
