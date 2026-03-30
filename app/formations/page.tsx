@@ -10,10 +10,12 @@ import RegistrationCard, { type RegistrationData } from "@/components/formations
 import FormationList from "@/components/formations/FormationList";
 import DayTimeline from "@/components/formations/DayTimeline";
 import SummaryPanel from "@/components/formations/SummaryPanel";
+import YouTubeEmbed from "@/components/media/YouTubeEmbed";
 import { FORMATION_MODULES, type FormationModule } from "@/lib/formations";
 import { calculateSchedule, type DaySchedule } from "@/lib/dayBuilder";
 
 export default function FormationsPage() {
+  const heroVideoId = "aXYMZ-Tw1Ok";
   const [registrationData, setRegistrationData] = useState<RegistrationData | null>(null);
   const [selectedModules, setSelectedModules] = useState<FormationModule[]>([]);
   const [isConfirmed, setIsConfirmed] = useState(false);
@@ -113,24 +115,36 @@ export default function FormationsPage() {
           />
         </div>
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <Reveal>
-            <div className="max-w-3xl mx-auto">
-              <div className="inline-flex items-center justify-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent/20 flex items-center justify-center">
-                  <Award className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
+            <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
+              <div className="text-center lg:text-left">
+                <div className="inline-flex items-center justify-center lg:justify-start gap-2 sm:gap-3 mb-4 sm:mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-accent/20 flex items-center justify-center">
+                    <Award className="w-5 h-5 sm:w-6 sm:h-6 text-accent" />
+                  </div>
+                  <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm">
+                    Centre agréé Constructiv
+                  </span>
                 </div>
-                <span className="text-accent font-medium tracking-wide uppercase text-xs sm:text-sm">
-                  Centre agréé Constructiv
-                </span>
+
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight">
+                  Centre de formation
+                </h1>
+                <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                  Découvrez nos dates de formations programmées. Et parce que chaque entreprise a des besoins spécifiques, nous vous offrons également la possibilité unique d&apos;organiser des{" "}
+                  <span className="font-semibold text-white">formations à la demande</span>&nbsp;: des journées personnalisées, centrées sur les thématiques qui vous intéressent réellement.
+                </p>
               </div>
 
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 sm:mb-6 leading-tight">
-                Centre de formation
-              </h1>
-              <p className="text-base sm:text-lg md:text-xl text-white/80 leading-relaxed max-w-2xl mx-auto">
-                Découvrez nos dates de formations programmées. Et parce que chaque entreprise a des besoins spécifiques, nous vous offrons également la possibilité unique d&apos;organiser des <span className="font-semibold text-white">formations à la demande</span>&nbsp;: des journées personnalisées, centrées sur les thématiques qui vous intéressent réellement.
-              </p>
+              <div className="hidden lg:block">
+                <YouTubeEmbed
+                  videoId={heroVideoId}
+                  title="Vidéo — Centre de formation Comarden"
+                  eyebrow="YouTube"
+                  className="border-white/15"
+                />
+              </div>
             </div>
           </Reveal>
         </div>

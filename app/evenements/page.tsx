@@ -465,7 +465,7 @@ function EventCard({
 export default function EvenementsPage() {
   const [highlightedId, setHighlightedId] = useState<string | null>(null);
   const cardRefs = useRef<Map<string, React.RefObject<HTMLDivElement>>>(new Map());
-  const videoId = "";
+  const videoId = "on_vVQB49YA";
 
   const getRef = useCallback((id: string) => {
     if (!cardRefs.current.has(id)) {

@@ -38,7 +38,7 @@ const features = [
 ];
 
 export default function DronePage() {
-  const videoId = "";
+  const videoId = "-NzyGVYAZmk";
   return (
     <div className="pt-20">
       {/* ── Hero ── */}
