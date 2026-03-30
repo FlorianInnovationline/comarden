@@ -76,10 +76,13 @@ export default function Hero() {
       {/* Subtle scroll hint */}
       <div className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 z-10">
         <div className="flex flex-col items-center gap-2">
-          <div className="h-10 w-6 rounded-full border border-white/25 bg-white/5 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.25)] flex items-start justify-center p-1">
-            <span className="h-2 w-2 rounded-full bg-white/70 animate-bounce" />
+          <div
+            className="h-10 w-6 rounded-full border bg-white/5 backdrop-blur-sm shadow-[0_10px_30px_rgba(0,0,0,0.25)] flex items-start justify-center p-1"
+            style={{ borderColor: "rgba(255, 213, 0, 0.55)" }}
+          >
+            <span className="h-2 w-2 rounded-full animate-bounce" style={{ backgroundColor: "#ffd500" }} />
           </div>
-          <ChevronDown className="w-4 h-4 text-white/60 animate-bounce [animation-delay:120ms]" />
+          <ChevronDown className="w-4 h-4 animate-bounce [animation-delay:120ms]" style={{ color: "rgba(255, 213, 0, 0.75)" }} />
         </div>
       </div>
     </section>

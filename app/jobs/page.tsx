@@ -126,12 +126,13 @@ export default function JobsPage() {
               </div>
             </Reveal>
             <Reveal delay={120}>
-              <div className="relative aspect-[4/3] w-full rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
+              <div className="w-full rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
                 <Image
                   src="/images/Jobs/1.jpg"
                   alt="Équipe Comarden — carrières"
-                  fill
-                  className="object-contain bg-white/5"
+                  width={1400}
+                  height={1050}
+                  className="w-full h-auto"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                   priority
                 />

@@ -54,6 +54,21 @@ const EVENTS: EventData[] = [
       { alt: "TYVEK" },
     ],
     cloture: "Apéritif + repas du mineur",
+    photos: [
+      "/images/Jobs/EventArdoises/1.jpg",
+      "/images/Jobs/EventArdoises/2.jpg",
+      "/images/Jobs/EventArdoises/3.JPG",
+      "/images/Jobs/EventArdoises/4.JPG",
+      "/images/Jobs/EventArdoises/5.jpg",
+      "/images/Jobs/EventArdoises/6.JPG",
+      "/images/Jobs/EventArdoises/7.JPG",
+      "/images/Jobs/EventArdoises/8.JPG",
+      "/images/Jobs/EventArdoises/9.JPG",
+      "/images/Jobs/EventArdoises/10.jpg",
+      "/images/Jobs/EventArdoises/11.JPG",
+      "/images/Jobs/EventArdoises/12.JPG",
+      "/images/Jobs/EventArdoises/13.JPG",
+    ],
   },
   {
     id: "jeudiredi-etex",
@@ -234,6 +249,7 @@ function EventCard({
   isPast?: boolean;
 }) {
   const [photosOpen, setPhotosOpen] = useState(false);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const items = event.programme ?? event.contenu ?? [];
 
   return (
@@ -334,13 +350,95 @@ function EventCard({
               {photosOpen && (
                 <div className="mt-4 animate-fade-in">
                   {event.photos && event.photos.length > 0 ? (
-                    <div className="grid grid-cols-3 gap-2">
-                      {event.photos.map((photo, i) => (
-                        <div key={i} className="relative aspect-[4/3] rounded-xl overflow-hidden">
-                          <Image src={photo} alt={`${event.title} - photo ${i + 1}`} fill className="object-cover" sizes="200px" />
+                    <>
+                      <div className="relative">
+                        <div className="flex gap-3 overflow-x-auto pb-2 snap-x snap-mandatory">
+                          {event.photos.map((photo, i) => (
+                            <button
+                              key={photo}
+                              type="button"
+                              onClick={() => setLightboxIndex(i)}
+                              className="snap-start shrink-0 w-40 sm:w-44"
+                              aria-label={`Ouvrir la photo ${i + 1}`}
+                            >
+                              <div className="relative aspect-[4/3] rounded-xl overflow-hidden border border-slate-200 bg-slate-100">
+                                <Image
+                                  src={photo}
+                                  alt={`${event.title} - photo ${i + 1}`}
+                                  fill
+                                  className="object-cover transition-transform duration-500 hover:scale-105"
+                                  sizes="(max-width: 640px) 160px, 176px"
+                                />
+                              </div>
+                            </button>
+                          ))}
                         </div>
-                      ))}
-                    </div>
+                        <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-white to-transparent" />
+                        <div className="pointer-events-none absolute inset-y-0 right-0 w-10 bg-gradient-to-l from-white to-transparent" />
+                      </div>
+
+                      {lightboxIndex !== null && (
+                        <div
+                          className="fixed inset-0 z-[9999] bg-black/70 backdrop-blur-sm flex items-center justify-center p-4"
+                          onClick={() => setLightboxIndex(null)}
+                          role="dialog"
+                          aria-modal="true"
+                        >
+                          <div
+                            className="relative w-full max-w-5xl"
+                            onClick={(e) => e.stopPropagation()}
+                          >
+                            <button
+                              type="button"
+                              onClick={() => setLightboxIndex(null)}
+                              className="absolute -top-12 right-0 text-white/80 hover:text-white transition-colors text-sm font-semibold"
+                            >
+                              Fermer
+                            </button>
+
+                            <div className="relative w-full aspect-[16/10] bg-black rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
+                              <Image
+                                src={event.photos[lightboxIndex]}
+                                alt={`${event.title} - photo ${lightboxIndex + 1}`}
+                                fill
+                                className="object-contain"
+                                sizes="(max-width: 1024px) 100vw, 1024px"
+                              />
+                            </div>
+
+                            <div className="mt-4 flex items-center justify-between">
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  setLightboxIndex((i) =>
+                                    i === null ? 0 : (i - 1 + event.photos!.length) % event.photos!.length
+                                  )
+                                }
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-white text-sm font-semibold transition"
+                              >
+                                <ChevronLeft className="w-4 h-4" />
+                                Précédent
+                              </button>
+                              <div className="text-xs text-white/70">
+                                {lightboxIndex + 1} / {event.photos.length}
+                              </div>
+                              <button
+                                type="button"
+                                onClick={() =>
+                                  setLightboxIndex((i) =>
+                                    i === null ? 0 : (i + 1) % event.photos!.length
+                                  )
+                                }
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/10 hover:bg-white/15 text-white text-sm font-semibold transition"
+                              >
+                                Suivant
+                                <ChevronRight className="w-4 h-4" />
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </>
                   ) : (
                     <div className="flex items-center gap-3 p-4 bg-slate-50 rounded-xl">
                       <Camera className="w-5 h-5 text-slate-400" />
