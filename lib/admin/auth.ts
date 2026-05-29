@@ -1,41 +1,63 @@
-// Admin authentication utilities (SERVER-ONLY)
-// This file uses next/headers and should only be imported in Server Components
+// ============================================================================
+// Admin authentication helpers — Supabase Auth + `profiles.role = 'admin'`.
+// ----------------------------------------------------------------------------
+// All checks go through Supabase. There's no dev-credentials backdoor anymore.
+//
+// SERVER-ONLY. Imports lib/supabase/server.ts which depends on next/headers.
+// ============================================================================
 
-import { cookies } from 'next/headers';
+import { createSupabaseServerClient } from "@/lib/supabase/server";
+import { isSupabaseConfigured } from "@/lib/supabase/env";
 
 export interface AdminUser {
   id: string;
   email: string;
-  user_id: string;
+  full_name: string | null;
 }
 
-// Check if user is admin (server-side only)
+/**
+ * True iff the current request has a Supabase session AND the user's
+ * `profiles.role` is `'admin'`. Safe to call from Server Components and
+ * Route Handlers.
+ *
+ * When Supabase is not configured (local dev with no env vars), this always
+ * returns `false` so the rest of the app behaves as "no admin access".
+ */
 export async function isAdmin(): Promise<boolean> {
-  const cookieStore = await cookies();
-  const adminSession = cookieStore.get('admin_session');
-  const devAdmin = cookieStore.get('dev_admin');
+  if (!isSupabaseConfigured()) return false;
 
-  // Check if user is authenticated via cookies
-  if (adminSession?.value === 'authenticated' || devAdmin?.value === 'true') {
-    return true;
-  }
+  const sb = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await sb.auth.getUser();
+  if (!user) return false;
 
-  return false;
+  const { data, error } = await sb
+    .from("profiles")
+    .select("role")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  if (error || !data) return false;
+  return data.role === "admin";
 }
 
-// Get current admin user (server-side only)
+/** Returns the signed-in admin's profile, or `null` if not authed / not admin. */
 export async function getCurrentAdmin(): Promise<AdminUser | null> {
-  const cookieStore = await cookies();
-  const adminSession = cookieStore.get('admin_session');
-  const devAdmin = cookieStore.get('dev_admin');
-  
-  if (adminSession?.value === 'authenticated' || devAdmin?.value === 'true') {
-    return {
-      id: 'admin-1',
-      email: process.env.DEV_ADMIN_EMAIL || 'admin@comarden.be',
-      user_id: 'admin-user-id',
-    };
-  }
+  if (!isSupabaseConfigured()) return null;
 
-  return null;
+  const sb = await createSupabaseServerClient();
+  const {
+    data: { user },
+  } = await sb.auth.getUser();
+  if (!user) return null;
+
+  const { data, error } = await sb
+    .from("profiles")
+    .select("id, email, full_name, role")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  if (error || !data || data.role !== "admin") return null;
+  return { id: data.id, email: data.email, full_name: data.full_name };
 }

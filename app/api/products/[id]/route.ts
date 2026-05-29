@@ -1,5 +1,20 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getDatabaseClient } from "@/lib/shop/db";
+import { isSupabaseConfigured } from "@/lib/supabase/env";
+import { createSupabaseServerClient } from "@/lib/supabase/server";
+
+interface UpdateProductBody {
+  title: string;
+  slug: string;
+  description?: string | null;
+  price_cents: number;
+  currency?: string;
+  sku?: string | null;
+  stock?: number;
+  is_active?: boolean;
+  category_id?: string | null;
+  images?: string[];
+  tags?: string[];
+}
 
 export async function PUT(
   request: NextRequest,
@@ -7,50 +22,38 @@ export async function PUT(
 ) {
   try {
     const { id } = await params;
-    const body = await request.json();
-    const client = getDatabaseClient();
+    const body = (await request.json()) as UpdateProductBody;
 
-    if (client.type === 'fallback') {
-      // Fallback mode
-      console.log("Product updated (fallback):", id, body);
+    if (!isSupabaseConfigured()) {
+      console.log("[products] Product updated (fallback — no DB):", id, body);
       return NextResponse.json({ id, ...body }, { status: 200 });
     }
 
-    // MySQL mode
-    const connection = await client.pool.getConnection();
-    try {
-      await connection.query(
-        `UPDATE products 
-         SET title = ?, slug = ?, description = ?, price_cents = ?, currency = ?, 
-             sku = ?, stock = ?, is_active = ?, category_id = ?, images = ?, tags = ?
-         WHERE id = ?`,
-        [
-          body.title,
-          body.slug,
-          body.description || null,
-          body.price_cents,
-          body.currency || 'EUR',
-          body.sku || null,
-          body.stock || 0,
-          body.is_active ? 1 : 0,
-          body.category_id || null,
-          JSON.stringify(body.images || []),
-          JSON.stringify(body.tags || []),
-          id,
-        ]
-      );
+    const sb = await createSupabaseServerClient();
+    const { data, error } = await sb
+      .from("products")
+      .update({
+        title: body.title,
+        slug: body.slug,
+        description: body.description ?? null,
+        price_cents: body.price_cents,
+        currency: body.currency || "EUR",
+        sku: body.sku ?? null,
+        stock: body.stock ?? 0,
+        is_active: body.is_active ?? true,
+        category_id: body.category_id ?? null,
+        images: body.images ?? [],
+        tags: body.tags ?? [],
+      })
+      .eq("id", id)
+      .select("*")
+      .single();
 
-      // Fetch updated product
-      const [rows] = await connection.query(
-        'SELECT * FROM products WHERE id = ?',
-        [id]
-      );
-      const products = Array.isArray(rows) ? rows : [];
-      
-      return NextResponse.json(products[0] || { id, ...body }, { status: 200 });
-    } finally {
-      connection.release();
+    if (error) {
+      console.error("[products] update error:", error.message);
+      return NextResponse.json({ error: error.message }, { status: 500 });
     }
+    return NextResponse.json(data, { status: 200 });
   } catch (error) {
     console.error("Error:", error);
     return NextResponse.json(

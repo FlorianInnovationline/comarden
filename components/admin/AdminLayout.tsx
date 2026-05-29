@@ -1,6 +1,6 @@
 "use client";
 
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { 
   LayoutDashboard, 
@@ -32,15 +32,11 @@ const navItems = [
 ];
 
 export default function AdminLayout({ children }: AdminLayoutProps) {
-  const router = useRouter();
   const pathname = usePathname();
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
-  const handleLogout = async () => {
-    // Clear cookies
-    document.cookie = "admin_session=; path=/; max-age=0";
-    document.cookie = "dev_admin=; path=/; max-age=0";
-    router.push("/admin/login");
+  const handleLogout = () => {
+    window.location.href = "/admin/logout";
   };
 
   return (

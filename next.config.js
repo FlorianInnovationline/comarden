@@ -7,6 +7,13 @@ const nextConfig = {
         hostname: 'images.unsplash.com',
         pathname: '/**',
       },
+      // Supabase Storage public buckets (product-images, event-media, etc.)
+      // Pattern: https://<project-ref>.supabase.co/storage/v1/object/public/<bucket>/<path>
+      {
+        protocol: 'https',
+        hostname: '*.supabase.co',
+        pathname: '/storage/v1/object/public/**',
+      },
     ],
   },
   async headers() {
@@ -43,44 +50,6 @@ const nextConfig = {
         ],
       },
     ];
-  },
-  webpack: (config, { isServer }) => {
-    // Exclude mysql2 and Node.js modules from client-side bundle
-    if (!isServer) {
-      config.resolve.fallback = {
-        ...config.resolve.fallback,
-        fs: false,
-        net: false,
-        tls: false,
-        crypto: false,
-        stream: false,
-        url: false,
-        zlib: false,
-        http: false,
-        https: false,
-        assert: false,
-        os: false,
-        path: false,
-      };
-      
-      // Exclude mysql2 from client bundle
-      config.externals = config.externals || [];
-      config.externals.push('mysql2');
-    }
-    
-    // Optimize chunks to prevent webpack errors
-    config.optimization = {
-      ...config.optimization,
-      splitChunks: {
-        chunks: 'all',
-        cacheGroups: {
-          default: false,
-          vendors: false,
-        },
-      },
-    };
-    
-    return config;
   },
 };
 

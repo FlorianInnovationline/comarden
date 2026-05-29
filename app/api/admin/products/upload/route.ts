@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
-import { cookies } from "next/headers";
 import { mkdir, writeFile } from "fs/promises";
 import path from "path";
+import { isAdmin } from "@/lib/admin/auth";
 
 export const dynamic = "force-dynamic";
 
@@ -32,17 +32,9 @@ function sanitizeBaseName(name: string): string {
     .slice(0, 60) || "image";
 }
 
-async function requireAdmin(): Promise<boolean> {
-  const cookieStore = await cookies();
-  const adminSession = cookieStore.get("admin_session");
-  const devAdmin = cookieStore.get("dev_admin");
-  return (
-    adminSession?.value === "authenticated" || devAdmin?.value === "true"
-  );
-}
-
 export async function POST(request: NextRequest) {
-  if (!(await requireAdmin())) {
+  // Middleware already enforces admin on /api/admin/*, but defence-in-depth.
+  if (!(await isAdmin())) {
     return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
   }
 
