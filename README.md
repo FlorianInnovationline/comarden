@@ -88,7 +88,7 @@ npm start
 The site includes a premium catalog reader accessible at `/catalog-secret?t=TOKEN`. The catalog is **not linked from the main website navigation** - it's a hidden route accessible only via direct URL with token. See `/docs/CATALOG.md` for full documentation.
 
 **Quick access:**
-- Catalog: `/catalog-secret?t=catalog-secret-2024`
+- Catalog: `/catalog-secret?t=<your-catalog-token>` _(set the `CATALOG_TOKEN` env var in Vercel / `.env.local`)_
 - Admin: `/admin/catalog` (after logging in via `/admin/login`)
 
 ## Next Steps

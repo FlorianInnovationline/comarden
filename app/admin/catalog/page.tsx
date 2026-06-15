@@ -12,7 +12,7 @@ export default async function AdminCatalogPage() {
 
   return (
     <AdminLayout>
-      <CatalogAdminPanel />
+      <CatalogAdminPanel previewToken={process.env.CATALOG_TOKEN} />
     </AdminLayout>
   );
 }

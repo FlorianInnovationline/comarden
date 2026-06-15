@@ -6,7 +6,7 @@ import type { CatalogEdition, CatalogPage, CatalogProduct } from '@/types/catalo
 import Button from '@/components/ui/Button';
 import Reveal from '@/components/ui/Reveal';
 
-export default function CatalogAdminPanel() {
+export default function CatalogAdminPanel({ previewToken }: { previewToken?: string }) {
   const [editions, setEditions] = useState<CatalogEdition[]>([]);
   const [selectedEdition, setSelectedEdition] = useState<CatalogEdition | null>(null);
   const [pages, setPages] = useState<CatalogPage[]>([]);
@@ -120,9 +120,11 @@ export default function CatalogAdminPanel() {
 
   const previewEdition = () => {
     if (!selectedEdition) return;
-    // Generate a preview token (in production, use proper token generation)
-    const previewToken = 'catalog-secret-2024';
-    window.open(`/catalog-secret/edition/${selectedEdition.id}?t=${previewToken}`, '_blank');
+    if (!previewToken) {
+      alert("Aperçu indisponible : la variable d'environnement CATALOG_TOKEN n'est pas configurée.");
+      return;
+    }
+    window.open(`/catalog-secret/edition/${selectedEdition.id}?t=${encodeURIComponent(previewToken)}`, '_blank');
   };
 
   const handleImport = async () => {

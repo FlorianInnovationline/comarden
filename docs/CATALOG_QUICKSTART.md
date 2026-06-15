@@ -4,7 +4,7 @@
 
 ### 1. Accéder au catalogue
 ```
-http://localhost:3000/catalog-secret?t=catalog-secret-2024
+http://localhost:3000/catalog-secret?t=<your-catalog-token>
 ```
 
 ### 2. Accéder à l'admin du catalogue
@@ -17,12 +17,12 @@ http://localhost:3000/admin/catalog
 
 ### Variables d'environnement
 
-Créez un fichier `.env.local` à la racine du projet:
+Créez un fichier `.env.local` à la racine du projet (et configurez les mêmes variables sur Vercel en production). Aucune valeur par défaut — **obligatoires** :
 
 ```env
 # Tokens d'accès au catalogue
-CATALOG_TOKEN=catalog-secret-2024
-CATALOG_ADMIN_TOKEN=admin-secret-2024
+CATALOG_TOKEN=<your-catalog-token>
+CATALOG_ADMIN_TOKEN=<your-catalog-admin-token>
 ```
 
 ### Données de test
@@ -40,7 +40,7 @@ Les données de test sont déjà créées dans `/data/catalog/`:
    ```
 
 2. **Ouvrir le catalogue:**
-   - URL: `http://localhost:3000/_catalog?t=catalog-secret-2024`
+   - URL: `http://localhost:3000/_catalog?t=<your-catalog-token>`
    - Vous devriez voir 5 pages avec des produits
 
 3. **Tester la navigation:**
@@ -54,7 +54,7 @@ Les données de test sont déjà créées dans `/data/catalog/`:
    - Ou: "Page suivante"
 
 5. **Tester l'admin:**
-   - URL: `http://localhost:3000/_catalog/admin?t=admin-secret-2024`
+   - URL: `http://localhost:3000/_catalog/admin?t=<your-catalog-admin-token>`
    - Créer une nouvelle édition
    - Ajouter des pages
    - Publier
@@ -75,7 +75,7 @@ ARD-NAT-30x20,Ardoises naturelles,185.00,,Toiture,Ardoisières
 
 ```bash
 curl -X POST \
-  "http://localhost:3000/api/admin/import/mercator?t=admin-secret-2024" \
+  "http://localhost:3000/api/admin/import/mercator?t=<your-catalog-admin-token>" \
   -F "file=@products.csv"
 ```
 

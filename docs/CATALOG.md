@@ -9,7 +9,7 @@ Le Catalogue Reader est une application de lecture de catalogue magazine intégr
 ### Accès public (lecture)
 - URL: `/catalog-secret?t=TOKEN`
 - Le token est requis. Sans token valide, la route retourne une 404 (comme si elle n'existait pas).
-- Token par défaut: `catalog-secret-2024` (configurable via `CATALOG_TOKEN`)
+- Token: défini via la variable d'environnement `CATALOG_TOKEN` (obligatoire, aucune valeur par défaut)
 - **Note:** Le catalogue n'apparaît pas dans la navigation du site principal. Il est accessible uniquement via l'URL directe avec token.
 
 ### Accès admin
@@ -21,11 +21,11 @@ Le Catalogue Reader est une application de lecture de catalogue magazine intégr
 
 ### Variables d'environnement
 
-Ajoutez dans `.env.local`:
+Ajoutez dans `.env.local` (et dans les variables d'environnement Vercel en production). Aucune valeur par défaut — ces variables sont **obligatoires** :
 
 ```env
-CATALOG_TOKEN=catalog-secret-2024
-CATALOG_ADMIN_TOKEN=admin-secret-2024
+CATALOG_TOKEN=<your-catalog-token>
+CATALOG_ADMIN_TOKEN=<your-catalog-admin-token>
 ```
 
 ## Structure des données
