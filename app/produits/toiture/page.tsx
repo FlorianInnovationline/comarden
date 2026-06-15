@@ -28,7 +28,7 @@ const categories = [
   },
   {
     title: "EPDM & Étanchéité",
-    href: "/produits/epdm",
+    href: "/produits/toitures-plates",
     icon: Droplets,
     description:
       "Membranes EPDM Elevate (RubberGard, RubberCover), systèmes d'étanchéité pour toitures plates résidentielles et industrielles.",

@@ -16,6 +16,15 @@ const nextConfig = {
       },
     ],
   },
+  async redirects() {
+    return [
+      {
+        source: '/produits/epdm',
+        destination: '/produits/toitures-plates',
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       {

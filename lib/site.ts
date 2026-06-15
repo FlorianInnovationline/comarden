@@ -68,7 +68,7 @@ export const site = {
       { label: "Isolation", href: "/produits/isolation" },
       { label: "Toitures vertes", href: "/produits/toitures-vertes" },
       { label: "Tôles & Panneaux", href: "/produits/toles-panneaux" },
-      { label: "Toiture Plates", href: "/produits/epdm" },
+      { label: "Toitures plates", href: "/produits/toitures-plates" },
       { label: "Façade", href: "/produits/facade" },
       { label: "Visserie", href: "/produits/visserie" },
       { label: "Colles & Mastics", href: "/produits/colles-mastics" },
