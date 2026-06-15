@@ -28,6 +28,11 @@ yarn-error.log*
 .env.local
 .env*.local
 
+# Env files — ignore by default, allow templates
+.env
+.env.*
+!.env*.example
+
 # vercel
 .vercel
 
