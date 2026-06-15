@@ -308,14 +308,6 @@ CATALOG_TOKEN=your-secure-token-here
 CATALOG_ADMIN_TOKEN=your-admin-token-here
 ```
 
-### Migration vers base de données
-
-Le système utilise actuellement des fichiers JSON. Pour migrer vers MySQL:
-
-1. Créer les tables (voir `db/mysql-schema.sql`)
-2. Modifier `lib/catalog/data.ts` pour utiliser MySQL
-3. Migrer les données JSON vers la base
-
 ## Dépannage
 
 ### Le catalogue ne charge pas

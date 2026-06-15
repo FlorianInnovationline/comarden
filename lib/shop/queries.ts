@@ -1,7 +1,6 @@
 // ============================================================================
 // Shop data access — Supabase implementation.
 // ----------------------------------------------------------------------------
-// All functions keep their MySQL-era signatures so call sites don't change.
 // If Supabase is not configured (no NEXT_PUBLIC_SUPABASE_URL), every read
 // transparently falls back to the in-memory seed in ./seed.ts — preserving
 // the "works without a DB" local-dev experience that the previous codebase
