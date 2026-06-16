@@ -95,3 +95,4 @@ The site includes a premium catalog reader accessible at `/catalog-secret?t=TOKE
 
 Use the V0 prompt in `V0_PROMPT.md` to generate alternative UI sections via V0 by Vercel.
 
+
