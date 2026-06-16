@@ -1,9 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { mkdir, writeFile } from "fs/promises";
 import path from "path";
 import { isAdmin } from "@/lib/admin/auth";
+import { createSupabaseAdminClient } from "@/lib/supabase/admin";
 
 export const dynamic = "force-dynamic";
+
+const BUCKET = "product-images";
 
 const MAX_BYTES = 5 * 1024 * 1024; // 5 MB
 const ALLOWED_MIME = new Set([
@@ -36,18 +38,6 @@ export async function POST(request: NextRequest) {
   // Middleware already enforces admin on /api/admin/*, but defence-in-depth.
   if (!(await isAdmin())) {
     return NextResponse.json({ error: "Non autorisé" }, { status: 401 });
-  }
-
-  // Vercel / serverless: filesystem is read-only — uploads must be done locally then git push,
-  // or use external storage (S3, Supabase Storage, etc.).
-  if (process.env.VERCEL === "1") {
-    return NextResponse.json(
-      {
-        error:
-          "L'upload vers le disque n'est pas disponible sur Vercel. Ajoutez les images dans public/images/products/<slug>/ en local, puis poussez le dépôt, ou configurez un stockage cloud.",
-      },
-      { status: 501 }
-    );
   }
 
   let formData: FormData;
@@ -89,22 +79,46 @@ export async function POST(request: NextRequest) {
   const ext = EXT_BY_MIME[mime];
   const base = sanitizeBaseName(file.name);
   const filename = `${base}-${Date.now()}${ext}`;
+  const objectPath = `${slugRaw}/${filename}`;
 
-  const dir = path.join(process.cwd(), "public", "images", "products", slugRaw);
-  const fullPath = path.join(dir, filename);
-
+  let sb;
   try {
-    await mkdir(dir, { recursive: true });
-    const buf = Buffer.from(await file.arrayBuffer());
-    await writeFile(fullPath, buf);
+    sb = createSupabaseAdminClient();
   } catch (e) {
-    console.error("Product image upload write error:", e);
+    console.error("Product image upload: Supabase admin client error:", e);
     return NextResponse.json(
-      { error: "Échec de l'enregistrement du fichier" },
+      {
+        error:
+          "Stockage non configuré : vérifiez NEXT_PUBLIC_SUPABASE_URL et SUPABASE_SERVICE_ROLE_KEY.",
+      },
+      { status: 503 }
+    );
+  }
+
+  const buf = Buffer.from(await file.arrayBuffer());
+  const { error: uploadErr } = await sb.storage
+    .from(BUCKET)
+    .upload(objectPath, buf, {
+      contentType: mime,
+      upsert: false,
+      cacheControl: "31536000",
+    });
+
+  if (uploadErr) {
+    console.error("Product image upload (storage) error:", uploadErr.message);
+    return NextResponse.json(
+      { error: `Échec de l'envoi vers le stockage : ${uploadErr.message}` },
       { status: 500 }
     );
   }
 
-  const publicUrl = `/images/products/${slugRaw}/${filename}`;
-  return NextResponse.json({ url: publicUrl, filename }, { status: 201 });
+  const { data: pub } = sb.storage.from(BUCKET).getPublicUrl(objectPath);
+  if (!pub?.publicUrl) {
+    return NextResponse.json(
+      { error: "Fichier envoyé mais URL publique introuvable." },
+      { status: 500 }
+    );
+  }
+
+  return NextResponse.json({ url: pub.publicUrl, filename }, { status: 201 });
 }

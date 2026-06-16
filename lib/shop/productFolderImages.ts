@@ -55,6 +55,11 @@ function urlDedupeKey(url: string): string {
 /**
  * Merges `product.images` (admin / DB / seed) with files found on disk for this slug.
  * Order: DB URLs first (curated order + external links), then folder files not already listed.
+ *
+ * TRANSITIONAL: the on-disk folder fallback is a stopgap and will be removed once
+ * every product has its images[] populated in the DB (now backed by Supabase
+ * Storage — see scripts/migrate-product-images-to-storage.mjs). DB images always
+ * take precedence, so this fallback is a no-op for already-migrated products.
  */
 export function mergeProductImagesWithFolder(product: {
   slug: string;
@@ -64,6 +69,7 @@ export function mergeProductImagesWithFolder(product: {
     ? product.images.map((x) => (typeof x === "string" ? x.trim() : "")).filter(Boolean)
     : [];
 
+  // Transitional disk fallback (local/static only; superseded by DB images above).
   const fromFolder = listProductImageUrlsFromDisk(product.slug);
   const seen = new Set<string>();
   const out: string[] = [];
