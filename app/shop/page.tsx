@@ -4,6 +4,7 @@ import { Search, ShoppingBag, ArrowRight } from "lucide-react";
 import { getCategories, getProducts } from "@/lib/shop/queries";
 import CategoryCard from "@/components/shop/CategoryCard";
 import ProductCard from "@/components/shop/ProductCard";
+import ShopBrandsSection from "@/components/shop/ShopBrandsSection";
 import Reveal from "@/components/ui/Reveal";
 import Button from "@/components/ui/Button";
 
@@ -71,6 +72,9 @@ export default async function ShopPage() {
           </div>
         </Reveal>
       </div>
+
+      {/* Brands Section — links to /marques/<slug> brand pages */}
+      <ShopBrandsSection />
 
       {/* Categories Section */}
       <section className="py-10 sm:py-12 lg:py-16 bg-white">
