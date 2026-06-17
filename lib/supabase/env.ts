@@ -15,12 +15,15 @@ const PUBLIC_ANON_KEY = "NEXT_PUBLIC_SUPABASE_ANON_KEY";
 const SERVICE_ROLE_KEY = "SUPABASE_SERVICE_ROLE_KEY";
 
 export function getSupabaseUrl(): string | null {
-  const v = process.env[PUBLIC_URL_KEY];
+  // Static literal access is REQUIRED: Next.js only inlines
+  // `process.env.NEXT_PUBLIC_*` into the client bundle when referenced
+  // literally. Dynamic access (process.env[KEY]) is left undefined in the browser.
+  const v = process.env.NEXT_PUBLIC_SUPABASE_URL;
   return v && v.length > 0 ? v : null;
 }
 
 export function getSupabaseAnonKey(): string | null {
-  const v = process.env[PUBLIC_ANON_KEY];
+  const v = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
   return v && v.length > 0 ? v : null;
 }
 

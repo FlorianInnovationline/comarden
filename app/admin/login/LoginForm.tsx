@@ -37,8 +37,9 @@ export default function LoginForm({
 
     try {
       const supabase = createSupabaseBrowserClient();
+      const normalizedEmail = email.trim().toLowerCase();
       const { data, error: signInError } = await supabase.auth.signInWithPassword(
-        { email, password }
+        { email: normalizedEmail, password }
       );
 
       if (signInError || !data.session) {
@@ -67,7 +68,7 @@ export default function LoginForm({
       window.location.href = target;
     } catch (err) {
       console.error("Login error:", err);
-      setError("Une erreur est survenue. Veuillez réessayer.");
+      setError(err instanceof Error ? err.message : "Une erreur est survenue. Veuillez réessayer.");
       setIsLoading(false);
     }
   };
