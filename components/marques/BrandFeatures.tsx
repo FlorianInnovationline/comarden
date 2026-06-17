@@ -48,13 +48,13 @@ export default function BrandFeatures({ brand }: { brand: BrandConfig }) {
                   key={g.title}
                   className="rounded-2xl p-6 ring-1 ring-black/5 bg-[var(--brand-dark)] text-white"
                 >
-                  <h3 className="text-base font-bold mb-3 text-[var(--brand-primary)]">
+                  <h3 className="text-base font-bold mb-3 text-[var(--brand-accent)]">
                     {g.title}
                   </h3>
                   <ul className="space-y-1.5">
                     {g.items.map((it) => (
                       <li key={it} className="text-sm text-white/80 leading-relaxed flex gap-2">
-                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--brand-primary)] flex-shrink-0" />
+                        <span className="mt-2 h-1.5 w-1.5 rounded-full bg-[var(--brand-accent)] flex-shrink-0" />
                         {it}
                       </li>
                     ))}
