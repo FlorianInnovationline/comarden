@@ -1,0 +1,275 @@
+// ============================================================================
+// Brand pages config — /marques/<slug>
+// ----------------------------------------------------------------------------
+// QR-only landing pages (NOT linked anywhere on the site, noindex). Each brand
+// shares the same component template but injects its own palette + content.
+// Colours are applied via CSS variables set on the page root (see the route),
+// so we don't need per-brand Tailwind configs.
+// ============================================================================
+
+export interface BrandColors {
+  /** Hero / primary brand colour */
+  primary: string;
+  /** Ink colour for text on light backgrounds */
+  dark: string;
+  /** Deeper shade for hover / CTAs */
+  accent: string;
+  /** Page background (light) */
+  bg: string;
+  /** Legible text colour to place ON the primary colour (hero) */
+  onPrimary: string;
+}
+
+export interface BrandFeature {
+  /** lucide-react icon name */
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface BrandSpecGroup {
+  title: string;
+  items: string[];
+}
+
+export interface BrandConfig {
+  slug: string;
+  /** Display name (may contain ™ / ®) */
+  name: string;
+  /** Public logo path, or null to fall back to a styled wordmark */
+  logo: string | null;
+  tagline: string;
+  heroPitch: string;
+  aboutTitle: string;
+  aboutText: string;
+  /** Optional photo for the "Qui est…" section; null → branded panel */
+  aboutImage?: string | null;
+  features: BrandFeature[];
+  productsTitle: string;
+  /** Label of the hero / features CTA that jumps to the product section */
+  productsCtaLabel: string;
+  /**
+   * Value to match against products.brand in Supabase (case-insensitive, trimmed).
+   * null → no products in the DB yet (shows an "à venir" placeholder).
+   */
+  productBrand: string | null;
+  /** Optional spec callout (e.g. Solid John) rendered under the features */
+  specGroups?: BrandSpecGroup[];
+  colors: BrandColors;
+}
+
+export const BRANDS: Record<string, BrandConfig> = {
+  faynot: {
+    slug: "faynot",
+    name: "FAYNOT",
+    logo: "/images/logos/faynot-logo.png",
+    tagline: "Enveloppe du bâtiment — Système breveté",
+    heroPitch:
+      "FAYNOT, expert en isolation thermique par l'extérieur (ITE) de la toiture. Le système Easy-Sarking, breveté, offre la solution la plus performante pour isoler par l'extérieur sans dérangement intérieur.",
+    aboutTitle: "Qui est FAYNOT ?",
+    aboutText:
+      "FAYNOT est un fabricant français spécialisé dans l'enveloppe du bâtiment, reconnu pour son expertise en isolation thermique par l'extérieur (ITE) de la toiture. Sa solution phare, le système Easy-Sarking breveté, permet d'isoler les toitures par l'extérieur tout en préservant l'espace intérieur. FAYNOT propose également une gamme complète de visserie et fixations de qualité industrielle, distribuée chez Comarden depuis de nombreuses années.",
+    aboutImage: null,
+    features: [
+      {
+        icon: "ShieldCheck",
+        title: "Système Breveté",
+        description: "Easy-Sarking, solution ITE couverture protégée par brevet.",
+      },
+      {
+        icon: "ThermometerSun",
+        title: "Performance Thermique",
+        description: "R jusqu'à 8,75 m².K/W (label BBC) avec le pilier H120.",
+      },
+      {
+        icon: "Hammer",
+        title: "Acier Galvanisé Z275",
+        description: "Piliers ultra-durables, fixation sur chevrons existants.",
+      },
+      {
+        icon: "Award",
+        title: "Avis Technique CSTB",
+        description: "Validé par essais CSTB N° AC12-26041687/2.",
+      },
+    ],
+    productsTitle: "Nos produits FAYNOT",
+    productsCtaLabel: "Voir nos produits FAYNOT",
+    productBrand: "FAYNOT",
+    colors: {
+      primary: "#FFCC00",
+      dark: "#221F20",
+      accent: "#C8A800",
+      bg: "#FFFDF5",
+      onPrimary: "#221F20",
+    },
+  },
+
+  "mg-bouw": {
+    slug: "mg-bouw",
+    name: "MG Bouw",
+    logo: "/images/logos/mg-bouw-logo.png",
+    tagline: "Build to last — Bouwen voor morgen",
+    heroPitch:
+      "Meuwissen Gerritsen (MG Bouw) — depuis 1954, leader néerlandais des films techniques pour le bâtiment. Plus de 1200 points de vente, 4 générations d'expertise familiale.",
+    aboutTitle: "Qui est MG Bouw ?",
+    aboutText:
+      "Meuwissen Gerritsen est une entreprise familiale néerlandaise fondée en 1954, aujourd'hui dirigée par la quatrième génération. Marché leader des films techniques pour le bâtiment aux Pays-Bas, MG Bouw commercialise des marques reconnues comme Miofol®, Polytex®, Taftex®, VASTR®, Alkreflex® et est distributeur de Tyvek®. Leur engagement : protéger chaque construction contre les éléments pour les générations à venir.",
+    aboutImage: null,
+    features: [
+      { icon: "History", title: "Depuis 1954", description: "Plus de 70 ans d'expertise dans les films techniques." },
+      { icon: "Store", title: "1200+ points de vente", description: "Distribution étendue à travers le Benelux." },
+      { icon: "Tags", title: "Marques propres", description: "Miofol, Polytex, Taftex, VASTR, Alkreflex." },
+      { icon: "FlaskConical", title: "Qualité contrôlée", description: "Laboratoire interne à Haarlem, certification KOMO." },
+    ],
+    productsTitle: "Nos produits MG Bouw",
+    productsCtaLabel: "Demander information",
+    productBrand: null,
+    colors: {
+      primary: "#003D7A",
+      dark: "#001F3D",
+      accent: "#0066CC",
+      bg: "#F4F8FC",
+      onPrimary: "#FFFFFF",
+    },
+  },
+
+  tyvek: {
+    slug: "tyvek",
+    name: "Tyvek®",
+    logo: "/images/logos/tyvek-logo.png",
+    tagline: "L'enveloppe technique de référence depuis 1955",
+    heroPitch:
+      "DuPont™ Tyvek® — la marque de référence mondiale pour les membranes pare-pluie, pare-vapeur et solutions d'étanchéité à l'air. Performance durable, distribuée chez Comarden.",
+    aboutTitle: "Qui est Tyvek ?",
+    aboutText:
+      "Tyvek® est une marque emblématique de DuPont, leader mondial des matériaux haute performance depuis 1955. La technologie Tyvek® utilise des fibres de polyéthylène haute densité filées-liées sans liant, créant une matière unique : imperméable à l'eau et au vent, perméable à la vapeur, ultra-résistante et durable. Tyvek® est la référence internationale des pare-pluie et solutions d'étanchéité à l'air pour murs, façades et toitures.",
+    aboutImage: null,
+    features: [
+      { icon: "Atom", title: "Filé-Lié HDPE", description: "Technologie unique de fibres polyéthylène sans liant." },
+      { icon: "Wind", title: "Pare-Pluie & Étanche à l'Air", description: "Imperméable mais perméable à la vapeur." },
+      { icon: "Sun", title: "Résistance UV", description: "Tenue exceptionnelle aux intempéries." },
+      { icon: "Globe", title: "Référence Mondiale", description: "Standard de l'industrie depuis 70 ans." },
+    ],
+    productsTitle: "Nos produits Tyvek",
+    productsCtaLabel: "Voir nos produits Tyvek",
+    productBrand: "TYVEK DUPONT",
+    colors: {
+      primary: "#DA291C",
+      dark: "#1A1A1A",
+      accent: "#B81E14",
+      bg: "#FAFAFA",
+      onPrimary: "#FFFFFF",
+    },
+  },
+
+  express: {
+    slug: "express",
+    name: "EXPRESS",
+    logo: "/images/logos/express-logo.png",
+    tagline: "Outillage et solutions professionnelles du couvreur",
+    heroPitch:
+      "EXPRESS — Le spécialiste français de l'outillage et des solutions techniques pour les professionnels de la toiture et de l'étanchéité.",
+    aboutTitle: "Qui est EXPRESS ?",
+    aboutText:
+      "EXPRESS conçoit et distribue depuis des décennies une gamme complète d'outillage professionnel et de consommables techniques destinés aux couvreurs, étancheurs et zingueurs. Reconnue pour la fiabilité et la robustesse de ses produits, la marque accompagne les artisans sur les chantiers les plus exigeants.",
+    aboutImage: null,
+    features: [
+      { icon: "Flag", title: "Made in France", description: "Conception et production françaises." },
+      { icon: "HardHat", title: "Spécialiste Couverture", description: "Outillage et consommables dédiés au métier." },
+      { icon: "Wrench", title: "Robustesse Professionnelle", description: "Conçu pour les chantiers exigeants." },
+      { icon: "Users", title: "Réseau Reconnu", description: "Distribué par les principaux acteurs du bâtiment." },
+    ],
+    productsTitle: "Nos produits EXPRESS",
+    productsCtaLabel: "Voir nos produits EXPRESS",
+    productBrand: "EXPRESS",
+    colors: {
+      primary: "#E30613",
+      dark: "#1A1A1A",
+      accent: "#B30410",
+      bg: "#F7F5F3",
+      onPrimary: "#FFFFFF",
+    },
+  },
+
+  "solid-john": {
+    slug: "solid-john",
+    name: "Solid John",
+    logo: "/images/logos/solid-john-logo.png",
+    tagline: "Never average — Le bétonplex durable en conditions humides",
+    heroPitch:
+      "Solid John — Le contreplaqué bétonplex spécialement conçu pour les conditions humides, garanti 10 ans. Une nouvelle référence pour les toitures plates et la rive de toit.",
+    aboutTitle: "Qui est Solid John ?",
+    aboutText:
+      "Solid John est une marque belge basée à Izegem, dédiée à un seul objectif : produire le bétonplex le plus durable du marché en conditions humides. Sélection rigoureuse des bois, encollage Classe 3 (WBP), garantie 10 ans transparente — pas de petits caractères. Solid John propose une gamme intégrée : bétonplex 15mm, polymère hybride pour collage en environnement humide, et vis de rive de toit en acier galvanisé inoxydable.",
+    aboutImage: null,
+    features: [
+      { icon: "ShieldCheck", title: "Garantie 10 ans", description: "Contre gonflage, putréfaction, décollement." },
+      { icon: "Droplets", title: "100% Humidité", description: "Bois sélectionnés, encollage Classe 3 WBP." },
+      { icon: "TreePine", title: "Bois Durable", description: "Issu de forêts gérées durablement (replantation)." },
+      { icon: "Boxes", title: "Système Intégré", description: "Bétonplex + colle polymère + vis rive de toit." },
+    ],
+    specGroups: [
+      {
+        title: "Bétonplex",
+        items: ["122 cm × 244 cm × 15 mm", "Norme EN 636-3", "Densité 550–650 kg/m³", "Réaction au feu D-s2,d0"],
+      },
+      {
+        title: "Polymère hybride",
+        items: ["Polymère MS", "Application −5 °C à +40 °C", "Coloris RAL 9005", "Cartouches 290 ml ou 600 ml"],
+      },
+      {
+        title: "Vis rive de toit",
+        items: ["Acier galvanisé Ø 4,2 mm", "Tête plate PH12", "Versions 16 mm et 25 mm", "500 pièces / boîte"],
+      },
+    ],
+    productsTitle: "La gamme Solid John",
+    productsCtaLabel: "Demander un devis Solid John",
+    productBrand: null,
+    colors: {
+      primary: "#1A1A1A",
+      dark: "#000000",
+      accent: "#C8A055",
+      bg: "#FBF8F2",
+      onPrimary: "#FFFFFF",
+    },
+  },
+
+  "strato-grip": {
+    slug: "strato-grip",
+    name: "Strato Grip",
+    logo: "/images/logos/strato-grip-logo.png",
+    tagline: "Vous allez aimer coller — Colles contact tous matériaux",
+    heroPitch:
+      "Strato Grip — Le spécialiste français des colles contact industrielles en bonbonne sous pression. Bois, aluminium, cuir, mousses, EPDM : une solution de collage pour chaque matériau.",
+    aboutTitle: "Qui est Strato Grip ?",
+    aboutText:
+      "Strato Grip est une marque française d'Ardemat, experts en solutions de collage industriel. Leurs colles contact type néoprène en bonbonne sous pression et en spray sont conçues pour l'agencement, la menuiserie, la tapisserie, les sols, l'étanchéité EPDM et bien d'autres secteurs. Adhésion instantanée, application rapide, performance exceptionnelle — le tout avec démonstrations et formations gratuites sur site.",
+    aboutImage: null,
+    features: [
+      { icon: "SprayCan", title: "Bonbonne Sous Pression", description: "Application rapide, rendement maximal." },
+      { icon: "Layers", title: "Tous Matériaux", description: "Bois, alu, cuir, mousses, EPDM, mélaminé." },
+      { icon: "GraduationCap", title: "Démos Gratuites", description: "Formation et démonstration sur vos chantiers." },
+      { icon: "Flag", title: "Made in France", description: "Conception et production à Saint-Agrève." },
+    ],
+    productsTitle: "Nos produits Strato Grip",
+    productsCtaLabel: "Voir nos produits Strato Grip",
+    productBrand: "STRATO GRIP",
+    colors: {
+      primary: "#FF6B00",
+      dark: "#221F20",
+      accent: "#E85A00",
+      bg: "#FFF8F2",
+      onPrimary: "#221F20",
+    },
+  },
+};
+
+export const BRAND_SLUGS = Object.keys(BRANDS);
+
+export function getBrand(slug: string): BrandConfig | null {
+  return BRANDS[slug] ?? null;
+}
+
+export function allBrands(): BrandConfig[] {
+  return BRAND_SLUGS.map((s) => BRANDS[s]);
+}
