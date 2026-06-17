@@ -123,7 +123,7 @@ export const BRANDS: Record<string, BrandConfig> = {
     ],
     productsTitle: "Nos produits MG Bouw",
     productsCtaLabel: "Demander information",
-    productBrand: null,
+    productBrand: "MG BOUW",
     colors: {
       primary: "#003D7A",
       dark: "#001F3D",
