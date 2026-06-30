@@ -20,7 +20,7 @@ export default function HoursTable() {
 
   const getDayClass = (dayName: string) => {
     const dayMap: Record<string, string> = {
-      "Lundi – Vendredi": currentDay && ["lundi", "mardi", "mercredi", "jeudi", "vendredi"].includes(currentDay) ? "bg-accent/10 border-accent/30" : "",
+      "Lundi - Vendredi": currentDay && ["lundi", "mardi", "mercredi", "jeudi", "vendredi"].includes(currentDay) ? "bg-accent/10 border-accent/30" : "",
       "Samedi": currentDay === "samedi" ? "bg-accent/10 border-accent/30" : "",
       "Dimanche": currentDay === "dimanche" ? "bg-accent/10 border-accent/30" : "",
     };
@@ -64,9 +64,9 @@ export default function HoursTable() {
                     </tr>
                   </thead>
                   <tbody className="text-base">
-                    <tr className={`border-b border-border/50 transition-all duration-300 hover:bg-accent/5 ${getDayClass("Lundi – Vendredi")}`}>
+                    <tr className={`border-b border-border/50 transition-all duration-300 hover:bg-accent/5 ${getDayClass("Lundi - Vendredi")}`}>
                       <td className="py-5 pr-8 text-muted-foreground font-medium">
-                        Lundi – Vendredi
+                        Lundi - Vendredi
                       </td>
                       <td className="py-5 text-foreground font-semibold text-lg">
                         {hours.weekdays}

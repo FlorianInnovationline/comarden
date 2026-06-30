@@ -41,7 +41,7 @@ const elevateProducts = [
 ];
 
 const sopremaProduct = {
-  title: "Sopraguard Stick — Membrane EPDM auto-adhésive",
+  title: "Sopraguard Stick - Membrane EPDM auto-adhésive",
   brand: "SOPREMA",
   description:
     "Membrane EPDM auto-adhésive en rouleaux de 30\u00A0m, épaisseur 1,14\u00A0mm. Solution performante et rapide à mettre en œuvre pour l\u2019étanchéité des toitures plates résidentielles et commerciales.",
@@ -104,7 +104,7 @@ export default function EpdmPage() {
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
                   <Image
                     src="/images/Produits/ToiturePlate/1.jpg"
-                    alt="Membrane EPDM — étanchéité toiture plate"
+                    alt="Membrane EPDM - étanchéité toiture plate"
                     fill
                     className="object-cover"
                     sizes="(max-width: 1024px) 100vw, 50vw"
@@ -225,7 +225,7 @@ export default function EpdmPage() {
           <Reveal>
             <div className="max-w-3xl mb-12">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
-                Nos solutions EPDM — ELEVATE
+                Nos solutions EPDM - ELEVATE
               </h2>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
                 Des membranes d&apos;étanchéité de référence pour des toitures
@@ -356,7 +356,7 @@ export default function EpdmPage() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
             {[
               { icon: Shield, title: "50+ ans de durabilité prouvée", description: "Des membranes testées et éprouvées sur le terrain depuis plus d'un demi-siècle, garantissant performance et longévité." },
-              { icon: Leaf, title: "Économie circulaire", description: "Un procédé de recyclage unique qui valorise les matériaux en fin de vie — pour une construction responsable et durable." },
+              { icon: Leaf, title: "Économie circulaire", description: "Un procédé de recyclage unique qui valorise les matériaux en fin de vie - pour une construction responsable et durable." },
               { icon: Award, title: "Solutions complètes", description: "Membranes bitumineuses, systèmes d'isolation, accessoires : une gamme intégrée pour des toitures plates performantes." },
               { icon: Users, title: "Accompagnement Comarden", description: "Conseil technique, disponibilité produit et solutions sur mesure pour les professionnels de la toiture en Belgique." },
             ].map((arg, i) => {

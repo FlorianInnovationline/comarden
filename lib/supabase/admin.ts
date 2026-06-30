@@ -1,7 +1,7 @@
 // ============================================================================
 // SUPABASE SERVICE-ROLE CLIENT
 // ============================================================================
-// !!! SERVER-ONLY — DO NOT IMPORT FROM CLIENT COMPONENTS / "use client" CODE !!!
+// !!! SERVER-ONLY - DO NOT IMPORT FROM CLIENT COMPONENTS / "use client" CODE !!!
 // ----------------------------------------------------------------------------
 // The service-role key bypasses RLS entirely. Treat it like a database root
 // password: leaking it in the browser bundle is an account compromise.

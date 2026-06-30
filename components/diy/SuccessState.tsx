@@ -23,13 +23,13 @@ export default function SuccessState({ location }: SuccessStateProps) {
 
         {/* Success message */}
         <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
-          Merci — nous vous recontactons sous 24h.
+          Merci - nous vous recontactons sous 24h.
         </h2>
         <p className="text-lg text-slate-600 mb-8">
           Votre demande a bien été enregistrée. Notre équipe va l&apos;analyser et vous contacter rapidement.
         </p>
 
-        {/* Phone contact — adapted to depot */}
+        {/* Phone contact - adapted to depot */}
         <div className="mb-10 p-6 bg-slate-50 rounded-xl border border-slate-200 inline-block">
           <div className="flex items-center gap-3">
             <Phone className="w-6 h-6 text-accent" />

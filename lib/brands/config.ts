@@ -1,5 +1,5 @@
 // ============================================================================
-// Brand pages config — /marques/<slug>
+// Brand pages config - /marques/<slug>
 // ----------------------------------------------------------------------------
 // QR-only landing pages (NOT linked anywhere on the site, noindex). Each brand
 // shares the same component template but injects its own palette + content.
@@ -63,7 +63,7 @@ export const BRANDS: Record<string, BrandConfig> = {
     slug: "faynot",
     name: "FAYNOT",
     logo: "/images/logos/faynot-logo.png",
-    tagline: "Enveloppe du bâtiment — Système breveté",
+    tagline: "Enveloppe du bâtiment - Système breveté",
     heroPitch:
       "FAYNOT, expert en isolation thermique par l'extérieur (ITE) de la toiture. Le système Easy-Sarking, breveté, offre la solution la plus performante pour isoler par l'extérieur sans dérangement intérieur.",
     aboutTitle: "Qui est FAYNOT ?",
@@ -108,9 +108,9 @@ export const BRANDS: Record<string, BrandConfig> = {
     slug: "mg-bouw",
     name: "MG Bouw",
     logo: "/images/logos/mg-bouw-logo.png",
-    tagline: "Build to last — Bouwen voor morgen",
+    tagline: "Build to last - Bouwen voor morgen",
     heroPitch:
-      "Meuwissen Gerritsen (MG Bouw) — depuis 1954, leader néerlandais des films techniques pour le bâtiment. Plus de 1200 points de vente, 4 générations d'expertise familiale.",
+      "Meuwissen Gerritsen (MG Bouw) - depuis 1954, leader néerlandais des films techniques pour le bâtiment. Plus de 1200 points de vente, 4 générations d'expertise familiale.",
     aboutTitle: "Qui est MG Bouw ?",
     aboutText:
       "Meuwissen Gerritsen est une entreprise familiale néerlandaise fondée en 1954, aujourd'hui dirigée par la quatrième génération. Marché leader des films techniques pour le bâtiment aux Pays-Bas, MG Bouw commercialise des marques reconnues comme Miofol®, Polytex®, Taftex®, VASTR®, Alkreflex® et est distributeur de Tyvek®. Leur engagement : protéger chaque construction contre les éléments pour les générations à venir.",
@@ -139,7 +139,7 @@ export const BRANDS: Record<string, BrandConfig> = {
     logo: "/images/logos/tyvek-logo.png",
     tagline: "L'enveloppe technique de référence depuis 1955",
     heroPitch:
-      "DuPont™ Tyvek® — la marque de référence mondiale pour les membranes pare-pluie, pare-vapeur et solutions d'étanchéité à l'air. Performance durable, distribuée chez Comarden.",
+      "DuPont™ Tyvek® - la marque de référence mondiale pour les membranes pare-pluie, pare-vapeur et solutions d'étanchéité à l'air. Performance durable, distribuée chez Comarden.",
     aboutTitle: "Qui est Tyvek ?",
     aboutText:
       "Tyvek® est une marque emblématique de DuPont, leader mondial des matériaux haute performance depuis 1955. La technologie Tyvek® utilise des fibres de polyéthylène haute densité filées-liées sans liant, créant une matière unique : imperméable à l'eau et au vent, perméable à la vapeur, ultra-résistante et durable. Tyvek® est la référence internationale des pare-pluie et solutions d'étanchéité à l'air pour murs, façades et toitures.",
@@ -168,7 +168,7 @@ export const BRANDS: Record<string, BrandConfig> = {
     logo: "/images/logos/express-logo.png",
     tagline: "Outillage et solutions professionnelles du couvreur",
     heroPitch:
-      "EXPRESS — Le spécialiste français de l'outillage et des solutions techniques pour les professionnels de la toiture et de l'étanchéité.",
+      "EXPRESS - Le spécialiste français de l'outillage et des solutions techniques pour les professionnels de la toiture et de l'étanchéité.",
     aboutTitle: "Qui est EXPRESS ?",
     aboutText:
       "EXPRESS conçoit et distribue depuis des décennies une gamme complète d'outillage professionnel et de consommables techniques destinés aux couvreurs, étancheurs et zingueurs. Reconnue pour la fiabilité et la robustesse de ses produits, la marque accompagne les artisans sur les chantiers les plus exigeants.",
@@ -195,12 +195,12 @@ export const BRANDS: Record<string, BrandConfig> = {
     slug: "solid-john",
     name: "Solid John",
     logo: "/images/logos/solid-john-logo.png",
-    tagline: "Never average — Le bétonplex durable en conditions humides",
+    tagline: "Never average - Le bétonplex durable en conditions humides",
     heroPitch:
-      "Solid John — Le contreplaqué bétonplex spécialement conçu pour les conditions humides, garanti 10 ans. Une nouvelle référence pour les toitures plates et la rive de toit.",
+      "Solid John - Le contreplaqué bétonplex spécialement conçu pour les conditions humides, garanti 10 ans. Une nouvelle référence pour les toitures plates et la rive de toit.",
     aboutTitle: "Qui est Solid John ?",
     aboutText:
-      "Solid John est une marque belge basée à Izegem, dédiée à un seul objectif : produire le bétonplex le plus durable du marché en conditions humides. Sélection rigoureuse des bois, encollage Classe 3 (WBP), garantie 10 ans transparente — pas de petits caractères. Solid John propose une gamme intégrée : bétonplex 15mm, polymère hybride pour collage en environnement humide, et vis de rive de toit en acier galvanisé inoxydable.",
+      "Solid John est une marque belge basée à Izegem, dédiée à un seul objectif : produire le bétonplex le plus durable du marché en conditions humides. Sélection rigoureuse des bois, encollage Classe 3 (WBP), garantie 10 ans transparente - pas de petits caractères. Solid John propose une gamme intégrée : bétonplex 15mm, polymère hybride pour collage en environnement humide, et vis de rive de toit en acier galvanisé inoxydable.",
     aboutImage: null,
     features: [
       { icon: "ShieldCheck", title: "Garantie 10 ans", description: "Contre gonflage, putréfaction, décollement." },
@@ -211,11 +211,11 @@ export const BRANDS: Record<string, BrandConfig> = {
     specGroups: [
       {
         title: "Bétonplex",
-        items: ["122 cm × 244 cm × 15 mm", "Norme EN 636-3", "Densité 550–650 kg/m³", "Réaction au feu D-s2,d0"],
+        items: ["122 cm × 244 cm × 15 mm", "Norme EN 636-3", "Densité 550-650 kg/m³", "Réaction au feu D-s2,d0"],
       },
       {
         title: "Polymère hybride",
-        items: ["Polymère MS", "Application −5 °C à +40 °C", "Coloris RAL 9005", "Cartouches 290 ml ou 600 ml"],
+        items: ["Polymère MS", "Application -5 °C à +40 °C", "Coloris RAL 9005", "Cartouches 290 ml ou 600 ml"],
       },
       {
         title: "Vis rive de toit",
@@ -238,12 +238,12 @@ export const BRANDS: Record<string, BrandConfig> = {
     slug: "strato-grip",
     name: "Strato Grip",
     logo: "/images/logos/strato-grip-logo.png",
-    tagline: "Vous allez aimer coller — Colles contact tous matériaux",
+    tagline: "Vous allez aimer coller - Colles contact tous matériaux",
     heroPitch:
-      "Strato Grip — Le spécialiste français des colles contact industrielles en bonbonne sous pression. Bois, aluminium, cuir, mousses, EPDM : une solution de collage pour chaque matériau.",
+      "Strato Grip - Le spécialiste français des colles contact industrielles en bonbonne sous pression. Bois, aluminium, cuir, mousses, EPDM : une solution de collage pour chaque matériau.",
     aboutTitle: "Qui est Strato Grip ?",
     aboutText:
-      "Strato Grip est une marque française d'Ardemat, experts en solutions de collage industriel. Leurs colles contact type néoprène en bonbonne sous pression et en spray sont conçues pour l'agencement, la menuiserie, la tapisserie, les sols, l'étanchéité EPDM et bien d'autres secteurs. Adhésion instantanée, application rapide, performance exceptionnelle — le tout avec démonstrations et formations gratuites sur site.",
+      "Strato Grip est une marque française d'Ardemat, experts en solutions de collage industriel. Leurs colles contact type néoprène en bonbonne sous pression et en spray sont conçues pour l'agencement, la menuiserie, la tapisserie, les sols, l'étanchéité EPDM et bien d'autres secteurs. Adhésion instantanée, application rapide, performance exceptionnelle - le tout avec démonstrations et formations gratuites sur site.",
     aboutImage: null,
     features: [
       { icon: "SprayCan", title: "Bonbonne Sous Pression", description: "Application rapide, rendement maximal." },
@@ -269,7 +269,7 @@ export const BRANDS: Record<string, BrandConfig> = {
     logo: "/images/logos/soprema-logo.png",
     tagline: "Spécialiste mondial de l'étanchéité depuis 1908",
     heroPitch:
-      "SOPREMA — référence mondiale de l'étanchéité, de l'isolation et de la toiture. Membranes bitumineuses, résines ALSAN, systèmes EPDM et solutions végétalisées, distribuées chez Comarden.",
+      "SOPREMA - référence mondiale de l'étanchéité, de l'isolation et de la toiture. Membranes bitumineuses, résines ALSAN, systèmes EPDM et solutions végétalisées, distribuées chez Comarden.",
     aboutTitle: "Qui est SOPREMA ?",
     aboutText:
       "Fondée en 1908 à Strasbourg, SOPREMA est un groupe français devenu une référence mondiale dans la production de matériaux d'étanchéité, d'isolation, d'insonorisation et de végétalisation pour le bâtiment et le génie civil. SOPREMA développe des solutions complètes pour les toitures plates et inclinées : membranes bitumineuses SBS, résines liquides ALSAN, systèmes EPDM, isolants PIR et toitures végétalisées. Comarden distribue la gamme SOPREMA en Belgique, avec conseil technique et disponibilité produit sur ses deux sites de Bertrix et Naninne.",

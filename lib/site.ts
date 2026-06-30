@@ -39,7 +39,7 @@ export const site = {
       fax: "+32 (0)61 41 39 11",
       vat: "BE-0417.128.011",
       hours: {
-        weekdays: "7:30–12:00 et 13:00–17:00",
+        weekdays: "7:30-12:00 et 13:00-17:00",
         saturday: "Fermé",
         sunday: "Fermé",
         note: "En dehors de ces horaires sur rendez-vous.",
@@ -53,7 +53,7 @@ export const site = {
       fax: "+32 (0)81 40 06 43",
       vat: "",
       hours: {
-        weekdays: "7:30–12:00 et 13:00–17:00",
+        weekdays: "7:30-12:00 et 13:00-17:00",
         saturday: "Fermé",
         sunday: "Fermé",
         note: "En dehors de ces horaires sur rendez-vous.",

@@ -71,7 +71,7 @@ export default function TransportPage() {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
                 <Image
                   src="/images/Services/Transport/1.jpg"
-                  alt="Transport et livraison Comarden — camion-grue"
+                  alt="Transport et livraison Comarden - camion-grue"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"

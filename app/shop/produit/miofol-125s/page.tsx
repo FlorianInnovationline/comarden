@@ -4,7 +4,7 @@ import { getProductBySlug } from "@/lib/shop/queries";
 import MgProductPage, { type MgProductContent } from "@/components/shop/mg/MgProductPage";
 
 export const metadata: Metadata = {
-  title: "Miofol® 125S — Membrane pare-vapeur renforcée | Comarden",
+  title: "Miofol® 125S - Membrane pare-vapeur renforcée | Comarden",
   description:
     "Miofol® 125S de Meuwissen Gerritsen : membrane pare-vapeur renforcée pour murs et toitures. Spécifications techniques, conditionnement et mise en œuvre. Distribué par Comarden.",
 };

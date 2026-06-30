@@ -1,5 +1,5 @@
 // ============================================================================
-// Compatibility shim — exposes a tiny "is the DB configured?" probe so old
+// Compatibility shim - exposes a tiny "is the DB configured?" probe so old
 // call sites (notably app/api/products/*) can decide between hitting Supabase
 // and replying with a fallback response.
 // ----------------------------------------------------------------------------

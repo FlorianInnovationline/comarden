@@ -74,7 +74,7 @@ export default function LocationPageClient({ products, categories }: Props) {
             <p className="text-lg md:text-xl text-white/80 leading-relaxed mb-8 max-w-2xl">
               Louez du matériel de qualité professionnelle pour vos chantiers.
               Cloueurs, machines à ardoises, outillage spécialisé, transport et
-              levage — tout ce qu&apos;il vous faut, entretenu et prêt à
+              levage - tout ce qu&apos;il vous faut, entretenu et prêt à
               l&apos;emploi.
             </p>
             <div className="flex flex-wrap gap-4">
@@ -136,7 +136,7 @@ export default function LocationPageClient({ products, categories }: Props) {
                   2 dépôts en Wallonie
                 </p>
                 <p className="text-xs text-muted-foreground">
-                  Bertrix &amp; Naninne — retrait sur place
+                  Bertrix &amp; Naninne - retrait sur place
                 </p>
               </div>
             </div>

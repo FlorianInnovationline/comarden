@@ -1,5 +1,5 @@
 // ============================================================================
-// CORS helper — kept ready for later prompts.
+// CORS helper - kept ready for later prompts.
 // ----------------------------------------------------------------------------
 // Supabase already serves CORS for its REST/Auth/Storage endpoints when you
 // query with the anon key, so the events mini-site can talk directly to

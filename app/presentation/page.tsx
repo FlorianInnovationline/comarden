@@ -11,7 +11,7 @@ import NewsPreview from "@/components/sections/NewsPreview";
 import CTACompact from "@/components/sections/CTA";
 
 export const metadata: Metadata = {
-  title: "Comarden — Spécialiste matériaux de toiture en Belgique depuis 1977",
+  title: "Comarden - Spécialiste matériaux de toiture en Belgique depuis 1977",
   description:
     "Depuis 1977, Comarden accompagne les couvreurs et professionnels de la toiture en Wallonie et Bruxelles. Ardoises naturelles, tôles, isolation, charpente. Deux sites : Bertrix et Naninne.",
 };

@@ -38,7 +38,7 @@ export default async function ShopPage() {
                 Commandez vos matériaux de construction en ligne. Livraison rapide en Wallonie.
               </p>
 
-              {/* Search Bar — redirects to /shop/produits */}
+              {/* Search Bar - redirects to /shop/produits */}
               <div className="max-w-2xl mx-auto">
                 <form action="/shop/produits" method="get" className="relative">
                   <input
@@ -67,13 +67,13 @@ export default async function ShopPage() {
           <div className="bg-accent/10 border border-accent/30 rounded-xl p-4 text-center flex items-center justify-center gap-3">
             <ShoppingBag className="w-5 h-5 text-accent flex-shrink-0" />
             <p className="text-sm sm:text-base text-primary font-medium">
-              Boutique en ligne — Sélection initiale de produits disponibles. Notre gamme s&apos;enrichira dans les prochains mois.
+              Boutique en ligne - Sélection initiale de produits disponibles. Notre gamme s&apos;enrichira dans les prochains mois.
             </p>
           </div>
         </Reveal>
       </div>
 
-      {/* Brands Section — links to /marques/<slug> brand pages */}
+      {/* Brands Section - links to /marques/<slug> brand pages */}
       <ShopBrandsSection />
 
       {/* Categories Section */}

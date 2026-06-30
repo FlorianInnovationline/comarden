@@ -45,7 +45,7 @@ export default function ServicesPage({
             </div>
             <YouTubeEmbed
               videoId={videoId}
-              title="Vidéo — Services Comarden"
+              title="Vidéo - Services Comarden"
               eyebrow="YouTube"
               className="border-white/15"
             />

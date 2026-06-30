@@ -26,7 +26,7 @@ export default async function AdminMarquesPage() {
               Pages Marques (QR codes)
             </h1>
             <p className="text-muted-foreground">
-              Pages dédiées accessibles uniquement par lien direct ou QR code —
+              Pages dédiées accessibles uniquement par lien direct ou QR code -
               non référencées et absentes de la navigation du site.
             </p>
           </div>

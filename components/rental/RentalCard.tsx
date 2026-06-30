@@ -13,7 +13,7 @@ interface RentalCardProps {
 export default function RentalCard({ product, onRequest, onView }: RentalCardProps) {
   return (
     <div className="group bg-white rounded-2xl border border-border/40 shadow-sm hover:shadow-xl transition-all duration-500 overflow-hidden flex flex-col">
-      {/* Image — clickable */}
+      {/* Image - clickable */}
       <button
         type="button"
         onClick={() => onView(product)}

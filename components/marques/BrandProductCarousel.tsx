@@ -13,7 +13,7 @@ interface Props {
 }
 
 /**
- * "Nos produits <brand>" — horizontal product carousel from Supabase.
+ * "Nos produits <brand>" - horizontal product carousel from Supabase.
  * Three states:
  *   - productBrand === null   → catalogue "à venir"
  *   - 0 matching products     → "disponibles sur demande" CTA

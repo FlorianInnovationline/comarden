@@ -2,7 +2,7 @@ import { PLACEHOLDER_PRODUCT_IMAGE } from "@/lib/site";
 
 /**
  * Shop images are stored under `/images/products/<slug>/...` and listed in `product.images`.
- * The site does not auto-scan folders — you must save URLs in the product (admin / seed / DB).
+ * The site does not auto-scan folders - you must save URLs in the product (admin / seed / DB).
  */
 export function resolveProductImageSrc(src: string | undefined | null): string {
   if (!src || typeof src !== "string" || !src.trim()) {

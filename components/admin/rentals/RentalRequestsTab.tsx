@@ -239,7 +239,7 @@ export default function RentalRequestsTab() {
                       </span>
                       <span className="flex items-center gap-1">
                         <Calendar className="w-3 h-3" />
-                        {new Date(req.startDate).toLocaleDateString("fr-BE")} — {req.duration}{" "}
+                        {new Date(req.startDate).toLocaleDateString("fr-BE")} - {req.duration}{" "}
                         {req.durationUnit === "jour" ? "jour(s)" : req.durationUnit === "heure" ? "heure(s)" : "an(s)"}
                       </span>
                       <span className="hidden sm:inline text-xs">

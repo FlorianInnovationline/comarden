@@ -12,17 +12,17 @@ export const metadata: Metadata = {
 };
 
 const montageStepsH120 = [
-  "01 — Retirer l'ancien isolant, mettre la toiture à nu. Poser un écran pare-vapeur si nécessaire. Installer la 1ère couche d'isolant entre les chevrons existants.",
-  "02 — Fixer chaque pilier directement sur les chevrons existants avec les tirefonds fournis. Positionner un pilier au croisement d'un chevron et d'une panne, deux piliers de part et d'autre de la panne sablière.",
-  "03 — Dérouler la 2ème couche d'isolant d'épaisseur identique à la hauteur des piliers.",
-  "04 — Fixer les nouveaux chevrons latéralement aux piliers avec les tirefonds fournis. Abouter les chevrons au faîtage si nécessaire.",
-  "05 — Dérouler la 3ème couche d'isolant d'épaisseur identique à la hauteur des nouveaux chevrons.",
-  "06 — Installer la couverture (écran souple, liteaux, tuiles ou ardoises) comme pour une charpente traditionnelle.",
+  "01 - Retirer l'ancien isolant, mettre la toiture à nu. Poser un écran pare-vapeur si nécessaire. Installer la 1ère couche d'isolant entre les chevrons existants.",
+  "02 - Fixer chaque pilier directement sur les chevrons existants avec les tirefonds fournis. Positionner un pilier au croisement d'un chevron et d'une panne, deux piliers de part et d'autre de la panne sablière.",
+  "03 - Dérouler la 2ème couche d'isolant d'épaisseur identique à la hauteur des piliers.",
+  "04 - Fixer les nouveaux chevrons latéralement aux piliers avec les tirefonds fournis. Abouter les chevrons au faîtage si nécessaire.",
+  "05 - Dérouler la 3ème couche d'isolant d'épaisseur identique à la hauteur des nouveaux chevrons.",
+  "06 - Installer la couverture (écran souple, liteaux, tuiles ou ardoises) comme pour une charpente traditionnelle.",
 ];
 
 const mainProducts = [
   {
-    title: "PILIER ITE H120 SUPPORT CHEVRONS — Isolation de toiture par l'extérieur (FAYNOT)",
+    title: "PILIER ITE H120 SUPPORT CHEVRONS - Isolation de toiture par l'extérieur (FAYNOT)",
     brand: "FAYNOT",
     description:
       "Système breveté pour isolation toiture par l'extérieur sans dérangement intérieur. Acier galvanisé à chaud Z275. Résistance thermique R = 5,7 m².K/W (200mm isolant total, λ35). Fixation sur tôle métallique ondulée, en creux d'onde. Compatible tous isolants souples : laine de verre, laine de roche, fibre de bois, chanvre.",
@@ -46,7 +46,7 @@ const mainProducts = [
     steps: montageStepsH120,
   },
   {
-    title: "PILIER ITE H80 — Isolation de toiture par l'extérieur (FAYNOT)",
+    title: "PILIER ITE H80 - Isolation de toiture par l'extérieur (FAYNOT)",
     brand: "FAYNOT",
     description:
       "Même système que le H120 pour une épaisseur d'isolant réduite. R = 4,5 m².K/W (160mm isolant total, λ35). Fixation sur tôle métallique ondulée, en creux d'onde. Aucun pont thermique, compatible tous isolants souples.",
@@ -72,13 +72,13 @@ const mainProducts = [
 
 const kitProducts = [
   {
-    title: "KIT ITE H120 — Pilier + Vis tête fraisée Super Bois Ø8 (FAYNOT)",
+    title: "KIT ITE H120 - Pilier + Vis tête fraisée Super Bois Ø8 (FAYNOT)",
     brand: "FAYNOT",
     description:
       "Kit complet incluant le pilier H120 et la vis tête fraisée Super Bois zinguée diamètre 8 pour bois (SARKING). Solution tout-en-un pour installation rapide et complète.",
   },
   {
-    title: "KIT ITE H80 — Pilier + Vis tête fraisée Super Bois Ø8 (FAYNOT)",
+    title: "KIT ITE H80 - Pilier + Vis tête fraisée Super Bois Ø8 (FAYNOT)",
     brand: "FAYNOT",
     description:
       "Kit complet incluant le pilier H80 + vis sarking. R = 4,5 m².K/W. Solution tout-en-un pour installation rapide et complète.",
@@ -150,7 +150,7 @@ export default function IsolationPage() {
                   />
                 </div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
-                  URSA — Isolation durable en Belgique chez Comarden
+                  URSA - Isolation durable en Belgique chez Comarden
                 </h2>
                 <p className="text-slate-600 font-medium mb-2">URSA, marque du groupe Etex</p>
                 <div className="bg-primary/5 border-l-4 border-accent rounded-r-xl px-6 py-5">
@@ -163,7 +163,7 @@ export default function IsolationPage() {
                 <div className="relative aspect-square rounded-2xl overflow-hidden shadow-lg">
                   <Image
                     src="/images/placeholder/isolation/isolation1.jpg"
-                    alt="Isolation URSA — panneaux isolants"
+                    alt="Isolation URSA - panneaux isolants"
                     fill
                     className="object-cover"
                   />
@@ -193,7 +193,7 @@ export default function IsolationPage() {
             <div className="lg:col-span-3">
               <Reveal>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
-                  PAVATEX — Fibre de bois
+                  PAVATEX - Fibre de bois
                 </h2>
                 <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-3xl mb-8">
                   Isolation en fibre de bois pour la toiture : confort été/hiver, régulation hygrométrique et performance durable. Solutions adaptées aux toitures inclinées en rénovation ou neuf.
@@ -247,7 +247,7 @@ export default function IsolationPage() {
           <Reveal delay={50}>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-10">
               {[
-                { title: "Confort d\u2019été supérieur", text: "La densité élevée de la fibre de bois lui confère une inertie thermique exceptionnelle — elle ralentit la chaleur estivale bien mieux que la laine minérale." },
+                { title: "Confort d\u2019été supérieur", text: "La densité élevée de la fibre de bois lui confère une inertie thermique exceptionnelle - elle ralentit la chaleur estivale bien mieux que la laine minérale." },
                 { title: "Confort d\u2019hiver", text: "Excellente performance thermique pour une toiture plus stable et plus agréable en toutes saisons." },
                 { title: "Acoustique", text: "Réduction des bruits d\u2019impact et amélioration significative du confort sonore intérieur." },
               ].map((b) => (
@@ -290,7 +290,7 @@ export default function IsolationPage() {
             <Reveal>
               <div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
-                  FAYNOT — Systèmes ITE couverture
+                  FAYNOT - Systèmes ITE couverture
                 </h2>
                 <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
                   Le système breveté FAYNOT pour l&apos;isolation thermique de toiture par l&apos;extérieur. Performances élevées sans perte d&apos;espace intérieur.
@@ -301,7 +301,7 @@ export default function IsolationPage() {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src="/images/placeholder/pilier-ite.jpg"
-                  alt="Système ITE FAYNOT — isolation toiture extérieur"
+                  alt="Système ITE FAYNOT - isolation toiture extérieur"
                   fill
                   className="object-cover"
                 />
@@ -336,7 +336,7 @@ export default function IsolationPage() {
             <Reveal>
               <div>
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
-                  Pilier ITE — EASY-SARKLING / Support chevrons
+                  Pilier ITE - EASY-SARKLING / Support chevrons
                 </h2>
                 <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
                   Piliers ITE FAYNOT pour isolation de toiture par l&apos;extérieur : H120 et H80. Compatible laine minérale et fibre de bois, zéro pont thermique.
@@ -347,7 +347,7 @@ export default function IsolationPage() {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg">
                 <Image
                   src="/images/placeholder/isolation/isolation3.jpg"
-                  alt="Pilier ITE FAYNOT — support chevrons isolation"
+                  alt="Pilier ITE FAYNOT - support chevrons isolation"
                   fill
                   className="object-cover"
                 />

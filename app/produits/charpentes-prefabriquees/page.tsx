@@ -86,7 +86,7 @@ export default function CharpentesPrefabriqueesPage() {
                   </span>
                 </div>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                  Charpentes préfabriquées — Solutions bois prêtes à poser
+                  Charpentes préfabriquées - Solutions bois prêtes à poser
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
                   Charpentes préfabriquées disponibles chez Comarden à Bertrix et Naninne. Solutions bois sur mesure pour constructions résidentielles, agricoles et industrielles en Wallonie et Belgique.

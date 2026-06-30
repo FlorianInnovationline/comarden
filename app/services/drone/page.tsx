@@ -125,7 +125,7 @@ export default function DronePage() {
         </div>
       </section>
 
-      {/* ── Comment ça fonctionne — texte + visuel ── */}
+      {/* ── Comment ça fonctionne - texte + visuel ── */}
       <section className="py-16 sm:py-20 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-14 lg:items-center">
@@ -298,12 +298,12 @@ export default function DronePage() {
             <figure className="flex flex-col gap-2">
               <YouTubeEmbed
                 videoId={videoId}
-                title="Vidéo — service drone"
+                title="Vidéo - service drone"
                 eyebrow="YouTube"
                 className="border-primary/10 shadow-sm hover:shadow-lg transition-shadow bg-primary/5"
               />
               <figcaption className="text-center text-sm font-medium text-primary/80">
-                Vidéo — service drone
+                Vidéo - service drone
               </figcaption>
             </figure>
           </div>

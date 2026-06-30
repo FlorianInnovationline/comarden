@@ -5,7 +5,7 @@ import { site } from "@/lib/site";
 import Reveal from "@/components/ui/Reveal";
 
 /**
- * Comarden CTA band — re-anchors the Comarden identity at the bottom of every
+ * Comarden CTA band - re-anchors the Comarden identity at the bottom of every
  * brand page. Navy Comarden background with a brand-accent action button.
  */
 export default function BrandCTA({ brand }: { brand: BrandConfig }) {

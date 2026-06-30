@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 
 const stratogripProducts = [
   {
-    title: "STRATOGRIP S110 — Colle de contact Multi-Matériaux 22L",
+    title: "STRATOGRIP S110 - Colle de contact Multi-Matériaux 22L",
     brand: "STRATO GRIP",
     logo: "/images/logos/strato-grip-logo.png",
     body:
@@ -43,7 +43,7 @@ const stratogripProducts = [
     shopSlug: "stratogrip-s110-22l",
   },
   {
-    title: "STRATOGRIP S163 — Colle polyvalente haute adhérence (22L)",
+    title: "STRATOGRIP S163 - Colle polyvalente haute adhérence (22L)",
     brand: "STRATO GRIP",
     logo: "/images/logos/strato-grip-logo.png",
     body:
@@ -66,7 +66,7 @@ const stratogripProducts = [
     shopSlug: "stratogrip-s163-22l",
   },
   {
-    title: "STRATOGRIP M300 — Colle mousse et tissu (22L)",
+    title: "STRATOGRIP M300 - Colle mousse et tissu (22L)",
     brand: "STRATO GRIP",
     logo: "/images/logos/strato-grip-logo.png",
     body:
@@ -119,7 +119,7 @@ const stratogripProducts = [
 
 const tyvekProducts = [
   {
-    title: "Mastic AirGuard® — Liaison étanche à l'air (TYVEK DUPONT)",
+    title: "Mastic AirGuard® - Liaison étanche à l'air (TYVEK DUPONT)",
     brand: "TYVEK DUPONT",
     logo: null,
     body:
@@ -303,7 +303,7 @@ export default function CollesMasticsPage() {
                   Colles &amp; mastics
                 </span>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                  Colles &amp; Mastics — Solutions d&apos;adhésion pour professionnels
+                  Colles &amp; Mastics - Solutions d&apos;adhésion pour professionnels
                 </h1>
                 <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl leading-relaxed">
                   Colles de contact STRATO GRIP et mastics TYVEK DUPONT disponibles à Bertrix et Naninne. Haute performance pour bardage, isolation et étanchéité.
@@ -339,7 +339,7 @@ export default function CollesMasticsPage() {
                 />
               </div>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight">
-                STRATO GRIP — Colles de contact
+                STRATO GRIP - Colles de contact
               </h2>
             </div>
           </Reveal>
@@ -371,7 +371,7 @@ export default function CollesMasticsPage() {
           <Reveal>
             <div className="max-w-3xl mb-12">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
-                TYVEK DUPONT — Étanchéité à l&apos;air
+                TYVEK DUPONT - Étanchéité à l&apos;air
               </h2>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
                 Mastics et bandes adhésives pour une étanchéité à l&apos;air performante sur vos chantiers.
@@ -436,7 +436,7 @@ export default function CollesMasticsPage() {
             </Reveal>
             <Reveal delay={160}>
               <ProductCard
-                title="ALGIMOUSS PRO (5L) — Traitement toiture / façade"
+                title="ALGIMOUSS PRO (5L) - Traitement toiture / façade"
                 brand="ALGIMOUSS"
                 logo={null}
                 body="Élimine algues, lichens et moisissures sur toitures et façades. Sans chlore, sans rinçage, double biocide pour une efficacité longue durée."
@@ -453,7 +453,7 @@ export default function CollesMasticsPage() {
             </Reveal>
             <Reveal delay={240}>
               <ProductCard
-                title="ALGIFUGE BOIS (5L) — Hydrofuge bois"
+                title="ALGIFUGE BOIS (5L) - Hydrofuge bois"
                 brand="ALGIMOUSS"
                 logo={null}
                 body="Hydrofuge bois en phase aqueuse sans silicone. Protège contre les UV et le gel, retarde le grisaillement naturel du bois."

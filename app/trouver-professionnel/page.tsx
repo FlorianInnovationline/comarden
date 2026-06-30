@@ -142,7 +142,7 @@ export default function TrouverProfessionnelPage() {
         </div>
       </section>
 
-      {/* ── Section 1 — Accompagnement ── */}
+      {/* ── Section 1 - Accompagnement ── */}
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
@@ -188,7 +188,7 @@ export default function TrouverProfessionnelPage() {
         </div>
       </section>
 
-      {/* ── Section 2 — Mise en relation ── */}
+      {/* ── Section 2 - Mise en relation ── */}
       <section className="py-16 lg:py-24 bg-gradient-to-b from-white to-neutral/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
@@ -234,7 +234,7 @@ export default function TrouverProfessionnelPage() {
         </div>
       </section>
 
-      {/* ── Section 3 — Accompagnement A à Z ── */}
+      {/* ── Section 3 - Accompagnement A à Z ── */}
       <section className="py-16 lg:py-24 bg-primary text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>

@@ -58,7 +58,7 @@ function urlDedupeKey(url: string): string {
  *
  * TRANSITIONAL: the on-disk folder fallback is a stopgap and will be removed once
  * every product has its images[] populated in the DB (now backed by Supabase
- * Storage — see scripts/migrate-product-images-to-storage.mjs). DB images always
+ * Storage - see scripts/migrate-product-images-to-storage.mjs). DB images always
  * take precedence, so this fallback is a no-op for already-migrated products.
  */
 export function mergeProductImagesWithFolder(product: {

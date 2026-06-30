@@ -140,7 +140,7 @@ export default function FormationsPage() {
               <div className="hidden lg:block">
                 <YouTubeEmbed
                   videoId={heroVideoId}
-                  title="Vidéo — Centre de formation Comarden"
+                  title="Vidéo - Centre de formation Comarden"
                   eyebrow="YouTube"
                   className="border-white/15"
                 />
@@ -197,20 +197,20 @@ export default function FormationsPage() {
                       title: "Journée UNIQUE ARDOISES",
                       date: "Jeudi 26 mars 2026",
                       lieu: "MOREPIRE, Bertrix",
-                      horaire: "16h30 – fin",
+                      horaire: "16h30 - fin",
                       brands: "ATG Ardoises, VERTUOZA, STRATO GRIP, TYVEK",
                     },
                     {
                       title: "JEUDIREDI ETEX Cedral & Equitone",
                       date: "Jeudi 26 mars 2026",
                       lieu: "Naninne + Bertrix",
-                      horaire: "15h – 19h",
+                      horaire: "15h - 19h",
                     },
                     {
                       title: "PETIT DÉJEUNER SOLID JOHN",
                       date: "Vendredi 22 mai 2026",
                       lieu: "Bertrix",
-                      horaire: "7h15 – 11h",
+                      horaire: "7h15 - 11h",
                     },
                     {
                       title: "Journée UNIQUE SOPREMA",

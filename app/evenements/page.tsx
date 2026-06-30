@@ -48,7 +48,7 @@ const EVENTS: EventData[] = [
     title: "Journée UNIQUE ARDOISES",
     dates: [{ label: "Jeudi 26 mars 2026", year: 2026, month: 2, day: 26 }],
     lieu: "MOREPIRE, Bertrix",
-    horaires: "Accueil 16h30 – Début 17h30",
+    horaires: "Accueil 16h30 - Début 17h30",
     programme: ["ATG Ardoises", "VERTUOZA", "STRATO GRIP", "TYVEK"],
     logos: [
       { src: "/images/logos/strato-grip-logo.png", alt: "Strato Grip" },
@@ -73,7 +73,7 @@ const EVENTS: EventData[] = [
   },
   {
     id: "jeudiredi-etex",
-    title: "JEUDIREDI ETEX – Cedral & Equitone",
+    title: "JEUDIREDI ETEX - Cedral & Equitone",
     dates: [
       { label: "Jeudi 16 avril 2026 (Naninne)", year: 2026, month: 3, day: 16 },
       { label: "Jeudi 21 mai 2026 (Bertrix)", year: 2026, month: 4, day: 21 },
@@ -91,7 +91,7 @@ const EVENTS: EventData[] = [
     title: "PETIT DÉJEUNER SOLID JOHN",
     dates: [{ label: "Vendredi 22 mai 2026", year: 2026, month: 4, day: 22 }],
     lieu: "Bertrix",
-    horaires: "7h15 – 11h00",
+    horaires: "7h15 - 11h00",
     contenu: [
       "Présentation SOLID JOHN (bétonplex & polymères)",
       "Nespresso",
@@ -519,7 +519,7 @@ export default function EvenementsPage() {
               <div className="hidden lg:block">
                 <YouTubeEmbed
                   videoId={videoId}
-                  title="Vidéo — événements Comarden"
+                  title="Vidéo - événements Comarden"
                   eyebrow="YouTube"
                   className="border-white/15"
                 />

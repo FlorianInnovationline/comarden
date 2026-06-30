@@ -61,7 +61,7 @@ export default function YouTubeEmbed({
                     {title}
                   </div>
                   <div className="mt-1 text-xs text-white/60">
-                    YouTube — à renseigner
+                    YouTube - à renseigner
                   </div>
                 </div>
               </div>

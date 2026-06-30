@@ -4,7 +4,7 @@ import type { LucideIcon } from "lucide-react";
 import Reveal from "@/components/ui/Reveal";
 
 /**
- * "Pourquoi <brand>" — 3 to 5 icon cards in brand colours, plus an optional
+ * "Pourquoi <brand>" - 3 to 5 icon cards in brand colours, plus an optional
  * spec callout (specGroups).
  */
 export default function BrandFeatures({ brand }: { brand: BrandConfig }) {

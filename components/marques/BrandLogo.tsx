@@ -14,7 +14,7 @@ interface BrandLogoProps {
 
 /**
  * Renders the brand logo, falling back to a styled text wordmark when the file
- * is missing or fails to load — so brand pages never show a broken image.
+ * is missing or fails to load - so brand pages never show a broken image.
  */
 export default function BrandLogo({
   name,

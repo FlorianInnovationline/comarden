@@ -20,19 +20,19 @@ export const QUICK_QA: QuickQA[] = [
     id: "horaires",
     question: "Horaires d'ouverture ?",
     answer:
-      "Lun–Ven: 7h30–12h00 / 13h00–17h00. Sam/Dim: fermé. En dehors de ces horaires, sur rendez-vous uniquement.",
+      "Lun-Ven: 7h30-12h00 / 13h00-17h00. Sam/Dim: fermé. En dehors de ces horaires, sur rendez-vous uniquement.",
   },
   {
     id: "adresse-bertrix",
     question: "Adresse Bertrix ?",
     answer:
-      "Rue des Corettes, 47 — 6880 Bertrix. Tél: +32 (0)61 41 27 06. Fax: +32 (0)61 41 39 11.",
+      "Rue des Corettes, 47 - 6880 Bertrix. Tél: +32 (0)61 41 27 06. Fax: +32 (0)61 41 39 11.",
   },
   {
     id: "adresse-naninne",
     question: "Adresse Naninne ?",
     answer:
-      "Rue des Pieds d'Alouette, 6 — 5100 Namur. Tél: +32 (0)81 40 11 33. Fax: +32 (0)81 40 06 43.",
+      "Rue des Pieds d'Alouette, 6 - 5100 Namur. Tél: +32 (0)81 40 11 33. Fax: +32 (0)81 40 06 43.",
   },
   {
     id: "livraison",

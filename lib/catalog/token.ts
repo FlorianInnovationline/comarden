@@ -1,6 +1,6 @@
 // Token validation for catalog access.
 // ---------------------------------------------------------------------------
-// Tokens MUST be provided via environment variables — there are NO hardcoded
+// Tokens MUST be provided via environment variables - there are NO hardcoded
 // fallbacks. Set CATALOG_TOKEN and CATALOG_ADMIN_TOKEN in your environment
 // (Vercel project settings / local .env.local). Env vars are read lazily inside
 // the functions so the module can be imported during build without throwing;

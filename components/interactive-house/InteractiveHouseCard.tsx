@@ -207,7 +207,7 @@ ${codeSnippet}
           {/* Header - Smaller and cleaner */}
           <div className="text-center mb-6 lg:mb-8">
             <h2 className="text-2xl lg:text-3xl font-bold text-primary mb-2">
-              Explorez une maison — cliquez sur une zone
+              Explorez une maison - cliquez sur une zone
             </h2>
             <p className="text-sm lg:text-base text-slate-600 max-w-xl mx-auto">
               Découvrez nos solutions toiture, façade et isolation.

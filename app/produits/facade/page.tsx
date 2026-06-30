@@ -25,7 +25,7 @@ import Reveal from "@/components/ui/Reveal";
 import FacadeShowcase from "@/components/sections/FacadeShowcase";
 
 export const metadata: Metadata = {
-  title: "Façade STACBOND — Panneaux composites aluminium - Comarden",
+  title: "Façade STACBOND - Panneaux composites aluminium - Comarden",
   description:
     "Panneaux composites aluminium STACBOND en stock chez Comarden Naninne et Bertrix. Découpe sur mesure, ossature aluminium, plus de 100 finitions. Bardage professionnel en Wallonie.",
 };
@@ -43,7 +43,7 @@ const atouts = [
   },
   {
     icon: Leaf,
-    title: "Performance énergétique — jusqu\u2019à -30 %",
+    title: "Performance énergétique - jusqu\u2019à -30 %",
     text: "Utilisés en façade ventilée, les panneaux créent une lame d\u2019air isolante qui réduit la demande énergétique du bâtiment de plus de 30 %. Un atout pour les certifications LEED, BREEAM ou les primes Région Wallonne.",
   },
   {
@@ -65,7 +65,7 @@ const atouts = [
 
 const servicePoints = [
   "Panneaux STACBOND disponibles en stock immédiat à Naninne (Namur) et Bertrix",
-  "Découpe et façonnage sur mesure dans nos ateliers — éléments plats ou cassettes",
+  "Découpe et façonnage sur mesure dans nos ateliers - éléments plats ou cassettes",
   "Ossature aluminium laqué noir disponible en stock pour fixation non apparente",
   "Tous les accessoires de pose en un seul lieu",
   "Livraison partout en Belgique francophone : Wallonie, Bruxelles, Luxembourg, Namur, Hainaut, Brabant Wallon et Liège",
@@ -83,7 +83,7 @@ const projects = [
 
 const faq = [
   { q: "Où acheter des panneaux STACBOND en Belgique ?", a: "Comarden propose les panneaux composites aluminium STACBOND en stock dans ses deux négoces : à Naninne (Namur) pour le centre et nord de la Wallonie, et à Bertrix pour la province de Luxembourg. Livraison disponible partout en Belgique francophone." },
-  { q: "Quelle est la différence entre STACBOND A2 et STACBOND FR ?", a: "Le STACBOND A2 possède une âme minérale incombustible avec un classement A2-s1,d0 — utilisé sur les bâtiments soumis à des exigences incendie élevées. Le STACBOND FR dispose d\u2019une âme ignifuge avec un classement B-s1,d0 — adapté au bardage résidentiel neuf ou en rénovation." },
+  { q: "Quelle est la différence entre STACBOND A2 et STACBOND FR ?", a: "Le STACBOND A2 possède une âme minérale incombustible avec un classement A2-s1,d0 - utilisé sur les bâtiments soumis à des exigences incendie élevées. Le STACBOND FR dispose d\u2019une âme ignifuge avec un classement B-s1,d0 - adapté au bardage résidentiel neuf ou en rénovation." },
   { q: "Comarden peut-il découper les panneaux STACBOND sur mesure ?", a: "Oui. Comarden dispose d\u2019un atelier de découpe dédié aux panneaux de façade. Nous réalisons la découpe, le façonnage en cassettes et proposons l\u2019ossature aluminium laqué noir pour une pose propre et sans fixation apparente." },
   { q: "Les panneaux STACBOND conviennent-ils à la rénovation en Wallonie ?", a: "Absolument. Légers et faciles à poser, les panneaux STACBOND sont parfaitement adaptés à la rénovation de façades existantes sans surcharger la structure du bâtiment. Ils améliorent la performance thermique de l\u2019enveloppe, ouvrant droit aux primes énergie de la Région Wallonne." },
   { q: "Combien de coloris sont disponibles ?", a: "Plus de 100 finitions : couleurs RAL, Pantone, NCS, imitations bois, pierre, béton, métal ou acier Corten, dans différents niveaux de brillance. Des teintes sur mesure sont également réalisables." },
@@ -189,7 +189,7 @@ export default function FacadePage() {
 
           <Reveal delay={150}>
             <p className="mt-8 text-sm text-slate-500 leading-relaxed max-w-3xl">
-              Les deux versions sont recouvertes d&apos;une peinture PVDF haute résistance, garantissant une tenue parfaite aux UV, aux intempéries et au vieillissement — sans entretien contraignant.
+              Les deux versions sont recouvertes d&apos;une peinture PVDF haute résistance, garantissant une tenue parfaite aux UV, aux intempéries et au vieillissement - sans entretien contraignant.
             </p>
           </Reveal>
         </div>
@@ -416,7 +416,7 @@ export default function FacadePage() {
               Un projet de bardage ou de façade ventilée ?
             </h2>
             <p className="text-base sm:text-lg text-white/80 max-w-2xl mx-auto mb-8 leading-relaxed">
-              Contactez Comarden pour un conseil personnalisé et une offre de prix sur mesure — réponse en moins de 8 heures ouvrables.
+              Contactez Comarden pour un conseil personnalisé et une offre de prix sur mesure - réponse en moins de 8 heures ouvrables.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link

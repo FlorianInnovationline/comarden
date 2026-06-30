@@ -48,7 +48,7 @@ export default function ProductGallery({
                 className="absolute inset-0 rounded-lg pointer-events-none z-10"
                 style={{ boxShadow: i === active ? `0 0 0 2px ${accent}` : "none" }}
               />
-              <Image src={img} alt={`${alt} — vue ${i + 1}`} fill className="object-cover" sizes="100px" />
+              <Image src={img} alt={`${alt} - vue ${i + 1}`} fill className="object-cover" sizes="100px" />
             </button>
           ))}
         </div>

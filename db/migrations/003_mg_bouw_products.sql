@@ -1,5 +1,5 @@
 -- ============================================================================
--- Comarden — Migration 003: MG Bouw (Meuwissen Gerritsen) products
+-- Comarden - Migration 003: MG Bouw (Meuwissen Gerritsen) products
 -- ----------------------------------------------------------------------------
 -- Adds 3 technical films to public.products:
 --   miofol-125s, miofol-active-xtr, polytex-xtr
@@ -23,7 +23,7 @@ values
   -- ===== 1. Miofol® 125S =====
   (
     $q$miofol-125s$q$,
-    $q$Miofol® 125S — Membrane pare-vapeur renforcée$q$,
+    $q$Miofol® 125S - Membrane pare-vapeur renforcée$q$,
     $q$Miofol® 125S de Meuwissen Gerritsen est une membrane technique pour la construction, renforcée et retardatrice de vapeur. Le film composite a une durée de vie extrêmement longue grâce à l'utilisation de PE vierge. La vapeur provenant de la pièce ne peut pas pénétrer dans la structure ou l'isolation à travers le Miofol® 125S.$q$,
     $q$11111111-1111-1111-1111-000000000004$q$,
     $q$MG BOUW$q$, 0, $q$EUR$q$, null, 0, true, '[]'::jsonb,
@@ -51,10 +51,10 @@ values
       $q$La composition du LDPE empêche la dégradation à long terme$q$
     ],
     array[
-      $q$1,50 m × 25 m — réf 6112415026 — EAN 8714672002683 — 44 rouleaux/palette$q$,
-      $q$1,50 m × 50 m — réf 6112415010 — EAN 8714672000900 — 22 rouleaux/palette$q$,
-      $q$2,00 m × 50 m — réf 6112420010 — EAN 8714672000085 — 22 rouleaux/palette$q$,
-      $q$2,60 m × 50 m — réf 6112426010 — EAN 8714672000092 — 22 rouleaux/palette$q$
+      $q$1,50 m × 25 m - réf 6112415026 - EAN 8714672002683 - 44 rouleaux/palette$q$,
+      $q$1,50 m × 50 m - réf 6112415010 - EAN 8714672000900 - 22 rouleaux/palette$q$,
+      $q$2,00 m × 50 m - réf 6112420010 - EAN 8714672000085 - 22 rouleaux/palette$q$,
+      $q$2,60 m × 50 m - réf 6112426010 - EAN 8714672000092 - 22 rouleaux/palette$q$
     ],
     $q$https://www.mg-bouw.com/miofol-125s/$q$,
     null
@@ -63,8 +63,8 @@ values
   -- ===== 2. Miofol® Active XTR =====
   (
     $q$miofol-active-xtr$q$,
-    $q$Miofol® Active XTR — Membrane à perméabilité variable$q$,
-    $q$Miofol® Active XTR est une membrane à perméabilité variable à la vapeur, composée d'un non-tissé en polypropylène, d'un film copolymère en polyéthylène et d'un renfort tissé pour une résistance accrue à la déchirure et à la traction. Miofol® Active XTR est donc particulièrement adapté à l'isolation par insufflation. La membrane a une double fonction : en hiver, le film présente une résistance élevée à la vapeur (pare-vapeur) et en été, il présente une faible résistance à la vapeur (ouvert à la vapeur) — l'humidité éventuelle peut alors s'échapper vers l'intérieur de la construction. Miofol® Active XTR peut ainsi être utilisé de manière optimale dans les constructions où le côté froid ne peut pas ou peu respirer. C'est le film idéal pour les matériaux d'isolation biosourcés et l'isolation par insufflation.$q$,
+    $q$Miofol® Active XTR - Membrane à perméabilité variable$q$,
+    $q$Miofol® Active XTR est une membrane à perméabilité variable à la vapeur, composée d'un non-tissé en polypropylène, d'un film copolymère en polyéthylène et d'un renfort tissé pour une résistance accrue à la déchirure et à la traction. Miofol® Active XTR est donc particulièrement adapté à l'isolation par insufflation. La membrane a une double fonction : en hiver, le film présente une résistance élevée à la vapeur (pare-vapeur) et en été, il présente une faible résistance à la vapeur (ouvert à la vapeur) - l'humidité éventuelle peut alors s'échapper vers l'intérieur de la construction. Miofol® Active XTR peut ainsi être utilisé de manière optimale dans les constructions où le côté froid ne peut pas ou peu respirer. C'est le film idéal pour les matériaux d'isolation biosourcés et l'isolation par insufflation.$q$,
     $q$11111111-1111-1111-1111-000000000004$q$,
     $q$MG BOUW$q$, 0, $q$EUR$q$, null, 0, true, '[]'::jsonb,
     array[$q$pare-vapeur$q$, $q$membrane climatique$q$, $q$perméabilité variable$q$, $q$mg bouw$q$, $q$insufflation$q$, $q$biosourcé$q$],
@@ -72,7 +72,7 @@ values
       $q$Temps d'ouverture : 1 mois$q$,
       $q$Résistance à la température : -40 °C / +80 °C$q$,
       $q$Poids : 100 g/m²$q$,
-      $q$Valeur Sd (perméabilité variable) : 0,34 – 46,6 m$q$,
+      $q$Valeur Sd (perméabilité variable) : 0,34 - 46,6 m$q$,
       $q$Résistance initiale à la déchirure des clous (longueur) : ≥ 230 N$q$,
       $q$Résistance initiale à la déchirure des clous (transversale) : ≥ 230 N$q$,
       $q$Résistance initiale à la traction (longitudinale) : ≥ 300 N / 50 mm$q$,
@@ -91,8 +91,8 @@ values
       $q$Très adapté à l'isolation par insufflation$q$
     ],
     array[
-      $q$1,50 m × 50 m — réf 8610015000 — EAN 8714672002690 — 30 rouleaux/palette$q$,
-      $q$3,00 m × 50 m — réf 8610030000 — EAN 8714672002713 — 30 rouleaux/palette$q$
+      $q$1,50 m × 50 m - réf 8610015000 - EAN 8714672002690 - 30 rouleaux/palette$q$,
+      $q$3,00 m × 50 m - réf 8610030000 - EAN 8714672002713 - 30 rouleaux/palette$q$
     ],
     $q$https://www.mg-bouw.com/miofol-active/$q$,
     null
@@ -101,7 +101,7 @@ values
   -- ===== 3. Polytex® XTR =====
   (
     $q$polytex-xtr$q$,
-    $q$Polytex® XTR — Membrane pare-pluie 4 couches haute résistance$q$,
+    $q$Polytex® XTR - Membrane pare-pluie 4 couches haute résistance$q$,
     $q$Polytex® XTR est une membrane de toiture et façade à quatre couches très résistantes. Elle est composée de deux couches de polypropylène, d'un film respirant microporeux et d'un renfort tissé qui améliore sa résistance à la déchirure et à la traction. Cette membrane imperméable protège la structure contre le vent et la pluie, tout en permettant à la vapeur de s'évacuer vers l'extérieur.$q$,
     $q$11111111-1111-1111-1111-000000000004$q$,
     $q$MG BOUW$q$, 0, $q$EUR$q$, null, 0, true, '[]'::jsonb,
@@ -131,7 +131,7 @@ values
       $q$Toit et façade$q$
     ],
     array[
-      $q$1,50 m × 50 m — réf 8220015000 — EAN 8714672002409 — 25 rouleaux/palette$q$
+      $q$1,50 m × 50 m - réf 8220015000 - EAN 8714672002409 - 25 rouleaux/palette$q$
     ],
     $q$https://www.mg-bouw.com/polytex-xtr/$q$,
     null
@@ -158,7 +158,7 @@ on conflict (slug) do update set
 commit;
 
 -- ===========================================================================
--- Verification (read-only) — expect 3 rows, brand MG BOUW, isolation category
+-- Verification (read-only) - expect 3 rows, brand MG BOUW, isolation category
 -- ===========================================================================
 select
   slug,

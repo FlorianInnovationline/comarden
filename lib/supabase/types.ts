@@ -1,5 +1,5 @@
 // ============================================================================
-// Supabase generated `Database` type — keeps the JS client strongly typed.
+// Supabase generated `Database` type - keeps the JS client strongly typed.
 // ----------------------------------------------------------------------------
 // This file is HAND-WRITTEN to mirror db/supabase-schema.sql. Once the Supabase
 // CLI is installed locally, regenerate it with:

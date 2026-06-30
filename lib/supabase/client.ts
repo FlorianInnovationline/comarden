@@ -2,7 +2,7 @@
 // Browser Supabase client (use in Client Components / "use client" code).
 // ----------------------------------------------------------------------------
 // Uses the public anon key + browser-managed cookies via @supabase/ssr.
-// Singleton — `createBrowserClient` returns the same client across calls.
+// Singleton - `createBrowserClient` returns the same client across calls.
 // ============================================================================
 
 import { createBrowserClient } from "@supabase/ssr";

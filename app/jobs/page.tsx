@@ -129,7 +129,7 @@ export default function JobsPage() {
               <div className="w-full rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
                 <Image
                   src="/images/Jobs/1.jpg"
-                  alt="Équipe Comarden — carrières"
+                  alt="Équipe Comarden - carrières"
                   width={1400}
                   height={1050}
                   className="w-full h-auto"
@@ -340,7 +340,7 @@ export default function JobsPage() {
                     onChange={handleChange}
                     className={inputClass}
                   >
-                    <option value="">— Sélectionnez —</option>
+                    <option value="">- Sélectionnez -</option>
                     {postes.map((p) => (
                       <option key={p} value={p}>
                         {p}

@@ -173,18 +173,18 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
   },
   {
     id: "loc-07",
-    name: "Machine ardoises — Coin coupé",
+    name: "Machine ardoises - Coin coupé",
     category: "Machines ardoises",
-    description: "Machine à tailler les ardoises — coin coupé.",
+    description: "Machine à tailler les ardoises - coin coupé.",
     variants: ["20 cm", "22 cm"],
     priceCents: 2000,
     priceUnit: "jour",
   },
   {
     id: "loc-08",
-    name: "Machine ardoises — Coquette",
+    name: "Machine ardoises - Coquette",
     category: "Machines ardoises",
-    description: "Machine à tailler les ardoises — coquette.",
+    description: "Machine à tailler les ardoises - coquette.",
     variants: ["15 cm", "22 cm N°1", "22 cm N°2", "25 cm"],
     priceCents: 3000,
     priceUnit: "jour",
@@ -228,7 +228,7 @@ export const RENTAL_PRODUCTS: RentalProduct[] = [
   },
   {
     id: "loc-13",
-    name: "Multi-fraiseuse MAFELL MF 26 cc AF-MAX — Coffret T-MAX",
+    name: "Multi-fraiseuse MAFELL MF 26 cc AF-MAX - Coffret T-MAX",
     category: "Fraisage multifonction",
     description:
       "Fraiseuse multifonction professionnelle 1400W pour aluminium, bois et dérivés. Profondeur de fraisage 0-26mm réglable au 1/10ème mm, vitesse 3600-6250 tr/min. Coffret T-MAX inclus. Poids 5 kg.",

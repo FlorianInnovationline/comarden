@@ -3,7 +3,7 @@ import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
 
 /**
- * "Qui est <brand>" — 2-column identity section. Uses a real photo when
+ * "Qui est <brand>" - 2-column identity section. Uses a real photo when
  * `aboutImage` is set, otherwise a branded decorative panel (never a broken img).
  */
 export default function BrandAbout({ brand }: { brand: BrandConfig }) {

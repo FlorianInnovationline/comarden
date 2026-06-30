@@ -1,5 +1,5 @@
 // ============================================================================
-// Next.js middleware — protects `/admin/*` and `/api/admin/*`.
+// Next.js middleware - protects `/admin/*` and `/api/admin/*`.
 // ----------------------------------------------------------------------------
 // 1. Refreshes the Supabase session cookie on every matched request.
 // 2. For `/admin/*` (except /admin/login + /admin/logout): if no session,
@@ -7,7 +7,7 @@
 //    admin (profiles.role != 'admin'), redirects to /admin/login?error=...
 // 3. For `/api/admin/*`: 401 if no session, 403 if not admin.
 //
-// Falls back to redirect-to-login if Supabase env vars are missing — never
+// Falls back to redirect-to-login if Supabase env vars are missing - never
 // silently grants access.
 // ============================================================================
 

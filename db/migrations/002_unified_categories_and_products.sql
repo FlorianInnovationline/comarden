@@ -1,5 +1,5 @@
 -- ============================================================================
--- Comarden — Migration 002: unified categories + seed products
+-- Comarden - Migration 002: unified categories + seed products
 -- ----------------------------------------------------------------------------
 -- Phase 2 data load. Populates public.categories with the 11 unified marketing
 -- categories and public.products with the 37 catalogue products migrated from
@@ -18,7 +18,7 @@
 --     the 5 categories that have a clear equivalent in magasinCategoryImages.ts;
 --     the other 6 categories are left NULL (no mapping available).
 --   * products.images is set to '[]' on INSERT only (NOT overwritten on re-run)
---     so the on-disk image merge — and any future admin-curated URLs — survive.
+--     so the on-disk image merge - and any future admin-curated URLs - survive.
 --     Galleries come from public/images/products/<slug>/ at read time.
 --   * All products: price_cents = 0 (quote/lead model), currency EUR, stock 0,
 --     is_active = true, sku NULL.
@@ -64,23 +64,23 @@ insert into public.products
 values
   -- ===== Toitures plates (3) =====
   ('ancrage-photovoltaique-elevate',
-   'Ancrage Photovoltaïque Toiture Plate — ELEVATE',
-   'Système de toiture terrasse photovoltaïque durable. Membrane pare-vapeur + couche isolation + membrane d''étanchéité sur laquelle s''installent les panneaux solaires. Système avec fixation traversante — étanchéité parfaite autour des points de fixation.',
+   'Ancrage Photovoltaïque Toiture Plate - ELEVATE',
+   'Système de toiture terrasse photovoltaïque durable. Membrane pare-vapeur + couche isolation + membrane d''étanchéité sur laquelle s''installent les panneaux solaires. Système avec fixation traversante - étanchéité parfaite autour des points de fixation.',
    '11111111-1111-1111-1111-000000000007', 'ELEVATE', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['étanchéité','photovoltaïque','elevate'], null,
    array['Solution toiture PV complète et durable','Composants haute qualité pour éviter dépose des panneaux','Compatible tous accessoires Elevate'],
    null, 'https://www.holcimelevate.com/benelux-fr/etancheite-de-toitures/applications/toitures-syst%C3%A8me-photovolta%C3%AFque', null),
 
   ('rubbergard-epdm-sa-elevate',
-   'Elevate RubberGard EPDM SA — Membrane auto-adhésive',
-   'Membrane EPDM auto-adhésive haute performance. Technologie Secure Bond — adhésif appliqué en usine. Installation rapide sans flamme. Durée de vie >50 ans. Résistance exceptionnelle UV, ozone, températures extrêmes. Pose possible jusqu''à -7°C. Sans solvants et inodore.',
+   'Elevate RubberGard EPDM SA - Membrane auto-adhésive',
+   'Membrane EPDM auto-adhésive haute performance. Technologie Secure Bond - adhésif appliqué en usine. Installation rapide sans flamme. Durée de vie >50 ans. Résistance exceptionnelle UV, ozone, températures extrêmes. Pose possible jusqu''à -7°C. Sans solvants et inodore.',
    '11111111-1111-1111-1111-000000000007', 'ELEVATE', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['étanchéité','epdm','elevate'],
    array['Durée de vie : >50 ans','Pose jusqu''à : -7°C','Technologie : Secure Bond (adhésif en usine)','Application : toitures plates commerciales, industrielles, végétalisées, PV'],
    null, null, 'https://www.holcimelevate.com/benelux-fr/etancheite-de-toitures/epdm/rubbergard-epdm-sa', null),
 
   ('sopraguard-stick-epdm',
-   'Sopraguard Stick — Membrane EPDM auto-adhésive SOPREMA',
+   'Sopraguard Stick - Membrane EPDM auto-adhésive SOPREMA',
    'Membrane EPDM auto-adhésive haute performance. Rouleaux de 30m, épaisseur 1,14mm. Pose propre et rapide sans adhésifs supplémentaires ni outillage complexe. Réduit le temps de mise en œuvre, améliore la productivité sur chantier.',
    '11111111-1111-1111-1111-000000000007', 'SOPREMA', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['étanchéité','epdm','soprema'],
@@ -89,16 +89,16 @@ values
 
   -- ===== Isolation (4) =====
   ('pilier-ite-h120',
-   'Pilier ITE H120 Support Chevrons — FAYNOT',
+   'Pilier ITE H120 Support Chevrons - FAYNOT',
    'Pilier Sarking en acier galvanisé à chaud Z275, breveté. Isolation toiture par l''extérieur sans dérangement intérieur. R = 5,7 m².K/W (200mm isolant total, λ35). Fixation sur tôle métallique ondulée en creux d''onde. Aucun pont thermique.',
    '11111111-1111-1111-1111-000000000004', 'FAYNOT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['isolation','ite','faynot','sarking'],
    array['R thermique : 5,7 m².K/W','Isolant total : 200mm (λ35)','Matériau : acier galvanisé Z275','Fixation : tôle ondulée en creux d''onde'],
-   array['Isolation par l''extérieur — préserve l''espace intérieur','Aucun pont thermique','Système breveté et calculé','Compatible tous isolants souples','Correction planéité jusqu''à 40mm','Pas de formation spécifique requise'],
+   array['Isolation par l''extérieur - préserve l''espace intérieur','Aucun pont thermique','Système breveté et calculé','Compatible tous isolants souples','Correction planéité jusqu''à 40mm','Pas de formation spécifique requise'],
    null, 'https://www.faynot.com/isolation-thermique-exterieur/ite-couverture/piliers-et-accessoires.html', null),
 
   ('pilier-ite-h80',
-   'Pilier ITE H80 Support Chevrons — FAYNOT',
+   'Pilier ITE H80 Support Chevrons - FAYNOT',
    'Pilier Sarking en acier galvanisé à chaud Z275, breveté. R = 4,5 m².K/W (160mm isolant total, λ35). Même principe que H120 pour épaisseur réduite. Fixation sur tôle métallique ondulée en creux d''onde.',
    '11111111-1111-1111-1111-000000000004', 'FAYNOT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['isolation','ite','faynot'],
@@ -106,14 +106,14 @@ values
    null, null, 'https://www.faynot.com/isolation-thermique-exterieur/ite-couverture/piliers-et-accessoires.html', null),
 
   ('kit-pilier-ite-h120-vis',
-   'Kit ITE H120 + Vis Sarking — FAYNOT',
+   'Kit ITE H120 + Vis Sarking - FAYNOT',
    'Kit complet : Pilier H120 + Vis tête fraisée Super Bois zinguée Ø8 pour bois (SARKING). R = 5,7 m².K/W. Solution tout-en-un pour chantier rapide.',
    '11111111-1111-1111-1111-000000000004', 'FAYNOT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['isolation','kit','faynot'], null, null, null,
    'https://www.faynot.com/isolation-thermique-exterieur/ite-couverture/piliers-et-accessoires.html', null),
 
   ('kit-pilier-ite-h80-vis',
-   'Kit ITE H80 + Vis Sarking — FAYNOT',
+   'Kit ITE H80 + Vis Sarking - FAYNOT',
    'Kit complet : Pilier H80 + Vis tête fraisée Super Bois zinguée Ø8 pour bois (SARKING). R = 4,5 m².K/W. Solution tout-en-un.',
    '11111111-1111-1111-1111-000000000004', 'FAYNOT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['isolation','kit','faynot'], null, null, null,
@@ -121,24 +121,24 @@ values
 
   -- ===== Visserie (9) =====
   ('vis-tete-rivet-p1-faynot',
-   'Vis tête rivet autoperceuse P1 Ø6,3×18mm — FAYNOT',
-   'Vis autoforeuses P1 Ø6,3×18mm pour fixation tôles et accessoires bardage. Tête Ø9,5mm empreinte Torx T20 — aspect discret comparable à un rivet. Par 100 pièces.',
+   'Vis tête rivet autoperceuse P1 Ø6,3×18mm - FAYNOT',
+   'Vis autoforeuses P1 Ø6,3×18mm pour fixation tôles et accessoires bardage. Tête Ø9,5mm empreinte Torx T20 - aspect discret comparable à un rivet. Par 100 pièces.',
    '11111111-1111-1111-1111-000000000009', 'FAYNOT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['visserie','faynot','autoperceuse'],
    array['Diamètre : 6,3mm','Longueur : 18mm','Tête : Ø9,5mm Torx T20','Lot : 100 pièces','Épaisseur support : 0,63 à 1mm'],
-   array['Autoperceuse — aucun pré-perçage','Capacité perçage : jusqu''à 4×0,75mm','Haute résistance arrachement profils minces','Résistance corrosion : inox A2 ou zingué TK12'],
+   array['Autoperceuse - aucun pré-perçage','Capacité perçage : jusqu''à 4×0,75mm','Haute résistance arrachement profils minces','Résistance corrosion : inox A2 ou zingué TK12'],
    array['Sans laquage','RAL 1015','RAL 2001','RAL 5008','RAL 6011','RAL 7006','RAL 7015','RAL 7016','RAL 7022','RAL 7037','RAL 8012','RAL 8014','RAL 9002','RAL 9005','RAL 9006','RAL 9007','RAL 9010'],
    'https://www.faynot.com/vis-tr-p1.html', null),
 
   ('vis-super-bois-sarking-faynot',
-   'Vis tête fraisée Super Bois zinguée Ø8 Sarking — FAYNOT',
+   'Vis tête fraisée Super Bois zinguée Ø8 Sarking - FAYNOT',
    'Vis tête fraisée Super Bois zinguée diamètre 8 pour bois (SARKING). Spécialement conçue pour les systèmes ITE couverture.',
    '11111111-1111-1111-1111-000000000009', 'FAYNOT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['visserie','faynot','sarking'], null, null, null,
    'https://www.faynot.com/isolation-thermique-exterieur/ite-couverture/piliers-et-accessoires.html', null),
 
   ('vis-sk-rb-28-20x70-etanco',
-   'Vis Sapin SK-RB 28/20×70 — Fixation isolants ETANCO',
+   'Vis Sapin SK-RB 28/20×70 - Fixation isolants ETANCO',
    'Cheville monobloc à visser en polyamide renforcé fibre de verre. Tête large Ø50mm empreinte carrée 6mm. Pour fixation isolants en rénovation toiture. Pas de pré-perçage, vissage direct dans le bitume.',
    '11111111-1111-1111-1111-000000000009', 'ETANCO', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['visserie','etanco','isolant'],
@@ -147,7 +147,7 @@ values
    null, null, null),
 
   ('vis-sk-rb-28-40x90-etanco',
-   'Vis Sapin SK-RB 28/40×90 — Fixation isolants ETANCO',
+   'Vis Sapin SK-RB 28/40×90 - Fixation isolants ETANCO',
    'Cheville monobloc à visser en polyamide renforcé fibre de verre. Tête large Ø50mm empreinte carrée 6mm. Dimensions 28/40×90.',
    '11111111-1111-1111-1111-000000000009', 'ETANCO', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['visserie','etanco','isolant'],
@@ -155,7 +155,7 @@ values
    null, null, null, null),
 
   ('vis-sk-rb-28-60x110-etanco',
-   'Vis Sapin SK-RB 28/60×110 — Fixation isolants ETANCO',
+   'Vis Sapin SK-RB 28/60×110 - Fixation isolants ETANCO',
    'Cheville monobloc à visser en polyamide renforcé fibre de verre. Dimensions 28/60×110.',
    '11111111-1111-1111-1111-000000000009', 'ETANCO', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['visserie','etanco','isolant'],
@@ -163,7 +163,7 @@ values
    null, null, null, null),
 
   ('vis-sk-rb-28-120x175-etanco',
-   'Vis Sapin SK-RB 28/120×175 — Fixation isolants ETANCO',
+   'Vis Sapin SK-RB 28/120×175 - Fixation isolants ETANCO',
    'Cheville monobloc à visser en polyamide renforcé fibre de verre. Dimensions 28/120×175 pour isolants épais.',
    '11111111-1111-1111-1111-000000000009', 'ETANCO', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['visserie','etanco','isolant'],
@@ -171,7 +171,7 @@ values
    null, null, null, null),
 
   ('marcovis-fm-x3-etanco',
-   'MARCOVIS FM-X3/PA + Vis TF/Zn — Cheville universelle ETANCO',
+   'MARCOVIS FM-X3/PA + Vis TF/Zn - Cheville universelle ETANCO',
    'Cheville universelle nylon PA6 haute performance pour applications non structurelles. Tenue jusqu''à 2000kg à l''arrachement. Idéale façade, charpente, béton, brique, parpaing, pierre naturelle.',
    '11111111-1111-1111-1111-000000000009', 'ETANCO', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['visserie','etanco','cheville'],
@@ -189,8 +189,8 @@ values
    null, null, null, null),
 
   ('grille-anti-rongeur-gar-simpson',
-   'Grille anti-rongeur GAR — Simpson Strong-Tie',
-   'Protection bardage ventilé contre rongeurs et insectes. Acier S250GD finition ZPRO — résistance équivalente inox A2. Rouleaux 25m, épaisseur 0,8mm. Conforme DTU 41.2.',
+   'Grille anti-rongeur GAR - Simpson Strong-Tie',
+   'Protection bardage ventilé contre rongeurs et insectes. Acier S250GD finition ZPRO - résistance équivalente inox A2. Rouleaux 25m, épaisseur 0,8mm. Conforme DTU 41.2.',
    '11111111-1111-1111-1111-000000000009', 'SIMPSON STRONG-TIE', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['visserie','simpson','grille'],
    array['Matériau : acier S250GD finition ZPRO','Épaisseur : 0,8mm','Longueur rouleau : 25m'],
@@ -200,7 +200,7 @@ values
 
   -- ===== Colles & Mastics (11) =====
   ('stratogrip-s110-22l',
-   'STRATOGRIP S110 — Colle contact multi-matériaux 22L',
+   'STRATOGRIP S110 - Colle contact multi-matériaux 22L',
    'Colle de contact industrielle haute performance. HPL, aluminium, MDF, panneaux particules, contreplaqué. Adhésion instantanée, résistance chaleur 100°C, séchage 1-2 min. Double encollage pour collage permanent.',
    '11111111-1111-1111-1111-000000000010', 'STRATO GRIP', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['colle','stratogrip','multi-matériaux'],
@@ -209,7 +209,7 @@ values
    'Non recommandé : vinyles plastifiés, plastiques flexibles, polystyrène EPS/XPS, PE, PP, monochrome'),
 
   ('stratogrip-s163-22l',
-   'STRATOGRIP S163 — Colle polyvalente bâtiment/isolation 22L',
+   'STRATOGRIP S163 - Colle polyvalente bâtiment/isolation 22L',
    'Colle ultra high-tack sans chlore pour bâtiment et isolation. Compatible bois, MDF, plastiques rigides, métaux, XPS/EPS, isolants fibre, matériaux minéraux alu. Très long temps ouvert.',
    '11111111-1111-1111-1111-000000000010', 'STRATO GRIP', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['colle','stratogrip','isolation'],
@@ -217,7 +217,7 @@ values
    null, null, 'https://stratogrip.com/product/s163/', 'Non recommandé : vinyles plastifiés'),
 
   ('stratogrip-m300-22l',
-   'STRATOGRIP M300 — Colle mousse et tissu 22L',
+   'STRATOGRIP M300 - Colle mousse et tissu 22L',
    'Colle industrielle pour cuir, tissus, mousses et revêtements décoratifs. Sellerie, tapisserie, ameublement. Résistance 110°C, séchage 1-2min.',
    '11111111-1111-1111-1111-000000000010', 'STRATO GRIP', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['colle','stratogrip','mousse'],
@@ -233,18 +233,18 @@ values
    'https://stratogrip.com/product/pistolet-dapplication-professionnel/', null),
 
   ('raccord-flexible-stratogrip',
-   'Raccord flexible caoutchouc 4m — STRATOGRIP',
+   'Raccord flexible caoutchouc 4m - STRATOGRIP',
    'Tuyau professionnel ultra souple 4m en caoutchouc haute qualité. Pour applications collage/pulvérisation. Léger, ergonomique, facile à nettoyer.',
    '11111111-1111-1111-1111-000000000010', 'STRATO GRIP', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['colle','stratogrip','accessoire'], null, null, null,
    'https://stratogrip.com/product/raccord-flexible/', null),
 
   ('mastic-airguard-tyvek',
-   'Mastic AirGuard® — TYVEK DUPONT',
+   'Mastic AirGuard® - TYVEK DUPONT',
    'Mastic adhésif pour une liaison élastique permanente et étanche à l''air des joints et connexions structurelles. Connecte les pare-vapeur à des surfaces telles que la pierre. Excellente adhérence sur béton, plâtre, pierre, plaques de plâtre et bois.',
    '11111111-1111-1111-1111-000000000010', 'TYVEK DUPONT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['étanchéité','mastic','tyvek'], null,
-   array['Application par cartouche — installation facile','Recommandé pour l''étanchéité à l''air des couches pare-vapeur AirGuard','GEV-Emicode : très faibles émissions de COV','Efficacité énergétique améliorée','Installable à -5°C'],
+   array['Application par cartouche - installation facile','Recommandé pour l''étanchéité à l''air des couches pare-vapeur AirGuard','GEV-Emicode : très faibles émissions de COV','Efficacité énergétique améliorée','Installable à -5°C'],
    null, 'https://www.dupontdenemours.fr/products/mastic-airguard.html', null),
 
   ('bande-tyvek-flexwrap-nf',
@@ -252,11 +252,11 @@ values
    'Bande auto-adhésive flexible haute performance pour joint étanche à l''air et à l''eau autour des portes, fenêtres, cheminées, entrées de tuyaux. Utilisable intérieur/extérieur. Pose 50% plus rapide que les bandes ordinaires, sans fixation supplémentaire.',
    '11111111-1111-1111-1111-000000000010', 'TYVEK DUPONT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['étanchéité','bande','tyvek'], null,
-   array['Meilleure étanchéité à l''air et à l''eau que les membranes standard','Bande extensible avec doublure séparée en deux — installation facile','Pose ~50% plus rapide','Résiste aux rayons UV','Excellente adhérence sur la plupart des membranes de construction'],
+   array['Meilleure étanchéité à l''air et à l''eau que les membranes standard','Bande extensible avec doublure séparée en deux - installation facile','Pose ~50% plus rapide','Résiste aux rayons UV','Excellente adhérence sur la plupart des membranes de construction'],
    null, 'https://www.dupontdenemours.be/fr/products/dupont-tyvek-flexwrap-flashing-tape.html', null),
 
   ('poudre-assechante-express',
-   'Poudre asséchante toitures plates — EXPRESS (lot 6×1kg)',
+   'Poudre asséchante toitures plates - EXPRESS (lot 6×1kg)',
    'Absorbe eau de pluie sur toitures plates avant travaux étanchéité bitumineuse. Granulés gonflent au contact de l''eau et forment un gel. Conditionnée en boîtes 1kg, vendue par lot de 6 pièces. Réf. 848.',
    '11111111-1111-1111-1111-000000000010', 'EXPRESS', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['entretien','séchage','toiture-plate'],
@@ -272,7 +272,7 @@ values
    null, null, 'https://www.asphaltequipment.be/fr/rouleau-de-sechage/', null),
 
   ('algimouss-pro-5l',
-   'ALGIMOUSS PRO — Traitement toiture/façade 5L',
+   'ALGIMOUSS PRO - Traitement toiture/façade 5L',
    'Traitement professionnel prêt à l''emploi. Élimine algues, lichens et moisissures. Sans chlore, sans rinçage. Double biocide. Ardoises, tuiles, fibrociment, shingles, crépis, briques, bois, pierres.',
    '11111111-1111-1111-1111-000000000010', 'ALGIMOUSS', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['entretien','algimouss','traitement'],
@@ -281,75 +281,75 @@ values
    null, 'https://algimouss.com/produit/anti-mousse-toiture-algimouss-pro/', null),
 
   ('algifuge-bois-5l',
-   'ALGIFUGE BOIS — Hydrofuge protection bois 5L',
+   'ALGIFUGE BOIS - Hydrofuge protection bois 5L',
    'Hydrofuge haute performance phase aqueuse sans silicone. Protège bois contre eau, huiles, corps gras, UV, gel. Retarde grisaillement. Terrasses, bardages, palissades, caillebotis, menuiseries, volets, mobilier jardin.',
    '11111111-1111-1111-1111-000000000010', 'ALGIMOUSS', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['entretien','algimouss','bois'],
    array['Contenance : 5L','Consommation : ~1L/5m²','Séchage : min 12h','Température application : 5-25°C'],
    null, null, 'https://algimouss.com/produit/hydrofuge-bois-algifuge-bois/', null),
 
-  -- ===== Façade (10 — Clips & Go 2.0) =====
+  -- ===== Façade (10 - Clips & Go 2.0) =====
   ('clips-go-rive-100mm-3m',
-   'Clips & Go 2.0 — Rive 100mm × 3m Noir RAL 9005',
-   'Système Roofing Clips — aluminium thermo-laqué. 2 pièces : profilé de base + bourrelet. Finition rives toiture bitumées. Trous oblongs pré-poinçonnés 6×16mm. Compatible revêtements bitumés 4-5mm.',
+   'Clips & Go 2.0 - Rive 100mm × 3m Noir RAL 9005',
+   'Système Roofing Clips - aluminium thermo-laqué. 2 pièces : profilé de base + bourrelet. Finition rives toiture bitumées. Trous oblongs pré-poinçonnés 6×16mm. Compatible revêtements bitumés 4-5mm.',
    '11111111-1111-1111-1111-000000000008', 'CLAERHOUT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['accessoire','clips-go','rive'],
    array['Matériau : aluminium thermo-laqué','Largeur : 100mm','Longueur : 3m','Couleur : Noir RAL 9005','Compatibilité : bitume 4-5mm','Joint dilatation : 5mm profilé / 3mm bourrelet'],
    null, null, null, null),
 
   ('clips-go-rive-70mm-3m',
-   'Clips & Go 2.0 — Rive 70mm × 3m Noir RAL 9005',
-   'Même système que 100mm — version 70mm. Aluminium thermo-laqué, compatible bitume 4-5mm.',
+   'Clips & Go 2.0 - Rive 70mm × 3m Noir RAL 9005',
+   'Même système que 100mm - version 70mm. Aluminium thermo-laqué, compatible bitume 4-5mm.',
    '11111111-1111-1111-1111-000000000008', 'CLAERHOUT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['accessoire','clips-go','rive'],
    array['Largeur : 70mm','Longueur : 3m','Couleur : Noir RAL 9005'],
    null, null, null, null),
 
   ('clips-go-arret-100mm',
-   'Clips & Go 2.0 — Arrêt 100mm Noir RAL 9005',
-   'Accessoire Clips & Go 2.0 — Arrêt 100mm. Noir RAL 9005.',
+   'Clips & Go 2.0 - Arrêt 100mm Noir RAL 9005',
+   'Accessoire Clips & Go 2.0 - Arrêt 100mm. Noir RAL 9005.',
    '11111111-1111-1111-1111-000000000008', 'CLAERHOUT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['accessoire','clips-go'], null, null, null, null, null),
 
   ('clips-go-arret-70mm',
-   'Clips & Go 2.0 — Arrêt 70mm Noir RAL 9005',
-   'Accessoire Clips & Go 2.0 — Arrêt 70mm. Noir RAL 9005.',
+   'Clips & Go 2.0 - Arrêt 70mm Noir RAL 9005',
+   'Accessoire Clips & Go 2.0 - Arrêt 70mm. Noir RAL 9005.',
    '11111111-1111-1111-1111-000000000008', 'CLAERHOUT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['accessoire','clips-go'], null, null, null, null, null),
 
   ('clips-go-coin-interieur-100mm',
-   'Clips & Go 2.0 — Coin intérieur 100mm 30×30 Noir RAL 9005',
-   'Accessoire Clips & Go 2.0 — Coin intérieur COININT 100mm 30×30. Noir RAL 9005.',
+   'Clips & Go 2.0 - Coin intérieur 100mm 30×30 Noir RAL 9005',
+   'Accessoire Clips & Go 2.0 - Coin intérieur COININT 100mm 30×30. Noir RAL 9005.',
    '11111111-1111-1111-1111-000000000008', 'CLAERHOUT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['accessoire','clips-go','coin'], null, null, null, null, null),
 
   ('clips-go-coin-exterieur-100mm',
-   'Clips & Go 2.0 — Coin extérieur 100mm 30×30 Noir RAL 9005',
-   'Accessoire Clips & Go 2.0 — Coin extérieur COINEXT 100mm 30×30. Noir RAL 9005.',
+   'Clips & Go 2.0 - Coin extérieur 100mm 30×30 Noir RAL 9005',
+   'Accessoire Clips & Go 2.0 - Coin extérieur COINEXT 100mm 30×30. Noir RAL 9005.',
    '11111111-1111-1111-1111-000000000008', 'CLAERHOUT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['accessoire','clips-go','coin'], null, null, null, null, null),
 
   ('clips-go-raccord-100mm',
-   'Clips & Go 2.0 — Raccord 100mm Noir RAL 9005',
-   'Accessoire Clips & Go 2.0 — Raccord STRUC 100mm. Noir RAL 9005.',
+   'Clips & Go 2.0 - Raccord 100mm Noir RAL 9005',
+   'Accessoire Clips & Go 2.0 - Raccord STRUC 100mm. Noir RAL 9005.',
    '11111111-1111-1111-1111-000000000008', 'CLAERHOUT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['accessoire','clips-go'], null, null, null, null, null),
 
   ('clips-go-profil-base-3m',
-   'Clips & Go 2.0 — Profil de base 3m BRUT',
-   'Accessoire Clips & Go 2.0 — Profilé de base 3m. Couleur : BRUT (non laqué).',
+   'Clips & Go 2.0 - Profil de base 3m BRUT',
+   'Accessoire Clips & Go 2.0 - Profilé de base 3m. Couleur : BRUT (non laqué).',
    '11111111-1111-1111-1111-000000000008', 'CLAERHOUT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['accessoire','clips-go','profil'], null, null, null, null, null),
 
   ('clips-go-couvre-joint-100mm',
-   'Clips & Go 2.0 — Couvre-joint 100mm Noir RAL 9005',
-   'Accessoire Clips & Go 2.0 — Couvre-joint 100mm. Noir RAL 9005.',
+   'Clips & Go 2.0 - Couvre-joint 100mm Noir RAL 9005',
+   'Accessoire Clips & Go 2.0 - Couvre-joint 100mm. Noir RAL 9005.',
    '11111111-1111-1111-1111-000000000008', 'CLAERHOUT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['accessoire','clips-go'], null, null, null, null, null),
 
   ('clips-go-easy-corner',
-   'Clips & Go 2.0 — Easy Corner BRUT',
-   'Accessoire Clips & Go 2.0 — Easy Corner coin. Couleur : BRUT.',
+   'Clips & Go 2.0 - Easy Corner BRUT',
+   'Accessoire Clips & Go 2.0 - Easy Corner coin. Couleur : BRUT.',
    '11111111-1111-1111-1111-000000000008', 'CLAERHOUT', 0, 'EUR', null, 0, true, '[]'::jsonb,
    array['accessoire','clips-go','corner'], null, null, null, null, null)
 

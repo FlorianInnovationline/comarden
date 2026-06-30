@@ -72,7 +72,7 @@ export async function POST(request: NextRequest) {
 
   if (!productExists(idRaw)) {
     return NextResponse.json(
-      { error: "Produit introuvable — enregistrez-le d'abord" },
+      { error: "Produit introuvable - enregistrez-le d'abord" },
       { status: 404 }
     );
   }

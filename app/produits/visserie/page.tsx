@@ -19,7 +19,7 @@ const ralColors = [
 
 const products = [
   {
-    title: "Vis tête rivet autoperceuse — P1 Ø6,3×18mm",
+    title: "Vis tête rivet autoperceuse - P1 Ø6,3×18mm",
     brand: "FAYNOT",
     description:
       "Vis autoforeuses P1 Ø6,3×18mm pour fixation de tôles et accessoires de bardage. Solution rapide et fiable pour les professionnels de la couverture et du bardage.",
@@ -217,14 +217,14 @@ export default function VisseriePage() {
         </div>
       </section>
 
-      {/* ── VIS SAPIN SK-RB — ETANCO ── */}
+      {/* ── VIS SAPIN SK-RB - ETANCO ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
             <div className="max-w-3xl mb-10">
               <p className="text-xs font-bold uppercase tracking-widest text-accent mb-2">ETANCO</p>
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
-                Vis Sapin SK-RB — Fixation d&apos;isolants
+                Vis Sapin SK-RB - Fixation d&apos;isolants
               </h2>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
                 Cheville monobloc à visser en polyamide renforcé fibre de verre. Tête large Ø50 mm,
@@ -245,7 +245,7 @@ export default function VisseriePage() {
                     ETANCO
                   </span>
                   <h3 className="font-bold text-primary text-base mb-2">{vis.ref}</h3>
-                  <p className="text-xs text-slate-600">Tête Ø50 mm — {vis.usage}</p>
+                  <p className="text-xs text-slate-600">Tête Ø50 mm - {vis.usage}</p>
                 </div>
               </Reveal>
             ))}

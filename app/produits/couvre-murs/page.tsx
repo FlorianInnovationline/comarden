@@ -154,7 +154,7 @@ export default function CouvreMursPage() {
         </div>
       </section>
 
-      {/* ── SECTION 1 — Notre gamme ── */}
+      {/* ── SECTION 1 - Notre gamme ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
@@ -236,7 +236,7 @@ export default function CouvreMursPage() {
         </div>
       </section>
 
-      {/* ── SECTION 2 — Pourquoi choisir ── */}
+      {/* ── SECTION 2 - Pourquoi choisir ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Reveal>
@@ -245,7 +245,7 @@ export default function CouvreMursPage() {
                 Un couvre-mur conçu pour simplifier votre quotidien
               </h2>
               <p className="text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                Un produit design qui allie résistance, praticité et esthétique —
+                Un produit design qui allie résistance, praticité et esthétique -
                 pour que vos murets extérieurs restent beaux, quelle que soit la saison.
               </p>
             </div>
@@ -270,7 +270,7 @@ export default function CouvreMursPage() {
         </div>
       </section>
 
-      {/* ── SECTION 3 — Utilisations ── */}
+      {/* ── SECTION 3 - Utilisations ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-primary text-white relative overflow-hidden">
         <div
           className="absolute w-[500px] h-[500px] rounded-full blur-[100px] opacity-15"
@@ -319,7 +319,7 @@ export default function CouvreMursPage() {
         </div>
       </section>
 
-      {/* ── SECTION 4 — CTA ── */}
+      {/* ── SECTION 4 - CTA ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-[#FDD000]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <Reveal>
@@ -351,7 +351,7 @@ export default function CouvreMursPage() {
         </div>
       </section>
 
-      {/* Gallery — breaks up consecutive yellow CTAs */}
+      {/* Gallery - breaks up consecutive yellow CTAs */}
       <section className="py-12 sm:py-16 lg:py-20 bg-slate-100">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid sm:grid-cols-2 gap-4 sm:gap-6">
@@ -367,7 +367,7 @@ export default function CouvreMursPage() {
             <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200/80">
               <Image
                 src="/images/produits/CouvreMurs/3.jpg"
-                alt="Couvre-mur — détail de pose"
+                alt="Couvre-mur - détail de pose"
                 fill
                 className="object-cover"
                 sizes="(max-width: 640px) 100vw, 50vw"

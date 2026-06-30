@@ -26,7 +26,7 @@ if (typeof window !== "undefined") {
 /**
  * Supabase client for Server Components / Route Handlers / Server Actions.
  *
- * Note: in plain Server Components, the cookie store is read-only — Supabase
+ * Note: in plain Server Components, the cookie store is read-only - Supabase
  * may try to refresh the session and write cookies, which Next swallows.
  * That's expected; the refresh succeeds for the duration of the request, and
  * the cookie will be written next time it crosses a Route Handler / middleware.
@@ -46,7 +46,7 @@ export async function createSupabaseServerClient(): Promise<
         try {
           cookieStore.set({ name, value, ...options });
         } catch {
-          // Called from a Server Component context — cookie store is read-only.
+          // Called from a Server Component context - cookie store is read-only.
           // Safe to ignore: session will be re-synced by middleware on next request.
         }
       },

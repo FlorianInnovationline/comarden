@@ -64,7 +64,7 @@ export default function TolesPanneauxPage() {
                   Tôles & panneaux
                 </span>
                 <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight">
-                  Tôles acier et couvertures industrielles chez Comarden — Naninne & Bertrix
+                  Tôles acier et couvertures industrielles chez Comarden - Naninne & Bertrix
                 </h1>
                 <p className="text-base sm:text-lg text-white/80 leading-relaxed">
                   Revêtements métalliques, panneaux sandwich et fibrociment pour toitures industrielles et agricoles.

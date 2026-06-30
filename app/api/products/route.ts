@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
     const body = (await request.json()) as CreateProductBody;
 
     if (!isSupabaseConfigured()) {
-      console.log("[products] Product created (fallback — no DB):", body);
+      console.log("[products] Product created (fallback - no DB):", body);
       return NextResponse.json(
         { id: `prod-${Date.now()}`, ...body },
         { status: 201 }

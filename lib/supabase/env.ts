@@ -1,12 +1,12 @@
 // ============================================================================
-// Supabase env-var resolver — single source of truth.
+// Supabase env-var resolver - single source of truth.
 // ----------------------------------------------------------------------------
 // All Supabase clients (browser / server / admin) read configuration through
 // this module. It centralises:
 //   - whether Supabase is configured (used to enable the seed fallback in dev)
 //   - friendly error messages when something is missing
 //
-// Safe to import from client OR server code — only reads `NEXT_PUBLIC_*` vars
+// Safe to import from client OR server code - only reads `NEXT_PUBLIC_*` vars
 // unless you call `getServiceRoleKey()`, which is server-only.
 // ============================================================================
 

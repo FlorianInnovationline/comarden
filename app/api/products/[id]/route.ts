@@ -25,7 +25,7 @@ export async function PUT(
     const body = (await request.json()) as UpdateProductBody;
 
     if (!isSupabaseConfigured()) {
-      console.log("[products] Product updated (fallback — no DB):", id, body);
+      console.log("[products] Product updated (fallback - no DB):", id, body);
       return NextResponse.json({ id, ...body }, { status: 200 });
     }
 

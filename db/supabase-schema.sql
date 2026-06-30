@@ -1,5 +1,5 @@
 -- ============================================================================
--- Comarden — Supabase schema
+-- Comarden - Supabase schema
 -- ----------------------------------------------------------------------------
 -- Run this file in the Supabase SQL Editor (one-shot).
 -- It is idempotent: safe to re-run (uses `if not exists` / `create or replace`).
@@ -24,7 +24,7 @@ end;
 $$;
 
 -- ===========================================================================
--- 1. profiles  — mirrors auth.users, holds role
+-- 1. profiles  - mirrors auth.users, holds role
 -- ===========================================================================
 create table if not exists public.profiles (
   id          uuid primary key references auth.users(id) on delete cascade,
@@ -66,7 +66,7 @@ create trigger on_auth_user_created
   for each row execute function public.handle_new_user();
 
 -- ===========================================================================
--- 2. is_admin() helper — used by every RLS policy below
+-- 2. is_admin() helper - used by every RLS policy below
 -- ===========================================================================
 create or replace function public.is_admin()
 returns boolean
@@ -191,7 +191,7 @@ create trigger trg_promotions_updated_at
   for each row execute function public.set_updated_at();
 
 -- ===========================================================================
--- 4. Events (scaffolded — admin UI ships in a later prompt)
+-- 4. Events (scaffolded - admin UI ships in a later prompt)
 -- ===========================================================================
 create table if not exists public.events (
   id          uuid primary key default gen_random_uuid(),
@@ -438,12 +438,12 @@ create policy job_applications_delete_admin on public.job_applications
   for delete using (public.is_admin());
 
 -- ===========================================================================
--- 7. Storage buckets (optional — also creatable from the Dashboard UI)
+-- 7. Storage buckets (optional - also creatable from the Dashboard UI)
 -- ----------------------------------------------------------------------------
 -- Each bucket is created if missing; policies wire up the access rules.
 -- ===========================================================================
 
--- `cvs` — PRIVATE: anyone may upload, only admins may read/delete.
+-- `cvs` - PRIVATE: anyone may upload, only admins may read/delete.
 insert into storage.buckets (id, name, public)
   values ('cvs', 'cvs', false)
   on conflict (id) do nothing;
@@ -461,7 +461,7 @@ create policy "cvs_select_admin" on storage.objects
 create policy "cvs_delete_admin" on storage.objects
   for delete using (bucket_id = 'cvs' and public.is_admin());
 
--- `event-media` — PUBLIC: anyone reads, only admins write.
+-- `event-media` - PUBLIC: anyone reads, only admins write.
 insert into storage.buckets (id, name, public)
   values ('event-media', 'event-media', true)
   on conflict (id) do nothing;
@@ -476,7 +476,7 @@ create policy "event_media_write_admin" on storage.objects
   for all using (bucket_id = 'event-media' and public.is_admin())
   with check (bucket_id = 'event-media' and public.is_admin());
 
--- `product-images` — PUBLIC: anyone reads, only admins write.
+-- `product-images` - PUBLIC: anyone reads, only admins write.
 insert into storage.buckets (id, name, public)
   values ('product-images', 'product-images', true)
   on conflict (id) do nothing;

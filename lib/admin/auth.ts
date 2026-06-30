@@ -1,5 +1,5 @@
 // ============================================================================
-// Admin authentication helpers — Supabase Auth + `profiles.role = 'admin'`.
+// Admin authentication helpers - Supabase Auth + `profiles.role = 'admin'`.
 // ----------------------------------------------------------------------------
 // All checks go through Supabase. There's no dev-credentials backdoor anymore.
 //

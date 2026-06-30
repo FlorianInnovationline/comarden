@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 import ProductGallery from "@/components/shop/ProductGallery";
 import Reveal from "@/components/ui/Reveal";
 
-// MG Bouw palette — used as ACCENT only; page background stays white/light.
+// MG Bouw palette - used as ACCENT only; page background stays white/light.
 const MG_PRIMARY = "#003D7A";
 const MG_ACCENT = "#0066CC";
 

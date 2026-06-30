@@ -1,8 +1,8 @@
 // ============================================================================
-// Shop data access — Supabase implementation.
+// Shop data access - Supabase implementation.
 // ----------------------------------------------------------------------------
 // If Supabase is not configured (no NEXT_PUBLIC_SUPABASE_URL), every read
-// transparently falls back to the in-memory seed in ./seed.ts — preserving
+// transparently falls back to the in-memory seed in ./seed.ts - preserving
 // the "works without a DB" local-dev experience that the previous codebase
 // already supported.
 //
@@ -300,7 +300,7 @@ export async function createOrder(
   const sb = await client();
 
   if (!sb) {
-    console.log("[shop] Order created (fallback — no DB):", orderData, items);
+    console.log("[shop] Order created (fallback - no DB):", orderData, items);
     return {
       id: `order-${Date.now()}`,
       ...orderData,

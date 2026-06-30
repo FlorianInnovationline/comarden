@@ -160,7 +160,7 @@ export const FORMATION_MODULES: FormationModule[] = [
   },
   {
     id: "vertuoza",
-    title: "VERTUOZA — Logiciel de gestion chantier",
+    title: "VERTUOZA - Logiciel de gestion chantier",
     durationHours: 7,
     description: "Maîtrisez VERTUOZA pour vos devis, facturations, suivis de chantier et planning. Un outil complet pour la gestion de votre entreprise.",
     tag: "Formations",
@@ -169,7 +169,7 @@ export const FORMATION_MODULES: FormationModule[] = [
   },
   {
     id: "strato-grip",
-    title: "STRATO GRIP — Formation nouvelles colles",
+    title: "STRATO GRIP - Formation nouvelles colles",
     durationHours: 4,
     description: "Découvrez les nouvelles colles STRATO GRIP : application, compatibilités et bonnes pratiques pour des chantiers réussis.",
     tag: "Formations",
@@ -178,7 +178,7 @@ export const FORMATION_MODULES: FormationModule[] = [
   },
   {
     id: "tyvek",
-    title: "TYVEK — Présentation gamme et conseils pratiques",
+    title: "TYVEK - Présentation gamme et conseils pratiques",
     durationHours: 4,
     description: "Tour d\u2019horizon de la gamme TYVEK : membranes, pare-vapeur et solutions d\u2019étanchéité à l\u2019air. Conseils pratiques de mise en œuvre.",
     tag: "Formations",

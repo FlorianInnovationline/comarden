@@ -5,7 +5,7 @@ import BrandLogo from "@/components/marques/BrandLogo";
 import Reveal from "@/components/ui/Reveal";
 
 /**
- * "Nos marques" — brand logo strip on /shop. Each card links to the brand's
+ * "Nos marques" - brand logo strip on /shop. Each card links to the brand's
  * dedicated /marques/<slug> page. Logos fall back to a branded wordmark.
  */
 export default function ShopBrandsSection() {
@@ -20,7 +20,7 @@ export default function ShopBrandsSection() {
               Nos marques
             </h2>
             <p className="text-sm sm:text-base text-muted-foreground max-w-2xl mx-auto">
-              Découvrez les grandes marques que nous distribuons — cliquez pour explorer chaque univers.
+              Découvrez les grandes marques que nous distribuons - cliquez pour explorer chaque univers.
             </p>
           </div>
         </Reveal>

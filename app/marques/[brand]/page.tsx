@@ -21,9 +21,9 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { brand: slug } = await params;
   const brand = getBrand(slug);
-  if (!brand) return { title: "Marque introuvable — Comarden" };
+  if (!brand) return { title: "Marque introuvable - Comarden" };
   return {
-    title: `${brand.name} — Comarden`,
+    title: `${brand.name} - Comarden`,
     description: brand.heroPitch,
     // QR-only page: never index.
     robots: { index: false, follow: false },

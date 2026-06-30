@@ -158,7 +158,7 @@ export default function ProPackPage() {
               <div className="w-full aspect-[4/3] rounded-2xl bg-white/5 backdrop-blur-sm border border-white/10 flex flex-col items-center justify-center gap-4">
                 <Rocket className="w-16 h-16 text-accent/60" />
                 <span className="text-white/40 text-sm font-medium">
-                  Image Pack PRO — à venir
+                  Image Pack PRO - à venir
                 </span>
               </div>
             </div>
@@ -223,7 +223,7 @@ export default function ProPackPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 1 — Detailed Pack Descriptions
+          SECTION 1 - Detailed Pack Descriptions
       ══════════════════════════════════════════════════════════ */}
 
       {/* ── PACK 1 Detail ── */}
@@ -254,7 +254,7 @@ export default function ProPackPage() {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                 <Image
                   src="/images/services/PackPro/1.jpg"
-                  alt="Pro Pack 1 — Accompagnement administratif"
+                  alt="Pro Pack 1 - Accompagnement administratif"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -308,13 +308,13 @@ export default function ProPackPage() {
       {/* ── PACK 2 Detail ── */}
       <section className="py-16 sm:py-20 lg:py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Header with image — reversed layout */}
+          {/* Header with image - reversed layout */}
           <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 mb-10 items-center">
             <div className="lg:col-span-2 order-2 lg:order-1">
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                 <Image
                   src="/images/services/PackPro/2.jpg"
-                  alt="Pro Pack 2 — Accompagnement commercial"
+                  alt="Pro Pack 2 - Accompagnement commercial"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -414,7 +414,7 @@ export default function ProPackPage() {
                 Vous êtes une entreprise ambitieuse avec une réelle volonté de croissance ?
                 Le Pro PACK 3 est conçu pour vous aider à passer un cap : structurer votre
                 développement, professionnaliser votre organisation et maximiser votre
-                performance globale. La croissance ne s&apos;improvise pas — elle nécessite une
+                performance globale. La croissance ne s&apos;improvise pas - elle nécessite une
                 vision claire, des processus structurés et un accompagnement stratégique.
               </p>
             </div>
@@ -422,7 +422,7 @@ export default function ProPackPage() {
               <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-lg border border-slate-200">
                 <Image
                   src="/images/services/PackPro/3.jpg"
-                  alt="Pro Pack 3 — Accompagnement croissance"
+                  alt="Pro Pack 3 - Accompagnement croissance"
                   fill
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 40vw"
@@ -473,7 +473,7 @@ export default function ProPackPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 2 — Pourquoi Comarden
+          SECTION 2 - Pourquoi Comarden
       ══════════════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 lg:py-28 bg-primary relative overflow-hidden">
         <div
@@ -509,7 +509,7 @@ export default function ProPackPage() {
               {
                 icon: Award,
                 title: "Expertise complète",
-                text: "Gestion de toute la chaîne — administratif, comptabilité, ventes, chantiers, sous-traitants.",
+                text: "Gestion de toute la chaîne - administratif, comptabilité, ventes, chantiers, sous-traitants.",
               },
               {
                 icon: Handshake,
@@ -519,7 +519,7 @@ export default function ProPackPage() {
               {
                 icon: Zap,
                 title: "Résultats concrets",
-                text: "Optimisation des performances, de la rentabilité et de la croissance — mesurable dès les premières semaines.",
+                text: "Optimisation des performances, de la rentabilité et de la croissance - mesurable dès les premières semaines.",
               },
             ].map((item) => {
               const Icon = item.icon;
@@ -538,7 +538,7 @@ export default function ProPackPage() {
       </section>
 
       {/* ══════════════════════════════════════════════════════════
-          SECTION 3 — CTA Banner
+          SECTION 3 - CTA Banner
       ══════════════════════════════════════════════════════════ */}
       <section className="py-16 sm:py-20 lg:py-24 bg-[#FDD000]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">

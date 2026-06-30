@@ -157,7 +157,7 @@ export default function ToituresVertesPage() {
                 <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl border-2 border-white/10">
                   <Image
                     src="/images/placeholder/toitures/toit-veg.jpg"
-                    alt="Toiture végétalisée — toit vert"
+                    alt="Toiture végétalisée - toit vert"
                     fill
                     className="object-cover"
                   />
@@ -308,7 +308,7 @@ export default function ToituresVertesPage() {
           <Reveal>
             <div className="max-w-3xl mb-12">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-primary tracking-tight mb-4">
-                Hydropack<sup>®</sup> — Bacs précultivés
+                Hydropack<sup>®</sup> - Bacs précultivés
               </h2>
               <p className="text-base sm:text-lg text-slate-600 leading-relaxed">
                 Le système Hydropack<sup>®</sup> se compose de bacs précultivés
@@ -349,7 +349,7 @@ export default function ToituresVertesPage() {
           <Reveal>
             <div className="max-w-3xl mb-12">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight mb-4">
-                IDMAT<sup>®</sup> — Tapis précultivés
+                IDMAT<sup>®</sup> - Tapis précultivés
               </h2>
               <p className="text-base sm:text-lg text-white/80 leading-relaxed">
                 Le système IDMAT<sup>®</sup> est constitué de tapis précultivés

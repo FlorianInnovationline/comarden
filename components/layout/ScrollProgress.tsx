@@ -57,7 +57,7 @@ export default function ScrollProgress() {
         className="absolute inset-0 rounded-l-full bg-black/[0.07]"
         style={{ boxShadow: "inset 0 0 0 1px rgba(0,0,0,0.04)" }}
       />
-      {/* Fill — grows from top */}
+      {/* Fill - grows from top */}
       <div
         className="absolute left-0 right-0 top-0 origin-top rounded-l-full transition-[transform] duration-150 ease-out"
         style={{
