@@ -19,7 +19,7 @@ interface AdminLayoutProps {
   children: React.ReactNode;
 }
 
-import { BookOpen, Truck } from "lucide-react";
+import { BookOpen, Truck, QrCode } from "lucide-react";
 
 const navItems = [
   { href: "/admin", label: "Tableau de bord", icon: LayoutDashboard },
@@ -28,6 +28,7 @@ const navItems = [
   { href: "/admin/rentals", label: "Locations", icon: Truck },
   { href: "/admin/promotions", label: "Promotions", icon: Tag },
   { href: "/admin/catalog", label: "Catalogue", icon: BookOpen },
+  { href: "/admin/marques", label: "Marques", icon: QrCode },
   { href: "/admin/settings", label: "Paramètres", icon: Settings },
 ];
 
