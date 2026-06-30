@@ -1,6 +1,7 @@
 import type { BrandConfig } from "@/lib/brands/config";
 import Image from "next/image";
 import Reveal from "@/components/ui/Reveal";
+import BrandLogo from "./BrandLogo";
 
 /**
  * "Qui est <brand>" - 2-column identity section. Uses a real photo when
@@ -13,6 +14,17 @@ export default function BrandAbout({ brand }: { brand: BrandConfig }) {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
           <Reveal>
             <div>
+              <div
+                className="inline-flex items-center rounded-2xl px-5 py-3 mb-6"
+                style={{ backgroundColor: "var(--brand-primary)", color: "var(--brand-on-primary)" }}
+              >
+                <BrandLogo
+                  name={brand.name}
+                  logo={brand.logo}
+                  imgClassName="h-10 sm:h-12 w-auto object-contain"
+                  textClassName="text-xl sm:text-2xl font-extrabold tracking-tight"
+                />
+              </div>
               <div className="flex items-center gap-3 mb-5">
                 <span className="h-1.5 w-10 rounded-full bg-[var(--brand-primary)]" />
                 <span className="text-xs font-bold uppercase tracking-widest text-[var(--brand-accent)]">

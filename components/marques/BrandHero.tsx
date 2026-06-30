@@ -23,8 +23,8 @@ export default function BrandHero({ brand }: { brand: BrandConfig }) {
           <BrandLogo
             name={brand.name}
             logo={brand.logo}
-            imgClassName="h-16 sm:h-20 lg:h-24 w-auto object-contain"
-            textClassName="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight"
+            imgClassName="h-28 sm:h-36 lg:h-44 w-auto object-contain"
+            textClassName="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight"
           />
         </div>
 

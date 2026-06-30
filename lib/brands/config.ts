@@ -223,8 +223,8 @@ export const BRANDS: Record<string, BrandConfig> = {
       },
     ],
     productsTitle: "La gamme Solid John",
-    productsCtaLabel: "Demander un devis Solid John",
-    productBrand: null,
+    productsCtaLabel: "Voir nos produits Solid John",
+    productBrand: "SOLID JOHN",
     colors: {
       primary: "#1A1A1A",
       dark: "#000000",
