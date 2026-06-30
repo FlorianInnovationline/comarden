@@ -262,6 +262,35 @@ export const BRANDS: Record<string, BrandConfig> = {
       onPrimary: "#221F20",
     },
   },
+
+  soprema: {
+    slug: "soprema",
+    name: "SOPREMA",
+    logo: "/images/logos/soprema-logo.png",
+    tagline: "Spécialiste mondial de l'étanchéité depuis 1908",
+    heroPitch:
+      "SOPREMA — référence mondiale de l'étanchéité, de l'isolation et de la toiture. Membranes bitumineuses, résines ALSAN, systèmes EPDM et solutions végétalisées, distribuées chez Comarden.",
+    aboutTitle: "Qui est SOPREMA ?",
+    aboutText:
+      "Fondée en 1908 à Strasbourg, SOPREMA est un groupe français devenu une référence mondiale dans la production de matériaux d'étanchéité, d'isolation, d'insonorisation et de végétalisation pour le bâtiment et le génie civil. SOPREMA développe des solutions complètes pour les toitures plates et inclinées : membranes bitumineuses SBS, résines liquides ALSAN, systèmes EPDM, isolants PIR et toitures végétalisées. Comarden distribue la gamme SOPREMA en Belgique, avec conseil technique et disponibilité produit sur ses deux sites de Bertrix et Naninne.",
+    aboutImage: null,
+    features: [
+      { icon: "History", title: "Depuis 1908", description: "Plus d'un siècle d'expertise en étanchéité du bâtiment." },
+      { icon: "Globe", title: "Référence mondiale", description: "Présent sur tous les continents, leader du secteur." },
+      { icon: "Layers", title: "Gamme complète", description: "Membranes SBS, résines ALSAN, EPDM, isolants PIR." },
+      { icon: "Leaf", title: "Solutions durables", description: "Toitures végétalisées et performance énergétique." },
+    ],
+    productsTitle: "Nos produits SOPREMA",
+    productsCtaLabel: "Voir nos produits SOPREMA",
+    productBrand: "SOPREMA",
+    colors: {
+      primary: "#003366",
+      dark: "#00203F",
+      accent: "#0083CA",
+      bg: "#F4F8FB",
+      onPrimary: "#FFFFFF",
+    },
+  },
 };
 
 export const BRAND_SLUGS = Object.keys(BRANDS);
