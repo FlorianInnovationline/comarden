@@ -12,6 +12,10 @@ interface CartContextType {
   clearCart: () => void;
   getTotal: () => number;
   getItemCount: () => number;
+  /** Slide-out cart drawer state */
+  isOpen: boolean;
+  openCart: () => void;
+  closeCart: () => void;
 }
 
 const CartContext = createContext<CartContextType | undefined>(undefined);
@@ -21,6 +25,10 @@ const CART_STORAGE_KEY = "comarden_cart";
 export function CartProvider({ children }: { children: ReactNode }) {
   const [items, setItems] = useState<CartItem[]>([]);
   const [mounted, setMounted] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const openCart = () => setIsOpen(true);
+  const closeCart = () => setIsOpen(false);
 
   // Load cart from localStorage on mount
   useEffect(() => {
@@ -97,6 +105,9 @@ export function CartProvider({ children }: { children: ReactNode }) {
         clearCart,
         getTotal,
         getItemCount,
+        isOpen,
+        openCart,
+        closeCart,
       }}
     >
       {children}

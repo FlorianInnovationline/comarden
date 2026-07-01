@@ -16,13 +16,14 @@ export default function CardAddToCart({
   product: Product;
   color?: string;
 }) {
-  const { addToCart } = useCart();
+  const { addToCart, openCart } = useCart();
   const [added, setAdded] = useState(false);
 
   const onClick = (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
     addToCart(product, 1);
+    openCart();
     setAdded(true);
     setTimeout(() => setAdded(false), 1500);
   };

@@ -1,24 +1,24 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
 import { useCart } from "@/lib/shop/cart";
 
 /**
- * Header cart icon with item-count badge. Links to /cart.
+ * Header cart icon with item-count badge. Opens the slide-out cart drawer.
  * Count is only shown after mount to avoid hydration mismatch (cart lives in
  * localStorage).
  */
 export default function CartButton({ className = "" }: { className?: string }) {
-  const { getItemCount } = useCart();
+  const { getItemCount, openCart } = useCart();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
   const count = mounted ? getItemCount() : 0;
 
   return (
-    <Link
-      href="/cart"
+    <button
+      type="button"
+      onClick={openCart}
       aria-label={`Panier${count > 0 ? ` (${count})` : ""}`}
       className={`relative inline-flex items-center justify-center w-9 h-9 rounded-full transition-colors ${className}`}
     >
@@ -28,6 +28,6 @@ export default function CartButton({ className = "" }: { className?: string }) {
           {count}
         </span>
       )}
-    </Link>
+    </button>
   );
 }

@@ -17,11 +17,12 @@ export default function AddToCartButton({
   disabled = false,
   className = "",
 }: AddToCartButtonProps) {
-  const { addToCart } = useCart();
+  const { addToCart, openCart } = useCart();
   const [added, setAdded] = useState(false);
 
   const handleAdd = () => {
     addToCart(product, 1);
+    openCart();
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };
