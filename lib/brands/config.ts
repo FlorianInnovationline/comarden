@@ -302,3 +302,13 @@ export function getBrand(slug: string): BrandConfig | null {
 export function allBrands(): BrandConfig[] {
   return BRAND_SLUGS.map((s) => BRANDS[s]);
 }
+
+/** Maps a products.brand value (e.g. "SOPREMA") to its /marques slug, or null. */
+export function getBrandSlugForProductBrand(brandValue?: string | null): string | null {
+  if (!brandValue) return null;
+  const v = brandValue.trim().toLowerCase();
+  const found = allBrands().find(
+    (b) => (b.productBrand ?? "").trim().toLowerCase() === v
+  );
+  return found ? found.slug : null;
+}

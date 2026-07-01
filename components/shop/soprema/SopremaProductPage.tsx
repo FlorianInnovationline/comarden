@@ -4,6 +4,8 @@ import type { Product } from "@/types/shop";
 import { site } from "@/lib/site";
 import ProductGallery from "@/components/shop/ProductGallery";
 import Reveal from "@/components/ui/Reveal";
+import BuyNowButton from "@/components/shop/BuyNowButton";
+import RelatedProducts from "@/components/shop/RelatedProducts";
 
 // SOPREMA palette - navy accents on a white/light page so spec tables read cleanly.
 const SOPREMA_PRIMARY = "#003366";
@@ -66,10 +68,11 @@ export default function SopremaProductPage({ product }: { product: Product }) {
                   </p>
                 )}
                 <div className="flex flex-col sm:flex-row gap-3">
+                  <BuyNowButton product={product} redirectTo="/marques/soprema" color={SOPREMA_PRIMARY} />
                   <Link
                     href={`/contact?sujet=Devis%20${encodeURIComponent(product.title)}`}
-                    className="inline-flex items-center justify-center gap-2 rounded-full text-white font-semibold px-7 py-3.5 text-sm transition-transform duration-300 hover:scale-105 hover:shadow-lg"
-                    style={{ backgroundColor: SOPREMA_PRIMARY }}
+                    className="inline-flex items-center justify-center gap-2 rounded-full font-semibold px-6 py-3.5 text-sm border transition-colors"
+                    style={{ borderColor: SOPREMA_ACCENT, color: SOPREMA_PRIMARY }}
                   >
                     Demander un devis
                     <ArrowRight className="w-4 h-4" />
@@ -158,6 +161,14 @@ export default function SopremaProductPage({ product }: { product: Product }) {
           </div>
         </section>
       )}
+
+      {/* Related products */}
+      <RelatedProducts
+        brand={product.brand}
+        categoryId={product.category_id}
+        excludeSlug={product.slug}
+        accent={SOPREMA_ACCENT}
+      />
 
       {/* CTA band */}
       <section className="py-14 sm:py-20" style={{ backgroundColor: SOPREMA_PRIMARY }}>

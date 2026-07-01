@@ -6,6 +6,7 @@ import Image from "next/image";
 import { Phone, ArrowRight, ChevronDown } from "lucide-react";
 import { site } from "@/lib/site";
 import Button from "@/components/ui/Button";
+import CartButton from "@/components/shop/CartButton";
 
 const navItems = [
   { label: "Magasin", href: "/shop" },
@@ -166,6 +167,9 @@ export default function Header() {
                 </div>
                 <span className="hidden 2xl:inline">{site.phone.display}</span>
               </Link>
+              <CartButton
+                className={scrolled ? "text-primary hover:bg-neutral/50" : "text-white hover:bg-white/10"}
+              />
               <Button
                 asChild
                 href="/contact"
@@ -178,9 +182,11 @@ export default function Header() {
               </Button>
             </div>
 
-            {/* Mobile/Tablet Menu Button */}
+            {/* Mobile: cart + menu button */}
+            <div className="xl:hidden flex items-center gap-1">
+            <CartButton className={scrolled ? "text-primary" : "text-white"} />
             <button
-              className="xl:hidden relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
+              className="relative z-50 w-10 h-10 flex flex-col items-center justify-center gap-1.5"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               aria-label={isMenuOpen ? "Fermer le menu" : "Ouvrir le menu"}
             >
@@ -212,6 +218,7 @@ export default function Header() {
                 }`}
               />
             </button>
+            </div>
           </div>
         </div>
       </header>

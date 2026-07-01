@@ -5,6 +5,8 @@ import type { BrandConfig } from "@/lib/brands/config";
 import { site } from "@/lib/site";
 import ProductGallery from "@/components/shop/ProductGallery";
 import Reveal from "@/components/ui/Reveal";
+import BuyNowButton from "@/components/shop/BuyNowButton";
+import RelatedProducts from "@/components/shop/RelatedProducts";
 
 function parseSpec(s: string): { label: string; value: string } {
   const i = s.indexOf(" : ");
@@ -71,10 +73,11 @@ export default function BrandedProductPage({
                   </p>
                 )}
                 <div className="flex flex-col sm:flex-row gap-3">
+                  <BuyNowButton product={product} redirectTo={`/marques/${brand.slug}`} color={primary} />
                   <Link
                     href={`/contact?sujet=Devis%20${encodeURIComponent(product.title)}`}
-                    className="inline-flex items-center justify-center gap-2 rounded-full text-white font-semibold px-7 py-3.5 text-sm transition-transform duration-300 hover:scale-105 hover:shadow-lg"
-                    style={{ backgroundColor: primary }}
+                    className="inline-flex items-center justify-center gap-2 rounded-full font-semibold px-6 py-3.5 text-sm border transition-colors"
+                    style={{ borderColor: accent, color: primary }}
                   >
                     Demander un devis
                     <ArrowRight className="w-4 h-4" />
@@ -163,6 +166,14 @@ export default function BrandedProductPage({
           </div>
         </section>
       )}
+
+      {/* Related products */}
+      <RelatedProducts
+        brand={product.brand}
+        categoryId={product.category_id}
+        excludeSlug={product.slug}
+        accent={accent}
+      />
 
       {/* CTA band */}
       <section className="py-14 sm:py-20" style={{ backgroundColor: primary }}>

@@ -25,9 +25,10 @@ export default function ShopBrandsSection() {
           </div>
         </Reveal>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-5">
+        <div className="flex flex-wrap justify-center gap-4 sm:gap-5">
           {brands.map((b, i) => (
-            <Reveal key={b.slug} delay={i * 60}>
+            <div key={b.slug} className="w-[150px] sm:w-[180px]">
+              <Reveal delay={i * 60}>
               <Link href={`/marques/${b.slug}`} className="group block" aria-label={b.name}>
                 <div
                   className="relative h-24 sm:h-28 rounded-2xl bg-white ring-1 ring-border/60 flex items-center justify-center p-4 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
@@ -49,7 +50,8 @@ export default function ShopBrandsSection() {
                   <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
                 </p>
               </Link>
-            </Reveal>
+              </Reveal>
+            </div>
           ))}
         </div>
       </div>

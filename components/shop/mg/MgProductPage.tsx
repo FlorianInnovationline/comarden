@@ -6,6 +6,8 @@ import type { Product } from "@/types/shop";
 import { site } from "@/lib/site";
 import ProductGallery from "@/components/shop/ProductGallery";
 import Reveal from "@/components/ui/Reveal";
+import BuyNowButton from "@/components/shop/BuyNowButton";
+import RelatedProducts from "@/components/shop/RelatedProducts";
 
 // MG Bouw palette - used as ACCENT only; page background stays white/light.
 const MG_PRIMARY = "#003D7A";
@@ -136,10 +138,11 @@ export default function MgProductPage({
                 )}
 
                 <div className="flex flex-col sm:flex-row gap-3">
+                  <BuyNowButton product={product} redirectTo="/marques/mg-bouw" color={MG_PRIMARY} />
                   <Link
                     href={`/contact?sujet=Devis%20${encodeURIComponent(product.title)}`}
-                    className="inline-flex items-center justify-center gap-2 rounded-full text-white font-semibold px-7 py-3.5 text-sm transition-transform duration-300 hover:scale-105 hover:shadow-lg"
-                    style={{ backgroundColor: MG_PRIMARY }}
+                    className="inline-flex items-center justify-center gap-2 rounded-full font-semibold px-6 py-3.5 text-sm border transition-colors"
+                    style={{ borderColor: MG_ACCENT, color: MG_PRIMARY }}
                   >
                     Demander un devis
                     <ArrowRight className="w-4 h-4" />
@@ -340,6 +343,14 @@ export default function MgProductPage({
           </div>
         </section>
       )}
+
+      {/* Related products */}
+      <RelatedProducts
+        brand={product.brand}
+        categoryId={product.category_id}
+        excludeSlug={product.slug}
+        accent={MG_ACCENT}
+      />
 
       {/* 10. CTA banner */}
       <section className="py-14 sm:py-20" style={{ backgroundColor: MG_PRIMARY }}>
