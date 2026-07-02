@@ -10,6 +10,7 @@ import BrandFeatures from "@/components/marques/BrandFeatures";
 import BrandProductCarousel from "@/components/marques/BrandProductCarousel";
 import BrandCTA from "@/components/marques/BrandCTA";
 import BrandStory from "@/components/marques/BrandStory";
+import BrandUseCases from "@/components/marques/BrandUseCases";
 
 interface PageProps {
   params: Promise<{ brand: string }>;
@@ -61,6 +62,7 @@ export default async function BrandPage({ params }: PageProps) {
       <BrandFeatures brand={brand} />
       <BrandProductCarousel brand={brand} products={products} />
       {brand.story && <BrandStory brand={brand} />}
+      {brand.useCases && <BrandUseCases brand={brand} />}
       <BrandCTA brand={brand} />
     </div>
   );

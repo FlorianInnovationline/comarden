@@ -53,6 +53,12 @@ export interface BrandConfig {
   name: string;
   /** Public logo path, or null to fall back to a styled wordmark */
   logo: string | null;
+  /**
+   * True when the logo artwork is light/white (designed for a dark header) and
+   * therefore needs a dark backing chip when shown on light surfaces (the /shop
+   * strip, the "about" section). It already sits on the dark hero unchanged.
+   */
+  logoNeedsDark?: boolean;
   tagline: string;
   heroPitch: string;
   aboutTitle: string;
@@ -127,6 +133,7 @@ export const BRANDS: Record<string, BrandConfig> = {
     slug: "mg-bouw",
     name: "MG Bouw",
     logo: "/images/logos/mg-bouw-logo.png",
+    logoNeedsDark: true,
     tagline: "Build to last - Bouwen voor morgen",
     heroPitch:
       "Meuwissen Gerritsen (MG Bouw) - depuis 1954, leader néerlandais des films techniques pour le bâtiment. Plus de 1200 points de vente, 4 générations d'expertise familiale.",
@@ -220,7 +227,7 @@ export const BRANDS: Record<string, BrandConfig> = {
     aboutTitle: "Qui est Solid John ?",
     aboutText:
       "Solid John est une marque belge basée à Izegem, dédiée à un seul objectif : produire le bétonplex le plus durable du marché en conditions humides. Sélection rigoureuse des bois, encollage Classe 3 (WBP), garantie 10 ans transparente - pas de petits caractères. Solid John propose une gamme intégrée : bétonplex 15mm, polymère hybride pour collage en environnement humide, et vis de rive de toit en acier galvanisé inoxydable.",
-    aboutImage: null,
+    aboutImage: "/images/marques/solid-john/about.png",
     features: [
       { icon: "ShieldCheck", title: "Garantie 10 ans", description: "Contre gonflage, putréfaction, décollement." },
       { icon: "Droplets", title: "100% Humidité", description: "Bois sélectionnés, encollage Classe 3 WBP." },
@@ -253,6 +260,14 @@ export const BRANDS: Record<string, BrandConfig> = {
         "Encollage WBP garanti (résiste à l'ébullition de l'eau)",
         "Efficace et robuste avec une épaisseur de 15 mm ou 21 mm",
         "Vaste durabilité",
+      ],
+    },
+    useCases: {
+      heading: "La base parfaite pour les constructions de toiture et le revêtement de façade",
+      cards: [
+        { label: "Façade", image: "/images/marques/solid-john/usecase-facade.png" },
+        { label: "Crépi", image: "/images/marques/solid-john/usecase-crepi.png" },
+        { label: "Revêtement de façade", image: "/images/marques/solid-john/usecase-revetement.png" },
       ],
     },
     colors: {

@@ -31,8 +31,11 @@ export default function ShopBrandsSection() {
               <Reveal delay={i * 60}>
               <Link href={`/marques/${b.slug}`} className="group block" aria-label={b.name}>
                 <div
-                  className="relative h-24 sm:h-28 rounded-2xl bg-white ring-1 ring-border/60 flex items-center justify-center p-4 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
-                  style={{ color: b.colors.dark }}
+                  className="relative h-24 sm:h-28 rounded-2xl ring-1 ring-border/60 flex items-center justify-center p-4 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-lg"
+                  style={{
+                    color: b.logoNeedsDark ? b.colors.onPrimary : b.colors.dark,
+                    backgroundColor: b.logoNeedsDark ? b.colors.primary : "#ffffff",
+                  }}
                 >
                   <BrandLogo
                     name={b.name}
