@@ -32,6 +32,21 @@ export interface BrandSpecGroup {
   items: string[];
 }
 
+/** Optional editorial "story" section: image (left) + heading + numbered points. */
+export interface BrandStory {
+  heading: string;
+  text: string;
+  /** Public image path (left column); null falls back to a branded panel. */
+  image: string | null;
+  points: string[];
+}
+
+/** Optional "use cases" section: heading + image cards (e.g. Façade / Crépi / …). */
+export interface BrandUseCases {
+  heading: string;
+  cards: { label: string; image: string | null }[];
+}
+
 export interface BrandConfig {
   slug: string;
   /** Display name (may contain ™ / ®) */
@@ -55,6 +70,10 @@ export interface BrandConfig {
   productBrand: string | null;
   /** Optional spec callout (e.g. Solid John) rendered under the features */
   specGroups?: BrandSpecGroup[];
+  /** Optional editorial story section rendered under the product carousel */
+  story?: BrandStory;
+  /** Optional "use cases" image-card section rendered under the story */
+  useCases?: BrandUseCases;
   colors: BrandColors;
 }
 
@@ -225,6 +244,17 @@ export const BRANDS: Record<string, BrandConfig> = {
     productsTitle: "La gamme Solid John",
     productsCtaLabel: "Voir nos produits Solid John",
     productBrand: "SOLID JOHN",
+    story: {
+      heading: "Ce n'est pas un hasard s'il est résistant à l'humidité et performant",
+      text: "Pendant des années, nos experts ont travaillé sur le développement d'un bétonplex résistant à l'humidité. En Indonésie, nous avons trouvé des bois qui résistent au vent et aux intempéries. Ce bois dur tropical est reconnu pour sa capacité portante exceptionnelle. Les deux atouts répondent parfaitement aux exigences de qualité les plus élevées que nous avons fixées chez Solid John.",
+      image: "/images/marques/solid-john/humidite.png",
+      points: [
+        "Le bon mélange de bois sélectionnés",
+        "Encollage WBP garanti (résiste à l'ébullition de l'eau)",
+        "Efficace et robuste avec une épaisseur de 15 mm ou 21 mm",
+        "Vaste durabilité",
+      ],
+    },
     colors: {
       primary: "#1A1A1A",
       dark: "#000000",
