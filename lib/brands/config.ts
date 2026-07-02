@@ -47,6 +47,21 @@ export interface BrandUseCases {
   cards: { label: string; image: string | null }[];
 }
 
+export interface BrandOrigin {
+  /** Small eyebrow label shown next to the flag, e.g. "Fabriqué en Belgique" */
+  badge: string;
+  heading: string;
+  paragraphs: string[];
+  advantagesTitle: string;
+  advantages: string[];
+  /** Optional highlighted figure, e.g. { value: "60 %", label: "de parts de marché" } */
+  stat?: { value: string; label: string };
+  /** Context photo (right column); null → branded fallback panel */
+  image?: string | null;
+  /** Render a country flag block. Currently only the Belgian flag ("be"). */
+  flag?: "be";
+}
+
 export interface BrandConfig {
   slug: string;
   /** Display name (may contain ™ / ®) */
@@ -80,6 +95,8 @@ export interface BrandConfig {
   story?: BrandStory;
   /** Optional "use cases" image-card section rendered under the story */
   useCases?: BrandUseCases;
+  /** Optional "made in <country>" origin section rendered under the products */
+  origin?: BrandOrigin;
   colors: BrandColors;
 }
 
@@ -328,6 +345,28 @@ export const BRANDS: Record<string, BrandConfig> = {
     productsTitle: "Nos produits SOPREMA",
     productsCtaLabel: "Voir nos produits SOPREMA",
     productBrand: "SOPREMA",
+    origin: {
+      badge: "Fabriqué en Belgique",
+      heading: "Bitume SOPREMA : l'étanchéité durable fabriquée en Belgique",
+      paragraphs: [
+        "Leader du marché belge avec près de 60 % de parts de marché, SOPREMA conçoit et fabrique en Belgique des membranes d'étanchéité bitumineuses reconnues pour leur fiabilité, leur durabilité et leurs performances techniques. Développées à base de bitume modifié SBS, elles offrent une excellente résistance aux intempéries, aux UV, aux variations de température et au vieillissement, garantissant une protection durable des toitures plates.",
+        "Chez Comarden, nous mettons à votre disposition une gamme complète de solutions SOPREMA pour les toitures neuves, les rénovations, les bâtiments résidentiels, industriels et tertiaires. Nos spécialistes vous conseillent dans le choix du système d'étanchéité le plus adapté à votre projet et vous accompagnent avec un support technique de qualité ainsi qu'une livraison rapide en Wallonie, à Bruxelles et au Luxembourg.",
+      ],
+      advantagesTitle: "Les avantages du bitume SOPREMA",
+      advantages: [
+        "Fabriqué en Belgique",
+        "Leader du marché belge avec près de 60 % de parts de marché",
+        "Membranes bitumineuses SBS haute performance",
+        "Étanchéité durable et fiable",
+        "Excellente résistance aux UV, au gel et aux intempéries",
+        "Compatible avec les toitures végétalisées et les installations photovoltaïques",
+        "Solutions adaptées aux constructions neuves et aux rénovations",
+        "Recommandé par les professionnels de la toiture",
+      ],
+      stat: { value: "≈ 60 %", label: "de parts de marché en Belgique" },
+      image: "/images/marques/soprema/bitume-belgique.jpg",
+      flag: "be",
+    },
     colors: {
       primary: "#003366",
       dark: "#00203F",
