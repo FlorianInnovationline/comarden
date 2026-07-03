@@ -38,7 +38,7 @@ export default function BrandOrigin({ brand }: { brand: BrandConfig }) {
   return (
     <section className="bg-[var(--brand-bg)] pt-2 pb-16 sm:pb-20 lg:pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start lg:items-center">
           {/* Left: copy + advantages */}
           <Reveal>
             <div>
@@ -83,7 +83,7 @@ export default function BrandOrigin({ brand }: { brand: BrandConfig }) {
 
           {/* Right: flag + photo (+ optional stat) */}
           <Reveal delay={120}>
-            <div className="space-y-5 lg:sticky lg:top-28">
+            <div className="space-y-5">
               {origin.flag === "be" && (
                 <div className="overflow-hidden rounded-2xl ring-1 ring-black/5 shadow-lg">
                   <BelgianFlag className="w-full h-24 sm:h-28 block" />
