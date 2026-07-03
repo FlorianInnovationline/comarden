@@ -20,12 +20,23 @@ export default function BrandHero({ brand }: { brand: BrandConfig }) {
       />
       <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 sm:pt-32 lg:pt-36 pb-16 sm:pb-20 text-center">
         <div className="inline-flex items-center justify-center mb-8">
-          <BrandLogo
-            name={brand.name}
-            logo={brand.logo}
-            imgClassName="h-28 sm:h-36 lg:h-44 w-auto object-contain"
-            textClassName="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight"
-          />
+          {brand.logoNeedsLight ? (
+            <span className="inline-flex rounded-2xl bg-white px-8 py-6 shadow-lg">
+              <BrandLogo
+                name={brand.name}
+                logo={brand.logo}
+                imgClassName="h-20 sm:h-24 lg:h-28 w-auto object-contain"
+                textClassName="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-[var(--brand-primary)]"
+              />
+            </span>
+          ) : (
+            <BrandLogo
+              name={brand.name}
+              logo={brand.logo}
+              imgClassName="h-28 sm:h-36 lg:h-44 w-auto object-contain"
+              textClassName="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight"
+            />
+          )}
         </div>
 
         <p className="text-xs sm:text-sm font-bold uppercase tracking-[0.2em] opacity-80 mb-5">

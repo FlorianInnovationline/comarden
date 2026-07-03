@@ -74,6 +74,11 @@ export interface BrandConfig {
    * strip, the "about" section). It already sits on the dark hero unchanged.
    */
   logoNeedsDark?: boolean;
+  /**
+   * True when the logo artwork is dark/coloured and needs a light (white) chip
+   * on the coloured hero. It already sits fine on the light strip/about.
+   */
+  logoNeedsLight?: boolean;
   tagline: string;
   heroPitch: string;
   aboutTitle: string;
@@ -101,6 +106,59 @@ export interface BrandConfig {
 }
 
 export const BRANDS: Record<string, BrandConfig> = {
+  algimouss: {
+    slug: "algimouss",
+    name: "Algimouss",
+    logo: "/images/logos/algimouss-logo.png",
+    logoNeedsLight: true,
+    tagline: "Spécialiste du nettoyage, du traitement et de la protection",
+    heroPitch:
+      "Depuis 1978, Algimouss conçoit des solutions pour nettoyer, traiter et protéger toitures, façades, terrasses et bois, et lutter durablement contre les dépôts verts. Distribué chez Comarden.",
+    aboutTitle: "Algimouss vous accompagne depuis plus de 45 ans dans l'entretien de votre maison.",
+    aboutText:
+      "Inventeur du premier traitement anti-dépôts verts en 1978, Algimouss développe des produits permettant de lutter contre la prolifération des végétaux parasites (algues, mousses, lichens) tout en prolongeant la durée de vie des matériaux qui composent votre habitat. Avec plus de 45 ans d'expérience dans l'entretien extérieur des bâtiments, la volonté de la marque est de concevoir des solutions toujours plus simples d'utilisation et respectueuses. Comarden distribue la gamme Algimouss en Belgique.",
+    aboutImage: "/images/marques/algimouss/about.jpg",
+    features: [
+      {
+        icon: "Leaf",
+        title: "Anti-dépôts verts",
+        description: "Élimine algues, mousses et lichens et prévient leur réapparition.",
+      },
+      {
+        icon: "History",
+        title: "Depuis 1978",
+        description: "Inventeur du premier traitement anti-dépôts verts, plus de 45 ans d'expertise.",
+      },
+      {
+        icon: "SprayCan",
+        title: "Nettoyer, traiter, protéger",
+        description: "Une gamme complète pour toitures, façades, terrasses et bois.",
+      },
+      {
+        icon: "ShieldCheck",
+        title: "Protection durable",
+        description: "Hydrofuges et traitements qui prolongent la vie des matériaux.",
+      },
+    ],
+    productsTitle: "Nos produits Algimouss",
+    productsCtaLabel: "Voir nos produits Algimouss",
+    productBrand: "ALGIMOUSS",
+    useCases: {
+      heading: "Nettoyer, traiter, protéger : la méthode Algimouss",
+      cards: [
+        { label: "Nettoyage", image: "/images/marques/algimouss/nettoyage.jpg" },
+        { label: "Traitement", image: "/images/marques/algimouss/traitement.jpg" },
+        { label: "Protection", image: "/images/marques/algimouss/protection.jpg" },
+      ],
+    },
+    colors: {
+      primary: "#0E7A66",
+      dark: "#0A4A3C",
+      accent: "#8CC63F",
+      bg: "#F1F8E9",
+      onPrimary: "#FFFFFF",
+    },
+  },
   faynot: {
     slug: "faynot",
     name: "FAYNOT",
