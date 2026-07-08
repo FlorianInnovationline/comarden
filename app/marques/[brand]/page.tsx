@@ -12,6 +12,7 @@ import BrandCTA from "@/components/marques/BrandCTA";
 import BrandStory from "@/components/marques/BrandStory";
 import BrandUseCases from "@/components/marques/BrandUseCases";
 import BrandOrigin from "@/components/marques/BrandOrigin";
+import BrandNotice from "@/components/marques/BrandNotice";
 
 interface PageProps {
   params: Promise<{ brand: string }>;
@@ -28,8 +29,8 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   return {
     title: `${brand.name} - Comarden`,
     description: brand.heroPitch,
-    // QR-only page: never index.
-    robots: { index: false, follow: false },
+    // QR-only pages are noindex; info pages can opt in via `indexable`.
+    robots: brand.indexable ? { index: true, follow: true } : { index: false, follow: false },
   };
 }
 
@@ -61,10 +62,19 @@ export default async function BrandPage({ params }: PageProps) {
       <BrandHero brand={brand} />
       <BrandAbout brand={brand} />
       <BrandFeatures brand={brand} />
-      <BrandProductCarousel brand={brand} products={products} />
+      {!brand.hideProducts && <BrandProductCarousel brand={brand} products={products} />}
       {brand.origin && <BrandOrigin brand={brand} />}
       {brand.story && <BrandStory brand={brand} />}
-      {brand.useCases && <BrandUseCases brand={brand} />}
+      {brand.useCases &&
+        (brand.hideProducts ? (
+          // No product carousel: the hero's #produits anchor lands on the gamme cards.
+          <div id="produits">
+            <BrandUseCases brand={brand} />
+          </div>
+        ) : (
+          <BrandUseCases brand={brand} />
+        ))}
+      {brand.notice && <BrandNotice brand={brand} />}
       <BrandCTA brand={brand} />
     </div>
   );

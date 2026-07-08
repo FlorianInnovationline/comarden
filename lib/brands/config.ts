@@ -47,6 +47,15 @@ export interface BrandUseCases {
   cards: { label: string; image: string | null }[];
 }
 
+export interface BrandNotice {
+  eyebrow?: string;
+  heading: string;
+  text: string;
+  /** "À retenir" bullet list */
+  pointsTitle?: string;
+  points: string[];
+}
+
 export interface BrandOrigin {
   /** Small eyebrow label shown next to the flag, e.g. "Fabriqué en Belgique" */
   badge: string;
@@ -102,6 +111,12 @@ export interface BrandConfig {
   useCases?: BrandUseCases;
   /** Optional "made in <country>" origin section rendered under the products */
   origin?: BrandOrigin;
+  /** Optional informational notice card (e.g. prevention "à retenir" block) */
+  notice?: BrandNotice;
+  /** Hide the product carousel entirely (info pages that are not real brands) */
+  hideProducts?: boolean;
+  /** Allow search engines to index this page (brand pages are noindex by default) */
+  indexable?: boolean;
   colors: BrandColors;
 }
 
@@ -431,6 +446,92 @@ export const BRANDS: Record<string, BrandConfig> = {
       accent: "#0083CA",
       bg: "#F4F8FB",
       onPrimary: "#FFFFFF",
+    },
+  },
+
+  "danger-amiante": {
+    slug: "danger-amiante",
+    name: "Danger Amiante",
+    logo: "/images/logos/danger-amiante-logo.png",
+    logoNeedsLight: true,
+    tagline: "Matériaux de remplacement et équipements de protection",
+    heroPitch:
+      "Une toiture amiantée à remplacer ? Comarden fournit les professionnels : équipements de protection, accessoires et matériaux de remplacement pour préparer l'après-désamiantage, en Wallonie, à Bruxelles et en province du Luxembourg.",
+    aboutTitle: "Une toiture amiantée à remplacer ? Comarden fournit les professionnels.",
+    aboutText:
+      "Les rénovations de toitures contenant de l'amiante demandent rigueur, anticipation et matériaux adaptés. Pour les couvreurs, ardoisiers et entrepreneurs actifs en Wallonie, à Bruxelles et en province du Luxembourg, Comarden est le partenaire de confiance pour préparer l'après-désamiantage : choix de la nouvelle couverture, isolation, étanchéité, accessoires, façonnage et livraison sur chantier. Notre équipe vous conseille sur les solutions les plus adaptées à vos projets : remplacement de plaques ondulées, rénovation de bâtiments agricoles ou industriels, nouvelles couvertures en ardoises, tuiles, tôles ou panneaux sandwich. Avec Comarden, vous disposez d'un interlocuteur spécialisé, proche du terrain, capable de vous aider à gagner du temps et à sécuriser vos approvisionnements.",
+    aboutImage: "/images/marques/danger-amiante/about.jpg",
+    features: [
+      {
+        icon: "EyeOff",
+        title: "Fibres invisibles",
+        description: "Invisibles à l'œil nu, les fibres se libèrent lors des travaux de toiture, découpe, perçage ou nettoyage.",
+      },
+      {
+        icon: "HeartPulse",
+        title: "Maladies graves",
+        description: "Asbestose, cancer du poumon et mésothéliome peuvent apparaître des dizaines d'années après l'exposition.",
+      },
+      {
+        icon: "HardHat",
+        title: "Vigilance chantier",
+        description: "Une simple intervention sur une toiture ancienne peut libérer des fibres dangereuses.",
+      },
+      {
+        icon: "ShieldCheck",
+        title: "Protection adaptée",
+        description: "Masque P3, combinaison jetable, gants, lunettes, big bag amiante et procédure de décontamination.",
+      },
+    ],
+    productsTitle: "La gamme amiante",
+    productsCtaLabel: "Découvrir la gamme",
+    productBrand: null,
+    hideProducts: true,
+    indexable: true,
+    story: {
+      heading: "Danger amiante !",
+      text:
+        "L'amiante est un matériau extrêmement dangereux lorsqu'il libère des fibres dans l'air. Invisibles à l'œil nu, ces fibres peuvent être inhalées lors des travaux de toiture, de rénovation, de découpe, de perçage, de nettoyage ou de manipulation de plaques en amiante-ciment. Une fois inhalées, elles peuvent rester durablement dans les poumons et provoquer, parfois plusieurs dizaines d'années après l'exposition, des maladies graves comme l'asbestose, le cancer du poumon ou le mésothéliome. Avant toute intervention sur une toiture ancienne, il est indispensable d'identifier les matériaux à risque, de respecter la réglementation amiante en vigueur et d'utiliser les équipements de protection adaptés.",
+      image: "/images/marques/danger-amiante/danger.jpg",
+      points: [
+        "Masque P3",
+        "Combinaison jetable, gants et lunettes",
+        "Big bag amiante homologué",
+        "Procédure de décontamination",
+      ],
+    },
+    useCases: {
+      heading: "La gamme amiante disponible chez Comarden",
+      cards: [
+        { label: "Fixateur Amiante transparent", image: "/images/marques/danger-amiante/fixateur-transparent.jpg" },
+        { label: "Fixateur Amiante coloré", image: "/images/marques/danger-amiante/fixateur-colore.jpg" },
+        { label: "Gants jetables", image: "/images/marques/danger-amiante/gants.jpg" },
+        { label: "Salopettes jetables", image: "/images/marques/danger-amiante/salopettes.jpg" },
+        { label: "Masques avec recharges de filtres", image: "/images/marques/danger-amiante/masque-filtres.jpg" },
+        { label: "Masques jetables", image: "/images/marques/danger-amiante/masques-jetables.jpg" },
+        { label: "Big bag amiante", image: "/images/marques/danger-amiante/bigbag.jpg" },
+        { label: "Pulvérisateur", image: "/images/marques/danger-amiante/pulverisateur.jpg" },
+      ],
+    },
+    notice: {
+      eyebrow: "Prévention",
+      heading: "L'amiante expliqué simplement",
+      text:
+        "L'amiante est une matière que l'on utilisait autrefois dans certaines maisons, surtout dans les toitures, les murs ou les vieux bâtiments. Le problème, c'est que quand l'amiante est abîmé, cassé ou découpé, il peut envoyer dans l'air de toutes petites poussières invisibles. Ces poussières peuvent entrer dans les poumons quand on respire et rendre les personnes malades, parfois longtemps après. C'est pour cela qu'il ne faut jamais toucher, casser ou jouer avec de vieux morceaux de toiture, de plaques ou de matériaux que l'on ne connaît pas. Si tu vois un vieux matériau cassé ou suspect, il faut prévenir un adulte et ne pas y toucher.",
+      pointsTitle: "À retenir",
+      points: [
+        "On ne touche pas aux vieux matériaux cassés",
+        "On ne joue pas près de plaques ou morceaux suspects",
+        "On prévient toujours un adulte",
+        "Seuls les professionnels équipés peuvent intervenir en sécurité",
+      ],
+    },
+    colors: {
+      primary: "#F7B500",
+      dark: "#1A1A1A",
+      accent: "#D71920",
+      bg: "#FFFBEF",
+      onPrimary: "#1A1A1A",
     },
   },
 };

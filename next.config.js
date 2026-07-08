@@ -23,6 +23,12 @@ const nextConfig = {
         destination: '/produits/toitures-plates',
         permanent: true,
       },
+      {
+        // SEO-friendly URL for the asbestos-replacement info page.
+        source: '/toiture-amiante-remplacement',
+        destination: '/marques/danger-amiante',
+        permanent: true,
+      },
     ];
   },
   async headers() {
