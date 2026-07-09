@@ -113,8 +113,6 @@ export interface BrandConfig {
   origin?: BrandOrigin;
   /** Optional informational notice card (e.g. prevention "à retenir" block) */
   notice?: BrandNotice;
-  /** Hide the product carousel entirely (info pages that are not real brands) */
-  hideProducts?: boolean;
   /** Allow search engines to index this page (brand pages are noindex by default) */
   indexable?: boolean;
   colors: BrandColors;
@@ -486,7 +484,6 @@ export const BRANDS: Record<string, BrandConfig> = {
     productsTitle: "La gamme amiante",
     productsCtaLabel: "Découvrir la gamme",
     productBrand: null,
-    hideProducts: true,
     indexable: true,
     story: {
       heading: "Danger amiante !",
@@ -498,19 +495,6 @@ export const BRANDS: Record<string, BrandConfig> = {
         "Combinaison jetable, gants et lunettes",
         "Big bag amiante homologué",
         "Procédure de décontamination",
-      ],
-    },
-    useCases: {
-      heading: "La gamme amiante disponible chez Comarden",
-      cards: [
-        { label: "Fixateur Amiante transparent", image: "/images/marques/danger-amiante/fixateur-transparent.jpg" },
-        { label: "Fixateur Amiante coloré", image: "/images/marques/danger-amiante/fixateur-colore.jpg" },
-        { label: "Gants jetables", image: "/images/marques/danger-amiante/gants.jpg" },
-        { label: "Salopettes jetables", image: "/images/marques/danger-amiante/salopettes.jpg" },
-        { label: "Masques avec recharges de filtres", image: "/images/marques/danger-amiante/masque-filtres.jpg" },
-        { label: "Masques jetables", image: "/images/marques/danger-amiante/masques-jetables.jpg" },
-        { label: "Big bag amiante", image: "/images/marques/danger-amiante/bigbag.jpg" },
-        { label: "Pulvérisateur", image: "/images/marques/danger-amiante/pulverisateur.jpg" },
       ],
     },
     notice: {

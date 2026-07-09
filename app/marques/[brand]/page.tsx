@@ -62,18 +62,10 @@ export default async function BrandPage({ params }: PageProps) {
       <BrandHero brand={brand} />
       <BrandAbout brand={brand} />
       <BrandFeatures brand={brand} />
-      {!brand.hideProducts && <BrandProductCarousel brand={brand} products={products} />}
+      <BrandProductCarousel brand={brand} products={products} />
       {brand.origin && <BrandOrigin brand={brand} />}
       {brand.story && <BrandStory brand={brand} />}
-      {brand.useCases &&
-        (brand.hideProducts ? (
-          // No product carousel: the hero's #produits anchor lands on the gamme cards.
-          <div id="produits">
-            <BrandUseCases brand={brand} />
-          </div>
-        ) : (
-          <BrandUseCases brand={brand} />
-        ))}
+      {brand.useCases && <BrandUseCases brand={brand} />}
       {brand.notice && <BrandNotice brand={brand} />}
       <BrandCTA brand={brand} />
     </div>
