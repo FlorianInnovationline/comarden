@@ -45,6 +45,8 @@ export interface BrandStory {
 export interface BrandUseCases {
   heading: string;
   cards: { label: string; image: string | null }[];
+  /** True when the cards hold photos (full-bleed cover) rather than product shots */
+  coverImages?: boolean;
 }
 
 export interface BrandNotice {
@@ -443,6 +445,73 @@ export const BRANDS: Record<string, BrandConfig> = {
       dark: "#00203F",
       accent: "#0083CA",
       bg: "#F4F8FB",
+      onPrimary: "#FFFFFF",
+    },
+  },
+
+  rockpanel: {
+    slug: "rockpanel",
+    name: "Rockpanel",
+    logo: "/images/logos/rockpanel-logo.png",
+    logoNeedsLight: true,
+    tagline: "Panneaux de façade durables pour bardage ventilé",
+    heroPitch:
+      "ROCKPANEL, marque du groupe ROCKWOOL : des panneaux de façade fabriqués à base de roche volcanique pour le bardage ventilé, la rénovation de façade et la construction neuve. Coloris disponibles en stock chez Comarden à Namur et Bertrix.",
+    aboutTitle: "Qui est ROCKPANEL ?",
+    aboutText:
+      "Les panneaux de façade ROCKPANEL sont une solution moderne pour le bardage ventilé, la rénovation de façade et les projets de construction neuve. Fabriqués à base de roche volcanique (basalte), ils combinent l'aspect esthétique d'un panneau de façade haut de gamme avec une excellente durabilité, une grande résistance aux intempéries et un entretien réduit. Marque du groupe ROCKWOOL, ROCKPANEL affiche une durée de vie de 50 ans et 98 % de produits certifiés Cradle to Cradle Certified®. Chez Comarden, nous proposons des solutions ROCKPANEL pour façades, rives, habillages extérieurs et détails architecturaux, avec des coloris disponibles en stock à Namur et Bertrix pour les professionnels et particuliers en Wallonie. ROCKPANEL chez Comarden : le choix idéal pour une façade durable, esthétique et facile à poser.",
+    aboutImage: "/images/marques/rockpanel/about.jpg",
+    features: [
+      {
+        icon: "Mountain",
+        title: "Roche volcanique",
+        description: "Panneaux fabriqués à base de basalte : l'esthétique d'un panneau haut de gamme, la force de la pierre.",
+      },
+      {
+        icon: "Flame",
+        title: "Sécurité incendie",
+        description: "Aucun compromis : des solutions certifiées jusqu'aux bâtiments élevés et à risque.",
+      },
+      {
+        icon: "History",
+        title: "50 ans de durée de vie",
+        description: "Résiste aux UV, à l'humidité et aux variations de température, avec un entretien réduit.",
+      },
+      {
+        icon: "Recycle",
+        title: "Cradle to Cradle",
+        description: "98 % des produits certifiés Cradle to Cradle : démontables, réutilisables et recyclables.",
+      },
+    ],
+    productsTitle: "Nos solutions ROCKPANEL",
+    productsCtaLabel: "Voir nos solutions ROCKPANEL",
+    productBrand: null,
+    story: {
+      heading: "Facile à poser, prêt à durer",
+      text:
+        "Les panneaux ROCKPANEL se travaillent comme le bois : découpe directement sur le chantier, sans pré-perçage, et pose possible sur les structures existantes. Légers et faciles à manipuler, ils permettent une installation rapide en bardage ventilé, aussi bien en rénovation qu'en construction neuve. Une fois posés, ils protègent la façade pendant des décennies : les coloris restent stables face aux UV et le panneau résiste à l'humidité comme aux variations de température.",
+      image: "/images/marques/rockpanel/story.jpg",
+      points: [
+        "Découpe sur chantier, sans pré-perçage",
+        "Pose possible sur les structures existantes",
+        "Fixation par vis ou clous inox",
+        "Entretien réduit, coloris stables aux UV",
+      ],
+    },
+    useCases: {
+      heading: "Des solutions pour chaque projet de façade",
+      coverImages: true,
+      cards: [
+        { label: "Façades", image: "/images/marques/rockpanel/facades.png" },
+        { label: "Rives et habillages extérieurs", image: "/images/marques/rockpanel/rives-habillages.jpg" },
+        { label: "Détails architecturaux", image: "/images/marques/rockpanel/details-architecturaux.jpg" },
+      ],
+    },
+    colors: {
+      primary: "#14294C",
+      dark: "#0B1B33",
+      accent: "#C8102E",
+      bg: "#F4F6FA",
       onPrimary: "#FFFFFF",
     },
   },

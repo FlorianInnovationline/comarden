@@ -5,7 +5,7 @@ import Image from "next/image";
 import type { BrandConfig } from "@/lib/brands/config";
 import Reveal from "@/components/ui/Reveal";
 
-function CardImage({ src, label }: { src: string | null; label: string }) {
+function CardImage({ src, label, cover }: { src: string | null; label: string; cover?: boolean }) {
   const [failed, setFailed] = useState(false);
   return (
     <div className="relative aspect-[4/3] rounded-2xl overflow-hidden bg-white ring-1 ring-black/5 shadow-sm">
@@ -14,7 +14,7 @@ function CardImage({ src, label }: { src: string | null; label: string }) {
           src={src}
           alt={label}
           fill
-          className="object-contain p-4"
+          className={cover ? "object-cover" : "object-contain p-4"}
           sizes="(max-width: 1024px) 100vw, 33vw"
           onError={() => setFailed(true)}
         />
@@ -52,7 +52,7 @@ export default function BrandUseCases({ brand }: { brand: BrandConfig }) {
           {uc.cards.map((c, i) => (
             <Reveal key={c.label} delay={i * 90}>
               <div className="text-center">
-                <CardImage src={c.image} label={c.label} />
+                <CardImage src={c.image} label={c.label} cover={uc.coverImages} />
                 <p className="mt-4 text-sm font-bold uppercase tracking-wide text-[var(--brand-dark)]">
                   {c.label}
                 </p>
