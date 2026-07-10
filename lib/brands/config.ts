@@ -485,7 +485,7 @@ export const BRANDS: Record<string, BrandConfig> = {
     ],
     productsTitle: "Nos solutions ROCKPANEL",
     productsCtaLabel: "Voir nos solutions ROCKPANEL",
-    productBrand: null,
+    productBrand: "ROCKPANEL",
     story: {
       heading: "Facile à poser, prêt à durer",
       text:
