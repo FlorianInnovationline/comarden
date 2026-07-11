@@ -552,7 +552,7 @@ export const BRANDS: Record<string, BrandConfig> = {
     ],
     productsTitle: "La gamme amiante",
     productsCtaLabel: "Découvrir la gamme",
-    productBrand: null,
+    productBrand: "AMIANTE",
     indexable: true,
     story: {
       heading: "Danger amiante !",
