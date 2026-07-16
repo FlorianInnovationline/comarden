@@ -1,8 +1,12 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Copy, Check, ExternalLink, QrCode } from "lucide-react";
 import BrandLogo from "@/components/marques/BrandLogo";
+
+// Brand / QR pages live on the Comarden-events site. Override via env if needed.
+const MARQUES_BASE_URL =
+  process.env.NEXT_PUBLIC_MARQUES_BASE_URL || "https://comarden-events.be";
 
 interface Props {
   slug: string;
@@ -12,16 +16,11 @@ interface Props {
 }
 
 export default function MarquesAdminCard({ slug, name, logo, primary }: Props) {
-  const [origin, setOrigin] = useState("");
   const [copied, setCopied] = useState(false);
   const [showQr, setShowQr] = useState(false);
 
-  useEffect(() => {
-    setOrigin(window.location.origin);
-  }, []);
-
   const path = `/marques/${slug}`;
-  const url = origin ? `${origin}${path}` : path;
+  const url = `${MARQUES_BASE_URL}${path}`;
   const qrSrc = `https://api.qrserver.com/v1/create-qr-code/?size=200x200&margin=8&data=${encodeURIComponent(url)}`;
 
   const copy = async () => {
@@ -63,7 +62,7 @@ export default function MarquesAdminCard({ slug, name, logo, primary }: Props) {
             {copied ? "Copié !" : "Copier le lien"}
           </button>
           <a
-            href={path}
+            href={url}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs font-semibold px-3 py-2 rounded-lg border border-border text-primary hover:bg-neutral/30 transition-colors"
@@ -80,7 +79,7 @@ export default function MarquesAdminCard({ slug, name, logo, primary }: Props) {
           </button>
         </div>
 
-        {showQr && origin && (
+        {showQr && (
           <div className="mt-4 flex flex-col items-center gap-2 pt-4 border-t border-border/50">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
