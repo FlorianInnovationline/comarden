@@ -18,8 +18,34 @@ export default function ProductsTable({ products, categories }: ProductsTablePro
   const [search, setSearch] = useState("");
   const [categoryFilter, setCategoryFilter] = useState<string>("all");
   const [activeFilter, setActiveFilter] = useState<string>("all");
+  const [rows, setRows] = useState<Product[]>(products);
+  const [deletingId, setDeletingId] = useState<string | null>(null);
 
-  const filteredProducts = products.filter((product) => {
+  const handleDelete = async (product: Product) => {
+    if (deletingId) return;
+    const ok = window.confirm(
+      `Supprimer definitivement "${product.title}" ?\n\nCette action supprime le produit de la base de donnees et est irreversible.`
+    );
+    if (!ok) return;
+
+    setDeletingId(product.id);
+    try {
+      const res = await fetch(`/api/admin/products/${product.id}`, { method: "DELETE" });
+      if (!res.ok) {
+        const body = await res.json().catch(() => ({}));
+        window.alert(`Echec de la suppression : ${body.error ?? res.statusText}`);
+        return;
+      }
+      setRows((prev) => prev.filter((p) => p.id !== product.id));
+    } catch (e) {
+      window.alert("Echec de la suppression : erreur reseau.");
+      console.error("delete product error:", e);
+    } finally {
+      setDeletingId(null);
+    }
+  };
+
+  const filteredProducts = rows.filter((product) => {
     const matchesSearch =
       product.title.toLowerCase().includes(search.toLowerCase()) ||
       product.description?.toLowerCase().includes(search.toLowerCase());
@@ -183,7 +209,10 @@ export default function ProductsTable({ products, categories }: ProductsTablePro
                           <Edit className="w-4 h-4" />
                         </Link>
                         <button
-                          className="p-2 text-muted-foreground hover:text-red-600 transition-colors"
+                          type="button"
+                          onClick={() => handleDelete(product)}
+                          disabled={deletingId === product.id}
+                          className="p-2 text-muted-foreground hover:text-red-600 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                           aria-label="Supprimer le produit"
                         >
                           <Trash2 className="w-4 h-4" />
@@ -200,8 +229,8 @@ export default function ProductsTable({ products, categories }: ProductsTablePro
 
       <div className="p-4 sm:p-6 border-t border-border text-sm text-muted-foreground">
         {filteredProducts.length} produit{filteredProducts.length > 1 ? "s" : ""} affiché
-        {filteredProducts.length !== products.length &&
-          ` sur ${products.length}`}
+        {filteredProducts.length !== rows.length &&
+          ` sur ${rows.length}`}
       </div>
     </div>
   );
