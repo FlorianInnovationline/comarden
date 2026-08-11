@@ -1,6 +1,7 @@
 import { redirect } from "next/navigation";
 import { isAdmin } from "@/lib/admin/auth";
 import { getPromotions } from "@/lib/shop/queries";
+import { GLOBAL_DISCOUNT_CODE } from "@/lib/shop/globalDiscount";
 import AdminLayout from "@/components/admin/AdminLayout";
 import PromotionsTable from "@/components/admin/PromotionsTable";
 import { Plus } from "lucide-react";
@@ -14,7 +15,11 @@ export default async function AdminPromotionsPage() {
     redirect("/admin/login");
   }
 
-  const promotions = await getPromotions(false);
+  // The site-wide discount lives in this table too, but it is managed on its own
+  // "Discounts" page - keep it out of the promo-code list.
+  const promotions = (await getPromotions(false)).filter(
+    (p) => p.code !== GLOBAL_DISCOUNT_CODE
+  );
 
   return (
     <AdminLayout>
