@@ -20,7 +20,6 @@ import type {
   Product,
   Order,
   OrderItem,
-  Promotion,
 } from "@/types/shop";
 
 if (typeof window !== "undefined") {
@@ -45,7 +44,6 @@ type CategoryRow = Database["public"]["Tables"]["categories"]["Row"];
 type ProductRow = Database["public"]["Tables"]["products"]["Row"];
 type OrderRow = Database["public"]["Tables"]["orders"]["Row"];
 type OrderItemRow = Database["public"]["Tables"]["order_items"]["Row"];
-type PromotionRow = Database["public"]["Tables"]["promotions"]["Row"];
 
 function toStringArray(v: unknown): string[] {
   if (Array.isArray(v)) return v.filter((x): x is string => typeof x === "string");
@@ -134,22 +132,6 @@ function mapOrder(
     total_cents: r.total_cents,
     currency: r.currency,
     items: r.order_items ? r.order_items.map(mapOrderItem) : undefined,
-  };
-}
-
-function mapPromotion(r: PromotionRow): Promotion {
-  return {
-    id: r.id,
-    title: r.title,
-    code: r.code ?? undefined,
-    description: r.description ?? undefined,
-    discount_type: r.discount_type,
-    discount_value: r.discount_value,
-    starts_at: r.starts_at ?? undefined,
-    ends_at: r.ends_at ?? undefined,
-    active: r.active,
-    created_at: r.created_at,
-    updated_at: r.updated_at,
   };
 }
 
@@ -370,28 +352,3 @@ export async function getOrders(): Promise<Order[]> {
   );
 }
 
-// ===========================================================================
-// Promotions
-// ===========================================================================
-export async function getPromotions(
-  activeOnly: boolean = true
-): Promise<Promotion[]> {
-  const sb = await client();
-  if (!sb) {
-    return seedData.promotions.filter((p) => !activeOnly || p.active);
-  }
-
-  let query = sb
-    .from("promotions")
-    .select("*")
-    .order("created_at", { ascending: false });
-
-  if (activeOnly) query = query.eq("active", true);
-
-  const { data, error } = await query;
-  if (error) {
-    console.error("[shop] getPromotions error:", error.message);
-    return [];
-  }
-  return (data ?? []).map(mapPromotion);
-}
