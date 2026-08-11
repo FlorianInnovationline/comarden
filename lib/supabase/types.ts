@@ -121,6 +121,8 @@ export interface Database {
           specs: string[] | null;
           avantages: string[] | null;
           variants: string[] | null;
+          variant_prices: Json | null;
+          discount_percent: number | null;
           lien_produit: string | null;
           warning: string | null;
           created_at: string;
@@ -143,6 +145,8 @@ export interface Database {
           specs?: string[] | null;
           avantages?: string[] | null;
           variants?: string[] | null;
+          variant_prices?: Json | null;
+          discount_percent?: number | null;
           lien_produit?: string | null;
           warning?: string | null;
           created_at?: string;
@@ -165,6 +169,8 @@ export interface Database {
           specs?: string[] | null;
           avantages?: string[] | null;
           variants?: string[] | null;
+          variant_prices?: Json | null;
+          discount_percent?: number | null;
           lien_produit?: string | null;
           warning?: string | null;
           created_at?: string;

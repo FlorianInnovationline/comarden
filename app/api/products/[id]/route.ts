@@ -14,6 +14,14 @@ interface UpdateProductBody {
   category_id?: string | null;
   images?: string[];
   tags?: string[];
+  brand?: string | null;
+  specs?: string[] | null;
+  avantages?: string[] | null;
+  variants?: string[] | null;
+  /** Price in cents per variant label, or null when every variant shares the base price. */
+  variant_prices?: Record<string, number> | null;
+  lien_produit?: string | null;
+  warning?: string | null;
 }
 
 export async function PUT(
@@ -44,6 +52,17 @@ export async function PUT(
         category_id: body.category_id ?? null,
         images: body.images ?? [],
         tags: body.tags ?? [],
+        // Only touch these when the caller actually sent them, so a partial
+        // update can never silently wipe editorial content.
+        ...(body.brand !== undefined && { brand: body.brand }),
+        ...(body.specs !== undefined && { specs: body.specs }),
+        ...(body.avantages !== undefined && { avantages: body.avantages }),
+        ...(body.variants !== undefined && { variants: body.variants }),
+        ...(body.variant_prices !== undefined && {
+          variant_prices: body.variant_prices,
+        }),
+        ...(body.lien_produit !== undefined && { lien_produit: body.lien_produit }),
+        ...(body.warning !== undefined && { warning: body.warning }),
       })
       .eq("id", id)
       .select("*")

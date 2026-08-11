@@ -36,6 +36,43 @@ export default function ProductForm({ product, categories }: ProductFormProps) {
     variants: product?.variants?.join("\n") || "",
   });
 
+  // Per-variant pricing. Prices are held as euro strings while editing and
+  // converted to cents on submit. Empty means "use the product price".
+  const [perVariantPricing, setPerVariantPricing] = useState(
+    Object.keys(product?.variant_prices ?? {}).length > 0
+  );
+  const [variantPrices, setVariantPrices] = useState<Record<string, string>>(() => {
+    const out: Record<string, string> = {};
+    for (const [label, cents] of Object.entries(product?.variant_prices ?? {})) {
+      out[label] = (cents / 100).toString();
+    }
+    return out;
+  });
+
+  /** Variant labels as currently typed in the textarea. */
+  const variantLabels = formData.variants
+    .split("\n")
+    .map((v) => v.trim())
+    .filter((v) => v.length > 0);
+
+  /**
+   * Builds the variant_prices payload: a label -> cents map, or null when the
+   * "prix différents" box is unchecked or nothing usable was entered.
+   */
+  const buildVariantPrices = (): Record<string, number> | null => {
+    if (!perVariantPricing || variantLabels.length === 0) return null;
+    const out: Record<string, number> = {};
+    for (const label of variantLabels) {
+      const raw = (variantPrices[label] ?? "").trim();
+      if (!raw) continue;
+      const euros = Number(raw.replace(",", "."));
+      if (Number.isFinite(euros) && euros > 0) {
+        out[label] = Math.round(euros * 100);
+      }
+    }
+    return Object.keys(out).length > 0 ? out : null;
+  };
+
   const handleTitleChange = (title: string) => {
     setFormData({
       ...formData,
@@ -84,6 +121,7 @@ export default function ProductForm({ product, categories }: ProductFormProps) {
         lien_produit: formData.lien_produit || null,
         warning: formData.warning || null,
         variants: variants.length > 0 ? variants : null,
+        variant_prices: buildVariantPrices(),
       };
 
       // In a real app, this would be a server action
@@ -375,6 +413,59 @@ export default function ProductForm({ product, categories }: ProductFormProps) {
                   placeholder="RAL 9005&#10;RAL 7016"
                   className="w-full px-4 py-2 border border-border rounded-lg focus:outline-none focus:ring-2 focus:ring-accent text-sm"
                 />
+
+                {/* Per-variant pricing */}
+                {variantLabels.length > 0 && (
+                  <div className="mt-4 rounded-xl bg-neutral/30 p-4 ring-1 ring-black/5">
+                    <label className="flex items-center gap-3 cursor-pointer select-none">
+                      <input
+                        type="checkbox"
+                        checked={perVariantPricing}
+                        onChange={(e) => setPerVariantPricing(e.target.checked)}
+                        className="h-4 w-4 accent-accent"
+                      />
+                      <span className="text-sm font-semibold text-primary">
+                        Prix différents selon la variante&nbsp;?
+                      </span>
+                    </label>
+                    <p className="mt-1.5 ml-7 text-xs text-muted-foreground">
+                      {perVariantPricing
+                        ? "Indiquez le prix de chaque variante. Laissez vide pour utiliser le prix du produit."
+                        : "Toutes les variantes sont vendues au prix du produit ci-dessus."}
+                    </p>
+
+                    {perVariantPricing && (
+                      <div className="mt-4 space-y-2">
+                        {variantLabels.map((label) => (
+                          <div key={label} className="flex items-center gap-3">
+                            <span className="flex-1 text-xs text-primary truncate" title={label}>
+                              {label}
+                            </span>
+                            <div className="relative shrink-0">
+                              <input
+                                type="number"
+                                step="0.01"
+                                min="0"
+                                value={variantPrices[label] ?? ""}
+                                onChange={(e) =>
+                                  setVariantPrices({
+                                    ...variantPrices,
+                                    [label]: e.target.value,
+                                  })
+                                }
+                                placeholder={formData.price_cents.toString()}
+                                className="w-32 rounded-lg border border-border py-2 pl-3 pr-7 text-sm focus:outline-none focus:ring-2 focus:ring-accent"
+                              />
+                              <span className="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-xs text-muted-foreground">
+                                €
+                              </span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
               <div>
                 <label className="block text-sm font-semibold text-primary mb-2">Lien fiche produit (URL)</label>

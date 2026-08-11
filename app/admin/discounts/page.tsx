@@ -19,8 +19,8 @@ export default async function AdminDiscountsPage() {
             Discounts
           </h1>
           <p className="text-muted-foreground">
-            Appliquez une remise en pourcentage sur l&apos;ensemble des produits en
-            stock du site.
+            Définissez une remise par produit. Filtrez, appliquez en masse, ajustez
+            au cas par cas, puis enregistrez.
           </p>
         </div>
       </Reveal>
