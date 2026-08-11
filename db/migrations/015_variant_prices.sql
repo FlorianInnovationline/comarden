@@ -36,3 +36,22 @@ comment on column public.products.discount_percent is
 create index if not exists idx_products_discount_percent
   on public.products(discount_percent)
   where discount_percent is not null and discount_percent > 0;
+
+-- ===========================================================================
+-- Public order capture (optional but recommended)
+-- ---------------------------------------------------------------------------
+-- The "Commander" form on comarden-events.be stores each request so a lead is
+-- never lost if the mail provider is down. supabase-schema.sql already declares
+-- these policies; they are re-applied here because the live database is
+-- currently rejecting anonymous inserts.
+--
+-- Reading stays restricted: only the owner or an admin can select orders.
+-- ===========================================================================
+
+drop policy if exists orders_insert_public on public.orders;
+create policy orders_insert_public on public.orders
+  for insert with check (true);
+
+drop policy if exists order_items_insert_public on public.order_items;
+create policy order_items_insert_public on public.order_items
+  for insert with check (true);
