@@ -501,6 +501,10 @@ export interface Database {
         Args: Record<string, never>;
         Returns: boolean;
       };
+      stats_dashboard: {
+        Args: { p_from: string; p_to: string; p_site?: string };
+        Returns: Json;
+      };
     };
     Enums: { [_ in never]: never };
     CompositeTypes: { [_ in never]: never };
